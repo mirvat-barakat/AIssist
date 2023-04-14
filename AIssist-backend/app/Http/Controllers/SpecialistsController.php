@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Specialist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ class SpecialistsController extends Controller
     public function searchSpecialists(Request $request)
     {
         $query = $request->input('search_input');
-        $users = User::where('username', 'like', "%$query%")
+        $specialists = Specialist::where('name', 'like', "%$query%")
                        ->get();
 
         if ($specialists->isEmpty())
