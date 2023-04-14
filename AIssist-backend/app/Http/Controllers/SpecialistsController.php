@@ -37,4 +37,25 @@ class SpecialistsController extends Controller
         ]);
     }
 
+    public function searchSpecialistsByCategory(Request $request)
+{
+    $category = $request->input('category');
+    $specialists = Specialist::whereHas('categories', function($query) use ($category) {
+        $query->where('name', 'like', "%$category%");
+   })
+   ->get();
+
+   if ($specialists->isEmpty())
+         {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'No specialists found for the given category'
+            ], 204);
+         }
+         return response()->json([
+            'status' => 'success',
+            'specialists' => $specialists
+        ]);
+}
+
 }
