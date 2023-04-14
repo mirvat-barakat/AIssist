@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SpecialistsController;
 
 
 Route::group(["prefix" => "v0.0.1"], function()
@@ -16,6 +17,7 @@ Route::group(["prefix" => "v0.0.1"], function()
     {
         Route::get('/users', [UserController::class, 'getUsers']);
 
+        Route::get('/specialists', [SpecialistsController::class, 'getSpecialists']);
        
     });
 });
