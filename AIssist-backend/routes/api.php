@@ -19,6 +19,7 @@ Route::group(["prefix" => "v0.0.1"], function()
 
         Route::get('/specialists', [SpecialistsController::class, 'getSpecialists']);
         Route::get('/specialists/search', [SpecialistsController::class, 'searchSpecialists']);
+        Route::get('/specialists/search-by-category', [SpecialistsController::class, 'searchSpecialistsByCategory']);
        
     });
 });

@@ -40,10 +40,8 @@ class SpecialistsController extends Controller
     public function searchSpecialistsByCategory(Request $request)
 {
     $category = $request->input('category');
-    $specialists = Specialist::whereHas('categories', function($query) use ($category) {
-        $query->where('name', 'like', "%$category%");
-   })
-   ->get();
+    $specialists = Specialist::where('category', 'like', "%$category%")
+                               ->get();
 
    if ($specialists->isEmpty())
          {
