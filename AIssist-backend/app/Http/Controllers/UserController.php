@@ -10,8 +10,7 @@ class UserController extends Controller
 {
     public function getUsers()
     {
-        $logged_in_user = Auth::id();
-        $users = DB::table('users')->where('is_admin', '=', 0)->whereNot("id",$logged_in_user)->get();
+        $users = DB::table('users')->where('is_admin', '=', 0)->get();
         return response()->json([
             'status' => 'success',
             'users' => $users
