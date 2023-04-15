@@ -53,4 +53,33 @@ class CommentController extends Controller{
         'data' => $comments,
     ]);
     }
+
+    public function update(Request $request, $id){
+
+        $comment = Comment::find($id);
+
+        if (!$comment) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Comment not found',
+            ], 404);
+        }
+
+        if ($comment->user_id != auth()->user()->id ) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Unauthorized',
+            ], 401);
+        }
+
+        $comment->content = $request->input('content');
+        $comment->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Comment updated successfully',
+            'comment' => $comment,
+        ], 200);
+        
+    }
 }
