@@ -21,4 +21,13 @@ class CommunityPostController extends Controller
             'message' => 'Post created successfully'
         ]);
     }
+
+    public function getPosts()
+    {
+        $posts = DB::table('posts')->get();
+        return response()->json([
+            'status' => 'success',
+            'users' => $posts
+        ]);
+    }
 }
