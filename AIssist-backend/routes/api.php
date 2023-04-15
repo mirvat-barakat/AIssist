@@ -24,6 +24,7 @@ Route::group(["prefix" => "v0.0.1"], function()
 
         Route::post('/community/posts', [CommunityPostController::class, 'createPost']);
         Route::get('/community/posts', [CommunityPostController::class, 'getPosts']);
+        Route::delete('/community/{id}', [CommunityPostController::class, 'deletePost']);
        
     });
 });

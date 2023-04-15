@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 
 class CommunityPostController extends Controller{
-    
+
     public function createPost(Request $request){
         $post = new Post;
         $post->user_id = $request->user()->id;
@@ -30,7 +30,7 @@ class CommunityPostController extends Controller{
         ]);
     }
 
-    public function delete(Request $request, $id){
+    public function deletePost(Request $request, $id){
         $post = Post::find($id);
 
         if (!$post) {
