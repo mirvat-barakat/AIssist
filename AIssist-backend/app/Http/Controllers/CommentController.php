@@ -35,4 +35,12 @@ class CommentController extends Controller{
         ], 201);
     
     }
+
+    public function getComments(Request $request, Post $post){
+        $comments = $post->comments()->get();
+        return response()->json([
+            'status' => 'success',
+            'data' => $comments,
+        ]);
+    }
 }
