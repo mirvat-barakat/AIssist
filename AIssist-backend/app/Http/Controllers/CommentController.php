@@ -84,7 +84,8 @@ class CommentController extends Controller{
     }
 
     public function deleteComment(Request $request, $id){
-        $comment = Post::find($comment);
+
+        $comment = Comment::find($id);
 
         if (!$comment) {
             return response()->json([
@@ -94,7 +95,7 @@ class CommentController extends Controller{
         }
 
         $user = $request->user();
-        if (!$user->is_admin && $user->id !== $post->user_id) {
+        if (!$user->is_admin && $user->id !== $comment->user_id) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Unauthorized'
@@ -105,6 +106,6 @@ class CommentController extends Controller{
         return response()->json([
             'status' => 'success',
             'message' => 'Comment deleted successfully'
-        ]);
+        ], 200);
     }
 }

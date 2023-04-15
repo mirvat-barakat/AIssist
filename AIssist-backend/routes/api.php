@@ -30,6 +30,7 @@ Route::group(["prefix" => "v0.0.1"], function()
         Route::post('/posts/{post_id}/comments', [CommentController::class, 'createComment']);
         Route::get('/posts/{post_id}/comments', [CommentController::class, 'getComments']);
         Route::post('/comment/{id}', [CommentController::class, 'update']);
+        Route::delete('/comment/{id}', [CommentController::class, 'deleteComment']);
        
     });
 });
