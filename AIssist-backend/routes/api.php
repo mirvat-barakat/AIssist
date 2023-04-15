@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SpecialistsController;
+use App\Http\Controllers\CommunityPostController;
 
 
 Route::group(["prefix" => "v0.0.1"], function()
@@ -20,6 +21,8 @@ Route::group(["prefix" => "v0.0.1"], function()
         Route::get('/specialists', [SpecialistsController::class, 'getSpecialists']);
         Route::get('/specialists/search', [SpecialistsController::class, 'searchSpecialists']);
         Route::get('/specialists/search-by-category', [SpecialistsController::class, 'searchSpecialistsByCategory']);
+
+        Route::post('/community/posts', [CommunityPostController::class, 'createPost']);
        
     });
 });
