@@ -36,11 +36,21 @@ class CommentController extends Controller{
     
     }
 
-    public function getComments(Request $request, Post $post){
-        $comments = $post->comments()->get();
+    public function getComments(Request $request, $post_id){
+        $comments = Comment::where('post_id', 'like', "%$post_id%")
+                               ->get();
+
+        if ($comments->isEmpty()){
+            return response()->json([
+                'status' => 'error',
+                'message' => 'No comments found for this post',
+                'data' => []
+            ]);
+         }
+
         return response()->json([
-            'status' => 'success',
-            'data' => $comments,
-        ]);
+        'status' => 'success',
+        'data' => $comments,
+    ]);
     }
 }
