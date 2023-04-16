@@ -100,4 +100,27 @@ class LikeController extends Controller
         ], 200);
 
     }
+
+    public function getCommentLikes(Request $request, $id) {
+
+        $comment = Comment::find($id);
+
+        if (!$comment) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Comment not found'
+            ], 404);
+        }
+        $likes = Like::where('comment_id', $comment->id)->get();
+        $like_count = $likes->count();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => [
+                'likes' => $likes,
+                'like_count' => $like_count
+            ]
+        ], 200);
+
+    }
 }
