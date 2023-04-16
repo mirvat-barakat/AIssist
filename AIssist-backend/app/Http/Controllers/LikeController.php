@@ -42,4 +42,38 @@ class LikeController extends Controller
             'like' => $like,
         ], 201);
     }
+    
+    public function likeComment(Request $request, $comment_id) {
+
+        $comment = Comment::find($comment_id);
+
+        if (!$comment) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'comment not found',
+            ], 404);
+        }
+
+        $like = Like::where('user_id', auth()->user()->id)->where('comment_id', $post->id)->first();
+        if ($like) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Comment already liked by the user'
+            ], 400);
+        }
+
+        
+
+        $like = new Like();
+        $like->user_id = Auth::id();
+        $like->comment_id = $comment_id;
+        $like->post_id= $comment->post_id;
+        $like->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'like created successfully',
+            'like' => $like,
+        ], 201);
+    }
 }
