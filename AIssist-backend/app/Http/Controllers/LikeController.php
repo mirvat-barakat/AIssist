@@ -55,7 +55,7 @@ class LikeController extends Controller
             ], 404);
         }
 
-        $like = Like::where('user_id', auth()->user()->id)->where('comment_id', $post->id)->first();
+        $like = Like::where('user_id', auth()->user()->id)->where('comment_id', $comment->id)->first();
         if ($like) {
             return response()->json([
                 'status' => 'error',
