@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SpecialistsController;
 use App\Http\Controllers\CommunityPostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 
 
 Route::group(["prefix" => "v0.0.1"], function()
@@ -32,5 +33,7 @@ Route::group(["prefix" => "v0.0.1"], function()
         Route::post('/comment/{id}', [CommentController::class, 'update']);
         Route::delete('/comment/{id}', [CommentController::class, 'deleteComment']);
        
+        Route::post('/posts/{post_id}/likes', [LikeController::class, 'likePost']);
+
     });
 });
