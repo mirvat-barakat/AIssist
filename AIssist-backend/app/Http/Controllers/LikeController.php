@@ -20,6 +20,15 @@ class LikeController extends Controller
                 'message' => 'Post not found',
             ], 404);
         }
+
+        $like = Like::where('user_id', auth()->user()->id)->where('post_id', $post->id)->first();
+        if ($like) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Post already liked by the user'
+            ], 400);
+        }
+
         
 
         $like = new Like();
