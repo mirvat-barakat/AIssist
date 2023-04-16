@@ -34,6 +34,7 @@ Route::group(["prefix" => "v0.0.1"], function()
         Route::delete('/comment/{id}', [CommentController::class, 'deleteComment']);
        
         Route::post('/posts/{post_id}/likes', [LikeController::class, 'likePost']);
+        Route::post('/comments/{comment_id}/likes', [LikeController::class, 'likeComment']);
 
     });
 });
