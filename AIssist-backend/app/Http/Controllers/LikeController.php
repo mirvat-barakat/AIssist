@@ -77,4 +77,27 @@ class LikeController extends Controller
             'like' => $like,
         ], 201);
     }
+
+    public function getPostLikes(Request $request, $id) {
+
+        $post = Post::find($id);
+
+        if (!$post) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Post not found'
+            ], 404);
+        }
+        $likes = Like::where('post_id', $post->id)->whereNull('comment_id')->get();
+        $like_count = $likes->count();
+
+        return response()->json([
+            'status' => 'success',
+            'data' => [
+                'likes' => $likes,
+                'like_count' => $like_count
+            ]
+        ], 200);
+
+    }
 }
