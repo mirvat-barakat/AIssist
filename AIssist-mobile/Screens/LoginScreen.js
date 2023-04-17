@@ -32,8 +32,14 @@ export default function LoginScreen() {
                   secureTextEntry
                  />
             </View>
+            <TouchableOpacity style={styles.forgotPasswordLink} >
+                  <Text style={styles.forgotPasswordText}>Forgot password?</Text>
+            </TouchableOpacity>
             <TouchableOpacity style={styles.button} >
                  <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.registerLink} >
+                  <Text style={styles.registerText}>Don't have an account? <Text style={styles.registerLink}>Register Now</Text></Text>
             </TouchableOpacity>
         </View>
     );
