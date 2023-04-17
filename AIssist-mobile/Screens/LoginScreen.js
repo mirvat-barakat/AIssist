@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
-
+import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function LoginScreen() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    
+
+    const handleRegisterNow = () => {
+        const navigation = useNavigation();
+        navigation.navigate('RegisterScreen');
+      };
+    
 
     return (
         <View style={styles.container}>
@@ -14,7 +23,7 @@ export default function LoginScreen() {
             />
             <Text style={styles.title}>Login</Text>
             <View style={styles.inputContainer}>
-                 <Text style={styles.inputLabel}> Email:</Text>
+                 <Text style={styles.inputLabel}> <Ionicons name="ios-mail" size={24} style={styles.icon} /> Email:</Text>
                  <TextInput
                   style={styles.input}
                   placeholder="Enter your username"
@@ -23,7 +32,7 @@ export default function LoginScreen() {
                  />
             </View>
             <View style={styles.inputContainer}>
-                 <Text style={styles.inputLabel}> Password:</Text>
+                 <Text style={styles.inputLabel}> <Ionicons name="key-outline" size={24} style={styles.icon} /> Password:</Text>
                  <TextInput
                   style={styles.input}
                   placeholder="Enter your password"
@@ -38,7 +47,7 @@ export default function LoginScreen() {
             <TouchableOpacity style={styles.button} >
                  <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.registerLink} >
+            <TouchableOpacity style={styles.registerLink}  onPress={handleRegisterNow}>
                   <Text style={styles.registerText}>Don't have an account? <Text style={styles.registerLink}>Register Now</Text></Text>
             </TouchableOpacity>
         </View>
@@ -113,5 +122,7 @@ const styles = StyleSheet.create({
         color: '#FFC6C6',
         textDecorationLine: 'underline',
       },
-
+    icon: {
+        color:"#FFC6C6",
+    },
 });
