@@ -93,5 +93,25 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 18,
       },
+    forgotPasswordLink: {
+        marginTop: 10,
+        marginBottom:10,
+      },
+    forgotPasswordText: {
+        color: '#FFC6C6',
+        textDecorationLine: 'underline',
+        fontSize: 16,
+      },
+    registerLink: {
+        marginTop: 10,
+      },
+    registerText: {
+        color: 'black',
+        fontSize: 16,
+      },
+    registerLink: {
+        color: '#FFC6C6',
+        textDecorationLine: 'underline',
+      },
 
 });
