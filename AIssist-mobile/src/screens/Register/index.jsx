@@ -19,7 +19,7 @@ export default function LoginScreen() {
             />
             <Text style={styles.title}>Register</Text>
             <View style={styles.inputContainer}>
-                 <Text style={styles.inputLabel}> Name:</Text>
+                 <Text style={styles.inputLabel}>  <Ionicons name="person" size={24} style={styles.icon} /> Name:</Text>
                  <TextInput
                   style={styles.input}
                   placeholder="Enter your name"
