@@ -72,3 +72,5 @@ const styles = StyleSheet.create({
         color:"#FFC6C6",
     },
 });
+
+export default styles;
