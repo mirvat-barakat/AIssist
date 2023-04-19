@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import axios from "axios";
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Image
           style={styles.logo} 
           source={require('../../../assets/images/Logo.png')}
@@ -44,9 +43,9 @@ export default function LoginScreen() {
             <TouchableOpacity style={styles.button} >
                  <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.registerLink} >
-                  <Text style={styles.registerText}>Don't have an account? <Text style={styles.registerLink}>Register Now</Text></Text>
-            </TouchableOpacity>
-        </View>
+            <View style={styles.registerLink} >
+                  <Text style={styles.registerText}>Don't have an account? <TouchableOpacity  onPress={() => navigation.navigate('Register')}><Text style={styles.registerLink}>Register Now</Text></TouchableOpacity ></Text>
+            </View>
+        </SafeAreaView>
     );
 }

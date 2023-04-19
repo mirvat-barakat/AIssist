@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import axios from "axios";
 
-export default function LoginScreen() {
+export default function RegisterScreen() {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
