@@ -2,12 +2,37 @@ import React, { useState } from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
-import axios from "axios";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { SERVER_URL } from "../../../env";
+
+
 
 export default function LoginScreen({navigation}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const handleLogin = async () => {
+      const data = {
+        email: email,
+        password: password,
+      };
+  
+      const config = {
+        method: "post",
+        data,
+        url: `${SERVER_URL}/api/login`,
+      };
+      try {
+        const res = await axios(config);
+        if (res.data.status == "success") {
+          await AsyncStorage.setItem("@token", res.data.authorisation.token);
+          console.log("success");
+        }
+      } catch (error) {
+        console.log("error");
+      }
+    };
 
     return (
         <SafeAreaView style={styles.container}>
@@ -40,7 +65,7 @@ export default function LoginScreen({navigation}) {
             <TouchableOpacity style={styles.forgotPasswordLink} >
                   <Text style={styles.forgotPasswordText}>Forgot password?</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} >
+            <TouchableOpacity style={styles.button} onPress={handleLogin} >
                  <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
             <View style={styles.registerLink} >
