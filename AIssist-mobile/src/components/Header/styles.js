@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../constants/Palette';
 
 const styles = StyleSheet.create({
     header:{
@@ -6,7 +7,7 @@ const styles = StyleSheet.create({
         left:0,
         right:0,
         height:70,
-        backgroundColor:'#F08080',
+        backgroundColor:colors.primary_1,
         flexDirection:"row",
         justifyContent:"space-between",
         elevation:4,
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     icon: {
         top:20,
         left:-20,
-        color:"white",
+        color: colors.white,
     },
 });
 

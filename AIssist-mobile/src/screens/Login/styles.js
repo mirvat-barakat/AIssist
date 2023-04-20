@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../constants/Palette';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F08080',
+        backgroundColor: colors.primary_1,
         alignItems: 'center',
         justifyContent: 'center',
       },
@@ -29,14 +30,14 @@ const styles = StyleSheet.create({
       },
     input: {
         borderWidth: 1,
-        borderColor: '#ccc',
-        backgroundColor:'#FFFFFF',
+        borderColor: colors.black,
+        backgroundColor:colors.white,
         borderRadius: 10,
         padding: 10,
         fontSize: 16,
       },
     button: {
-        backgroundColor: '#FFC6C6',
+        backgroundColor: colors.primary_3,
         borderRadius: 10,
         padding: 12,
         alignItems: 'center',
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
         marginTop:10,
       },
     buttonText: {
-        color: '#fff',
+        color: colors.white,
         fontSize: 18,
       },
     forgotPasswordLink: {
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
         marginBottom:10,
       },
     forgotPasswordText: {
-        color: '#FFC6C6',
+        color: colors.primary_3,
         textDecorationLine: 'underline',
         fontSize: 16,
       },
@@ -61,15 +62,15 @@ const styles = StyleSheet.create({
         marginTop: 10,
       },
     registerText: {
-        color: 'black',
+        color: colors.black,
         fontSize: 16,
       },
     registerLink: {
-        color: '#FFC6C6',
+        color: colors.primary_3,
         textDecorationLine: 'underline',
       },
     icon: {
-        color:"#FFC6C6",
+        color: colors.primary_3,
     },
 });
 

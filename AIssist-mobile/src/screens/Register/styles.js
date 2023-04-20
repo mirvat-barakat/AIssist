@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../constants/Palette';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#F08080',
+        backgroundColor: colors.primary_1,
         alignItems: 'center',
         justifyContent: 'center',
       },
@@ -30,13 +31,13 @@ const styles = StyleSheet.create({
     input: {
         borderWidth: 1,
         borderColor: '#ccc',
-        backgroundColor:'#FFFFFF',
+        backgroundColor: colors.white,
         borderRadius: 10,
         padding: 10,
         fontSize: 16,
       },
     button: {
-        backgroundColor: '#FFC6C6',
+        backgroundColor: colors.primary_3,
         borderRadius: 10,
         padding: 12,
         alignItems: 'center',
@@ -45,11 +46,11 @@ const styles = StyleSheet.create({
         marginTop:10,
       },
     buttonText: {
-        color: '#fff',
+        color: colors.white,
         fontSize: 18,
       },
     icon: {
-        color:"#FFC6C6",
+        color: colors.primary_3,
     },
 });
 
