@@ -10,28 +10,29 @@ export default function RegisterScreen({navigation}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleRegister = async () => {
-     const data = {
-       name:name,
-       email: email,
-       password: password,
-     };
- 
-     const config = {
-       method: "post",
-       data,
-       url: "http://127.0.0.1:8000/api/v0.0.1/register",
-     };
-     try {
-       const res = await axios(config);
-       if (res.data.status == "success") {
-         await AsyncStorage.setItem("@token", res.data.authorisation.token);
-         console.log("success");
-       }
-     } catch (error) {
-       return error;
-     }
-   };
+  
+   const handleRegister= (e) => {
+
+    e.preventDefault();
+    axios.post('http://127.0.0.1:8000/api/v0.0.1/register', {
+        'name': name,
+        'email': email,
+        'password': password
+    }, {
+        headers: {
+            'content-type': 'application/json',
+            'Accept': 'application/json',
+        }
+    })
+    .then(response => {
+        if (response.data.status == "success"){
+            alert("success");
+        }
+    })
+    .catch(error => {
+        console.log(error);
+    });
+};
 
     return (
         <SafeAreaView style={styles.container}>

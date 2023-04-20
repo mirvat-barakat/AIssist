@@ -4,6 +4,7 @@ import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SERVER_URL } from "../../../env";
+import axios from "axios";
 
 
 
@@ -12,27 +13,33 @@ export default function LoginScreen({navigation}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = async () => {
-      const data = {
-        email: email,
-        password: password,
-      };
-  
-      const config = {
-        method: "post",
-        data,
-        url: `${SERVER_URL}/login`,
-      };
-      try {
-        const res = await axios(config);
-        if (res.data.status == "success") {
-          await AsyncStorage.setItem("@token", res.data.authorisation.token);
-          console.log("success");
+    
+      const handleLogin  = async () => {
+        const data = {
+          email: email,
+          password: password,
+        };
+    
+        const config = {
+          method: "post",
+          data,
+          url: 'http://127.0.0.1:8000/api/v0.0.1/login',
+          headers: {
+            'content-type': 'application/json',
+            'Accept': 'application/json',
+          },
+        };
+        try {
+          const res = await axios(config);
+          if (res.data.status == "success") {
+            await AsyncStorage.setItem("@token", res.data.authorisation.token);
+            alert("success");
+          }
+        } catch (error) {
+          return error.response.data;
         }
-      } catch (error) {
-        console.error("error");
-      }
-    };
+      };
+
 
     return (
         <SafeAreaView style={styles.container}>
