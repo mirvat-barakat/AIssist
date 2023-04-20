@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: colors.primary_3,
         borderRadius: 10,
-        padding: 12,
+        padding: 10,
         alignItems: 'center',
         width: 250,
         marginBottom: 10,
@@ -63,14 +63,12 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
         fontSize: 16,
       },
-    registerLink: {
-        marginTop: 10,
-      },
     registerText: {
         color: colors.white,
         fontSize: 16,
       },
     registerLink: {
+      marginTop: 10,
         color: colors.primary_3,
         textDecorationLine: 'underline',
       },

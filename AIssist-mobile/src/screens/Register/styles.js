@@ -8,18 +8,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
       },
-    logo: {
-        width: 250,
-        height: 250,
-        resizeMode: 'contain',
-        marginTop: -10,
-      },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        marginTop:-20,
-      },
     inputContainer: {
         width: 250,
         marginBottom: 20,
@@ -27,10 +15,9 @@ const styles = StyleSheet.create({
     inputLabel: {
         marginBottom: 10,
         fontSize:20,
+        color:colors.white,
       },
     input: {
-        borderWidth: 1,
-        borderColor: '#ccc',
         backgroundColor: colors.white,
         borderRadius: 10,
         padding: 10,
@@ -39,9 +26,9 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: colors.primary_3,
         borderRadius: 10,
-        padding: 12,
+        padding: 10,
         alignItems: 'center',
-        width: 100,
+        width: 250,
         marginBottom: 10,
         marginTop:10,
       },
@@ -51,6 +38,15 @@ const styles = StyleSheet.create({
       },
     icon: {
         color: colors.primary_3,
+    },
+    loginText: {
+      color: colors.white,
+      fontSize: 16,
+    },
+  loginLink: {
+    marginTop: 10,
+      color: colors.primary_3,
+      textDecorationLine: 'underline',
     },
 });
 

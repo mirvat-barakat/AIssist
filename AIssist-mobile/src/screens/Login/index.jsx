@@ -21,7 +21,7 @@ export default function LoginScreen({navigation}) {
       const config = {
         method: "post",
         data,
-        url: `${SERVER_URL}/api/login`,
+        url: `${SERVER_URL}/login`,
       };
       try {
         const res = await axios(config);
@@ -30,7 +30,7 @@ export default function LoginScreen({navigation}) {
           console.log("success");
         }
       } catch (error) {
-        console.log("error");
+        console.error("error");
       }
     };
 
@@ -69,7 +69,7 @@ export default function LoginScreen({navigation}) {
             <TouchableOpacity style={styles.button} onPress={handleLogin} >
                  <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
-            <View style={styles.registerLink} >
+            <View>
                   <Text style={styles.registerText}>Don't have an account? <TouchableOpacity  onPress={() => navigation.navigate('Register')}><Text style={styles.registerLink}>Register Now</Text></TouchableOpacity ></Text>
             </View>
             </View>

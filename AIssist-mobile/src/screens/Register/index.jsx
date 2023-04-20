@@ -4,7 +4,7 @@ import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import axios from "axios";
 
-export default function RegisterScreen() {
+export default function RegisterScreen({navigation}) {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -29,17 +29,12 @@ export default function RegisterScreen() {
          console.log("success");
        }
      } catch (error) {
-       console.error;
+       return error;
      }
    };
 
     return (
         <SafeAreaView style={styles.container}>
-            <Image
-          style={styles.logo} 
-          source={require('../../../assets/images/Logo.png')}
-            />
-            <Text style={styles.title}>Register</Text>
             <View style={styles.inputContainer}>
                  <Text style={styles.inputLabel}>  <Ionicons name="person" size={24} style={styles.icon} /> Name</Text>
                  <TextInput
@@ -61,7 +56,7 @@ export default function RegisterScreen() {
                  />
             </View>
             <View style={styles.inputContainer}>
-                 <Text style={styles.inputLabel}> <Ionicons name="key-outline" size={24} style={styles.icon} /> Password:</Text>
+                 <Text style={styles.inputLabel}> <Ionicons name="key-outline" size={24} style={styles.icon} /> Password</Text>
                  <TextInput
                   style={styles.input}
                   placeholder="Enter your password"
@@ -72,8 +67,11 @@ export default function RegisterScreen() {
                  />
             </View>
             <TouchableOpacity style={styles.button} >
-                 <Text style={styles.buttonText} onPress={handleRegister}>Register</Text>
+                 <Text style={styles.buttonText} onPress={handleRegister}>REGISTER</Text>
             </TouchableOpacity>
+            <View >
+                  <Text style={styles.loginText}>Already have an account? <TouchableOpacity  onPress={() => navigation.navigate('Login')}><Text style={styles.loginLink}>Login Now</Text></TouchableOpacity ></Text>
+            </View>
         </SafeAreaView>
     );
 }
