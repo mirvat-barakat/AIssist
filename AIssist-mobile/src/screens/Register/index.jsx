@@ -20,7 +20,7 @@ export default function RegisterScreen() {
      const config = {
        method: "post",
        data,
-       url: `${SERVER_URL}/api/register`,
+       url: "http://127.0.0.1:8000/api/v0.0.1/register",
      };
      try {
        const res = await axios(config);
@@ -29,7 +29,7 @@ export default function RegisterScreen() {
          console.log("success");
        }
      } catch (error) {
-       console.log("error");
+       console.error;
      }
    };
 
@@ -41,7 +41,7 @@ export default function RegisterScreen() {
             />
             <Text style={styles.title}>Register</Text>
             <View style={styles.inputContainer}>
-                 <Text style={styles.inputLabel}>  <Ionicons name="person" size={24} style={styles.icon} /> Name:</Text>
+                 <Text style={styles.inputLabel}>  <Ionicons name="person" size={24} style={styles.icon} /> Name</Text>
                  <TextInput
                   style={styles.input}
                   placeholder="Enter your name"
@@ -51,7 +51,7 @@ export default function RegisterScreen() {
                  />
             </View>
             <View style={styles.inputContainer}>
-                 <Text style={styles.inputLabel}> <Ionicons name="ios-mail" size={24} style={styles.icon} /> Email:</Text>
+                 <Text style={styles.inputLabel}> <Ionicons name="ios-mail" size={24} style={styles.icon} /> Email</Text>
                  <TextInput
                   style={styles.input}
                   placeholder="Enter your email"

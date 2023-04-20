@@ -9,28 +9,32 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
       },
     logo: {
-        width: 250,
-        height: 250,
+        width: 350,
+        height: 350,
         resizeMode: 'contain',
         marginTop: -10,
       },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-        marginTop:-20,
+      form:{
+        marginTop:-40,
       },
+    // title: {
+    //     fontSize: 24,
+    //     fontWeight: 'bold',
+    //     marginBottom: 20,
+    //     marginTop:-60,
+    //   },
     inputContainer: {
         width: 250,
         marginBottom: 20,
+        marginTop:-20,
       },
     inputLabel: {
         marginBottom: 10,
         fontSize:20,
+        color: colors.white,
+        marginTop:20,
       },
     input: {
-        borderWidth: 1,
-        borderColor: colors.black,
         backgroundColor:colors.white,
         borderRadius: 10,
         padding: 10,
@@ -41,7 +45,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 12,
         alignItems: 'center',
-        width: 100,
+        width: 250,
         marginBottom: 10,
         marginTop:10,
       },
@@ -50,6 +54,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
       },
     forgotPasswordLink: {
+       marginLeft:120,
         marginTop: 10,
         marginBottom:10,
       },
@@ -62,7 +67,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
       },
     registerText: {
-        color: colors.black,
+        color: colors.white,
         fontSize: 16,
       },
     registerLink: {

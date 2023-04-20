@@ -40,9 +40,10 @@ export default function LoginScreen({navigation}) {
           style={styles.logo} 
           source={require('../../../assets/images/Logo.png')}
             />
-            <Text style={styles.title}>Login</Text>
+            {/* <Text style={styles.title}>LOGIN</Text> */}
+            <View style={styles.form}>
             <View style={styles.inputContainer}>
-                 <Text style={styles.inputLabel}> <Ionicons name="ios-mail" size={24} style={styles.icon} /> Email:</Text>
+                 <Text style={styles.inputLabel}> <Ionicons name="ios-mail" size={24} style={styles.icon} /> Email</Text>
                  <TextInput
                   style={styles.input}
                   placeholder="Enter your email"
@@ -52,7 +53,7 @@ export default function LoginScreen({navigation}) {
                  />
             </View>
             <View style={styles.inputContainer}>
-                 <Text style={styles.inputLabel}> <Ionicons name="key-outline" size={24} style={styles.icon} /> Password:</Text>
+                 <Text style={styles.inputLabel}> <Ionicons name="key-outline" size={24} style={styles.icon} /> Password</Text>
                  <TextInput
                   style={styles.input}
                   placeholder="Enter your password"
@@ -66,10 +67,11 @@ export default function LoginScreen({navigation}) {
                   <Text style={styles.forgotPasswordText}>Forgot password?</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={handleLogin} >
-                 <Text style={styles.buttonText}>Login</Text>
+                 <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
             <View style={styles.registerLink} >
                   <Text style={styles.registerText}>Don't have an account? <TouchableOpacity  onPress={() => navigation.navigate('Register')}><Text style={styles.registerLink}>Register Now</Text></TouchableOpacity ></Text>
+            </View>
             </View>
         </SafeAreaView>
     );

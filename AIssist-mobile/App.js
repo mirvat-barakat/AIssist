@@ -6,12 +6,12 @@ import HomeScreen from './src/screens/Home';
 
 function App() {
   return (
-    // <NavigationContainer>
-    //   <AuthStack />
-    // </NavigationContainer>
-    <SafeAreaView>
-      <HomeScreen/>
-    </SafeAreaView>
+    <NavigationContainer>
+      <AuthStack />
+    </NavigationContainer>
+    // <SafeAreaView>
+    //   <HomeScreen/>
+    // </SafeAreaView>
   );
 }
 
