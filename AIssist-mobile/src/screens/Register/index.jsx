@@ -10,6 +10,29 @@ export default function RegisterScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const handleRegister = async () => {
+     const data = {
+       name:name,
+       email: email,
+       password: password,
+     };
+ 
+     const config = {
+       method: "post",
+       data,
+       url: `${SERVER_URL}/api/register`,
+     };
+     try {
+       const res = await axios(config);
+       if (res.data.status == "success") {
+         await AsyncStorage.setItem("@token", res.data.authorisation.token);
+         console.log("success");
+       }
+     } catch (error) {
+       console.log("error");
+     }
+   };
+
     return (
         <SafeAreaView style={styles.container}>
             <Image
@@ -49,7 +72,7 @@ export default function RegisterScreen() {
                  />
             </View>
             <TouchableOpacity style={styles.button} >
-                 <Text style={styles.buttonText}>Register</Text>
+                 <Text style={styles.buttonText} onPress={handleRegister}>Register</Text>
             </TouchableOpacity>
         </SafeAreaView>
     );
