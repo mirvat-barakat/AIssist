@@ -5,8 +5,8 @@ import Header from '../../components/Header';
 
 export default function HomeScreen() {
     return(
-        <View>
+        <SafeAreaView>
             <Header/>
-        </View>
+        </SafeAreaView>
     );
 }

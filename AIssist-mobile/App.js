@@ -1,4 +1,5 @@
 import React from 'react';
+import { View, SafeAreaView } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthStack from './src/navigation/AuthStack';
 import HomeScreen from './src/screens/Home';
@@ -8,9 +9,9 @@ function App() {
     // <NavigationContainer>
     //   <AuthStack />
     // </NavigationContainer>
-    <View>
+    <SafeAreaView>
       <HomeScreen/>
-    </View>
+    </SafeAreaView>
   );
 }
 

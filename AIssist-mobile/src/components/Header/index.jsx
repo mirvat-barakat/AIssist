@@ -1,21 +1,20 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, SafeAreaView, Image } from 'react-native';
 import styles from './styles';
-import styles from '../../screens/Login/styles';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function Header(){
     return(
-        <View style={styles.header}>
-         <View style={styles.left}>
+        <SafeAreaView style={styles.header}>
+         <View>
           <Image
-           style={styles.logo} 
+           style={styles.logo1} 
            source={require('../../../assets/images/Logo.png')}
            />
          </View>
-         <View style={styles.right}>
-           <Ionicons name="list-outline" size={16} style={styles.icon} />
+         <View>
+           <Ionicons name="list-outline" size={30} style={styles.icon} />
          </View>
-        </View>
+        </SafeAreaView>
     );
 }
