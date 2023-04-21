@@ -1,0 +1,12 @@
+.login-block{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+
+}

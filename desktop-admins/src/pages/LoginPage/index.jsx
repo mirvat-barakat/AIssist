@@ -1,11 +1,13 @@
 import React from "react";
 import  "./styles.css";
+import logo from '../../assets/images/Logo.png';
 
 const Login =()=> {
 
     return(
     <div className="login-block">
-      <h2>LOGIN</h2>
+      <img src={logo} alt="logo"></img>
+      <h2>LOGIN Here</h2>
       <form>
         <div className="form-group">
           <label htmlFor="email">Email:</label>
