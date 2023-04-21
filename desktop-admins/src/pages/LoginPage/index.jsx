@@ -1,6 +1,8 @@
 import React, { useState }  from "react";
 import  "./styles.css";
 import logo from '../../assets/images/Logo.png';
+import axios from "axios";
+
 
 const Login =()=> {
 
@@ -20,6 +22,32 @@ const Login =()=> {
     }
   };
 
+  const handleFormSubmit  = async () => {
+    const data = {
+      email: email,
+      password: password,
+    };
+
+    const config = {
+      method: "post",
+      data,
+      url: 'http://127.0.0.1:8000/api/v0.0.1/login',
+      headers: {
+        'content-type': 'application/json',
+        'Accept': 'application/json',
+      },
+    };
+    try {
+      const res = await axios(config);
+      if (res.data.status == "success" && res.data.user.isadmin==1) {
+        await localStorage.setItem("@token", res.data.authorisation.token);
+        alert("success");
+      }
+    } catch (error) {
+      console.error();
+    }
+  };
+
     return(
     <div className="login-block">
       <img src={logo} alt="logo" className="logo"></img>
@@ -27,14 +55,14 @@ const Login =()=> {
         <h2 className="title">LOGIN</h2>
         <div className="form-group">
           <label htmlFor="email" className="input-label">Email:</label>
-          <input type="email" id="email" name="email" className="input" autoComplete="off" required />
+          <input type="email" id="email" name="email" className="input" value={email} autoComplete="off" required />
         </div>
         <div className="form-group">
           <label htmlFor="password" className="input-label">Password:</label>
-          <input type="password" id="password" name="password"  className="input" onChange={handlePasswordChange} autoComplete="off" required/>
+          <input type="password" id="password" name="password" value={password} className="input" onChange={handlePasswordChange} autoComplete="off" required/>
           {<div className="error">{passwordError}</div>}
         </div>
-        <button type="submit" className="button">LOGIN</button>
+        <button type="submit" className="button" onClick={handleFormSubmit}>LOGIN</button>
       </form>
     </div>
     );
