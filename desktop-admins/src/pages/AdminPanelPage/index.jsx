@@ -1,5 +1,5 @@
 import React , {useState, useEffect} from "react";
-import Header from  '../../Components/Admin/Header';
+import Header from  '../../components/Header';
 
 const AdminPage = () => {
     return (

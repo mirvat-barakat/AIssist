@@ -1,8 +1,11 @@
 import React from 'react';
-import AppButton from "../../Button";
-import "./style.css";
+import AppButton from "../Button";
+import "./styles.css";
+import axios from 'axios';
+// import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+    // const navigate = useNavigate();
 
     const handleLogout = () => {
 
@@ -22,7 +25,7 @@ const Header = () => {
         
         axios.request(logout)
             .then(response => {
-                navigate("/");
+                // navigate("/");
           });
       }
 
