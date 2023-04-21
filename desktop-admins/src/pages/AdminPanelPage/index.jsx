@@ -5,8 +5,8 @@ import Sidebar from "../../components/Sidebar";
 const AdminPage = () => {
     return (
         <>
-        <Header/>
         <Sidebar/>
+        <Header/>
         </>
         
     );
