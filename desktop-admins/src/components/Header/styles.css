@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: start;
+    gap:36%;
+    align-items: center;
+    background-color: #F08080;
+    color: white;
+    padding: 1.5rem;
+  }
+  
+  
+  .buttons {
+    border-radius: 20px;
+    background-image: linear-gradient(90deg, rgb(66, 232, 255), rgb(151, 0, 154));
+    color: aliceblue;
+    width: 30%;
+    height: 80%;
+    padding: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button::after {
+    transform: scale(0.9);
+  }
