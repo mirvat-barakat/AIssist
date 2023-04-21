@@ -1,9 +1,9 @@
 import React from 'react';
-import "./style.css";
+import "./styles.css";
 
 const Sidebar = () => {
     return (
-        <aside>
+        <aside className='sidebar'>
             <div className='sidebar-links'>
             <a href='#' className="link" >View Users</a>
             </div>
