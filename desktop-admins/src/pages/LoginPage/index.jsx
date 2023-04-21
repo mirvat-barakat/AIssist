@@ -10,6 +10,10 @@ const Login =()=> {
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handlePasswordChange = (e) => {
     const value = e.target.value;
     setPassword(value);
@@ -22,30 +26,31 @@ const Login =()=> {
     }
   };
 
-  const handleFormSubmit  = async () => {
-    const data = {
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    axios.post('http://localhost:8000/api/v0.0.1/login', {
       email: email,
-      password: password,
-    };
-
-    const config = {
-      method: "post",
-      data,
-      url: 'http://127.0.0.1:8000/api/v0.0.1/login',
+      password: password
+    }, {
       headers: {
         'content-type': 'application/json',
         'Accept': 'application/json',
-      },
-    };
-    try {
-      const res = await axios(config);
-      if (res.data.status == "success" && res.data.user.isadmin==1) {
-        await localStorage.setItem("@token", res.data.authorisation.token);
-        alert("success");
       }
-    } catch (error) {
-      console.error();
-    }
+    })
+      .then(response => {
+        console.log(response);
+        if ( response.data.user.is_admin == 1) {
+          alert("success");
+          window.localStorage.setItem('token', response.data.authorization.token);
+        }
+        else{
+          alert("Incorrect Credentials");
+
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
   };
 
     return(
@@ -55,11 +60,13 @@ const Login =()=> {
         <h2 className="title">LOGIN</h2>
         <div className="form-group">
           <label htmlFor="email" className="input-label">Email:</label>
-          <input type="email" id="email" name="email" className="input" value={email} autoComplete="off" required />
+          <input type="email" id="email" name="email" className="input"
+                  value={email}  onChange={handleEmailChange} autoComplete="off" required />
         </div>
         <div className="form-group">
           <label htmlFor="password" className="input-label">Password:</label>
-          <input type="password" id="password" name="password" value={password} className="input" onChange={handlePasswordChange} autoComplete="off" required/>
+          <input type="password" id="password" name="password"
+                  value={password} className="input" onChange={handlePasswordChange} autoComplete="off" required/>
           {<div className="error">{passwordError}</div>}
         </div>
         <button type="submit" className="button" onClick={handleFormSubmit}>LOGIN</button>
