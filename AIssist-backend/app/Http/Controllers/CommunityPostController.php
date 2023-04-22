@@ -23,7 +23,11 @@ class CommunityPostController extends Controller{
     }
 
     public function getPosts(){
-        $posts = DB::table('posts')->get();
+        $posts = DB::table('posts')
+                ->join('users', 'posts.user_id', '=', 'users.id')
+                ->select('posts.*', 'users.name', 'users.profile_picture') 
+                ->get();
+
         return response()->json([
             'status' => 'success',
             'posts' => $posts
