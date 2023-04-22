@@ -7,12 +7,12 @@ import CommunityScreen from './src/screens/Community';
 
 function App() {
   return (
-    // <NavigationContainer>
-    //   <AuthStack />
-    // </NavigationContainer>
-    <SafeAreaView>
-      <CommunityScreen/>
-    </SafeAreaView>
+    <NavigationContainer>
+      <AuthStack />
+    </NavigationContainer>
+    // <SafeAreaView>
+    //   <CommunityScreen/>
+    // </SafeAreaView>
   );
 }
 

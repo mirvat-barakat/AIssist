@@ -22,7 +22,7 @@ export default function LoginScreen({navigation}) {
     
         const config = {
           method: "post",
-          data,
+          data:data,
           url: 'http://127.0.0.1:8000/api/v0.0.1/login',
           headers: {
             'content-type': 'application/json',
@@ -32,8 +32,10 @@ export default function LoginScreen({navigation}) {
         try {
           const res = await axios(config);
           if (res.data.status == "success") {
-            await AsyncStorage.setItem("@token", res.data.authorisation.token);
-            alert("success");
+            // await AsyncStorage.setItem("@token", res.data.authorisation.token);
+            window.localStorage.setItem('token', res.data.authorisation.token);
+            // alert("success");
+            navigation.navigate('Community');
           }
         } catch (error) {
           return error.response.data;

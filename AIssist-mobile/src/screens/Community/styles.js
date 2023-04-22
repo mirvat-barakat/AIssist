@@ -26,6 +26,8 @@ const styles = StyleSheet.create({
     },
     mainPostView:{
         width:'100%',
+        // display:'flex',
+        // flexDirection:'column',
     },
     postTitle:{
         width:'90%',
@@ -37,6 +39,8 @@ const styles = StyleSheet.create({
         width:'100%',
         alignItems:'center',
         marginTop:20,
+        display:'flex',
+        flexDirection:'column',
     },
     profilePhoto:{
         width:50,
@@ -45,11 +49,14 @@ const styles = StyleSheet.create({
     },
     username:{
         alignContent:'center',
-        marginTop:15,
+        // marginTop:15,
+        marginLeft:10,
     },
     imageView:{
         display:'flex',
-        flexDirection:'row'
+        flexDirection:'row',
+        marginLeft:15,
+        alignItems:'center',
     },
     
 
