@@ -3,10 +3,12 @@ import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 're
 import styles from './styles';
 import Header from '../../components/Header';
 import axios from 'axios';
+import { FlatList } from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function CommunityScreen() {
     const[postContent,setPostContent]= useState('');
-    const[feed, setFeed]= useState('');
+    const[posts, setFeed]= useState([]);
     const token = localStorage.getItem("token");
 
     const getPosts = {
@@ -29,7 +31,7 @@ export default function CommunityScreen() {
                 console.error();
             });
       },[]);
-    return(
+      return(
         <SafeAreaView>
             <Header/>
             <View style={styles.main}>
@@ -39,12 +41,15 @@ export default function CommunityScreen() {
         numberOfLines={20}
         placeholder="Enter your text here..." style={styles.TextInput}></TextInput>
                 </View>
-                <View style={styles.PstView}>
-
-                </View>
-                
+                <View style={styles.container}>
+      {posts.map(post => (
+        <View key={post.id} style={styles.userContainer}>
+          <Text style={styles.username}>{post.name}</Text>
+          <Text style={styles.email}>{post.profile_picture}</Text>
+        </View>
+      ))}
+    </View>
             </View>
-
         </SafeAreaView>
     );
 }
