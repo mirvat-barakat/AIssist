@@ -9,3 +9,11 @@
     height:40%;
     width:100%;
 }
+.items{
+  display:flex;
+  flex-direction: column;
+}
+.items-list{
+  display: flex;
+  flex-direction: row;
+}
