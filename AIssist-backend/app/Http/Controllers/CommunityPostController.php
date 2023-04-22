@@ -26,7 +26,7 @@ class CommunityPostController extends Controller{
         $posts = DB::table('posts')->get();
         return response()->json([
             'status' => 'success',
-            'users' => $posts
+            'posts' => $posts
         ]);
     }
 
