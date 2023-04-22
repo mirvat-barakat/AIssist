@@ -23,11 +23,10 @@ export default function CommunityScreen() {
         axios.request(getPosts)
             .then(response => {
                 console.log(response);
-                setFeed(response.data.users);
-                // console.log(response);
+                setFeed(response.data.posts);
             })
             .catch(function (error) {
-            //   navigate("/");
+                console.error();
             });
       },[]);
     return(
