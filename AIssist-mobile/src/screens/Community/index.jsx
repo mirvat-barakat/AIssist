@@ -10,7 +10,12 @@ export default function CommunityScreen() {
             <Header/>
             <View style={styles.main}>
                 <Text style={styles.Heading}>Community</Text>
-                <TextInput value={postContent} onChangeText={(val)=>setPostContent(val)}style={styles.TextInput}></TextInput>
+                <View style={styles.TextInputView}>
+                    <TextInput value={postContent} onChangeText={(val)=>setPostContent(val)} multiline={true}
+        numberOfLines={20}
+        placeholder="Enter your text here..." style={styles.TextInput}></TextInput>
+                </View>
+                
             </View>
 
         </SafeAreaView>

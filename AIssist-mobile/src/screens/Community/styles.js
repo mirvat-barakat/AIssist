@@ -16,6 +16,13 @@ const styles = StyleSheet.create({
         width:'90%',
         backgroundColor:colors.white,
         borderRadius:10,
+        marginLeft:15,
+        flexWrap:'wrap',
+        padding:10,
+    },
+    TextInputView:{
+        dispaly:'flex',
+        alignItems: 'center',
     },
     
 
