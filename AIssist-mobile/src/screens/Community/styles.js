@@ -24,6 +24,33 @@ const styles = StyleSheet.create({
         dispaly:'flex',
         alignItems: 'center',
     },
+    mainPostView:{
+        width:'100%',
+    },
+    postTitle:{
+        width:'90%',
+        display:'flex',
+        justifyContent:'space-between',
+        flexDirection:'row',
+    },
+    postView:{
+        width:'100%',
+        alignItems:'center',
+        marginTop:20,
+    },
+    profilePhoto:{
+        width:50,
+        height:50,
+        borderRadius:50,
+    },
+    username:{
+        alignContent:'center',
+        marginTop:15,
+    },
+    imageView:{
+        display:'flex',
+        flexDirection:'row'
+    },
     
 
 });
