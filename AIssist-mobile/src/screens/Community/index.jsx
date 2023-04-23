@@ -12,6 +12,33 @@ export default function CommunityScreen({ navigation }) {
     const token = localStorage.getItem("token");
     // const [token, setToken] = useState('');
 
+    const HeartIcon = () => {
+      const [liked, setLiked] = useState(false);
+
+      const handleLike = async () => {
+        try {
+          if (liked) {
+            await fetch('http://127.0.0.1:8000/api/posts/{post_id}/likes', {
+              method: 'DELETE',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            });
+          }else {
+            await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/{post_id}/likes', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              });
+
+        }
+      }catch (error) {
+        console.error('Failed to toggle like:', error);
+      }
+    } 
+  };
+
     const getPosts = {
         method: 'GET',
         url: 'http://127.0.0.1:8000/api/v0.0.1/community/posts',
