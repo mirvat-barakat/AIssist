@@ -11,12 +11,12 @@ export default function CommunityScreen({ navigation }) {
     const[posts, setFeed]= useState([]);
     const token = localStorage.getItem("token");
     // const [token, setToken] = useState('');
-    const [liked, setLiked] = useState(false);
+    const [likedPosts, setLikedPosts] = useState([]); 
 
-      const handleLike = async () => {
+      const handleLike = async (postId, index) => {
         try {
-          if (liked) {
-            await fetch('http://127.0.0.1:8000/api/v0.0.1/like/11', {
+          if (likedPosts[index]) {
+            await fetch('http://127.0.0.1:8000/api/v0.0.1/like/${postId}', {
               method: 'DELETE',
               headers: {
                 'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export default function CommunityScreen({ navigation }) {
               },
             });
           }else {
-            await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/1/likes', {
+            await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/${postId}/likes', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,9 @@ export default function CommunityScreen({ navigation }) {
               });
 
         }
-        setLiked(!liked);
+        const updatedLikedPosts = [...likedPosts];
+        updatedLikedPosts[index] = !likedPosts[index];
+        setLikedPosts(updatedLikedPosts);
       }catch (error) {
         console.error('Failed to toggle like:', error);
       }
@@ -66,6 +68,7 @@ export default function CommunityScreen({ navigation }) {
             .then(response => {
                 console.log(response);
                 setFeed(response.data.posts);
+                setLikedPosts(Array(response.data.posts.length).fill(false));
             })
             .catch(function (error) {
                 console.error();
@@ -87,7 +90,7 @@ export default function CommunityScreen({ navigation }) {
                 </View>
                 <View style={styles.mainPostView}>
                     <View >
-                       {posts.map(post => (
+                       {posts.map((post, index) => (
                         <View style={styles.postView}>
                         <View key={post.id} style={styles.postTitle}>
                           <View style={styles.imageView}>
@@ -100,7 +103,7 @@ export default function CommunityScreen({ navigation }) {
                         </View>
                         <View style={styles.actions}>
                           <View>
-                          <TouchableOpacity onPress={handleLike}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: liked ? 'red' : 'black' }]} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => handleLike(post.id, index)}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: likedPosts[index] ? 'red' : 'black' }]} /></TouchableOpacity>
                           </View>
                           <View>
                           <TouchableOpacity style={styles.commentButton} >
