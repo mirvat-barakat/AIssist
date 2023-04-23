@@ -74,6 +74,22 @@ const styles = StyleSheet.create({
             fontWeight: 'bold',
             textAlign:'center',
             },
+        commentButton: {
+                color: '#fff',
+                border: 'none',
+                borderRadius: 10,
+                padding: 10,
+                width:100,
+                cursor: 'pointer',
+                fontSize: 16,
+                marginTop:10,
+                },
+        commentButtonText: {
+                color: 'black',
+                fontWeight: '600',
+                textAlign:'center',
+                textDecorationLine:'underline',
+        },
     postContent:{
         // display:'flex',
         // flexWrap: 'wrap',   

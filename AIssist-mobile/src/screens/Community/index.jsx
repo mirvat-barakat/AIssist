@@ -72,8 +72,8 @@ export default function CommunityScreen({ navigation }) {
                             <Text>{post.content}</Text>
                         </View>
                         {/* <Button title="Open Modal" onPress={() => navigation.navigate('Modal')} /> */}
-                        <TouchableOpacity style={styles.shareButton} >
-                      <Text style={styles.shareButtonText} title="Open Modal" onPress={() => navigation.navigate('Comments')} >Share</Text>
+                        <TouchableOpacity style={styles.commentButton} >
+                      <Text style={styles.commentButtonText} title="Open Comments" onPress={() => navigation.navigate('Comments')} >Comments</Text>
                     </TouchableOpacity>
                        </View>
                        ))}
