@@ -8,18 +8,18 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function CommunityScreen({ navigation }) {
     const[postContent,setPostContent]= useState('');
     const[posts, setFeed]= useState([]);
-    // const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     // const [token, setToken] = useState('');
 
-    // const getPosts = {
-    //     method: 'GET',
-    //     url: 'http://127.0.0.1:8000/api/v0.0.1/community/posts',
-    //     headers: {
-    //       'content-type': 'application/json',
-    //       'Accept' : 'application/json',
-    //       'Authorization': 'bearer ' + token
-    //     },
-    //   };
+    const getPosts = {
+        method: 'GET',
+        url: 'http://127.0.0.1:8000/api/v0.0.1/community/posts',
+        headers: {
+          'content-type': 'application/json',
+          'Accept' : 'application/json',
+          'Authorization': 'bearer ' + token
+        },
+      };
 
       // useEffect(() => {
       //   AsyncStorage.getItem('token')
@@ -31,16 +31,16 @@ export default function CommunityScreen({ navigation }) {
       //     .catch((error) => console.error('Error getting token from async storage:', error));
       // },[]);
   
-      // useEffect(() => {
-      //   axios.request(getPosts)
-      //       .then(response => {
-      //           console.log(response);
-      //           setFeed(response.data.posts);
-      //       })
-      //       .catch(function (error) {
-      //           console.error();
-      //       });
-      // },[]);
+      useEffect(() => {
+        axios.request(getPosts)
+            .then(response => {
+                console.log(response);
+                setFeed(response.data.posts);
+            })
+            .catch(function (error) {
+                console.error();
+            });
+      },[token]);
       return(
         <SafeAreaView>
             <Header/>
@@ -57,7 +57,28 @@ export default function CommunityScreen({ navigation }) {
                       <Text style={styles.shareButtonText} title="Open Modal" onPress={() => navigation.navigate('Comments')} >Share</Text>
                     </TouchableOpacity>
                 </View>
-                
+                <View style={styles.mainPostView}>
+                    <View >
+                       {posts.map(post => (
+                        <View style={styles.postView}>
+                        <View key={post.id} style={styles.postTitle}>
+                          <View style={styles.imageView}>
+                             <Image style={styles.profilePhoto} source={{uri:post.profile_picture}}></Image>
+                             <Text style={styles.username} numberOfLines={3} ellipsizeMode="tail">{post.name}</Text>
+                          </View>
+                          <View>options</View>
+                        </View>
+                        <View style={styles.postContent}>
+                            <Text>{post.content}</Text>
+                        </View>
+                        {/* <Button title="Open Modal" onPress={() => navigation.navigate('Modal')} /> */}
+                        <TouchableOpacity style={styles.shareButton} >
+                      <Text style={styles.shareButtonText} title="Open Modal" onPress={() => navigation.navigate('Comments')} >Share</Text>
+                    </TouchableOpacity>
+                       </View>
+                       ))}
+                    </View>
+                </View>
                 </View>
         </SafeAreaView>
     );
