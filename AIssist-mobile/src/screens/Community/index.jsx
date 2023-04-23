@@ -50,6 +50,9 @@ export default function CommunityScreen() {
                     <TextInput value={postContent} onChangeText={(val)=>setPostContent(val)} multiline={true}
                        numberOfLines={20} placeholder="Enter your text here..." style={styles.TextInput}>
                     </TextInput>
+                    <TouchableOpacity style={styles.shareButton} >
+                      <Text style={styles.shareButtonText}>Share</Text>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.mainPostView}>
                     <View >
