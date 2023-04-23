@@ -16,12 +16,14 @@ export default function CommunityScreen({ navigation }) {
       const handleLike = async () => {
         try {
           if (liked) {
-            // await fetch('http://127.0.0.1:8000/api/posts/1/likes', {
-            //   method: 'DELETE',
-            //   headers: {
-            //     'Content-Type': 'application/json',
-            //   },
-            // });
+            await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/1/likes', {
+              method: 'DELETE',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'bearer ' + token
+              },
+            });
             alert("liked");
           }else {
             alert("here");
