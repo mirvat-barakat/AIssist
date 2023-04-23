@@ -16,7 +16,7 @@ export default function CommunityScreen({ navigation }) {
       const handleLike = async () => {
         try {
           if (liked) {
-            await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/1/likes', {
+            await fetch('http://127.0.0.1:8000/api/v0.0.1/like/11', {
               method: 'DELETE',
               headers: {
                 'Content-Type': 'application/json',
@@ -24,9 +24,7 @@ export default function CommunityScreen({ navigation }) {
                 'Authorization': 'bearer ' + token
               },
             });
-            alert("liked");
           }else {
-            alert("here");
             await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/1/likes', {
               method: 'POST',
               headers: {
