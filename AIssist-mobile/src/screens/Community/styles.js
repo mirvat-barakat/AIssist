@@ -58,6 +58,14 @@ const styles = StyleSheet.create({
         marginLeft:15,
         alignItems:'center',
     },
+    postContent:{
+        // display:'flex',
+        // flexWrap: 'wrap',   
+        // textAlign: 'left',
+        marginLeft:15,       
+        lineHeight: 22,         
+        fontSize: 16, 
+    },
     
 
 });

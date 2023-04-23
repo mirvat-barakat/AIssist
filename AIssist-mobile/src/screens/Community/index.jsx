@@ -58,7 +58,7 @@ export default function CommunityScreen() {
                         <View key={post.id} style={styles.postTitle}>
                           <View style={styles.imageView}>
                              <Image style={styles.profilePhoto} source={{uri:post.profile_picture}}></Image>
-                             <Text style={styles.username}>{post.name}</Text>
+                             <Text style={styles.username} numberOfLines={3} ellipsizeMode="tail">{post.name}</Text>
                           </View>
                           <View>options</View>
                         </View>
