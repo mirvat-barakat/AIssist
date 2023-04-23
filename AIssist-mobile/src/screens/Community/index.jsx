@@ -11,9 +11,7 @@ export default function CommunityScreen({ navigation }) {
     const[posts, setFeed]= useState([]);
     const token = localStorage.getItem("token");
     // const [token, setToken] = useState('');
-
-    const HeartIcon = () => {
-      const [liked, setLiked] = useState(false);
+    const [liked, setLiked] = useState(false);
 
       const handleLike = async () => {
         try {
@@ -33,11 +31,11 @@ export default function CommunityScreen({ navigation }) {
               });
 
         }
+        setLiked(!liked);
       }catch (error) {
         console.error('Failed to toggle like:', error);
       }
     } 
-  };
 
     const getPosts = {
         method: 'GET',
@@ -98,7 +96,7 @@ export default function CommunityScreen({ navigation }) {
                         </View>
                         <View style={styles.actions}>
                           <View>
-                          <TouchableOpacity><Ionicons name="heart-outline" size={24} style={styles.icon} /></TouchableOpacity>
+                          <TouchableOpacity onPress={handleLike}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: liked ? 'red' : 'black' }]} /></TouchableOpacity>
                           </View>
                           <View>
                           <TouchableOpacity style={styles.commentButton} >
