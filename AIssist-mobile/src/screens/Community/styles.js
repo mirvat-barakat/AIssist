@@ -58,6 +58,22 @@ const styles = StyleSheet.create({
         marginLeft:15,
         alignItems:'center',
     },
+    shareButton: {
+        backgroundColor: colors.primary_3,
+        color: '#fff',
+        border: 'none',
+        borderRadius: 10,
+        padding: 10,
+        width:100,
+        cursor: 'pointer',
+        fontSize: 16,
+        marginTop:10,
+        },
+        shareButtonText: {
+            color: '#fff',
+            fontWeight: 'bold',
+            textAlign:'center',
+            },
     postContent:{
         // display:'flex',
         // flexWrap: 'wrap',   
