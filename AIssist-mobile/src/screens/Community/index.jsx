@@ -3,6 +3,7 @@ import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, ScrollVie
 import styles from './styles';
 import Header from '../../components/Header';
 import axios from 'axios';
+import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function CommunityScreen({ navigation }) {
@@ -68,10 +69,16 @@ export default function CommunityScreen({ navigation }) {
                         <View style={styles.postContent}>
                             <Text>{post.content}</Text>
                         </View>
-                        {/* <Button title="Open Modal" onPress={() => navigation.navigate('Modal')} /> */}
-                        <TouchableOpacity style={styles.commentButton} >
-                      <Text style={styles.commentButtonText} title="Open Comments" onPress={() => navigation.navigate('Comments')} >Comments</Text>
-                    </TouchableOpacity>
+                        <View style={styles.actions}>
+                          <View>
+                          <TouchableOpacity><Ionicons name="heart-outline" size={24} style={styles.icon} /></TouchableOpacity>
+                          </View>
+                          <View>
+                          <TouchableOpacity style={styles.commentButton} >
+                            <Text style={styles.commentButtonText} title="Open Comments" onPress={() => navigation.navigate('Comments')} >Comments</Text>
+                          </TouchableOpacity>
+                          </View>
+                        </View>
                        </View>
                        ))}
                     </View>

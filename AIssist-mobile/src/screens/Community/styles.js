@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     },
     postView:{
         width:'100%',
-        alignItems:'center',
+        // alignItems:'center',
         marginTop:20,
         display:'flex',
         flexDirection:'column',
@@ -94,12 +94,19 @@ const styles = StyleSheet.create({
                 textDecorationLine:'underline',
         },
     postContent:{
-        // display:'flex',
-        // flexWrap: 'wrap',   
-        // textAlign: 'left',
         marginLeft:15,       
         lineHeight: 22,         
         fontSize: 16, 
+    },
+    icon: {
+        color: colors.black,
+        marginTop:15,
+    },
+    actions:{
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'flex-start',
+        marginLeft:15,
     },
     
 
