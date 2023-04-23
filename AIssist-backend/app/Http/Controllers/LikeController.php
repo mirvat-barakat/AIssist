@@ -123,4 +123,22 @@ class LikeController extends Controller
         ], 200);
 
     }
+    public function deleteLike(Request $request, $id){
+
+        $like = Like::find($id);
+
+        if (!$like ) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'like  not found'
+            ], 404);
+        }
+
+        $like ->delete();
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Like  deleted successfully'
+        ], 200);
+    }
+
 }
