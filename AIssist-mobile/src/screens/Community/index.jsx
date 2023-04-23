@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function CommunityScreen() {
+export default function CommunityScreen({ navigation }) {
     const[postContent,setPostContent]= useState('');
     const[posts, setFeed]= useState([]);
     const token = localStorage.getItem("token");
@@ -68,6 +68,10 @@ export default function CommunityScreen() {
                         <View style={styles.postContent}>
                             <Text>{post.content}</Text>
                         </View>
+                        {/* <Button title="Open Modal" onPress={() => navigation.navigate('Modal')} /> */}
+                        <TouchableOpacity style={styles.shareButton} >
+                      <Text style={styles.shareButtonText} title="Open Modal" onPress={() => navigation.navigate('Comments')} >Share</Text>
+                    </TouchableOpacity>
                        </View>
                        ))}
                     </View>
