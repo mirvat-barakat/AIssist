@@ -3,10 +3,15 @@ import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 're
 import styles from './styles';
 import Header from '../../components/Header';
 
-export default function HomeScreen() {
+
+
+export default function HomeScreen({ navigation }) {
     return(
         <SafeAreaView>
             <Header/>
+            <TouchableOpacity style={styles.shareButton} >
+                      <Text style={styles.shareButtonText} title="Close Modal" onPress={() => navigation.goBack()} >Share</Text>
+                    </TouchableOpacity>
         </SafeAreaView>
     );
 }
