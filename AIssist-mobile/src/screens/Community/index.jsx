@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, ScrollView } from 'react-native';
 import styles from './styles';
 import Header from '../../components/Header';
 import axios from 'axios';
@@ -43,6 +43,7 @@ export default function CommunityScreen({ navigation }) {
       },[token]);
       return(
         <SafeAreaView>
+          <ScrollView>
             <Header/>
             <View style={styles.main}>
                 <Text style={styles.Heading}>Community</Text>
@@ -52,9 +53,6 @@ export default function CommunityScreen({ navigation }) {
                     </TextInput>
                     <TouchableOpacity style={styles.shareButton} >
                       <Text style={styles.shareButtonText}>Share</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.shareButton} >
-                      <Text style={styles.shareButtonText} title="Open Modal" onPress={() => navigation.navigate('Comments')} >Share</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.mainPostView}>
@@ -66,7 +64,6 @@ export default function CommunityScreen({ navigation }) {
                              <Image style={styles.profilePhoto} source={{uri:post.profile_picture}}></Image>
                              <Text style={styles.username} numberOfLines={3} ellipsizeMode="tail">{post.name}</Text>
                           </View>
-                          <View>options</View>
                         </View>
                         <View style={styles.postContent}>
                             <Text>{post.content}</Text>
@@ -80,6 +77,7 @@ export default function CommunityScreen({ navigation }) {
                     </View>
                 </View>
                 </View>
+                </ScrollView>
         </SafeAreaView>
     );
 }

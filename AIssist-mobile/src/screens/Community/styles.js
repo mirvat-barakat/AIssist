@@ -4,11 +4,12 @@ import { colors } from '../../constants/Palette';
 const styles = StyleSheet.create({
     main: {
         backgroundColor:colors.grey,
+        height:'100vh',
     },
     Heading: {
         fontSize:32,
         marginTop:30,
-        marginLeft:15,
+        marginLeft:'7%',
         fontWeight:'bold',
     },
     TextInput:{
@@ -68,6 +69,8 @@ const styles = StyleSheet.create({
         cursor: 'pointer',
         fontSize: 16,
         marginTop:10,
+        marginRight:10,
+        alignSelf:'flex-end',
         },
         shareButtonText: {
             color: '#fff',
