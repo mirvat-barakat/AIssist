@@ -35,12 +35,8 @@ const AddSpecialists = () => {
     })
       .then(response => {
         console.log(response);
-        if ( response.status== "success") {
+        if ( response.data.status== "success") {
             alert("Specialist added");
-        }
-        else{
-          alert("Incorrect Credentials");
-
         }
       })
       .catch(error => {

@@ -17,7 +17,6 @@ body{
       width:90%;
       padding: 2%;
       margin-bottom: 2%;
-      /* align-self: center; */
   }
   .input1:hover{
 
@@ -26,8 +25,3 @@ body{
   .input1-text{
    font-weight: 600;
   }
-  /* .input-flex{
-   display: flex;
-   flex-direction: column;
-   align-items: start;
-  } */
