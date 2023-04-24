@@ -62,32 +62,51 @@ const AddSpecialists = () => {
         <input className="input1"
           type="text"
           id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <label htmlFor="email" className="input1-text">Email:</label>
         <input className="input1"
           type="text"
           id="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <label htmlFor="category" className="input1-text">Category:</label>
         <input className="input1"
           type="text"
           id="Category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
         />
         <label htmlFor="speciality" className="input1-text">Speciality:</label>
         <input className="input1"
           type="text"
           id="Speciality"
+          value={speciality}
+          onChange={(e) => setSpeciality(e.target.value)}
         />
        
         <label htmlFor="phone-number" className="input1-text">Phone number:</label>
         <input className="input1"
           type="text"
           id="Phone number"
+          value={phone_number}
+          onChange={(e) => setPhone(e.target.value)}
         />
         <label htmlFor="location" className="input1-text">Location:</label>
         <input className="input1"
           type="text"
           id="Location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+        <label htmlFor="profile_picture" className="input1-text">Profile Picture:</label>
+        <input className="input1"
+          type="text"
+          id="profile_picture"
+          value={profile_picture}
+          onChange={(e) => setProfilePicture(e.target.value)}
         />
 
         <button type="submit" onClick={handleFormSubmit}>Add</button>
