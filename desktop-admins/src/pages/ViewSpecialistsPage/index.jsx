@@ -30,6 +30,42 @@ const ViewSpecialists = () => {
             alert("error");
             });
       },[]);
+
+      return (
+        <>
+        <div className="body">
+        <Sidebar/>
+        <Header/>
+          <div className="users-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Created At</th>
+                </tr>
+              </thead>
+              <tbody>
+              {specialists.map(specialist => (
+                  <tr key={specialist.id}>
+                      <td>{specialist.name}</td>
+                      <td>{specialist.email}</td>
+                      <td>{specialist.category}</td>
+                      <td>{specialist.speciality}</td>
+                      <td>{specialist.phone_number}</td>
+                      <td>{specialist.location}</td>
+                      <td>{specialist.profile_photo}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </>
+        
+        
+    );
 }
 
 export default ViewPage;
