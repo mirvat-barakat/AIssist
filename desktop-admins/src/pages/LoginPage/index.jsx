@@ -55,7 +55,7 @@ const Login =()=> {
 
     return(
     <div className="login-block">
-      <img src={logo} alt="logo" className="logo"></img>
+      <img src={logo} alt="logo" className="logo1"></img>
       <form className="form">
         <h2 className="title">LOGIN</h2>
         <div className="form-group">

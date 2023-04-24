@@ -5,7 +5,8 @@ import AdminPannelPage from './pages/AdminPanelPage';
 function App() {
   return (
     <div className="App">
-      <AdminPannelPage/>
+      {/* <AdminPannelPage/> */}
+      <LoginPage/>
     </div>
   );
 }

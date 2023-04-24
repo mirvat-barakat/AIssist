@@ -16,7 +16,7 @@ export default function CommunityScreen({ navigation }) {
       const handleLike = async (postId, index) => {
         try {
           if (likedPosts[index]) {
-            await fetch('http://127.0.0.1:8000/api/v0.0.1/like/${postId}', {
+            await fetch('http://127.0.0.1:8000/api/v0.0.1/like/12', {
               method: 'DELETE',
               headers: {
                 'Content-Type': 'application/json',
@@ -25,7 +25,7 @@ export default function CommunityScreen({ navigation }) {
               },
             });
           }else {
-            await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/${postId}/likes', {
+            await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/1/likes', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ export default function CommunityScreen({ navigation }) {
                 </View>
                 <View style={styles.mainPostView}>
                     <View >
-                       {posts.map((post, index) => (
+                       {posts.map(post => (
                         <View style={styles.postView}>
                         <View key={post.id} style={styles.postTitle}>
                           <View style={styles.imageView}>
@@ -103,7 +103,7 @@ export default function CommunityScreen({ navigation }) {
                         </View>
                         <View style={styles.actions}>
                           <View>
-                          <TouchableOpacity onPress={() => handleLike(post.id, index)}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: likedPosts[index] ? 'red' : 'black' }]} /></TouchableOpacity>
+                          <TouchableOpacity  onPress={handleLike(post.id)}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: likedPosts ? 'red' : 'black' }]} /></TouchableOpacity>
                           </View>
                           <View>
                           <TouchableOpacity style={styles.commentButton} >
