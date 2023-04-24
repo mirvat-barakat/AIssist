@@ -11,11 +11,37 @@ export default function CommunityScreen({ navigation }) {
     const[posts, setFeed]= useState([]);
     const token = localStorage.getItem("token");
     // const [token, setToken] = useState('');
-    const [likedPosts, setLikedPosts] = useState([]); 
+    const [liked, setLiked] = useState(); 
 
-      const handleLike = async (postId,index) => {
+    const handleSharePost= (e) => {
+      const [title, setTitle] = useState('');
+      const [content, setContent] = useState('');
+
+      e.preventDefault();
+      axios.post('http://127.0.0.1:8000/api/v0.0.1/community/posts', {
+          'content': content,
+          'title':title,
+      }, {
+          headers: {
+              'content-type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': 'bearer ' + token
+          }
+      })
+      .then(response => {
+          if (response.data.status == "success"){
+              alert("Post Shared");
+          }
+      })
+      .catch(error => {
+          console.log(error);
+      });
+  };
+  
+
+      const handleLike = async () => {
         try {
-          if (likedPosts[index]) {
+          if (liked) {
             await fetch('http://127.0.0.1:8000/api/v0.0.1/like/'+ postId, {
               method: 'DELETE',
               headers: {
@@ -35,9 +61,8 @@ export default function CommunityScreen({ navigation }) {
               });
 
         }
-        const updatedLikedPosts = [...likedPosts];
-        updatedLikedPosts[index] = !likedPosts[index];
-        setLikedPosts(updatedLikedPosts);
+        
+        setLiked(!liked);
       }catch (error) {
         console.error('Failed to toggle like:', error);
       }
@@ -90,7 +115,7 @@ export default function CommunityScreen({ navigation }) {
                 </View>
                 <View style={styles.mainPostView}>
                     <View >
-                       {posts.map((post, index) => (
+                       {posts.map(post => (
                         <View style={styles.postView}>
                         <View key={post.id} style={styles.postTitle}>
                           <View style={styles.imageView}>
@@ -103,7 +128,7 @@ export default function CommunityScreen({ navigation }) {
                         </View>
                         <View style={styles.actions}>
                           <View>
-                          <TouchableOpacity  onClick={handleLike(post.id, index)}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: likedPosts? 'red' : 'black' }]} /></TouchableOpacity>
+                          <TouchableOpacity  onClick={handleLike()}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: liked? 'red' : 'black' }]} /></TouchableOpacity>
                           </View>
                           <View>
                           <TouchableOpacity style={styles.commentButton} >

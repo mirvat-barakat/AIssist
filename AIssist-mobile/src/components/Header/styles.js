@@ -3,10 +3,9 @@ import { colors } from '../../constants/Palette';
 
 const styles = StyleSheet.create({
     header:{
-        top:20,
         left:0,
         right:0,
-        height:70,
+        height:90,
         backgroundColor:colors.primary_1,
         flexDirection:"row",
         justifyContent:"space-between",

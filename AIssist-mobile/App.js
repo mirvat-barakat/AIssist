@@ -9,7 +9,12 @@ import CommunityScreen from './src/screens/Community';
 function App() {
   return (
     
-      <AppStack/>
+      // <AppStack/>
+      
+      <NavigationContainer>
+        <AuthStack/>
+      </NavigationContainer>
+      
     
     // <SafeAreaView>
     //   <CommunityScreen/>
