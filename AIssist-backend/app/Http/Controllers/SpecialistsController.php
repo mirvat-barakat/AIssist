@@ -9,6 +9,30 @@ use Illuminate\Support\Facades\Auth;
 
 class SpecialistsController extends Controller
 {
+
+
+    public function addSpecialist(Request $request){
+        
+
+        $specialist = new Specialist();
+        $specialist->name = $request->input('name');
+        $specialist->email = $request->input('email');
+        $specialist->category = $request->input('category');
+        $specialist->speciality = $request->input('speciality');
+        $specialist->phone= $request->input('phone');
+        $specialist->location= $request->input('location');
+        $specialist->profile= $request->input('profile');
+        $specialist->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Specialist added successfully',
+            'specialist' => $specialist,
+        ], 201);
+    
+    }
+
+
     public function getSpecialists()
     {
         $specialists = DB::table('specialists')->get();
