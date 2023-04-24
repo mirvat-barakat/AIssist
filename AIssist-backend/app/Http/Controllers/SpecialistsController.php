@@ -19,9 +19,9 @@ class SpecialistsController extends Controller
         $specialist->email = $request->input('email');
         $specialist->category = $request->input('category');
         $specialist->speciality = $request->input('speciality');
-        $specialist->phone= $request->input('phone');
+        $specialist->phone_number= $request->input('phone_number');
         $specialist->location= $request->input('location');
-        $specialist->profile= $request->input('profile');
+        $specialist->profile_picture= $request->input('profile_picture');
         $specialist->save();
 
         return response()->json([
