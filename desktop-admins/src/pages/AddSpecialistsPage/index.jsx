@@ -2,6 +2,7 @@ import React , {useState, useEffect} from "react";
 import Header from  '../../components/Header';
 import Sidebar from "../../components/Sidebar";
 import "./styles.css";
+import axios from "axios";
 
 const AddSpecialists = () => {
 
@@ -9,24 +10,27 @@ const AddSpecialists = () => {
     const [email, setEmail] = useState('');
     const [category, setCategory] = useState('');
     const [speciality, setSpeciality] = useState('');
-    const [phone, setPhone] = useState('');
+    const [phone_number, setPhone] = useState('');
     const [location, setLocation] = useState('');
-    const [profile-picture, setProfilePicture] = useState('');
+    const [profile_picture, setProfilePicture] = useState('');
+    const token = localStorage.getItem("token");
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/api/v0.0.1/login', {
-      name: name
+        axios.post('http://localhost:8000/api/v0.0.1/specialist', {
+      name: name,
       email: email,
-      category: category
-      speciality: speciality
-      phone: phone
-      location: location
-      profile-picture: profile-picture
+      category: category,
+      speciality: speciality,
+      phone_number: phone_number,
+      location: location,
+      profile_picture: profile_picture,
     }, {
       headers: {
         'content-type': 'application/json',
         'Accept': 'application/json',
+        'Authorization': 'bearer ' + token
+
       }
     })
       .then(response => {
@@ -86,7 +90,7 @@ const AddSpecialists = () => {
           id="Location"
         />
 
-        <button type="submit">Add</button>
+        <button type="submit" onClick={handleFormSubmit}>Add</button>
       </form>
     </div>
         </>
