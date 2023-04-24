@@ -38,7 +38,7 @@ class SpecialistsController extends Controller
         $specialists = DB::table('specialists')->get();
         return response()->json([
             'status' => 'success',
-            'users' => $specialists
+            'specialists' => $specialists
         ]);
     }
 
