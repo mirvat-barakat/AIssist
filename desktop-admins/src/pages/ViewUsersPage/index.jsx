@@ -1,13 +1,17 @@
 import React , {useState, useEffect} from "react";
 import Header from  '../../components/Header';
 import Sidebar from "../../components/Sidebar";
-import axios from ".axios";
+import axios from "axios";
 
 const ViewPage = () => {
 
+    const [isOpen, setIsOpen] = useState(true);
+    const [users, setUsers] = useState([]);
+    const token = localStorage.getItem("token");
+
     const getUsers = {
         method: 'GET',
-        url: 'http://127.0.0.1:8000/api/v0.0.1/users/',
+        url: 'http://127.0.0.1:8000/api/v0.0.1/users',
         headers: {
           'content-type': 'application/json',
           'Accept' : 'application/json',
