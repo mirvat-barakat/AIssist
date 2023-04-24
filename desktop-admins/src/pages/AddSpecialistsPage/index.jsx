@@ -10,6 +10,18 @@ const AddSpecialists = () => {
         <Sidebar/>
         <Header/>
         </div>
+        <div>
+      <h2>Add Specialist</h2>
+      <form className="form">
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+        //   onChange={(e) => setName(e.target.value)}
+        />
+        <button type="submit">Add</button>
+      </form>
+    </div>
         </>
     )
 }
