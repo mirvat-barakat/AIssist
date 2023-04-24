@@ -4,6 +4,47 @@ import Sidebar from "../../components/Sidebar";
 import "./styles.css";
 
 const AddSpecialists = () => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [category, setCategory] = useState('');
+    const [speciality, setSpeciality] = useState('');
+    const [phone, setPhone] = useState('');
+    const [location, setLocation] = useState('');
+    const [profile-picture, setProfilePicture] = useState('');
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        axios.post('http://localhost:8000/api/v0.0.1/login', {
+      name: name
+      email: email,
+      category: category
+      speciality: speciality
+      phone: phone
+      location: location
+      profile-picture: profile-picture
+    }, {
+      headers: {
+        'content-type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+      .then(response => {
+        console.log(response);
+        if ( response.status== "success") {
+            alert("Specialist added");
+        }
+        else{
+          alert("Incorrect Credentials");
+
+        }
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+
     return (
         <>
         <div className="body">
