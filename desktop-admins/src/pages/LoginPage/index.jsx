@@ -2,6 +2,8 @@ import React, { useState }  from "react";
 import  "./styles.css";
 import logo from '../../assets/images/Logo.png';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 
 const Login =()=> {
@@ -9,6 +11,7 @@ const Login =()=> {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -40,8 +43,9 @@ const Login =()=> {
       .then(response => {
         console.log(response);
         if ( response.data.user.is_admin == 1) {
-          alert("success");
+          navigate("/admin");
           window.localStorage.setItem('token', response.data.authorization.token);
+          // navigate("/admin");
         }
         else{
           alert("Incorrect Credentials");
