@@ -6,6 +6,7 @@ import "./styles.css";
 
 const ViewSpecialists = () => {
 
+    const [isOpen, setIsOpen] = useState(true);
     const [specialists, setSpecialists] = useState([]);
     const token = localStorage.getItem("token");
 
@@ -22,7 +23,7 @@ const ViewSpecialists = () => {
       useEffect(() => {
         axios.request(getSpecialists)
             .then(response => {
-                setUsers(response.data.specialists);
+                setSpecialists(response.data.specialists);
                 console.log(response);
             })
             .catch(function (error) {
@@ -36,14 +37,18 @@ const ViewSpecialists = () => {
         <div className="body">
         <Sidebar/>
         <Header/>
-          <div className="users-table">
+          <div className="specialists-table">
             <table>
               <thead>
                 <tr>
                   <th>Id</th>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Created At</th>
+                  <th>Category</th>
+                  <th>Speciality</th>
+                  <th>Phone Number</th>
+                  <th>Location</th>
+                  <th>Profile Photo</th>
                 </tr>
               </thead>
               <tbody>
@@ -68,4 +73,4 @@ const ViewSpecialists = () => {
     );
 }
 
-export default ViewPage;
+export default ViewSpecialists;

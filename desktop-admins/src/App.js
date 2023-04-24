@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import AdminPannelPage from './pages/AdminPanelPage';
 import ViewUsersPage from './pages/ViewUsersPage';
 import AddSpecialistsPage from './pages/AddSpecialistsPage';
+import ViewSpecialistsPage from './pages/ViewSpecialistsPage';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       //   <Route path="/admin" element={<AdminPannelPage />} />
       // </Routes>
       <div>
-        <AddSpecialistsPage />
+        <ViewSpecialistsPage />
       </div>
 
   );
