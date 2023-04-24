@@ -6,7 +6,6 @@ import "./styles.css";
 
 const ViewSpecialists = () => {
 
-    const [isOpen, setIsOpen] = useState(true);
     const [specialists, setSpecialists] = useState([]);
     const token = localStorage.getItem("token");
 
@@ -54,6 +53,7 @@ const ViewSpecialists = () => {
               <tbody>
               {specialists.map(specialist => (
                   <tr key={specialist.id}>
+                      <td>{specialist.id}</td>
                       <td>{specialist.name}</td>
                       <td>{specialist.email}</td>
                       <td>{specialist.category}</td>
