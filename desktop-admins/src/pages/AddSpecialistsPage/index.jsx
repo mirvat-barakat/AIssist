@@ -13,12 +13,38 @@ const AddSpecialists = () => {
         <div>
       <h2>Add Specialist</h2>
       <form className="form">
-        <label htmlFor="name">Name:</label>
-        <input
+        <label htmlFor="name" className="input1-text">Name:</label>
+        <input className="input1"
           type="text"
           id="name"
-        //   onChange={(e) => setName(e.target.value)}
         />
+        <label htmlFor="email" className="input1-text">Email:</label>
+        <input className="input1"
+          type="text"
+          id="Email"
+        />
+        <label htmlFor="category" className="input1-text">Category:</label>
+        <input className="input1"
+          type="text"
+          id="Category"
+        />
+        <label htmlFor="speciality" className="input1-text">Speciality:</label>
+        <input className="input1"
+          type="text"
+          id="Speciality"
+        />
+       
+        <label htmlFor="phone-number" className="input1-text">Phone number:</label>
+        <input className="input1"
+          type="text"
+          id="Phone number"
+        />
+        <label htmlFor="location" className="input1-text">Location:</label>
+        <input className="input1"
+          type="text"
+          id="Location"
+        />
+
         <button type="submit">Add</button>
       </form>
     </div>
