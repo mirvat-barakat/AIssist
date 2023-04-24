@@ -7,15 +7,15 @@ const Sidebar = () => {
         <aside className='sidebar'>
             <img src={logo} alt="logo" className="logo"></img>
             <div className='items'>
-                <div className='items-list'>
-                    <ion-icon name="people-outline" ></ion-icon>
-                    <a href="#"> <span className="ml-3">Users Accounts</span></a>
-                </div>
-             
-             <a href="#"><span className="ml-3">Specialists Managment</span></a>
-             <a href="#"><span className="ml-3">Community Moderation</span></a>
-             <a href="#"> <span className="ml-3">User Data Analysis</span></a>
-             <a href="#"><span className="ml-3">Rewards Managment</span></a>
+
+            <div className='sidebar-links'>
+            <a href="#" className='link'><span className="ml-3">Users Accounts</span></a>
+            <a href="#" className='link'><span className="ml-3">Specialists Managment</span></a>
+             <a href="#" className='link'><span className="ml-3">Community Moderation</span></a>
+             <a href="#" className='link'> <span className="ml-3">User Data Analysis</span></a>
+             <a href="#" className='link'><span className="ml-3">Rewards Managment</span></a>
+            </div>
+ 
             </div>
         </aside>
     );
