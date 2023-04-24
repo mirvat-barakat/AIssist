@@ -37,8 +37,32 @@ const ViewPage = () => {
 
     return (
         <>
+        <div className="body">
         <Sidebar/>
         <Header/>
+          <div className="users-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Created At</th>
+                </tr>
+              </thead>
+              <tbody>
+              {users.map(user => (
+                  <tr key={user.id}>
+                      <td>{user.id}</td>
+                      <td>{user.name}</td>
+                      <td>{user.email}</td>
+                      <td>{user.created_at}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          </div>
         </>
         
         
