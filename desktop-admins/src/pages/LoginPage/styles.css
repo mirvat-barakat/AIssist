@@ -6,7 +6,7 @@
     height: 100vh;
 }
 
-.form-group1{
+.form1-group1{
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -27,12 +27,12 @@
 .title{
     color:white;
 }
-.input-login{
+.input1-login{
     padding: 4%;
     border: white;
     width:300px;
 }
-.input-label{
+.input1-label{
     color: white;
     font-weight: 600;
 

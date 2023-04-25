@@ -12,6 +12,8 @@ export default function CommunityScreen({ navigation }) {
     const token = localStorage.getItem("token");
     // const [token, setToken] = useState('');
     const [liked, setLiked] = useState(); 
+    const [title, setTitle] = useState('');
+      const [content, setContent] = useState('');
 
     const handleSharePost= (e) => {
       const [title, setTitle] = useState('');
@@ -106,11 +108,13 @@ export default function CommunityScreen({ navigation }) {
             <View style={styles.main}>
                 <Text style={styles.Heading}>Community</Text>
                 <View style={styles.TextInputView}>
-                    <TextInput value={postContent} onChangeText={(val)=>setPostContent(val)} multiline={true}
+                    <TextInput onChangeText={text => setContent(text)}
+                  setContent={setContent}
+                  content={content} multiline={true}
                        numberOfLines={20} placeholder="Enter your text here..." style={styles.TextInput}>
                     </TextInput>
                     <TouchableOpacity style={styles.shareButton} >
-                      <Text style={styles.shareButtonText}>Share</Text>
+                      <Text style={styles.shareButtonText} onPress={handleSharePost}>Share</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.mainPostView}>

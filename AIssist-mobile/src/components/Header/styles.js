@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     icon: {
-        top:20,
+        top:10,
         left:-20,
         color: colors.white,
     },
