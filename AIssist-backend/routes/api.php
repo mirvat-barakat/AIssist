@@ -42,6 +42,7 @@ Route::group(["prefix" => "v0.0.1"], function()
         Route::delete('/like/{id}', [LikeController::class, 'deleteLike']);
 
         Route::post('/answers',[OpenAIController::class, 'generateAnswers']);
+        Route::post('/activities',[OpenAIController::class, 'generateActivities']);
 
     });
 });
