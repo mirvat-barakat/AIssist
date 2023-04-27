@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
+import Header1 from '../../components/Header1';
 import axios from "axios";
 
 export default function RegisterScreen({navigation}) {
@@ -35,7 +36,9 @@ export default function RegisterScreen({navigation}) {
 };
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView>
+            <Header1 title="Register" backgroundColor='#FFC6C6' />
+         <View style={styles.container}>
             <View style={styles.inputContainer}>
                  <Text style={styles.inputLabel}>  <Ionicons name="person" size={24} style={styles.icon} /> Name</Text>
                  <TextInput
@@ -73,6 +76,7 @@ export default function RegisterScreen({navigation}) {
             <View >
                   <Text style={styles.loginText}>Already have an account? <TouchableOpacity  onPress={() => navigation.navigate('Login')}><Text style={styles.loginLink}>Login Now</Text></TouchableOpacity ></Text>
             </View>
+         </View>
         </SafeAreaView>
     );
 }
