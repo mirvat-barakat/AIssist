@@ -3,10 +3,10 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import styles from './styles';
 
-const Header1 = ({ title, onPressBackButton }) => {
+const Header1 = ({ title, backgroundColor, onPressBackButton }) => {
 
     return (
-        <View style={styles.container}>
+        <View style={[styles.container, { backgroundColor } ]}>
           <TouchableOpacity style={styles.backButton} onPress={onPressBackButton}>
             <Ionicons name="ios-arrow-back" size={24} color="white" />
           </TouchableOpacity>
