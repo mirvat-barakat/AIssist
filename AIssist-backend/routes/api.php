@@ -19,9 +19,8 @@ Route::group(["prefix" => "v0.0.1"], function()
 
     Route::group(["middleware" => ["auth:api"]], function()
     {
-        Route::get('/users', [UserController::class, 'getUsers']);
         
-        Route::post('/specialist', [SpecialistsController::class, 'addSpecialist']);
+        
         Route::get('/specialists', [SpecialistsController::class, 'getSpecialists']);
         Route::get('/specialists/search', [SpecialistsController::class, 'searchSpecialists']);
         Route::get('/specialists/search-by-category', [SpecialistsController::class, 'searchSpecialistsByCategory']);
@@ -43,6 +42,13 @@ Route::group(["prefix" => "v0.0.1"], function()
 
         Route::post('/answers',[OpenAIController::class, 'generateAnswers']);
         Route::post('/activities',[OpenAIController::class, 'generateActivities']);
+
+        Route::group(['middleware' => ['admin']], function () {
+            
+            Route::post('/specialist', [SpecialistsController::class, 'addSpecialist']);
+            Route::get('/users', [UserController::class, 'getUsers']);
+
+        });
 
     });
 });
