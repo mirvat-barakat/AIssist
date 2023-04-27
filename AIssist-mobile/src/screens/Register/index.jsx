@@ -36,9 +36,10 @@ export default function RegisterScreen({navigation}) {
 };
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={styles.view}>
             <Header1 title="Register" backgroundColor='#FFC6C6' />
-            <View style={styles.inputContainer}>
+            <View style={styles.container}>
+              <View style={styles.inputContainer}>
                  <Text style={styles.inputLabel}>  <Ionicons name="person" size={24} style={styles.icon} /> Name</Text>
                  <TextInput
                   style={styles.input}
@@ -47,8 +48,8 @@ export default function RegisterScreen({navigation}) {
                   setName={setName}
                   name={name}
                  />
-            </View>
-            <View style={styles.inputContainer}>
+              </View>
+              <View style={styles.inputContainer}>
                  <Text style={styles.inputLabel}> <Ionicons name="ios-mail" size={24} style={styles.icon} /> Email</Text>
                  <TextInput
                   style={styles.input}
@@ -57,8 +58,8 @@ export default function RegisterScreen({navigation}) {
                   setEmail={setEmail}
                   email={email}
                  />
-            </View>
-            <View style={styles.inputContainer}>
+              </View>
+              <View style={styles.inputContainer}>
                  <Text style={styles.inputLabel}> <Ionicons name="key-outline" size={24} style={styles.icon} /> Password</Text>
                  <TextInput
                   style={styles.input}
@@ -68,13 +69,14 @@ export default function RegisterScreen({navigation}) {
                   password={password}
                   secureTextEntry
                  />
-            </View>
-            <TouchableOpacity style={styles.button} >
+              </View>
+              <TouchableOpacity style={styles.button} >
                  <Text style={styles.buttonText} onPress={handleRegister}>REGISTER</Text>
-            </TouchableOpacity>
-            <View >
+              </TouchableOpacity>
+              <View >
                   <Text style={styles.loginText}>Already have an account? <TouchableOpacity  onPress={() => navigation.navigate('Login')}><Text style={styles.loginLink}>Login Now</Text></TouchableOpacity ></Text>
-            </View>
+              </View>
+          </View>
         </SafeAreaView>
     );
 }
