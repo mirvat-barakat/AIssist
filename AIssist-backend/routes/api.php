@@ -43,7 +43,7 @@ Route::group(["prefix" => "v0.0.1"], function()
         Route::post('/answers',[OpenAIController::class, 'generateAnswers']);
         Route::post('/activities',[OpenAIController::class, 'generateActivities']);
 
-        Route::group(['middleware' => ['admin']], function () {
+        Route::group(['middleware' => 'admin'], function () {
             
             Route::post('/specialist', [SpecialistsController::class, 'addSpecialist']);
             Route::get('/users', [UserController::class, 'getUsers']);
