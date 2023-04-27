@@ -11,7 +11,7 @@ class CommunityPostController extends Controller{
 
     public function createPost(Request $request){
         $post = new Post;
-        $post->user_id = $request->user()->id;
+        $post->user_id = Auth::id();
         $post->title = $request->input('title');
         $post->content = $request->input('content');
         $post->save();
@@ -23,10 +23,8 @@ class CommunityPostController extends Controller{
     }
 
     public function getPosts(){
-        $posts = DB::table('posts')
-                ->join('users', 'posts.user_id', '=', 'users.id')
-                ->select('posts.*', 'users.name', 'users.profile_picture') 
-                ->get();
+        $posts = Post::join('users', 'posts.user_id', '=', 'users.id')
+                ->get(['posts.*', 'users.name', 'users.profile_picture']);
 
         return response()->json([
             'status' => 'success',
