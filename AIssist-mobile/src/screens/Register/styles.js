@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { colors } from '../../constants/Palette';
 
 const styles = StyleSheet.create({
+    view:{
+      height:'100%',
+      },
     container: {
         flex: 1,
         backgroundColor: colors.primary_1,
