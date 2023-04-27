@@ -8,6 +8,7 @@ use App\Http\Controllers\SpecialistsController;
 use App\Http\Controllers\CommunityPostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\OpenAIController;
 
 
 Route::group(["prefix" => "v0.0.1"], function()
@@ -39,6 +40,8 @@ Route::group(["prefix" => "v0.0.1"], function()
         Route::get('/post/{id}/likes', [LikeController::class, 'getPostLikes']);
         Route::get('/comment/{id}/likes', [LikeController::class, 'getCommentLikes']);
         Route::delete('/like/{id}', [LikeController::class, 'deleteLike']);
+
+        Route::post('/answers',[OpenAIController::class, 'generateAnswers']);
 
     });
 });
