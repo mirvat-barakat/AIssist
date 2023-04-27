@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function getUsers(){
 
-        $users = DB::table('users')->where('is_admin', '=', 0)->get();
+        $users = User::where('is_admin', '=', 0)->get();
         return response()->json([
             'status' => 'success',
             'users' => $users
