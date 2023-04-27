@@ -35,7 +35,7 @@ class SpecialistsController extends Controller
 
     public function getSpecialists()
     {
-        $specialists = DB::table('specialists')->get();
+        $specialists = Specialist::get();
         return response()->json([
             'status' => 'success',
             'specialists' => $specialists
