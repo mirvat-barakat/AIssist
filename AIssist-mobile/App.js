@@ -7,6 +7,7 @@ import HomeScreen from './src/screens/Home';
 import CommunityScreen from './src/screens/Community';
 import ActivitiesScreen from './src/screens/Activities';
 import FeedbacksScreen from './src/screens/Feedbacks';
+import QuestionsScreen from './src/screens/Questions';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       // <NavigationContainer>
       //   <AuthStack/>
       // </NavigationContainer>
-      <FeedbacksScreen />
+      <QuestionsScreen/>
       
     
     // <SafeAreaView>
