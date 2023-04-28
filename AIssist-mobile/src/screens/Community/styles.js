@@ -66,6 +66,8 @@ const styles = StyleSheet.create({
         alignContent:'center',
         // marginTop:15,
         marginLeft:10,
+        fontSize:'25',
+        fontWeight:'600'
     },
     imageView:{
         display:'flex',
