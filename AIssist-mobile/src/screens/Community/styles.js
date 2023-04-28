@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     },
     postTitle:{
         width:'90%',
+        top:10,
         display:'flex',
         justifyContent:'space-between',
         flexDirection:'row',
@@ -108,6 +109,7 @@ const styles = StyleSheet.create({
                 textDecorationLine:'underline',
         },
     postContent:{
+        top:10,
         marginLeft:15,       
         lineHeight: 22,         
         fontSize: 16, 
