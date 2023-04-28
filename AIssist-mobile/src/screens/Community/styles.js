@@ -39,6 +39,9 @@ const styles = StyleSheet.create({
     postView:{
         width:'100%',
         // alignItems:'center',
+        borderStyle:'solid',
+        borderWidth:1,
+        backgroundColor:'white',
         marginTop:20,
         display:'flex',
         flexDirection:'column',
