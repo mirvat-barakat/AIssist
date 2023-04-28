@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         elevation:4,
     },
     logo1:{
-        top:5,
+        top:0,
         width: 90,
         height: 80,
         resizeMode: 'contain',
