@@ -8,7 +8,7 @@ export default function QuestionsScreen() {
 
 
     return(
-        <ScrollView style={styles.mainViewFeedbacks}>
+        <ScrollView style={styles.mainViewQuestions}>
             <Header/>
             <View>
                 <Text style={styles.questionsTitle}>Questionss</Text>
