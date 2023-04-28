@@ -103,7 +103,7 @@ export default function CommunityScreen({ navigation }) {
       },[token]);
       return(
         <SafeAreaView>
-          <ScrollView>
+          <View>
             <Header/>
             <View style={styles.main}>
                 <Text style={styles.Heading}>Community</Text>
@@ -145,7 +145,7 @@ export default function CommunityScreen({ navigation }) {
                     </View>
                 </View>
                 </View>
-                </ScrollView>
+                </View>
         </SafeAreaView>
     );
 }
