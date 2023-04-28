@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
         color:'black',
         fontWeight:'600'
     },
-    button1: {
+    button: {
         backgroundColor: colors.primary_3,
         borderRadius: 10,
         padding: 10,

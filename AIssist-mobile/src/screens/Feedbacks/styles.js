@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { colors } from '../../constants/Palette';
 
 const styles = StyleSheet.create({
-    mainView:{
+    mainViewFeedbacks:{
         width:'100%',
         backgroundColor:'#F2F4F4',
     },
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     mainFormFeedbacks:{
         display:'flex',
         flexDirection:'column',
-        alignItems:'center',
+        alignItems:'flex-start',
         borderStyle:'solid',
         borderWidth:2,
         borderLeftColor:'#F08080',
@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         alignItems:'flex-start',
-        marginBottom:10
+        marginBottom:10,
+        marginLeft:20,
     },
     inputLabel1:{
         color:'black',
