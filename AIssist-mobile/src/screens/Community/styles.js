@@ -9,15 +9,15 @@ const styles = StyleSheet.create({
     Heading: {
         fontSize:32,
         marginTop:30,
-        marginLeft:'7%',
+        marginLeft:'5%',
         fontWeight:'bold',
+        marginBottom:10
     },
     TextInput:{
         height:39,
         width:'90%',
         backgroundColor:colors.white,
         borderRadius:10,
-        marginLeft:15,
         flexWrap:'wrap',
         padding:10,
     },
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
         marginTop:10,
         marginRight:10,
         alignSelf:'flex-end',
+        marginRight:'5%'
         },
         shareButtonText: {
             color: '#fff',

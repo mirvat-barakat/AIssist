@@ -15,10 +15,10 @@ function App() {
       // <AppStack/>
       
       // <NavigationContainer>
-      //   <AuthStack/>
+      //   <AppStack/>
       // </NavigationContainer>
-      <QuestionsScreen/>
-      
+      // <CommunityScreen/>
+      <AppStack/>
     
     // <SafeAreaView>
     //   <CommunityScreen/>
