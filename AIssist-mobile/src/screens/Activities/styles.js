@@ -10,6 +10,14 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
+        borderStyle:'solid',
+        borderWidth:2,
+        borderLeftColor:'#F08080',
+        borderRightColor:"#fff",
+        borderBottomColor:'#fff',
+        borderTopColor:'#fff',
+        borderLeftWidth:5,
+        backgroundColor:'#fff',
     },
     formActivities:{
         display:'flex',
@@ -33,13 +41,10 @@ const styles = StyleSheet.create({
         color: colors.white,
         fontSize: 18,
       },
-      inputLabel: {
-        marginBottom: 10,
-        fontSize:20,
-        color:colors.white,
-      },
-    input: {
+    input1: {
         backgroundColor: colors.white,
+        borderWidth:0.1,
+        borderColor:'#ccc',
         borderRadius: 10,
         padding: 10,
         fontSize: 16,
