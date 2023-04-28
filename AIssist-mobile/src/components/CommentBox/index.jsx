@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import styles from './styles';
 
 const CommentBox = ({ onComment }) => {
   const [comment, setComment] = useState('');
