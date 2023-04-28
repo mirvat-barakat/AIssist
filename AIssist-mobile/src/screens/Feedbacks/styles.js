@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         borderBottomColor:'#fff',
         borderTopColor:'#fff',
         borderLeftWidth:5,
-        backgroundColor:'#fff',
+        backgroundColor:'#F2F4F4',
         marginLeft:10,
         marginBottom:20,
         marginRight:10,
@@ -52,12 +52,14 @@ const styles = StyleSheet.create({
         alignItems:'flex-start',
         marginBottom:10,
         marginLeft:20,
+        marginTop:5,
     },
     inputLabel1:{
         color:'black',
         fontWeight:'600',
         paddingLeft:10,
         paddingRight:20,
+        marginBottom:5
     },
     button1: {
         backgroundColor: colors.primary_3,
@@ -75,8 +77,6 @@ const styles = StyleSheet.create({
       },
     input1: {
         backgroundColor: colors.white,
-        borderWidth:0.1,
-        borderColor:'#ccc',
         borderRadius: 10,
         padding: 10,
         fontSize: 16,
