@@ -37,7 +37,7 @@ export default function RegisterScreen({navigation}) {
 
     return (
         <SafeAreaView style={styles.view}>
-            <Header1 title="Register" backgroundColor='#FFC6C6' />
+            <Header1 title="Register" backgroundColor='#FFC6C6'onPressBackButton={() => navigation.navigate('Login')} />
             <View style={styles.container}>
               <View style={styles.inputContainer}>
                  <Text style={styles.inputLabel}>  <Ionicons name="person" size={24} style={styles.icon} /> Name</Text>
