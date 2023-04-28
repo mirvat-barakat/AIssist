@@ -8,15 +8,17 @@ const styles = StyleSheet.create({
     },
     activitiesTitle:{
         fontWeight:'bold',
-        fontSize:'larger',
+        fontSize:40,
         marginLeft:10,
         marginBottom:10,
-        marginTop:10
+        marginTop:10,
+        alignSelf:'center',
     },
     activitiesText:{
         marginLeft:10,
         marginBottom:10,
-        marginTop:10
+        marginTop:10,
+        alignSelf:'center',
     },
     mainFormActivities:{
         display:'flex',
@@ -31,7 +33,18 @@ const styles = StyleSheet.create({
         borderLeftWidth:5,
         backgroundColor:'#fff',
         marginLeft:10,
-        marginRight:10
+        marginBottom:20,
+        marginRight:10,
+        width:300,
+        alignSelf:'center',
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
     },
     formActivities:{
         display:'flex',
@@ -43,7 +56,7 @@ const styles = StyleSheet.create({
         color:'black',
         fontWeight:'600'
     },
-    button: {
+    button1: {
         backgroundColor: colors.primary_3,
         borderRadius: 10,
         padding: 10,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
 import styles from './styles';
 import Header from '../../components/Header';
 
@@ -7,11 +7,11 @@ export default function ActivitiesScreen() {
 
 
     return(
-        <SafeAreaView style={styles.mainView}>
+        <ScrollView style={styles.mainView}>
             <Header/>
             <View>
                 <Text style={styles.activitiesTitle}>Activities</Text>
-                <Text style={styles.activitiesText}>Please fill out this form to help us determine which activities best suits your child case.</Text>
+                <Text style={styles.activitiesText}>Please fill out this form to help us determine  which activities best suits your child case.</Text>
             </View>
             <View style={styles.mainFormActivities}>
                 <View style={styles.formActivities}>
@@ -51,15 +51,15 @@ export default function ActivitiesScreen() {
                  />
                 </View>
                 <View style={styles.formActivities}>
-                <Text style={styles.inputLabel1}> Is there anything else you'd like us <br></br> to know about your child?</Text>
+                <Text style={styles.inputLabel1}> Is there anything else you'd like us  to know about your child?</Text>
                  <TextInput
                   style={styles.input1}
                  />
                 </View>
-                <TouchableOpacity style={styles.button} >
+                <TouchableOpacity style={styles.button1} >
                  <Text style={styles.buttonText}>Save</Text>
                 </TouchableOpacity>
             </View>
-        </SafeAreaView>
+        </ScrollView>
     )
 };
