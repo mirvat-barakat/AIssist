@@ -15,7 +15,7 @@ const MyPage = () => {
     };
   
     return (
-      <View>
+      <View style={styles.commentView}>
         <Header1 title="Comments" backgroundColor='#F08080'  onPressBackButton={handleBackButtonPress} />
         <View style={styles.box}>
               <CommentBox  />
