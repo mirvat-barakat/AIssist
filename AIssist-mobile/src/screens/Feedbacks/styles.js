@@ -55,7 +55,9 @@ const styles = StyleSheet.create({
     },
     inputLabel1:{
         color:'black',
-        fontWeight:'600'
+        fontWeight:'600',
+        paddingLeft:10,
+        paddingRight:20,
     },
     button1: {
         backgroundColor: colors.primary_3,
@@ -65,6 +67,7 @@ const styles = StyleSheet.create({
         width: 250,
         marginBottom: 10,
         marginTop:10,
+        marginLeft:20,
       },
     buttonText: {
         color: colors.white,
