@@ -11,19 +11,17 @@ export default function QuestionsScreen() {
         <ScrollView style={styles.mainViewQuestions}>
             <Header/>
             <View>
-                <Text style={styles.questionsTitle}>Questionss</Text>
+                <Text style={styles.questionsTitle}>Questions</Text>
                 <Text style={styles.questionsText}>Welcome! Ask any questions you have about your child's condition and we'll do our best to help you find the answers you need.</Text>
             </View>
             <View style={styles.container}>
             <View style={styles.inputContainer}>
-                <TextInput
+              <TextInput
                 style={styles.input}
                 placeholder="Enter your question"
+                multiline
                 />
-                <TouchableOpacity style={styles.searchButton} >
-                <MaterialIcons name="search" size={24} color="#fff" style={styles.searchIcon} />
-                <Text style={styles.searchButtonText}>Search</Text>
-                </TouchableOpacity>
+                    <MaterialIcons name="search" size={30} color='black' style={styles.searchIcon} />
             </View>
             </View>
         </ScrollView>
