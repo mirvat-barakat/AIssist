@@ -27,8 +27,6 @@ const styles = StyleSheet.create({
     },
     mainPostView:{
         width:'100%',
-        // display:'flex',
-        // flexDirection:'column',
     },
     postTitle:{
         width:'90%',
@@ -39,13 +37,10 @@ const styles = StyleSheet.create({
     },
     postView:{
         width:'90%',
-        // alignItems:'center',
         borderStyle:'solid',
-        // borderWidth:1,
         backgroundColor:'white',
         marginTop:20,
         alignSelf:'center',
-        // paddingRight:10,
         display:'flex',
         flexDirection:'column',
         shadowColor: '#000',
@@ -64,7 +59,6 @@ const styles = StyleSheet.create({
     },
     username:{
         alignContent:'center',
-        // marginTop:15,
         marginLeft:10,
         fontSize:'25',
         fontWeight:'600'
@@ -88,28 +82,28 @@ const styles = StyleSheet.create({
         marginRight:10,
         alignSelf:'flex-end',
         marginRight:'5%'
-        },
-        shareButtonText: {
-            color: '#fff',
-            fontWeight: 'bold',
-            textAlign:'center',
-            },
-        commentButton: {
-                color: '#fff',
-                border: 'none',
-                borderRadius: 10,
-                padding: 10,
-                width:100,
-                cursor: 'pointer',
-                fontSize: 16,
-                marginTop:10,
-                },
-        commentButtonText: {
-                color: 'black',
-                fontWeight: '600',
-                textAlign:'center',
-                textDecorationLine:'underline',
-        },
+    },
+    shareButtonText: {
+        color: '#fff',
+        fontWeight: 'bold',
+        textAlign:'center',
+    },
+    commentButton: {
+        color: '#fff',
+        border: 'none',
+        borderRadius: 10,
+        padding: 10,
+        width:100,
+        cursor: 'pointer',
+        fontSize: 16,
+        marginTop:10,
+    },
+    commentButtonText: {
+        color: 'black',
+        fontWeight: '600',
+        textAlign:'center',
+        textDecorationLine:'underline',
+    },
     postContent:{
         top:10,
         marginLeft:15,       
