@@ -138,6 +138,8 @@ export default function CommunityScreen({ navigation }) {
                           <TouchableOpacity style={styles.commentButton} >
                             <Text style={styles.commentButtonText} title="Open Comments" onPress={() => navigation.navigate('Comments')} >Comments</Text>
                           </TouchableOpacity>
+                          </View>
+                          <View>
                           <TouchableOpacity style={styles.commentButton} >
                             <Text style={styles.commentButtonText} title="Open Comments" onPress={() => navigation.navigate('Comments')} >Reply</Text>
                           </TouchableOpacity>

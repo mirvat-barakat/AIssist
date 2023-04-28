@@ -119,8 +119,8 @@ const styles = StyleSheet.create({
     actions:{
         display:'flex',
         flexDirection:'row',
-        justifyContent:'flex-start',
-        marginLeft:15,
+        justifyContent:'space-around',
+        flexWrap:'nowrap',
     },
     
 
