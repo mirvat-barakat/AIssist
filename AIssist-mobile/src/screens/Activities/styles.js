@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         alignItems:'flex-start',
+        marginBottom:10
     },
     inputLabel1:{
         color:'black',
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         fontSize: 16,
+        width:250
       },
 });
 

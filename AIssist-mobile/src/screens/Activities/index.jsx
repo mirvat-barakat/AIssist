@@ -16,38 +16,38 @@ export default function ActivitiesScreen() {
                   style={styles.input1}
                  />
                 </View>
-                <View>
+                <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Age</Text>
                  <TextInput
                   style={styles.input1}
                  />
                 </View>
-                <View>
+                <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Gender</Text>
                  <TextInput
                   style={styles.input1}
                  />
                 </View>
-                <View>
+                <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Diagnosis</Text>
                  <TextInput
                   style={styles.input1}
                  />
                 </View>
-                <View>
+                <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Medications</Text>
                  <TextInput
                   style={styles.input1}
                  />
                 </View>
-                <View>
-                <Text style={styles.inputLabel1}> What are your child's interests</Text>
+                <View style={styles.formActivities}>
+                <Text style={styles.inputLabel1}> What are your child's interests?</Text>
                  <TextInput
                   style={styles.input1}
                  />
                 </View>
-                <View>
-                <Text style={styles.inputLabel1}> Is there anything else you'd like us to know about your child?</Text>
+                <View style={styles.formActivities}>
+                <Text style={styles.inputLabel1}> Is there anything else you'd like us <br></br> to know about your child?</Text>
                  <TextInput
                   style={styles.input1}
                  />
