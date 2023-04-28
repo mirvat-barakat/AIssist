@@ -1,59 +1,83 @@
-import React from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
-import styles from './styles';
-import Header from '../../components/Header';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../constants/Palette';
 
-export default function FeedbacksScreen() {
+const styles = StyleSheet.create({
+    mainView:{
+        width:'100%',
+        backgroundColor:'#F2F4F4',
+    },
+    feedbacksTitle:{
+        fontWeight:'bold',
+        fontSize:40,
+        marginLeft:10,
+        marginBottom:10,
+        marginTop:10,
+        alignSelf:'center',
+    },
+    feedbacksText:{
+        marginLeft:10,
+        marginBottom:10,
+        marginTop:10,
+        alignSelf:'center',
+    },
+    mainFormFeedbacks:{
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        borderStyle:'solid',
+        borderWidth:2,
+        borderLeftColor:'#F08080',
+        borderRightColor:"#fff",
+        borderBottomColor:'#fff',
+        borderTopColor:'#fff',
+        borderLeftWidth:5,
+        backgroundColor:'#fff',
+        marginLeft:10,
+        marginBottom:20,
+        marginRight:10,
+        width:300,
+        alignSelf:'center',
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+    formFeedbacks:{
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'flex-start',
+        marginBottom:10
+    },
+    inputLabel1:{
+        color:'black',
+        fontWeight:'600'
+    },
+    button1: {
+        backgroundColor: colors.primary_3,
+        borderRadius: 10,
+        padding: 10,
+        alignItems: 'center',
+        width: 250,
+        marginBottom: 10,
+        marginTop:10,
+      },
+    buttonText: {
+        color: colors.white,
+        fontSize: 18,
+      },
+    input1: {
+        backgroundColor: colors.white,
+        borderWidth:0.1,
+        borderColor:'#ccc',
+        borderRadius: 10,
+        padding: 10,
+        fontSize: 16,
+        width:250
+      },
+});
 
-
-    return(
-        <ScrollView style={styles.mainView}>
-            <Header/>
-            <View>
-                <Text style={styles.feedbacksTitle}>Feedbacks</Text>
-                <Text style={styles.feedbacksText}>Please fill out this form to help us determine  which feedbacks best suits your child case.</Text>
-            </View>
-            <View style={styles.mainFormFeedbacks}>
-                <View style={styles.formFeedbacks}>
-                <Text style={styles.inputLabel1}> What is the name of the activity you tried?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
-                </View>
-                <View style={styles.formFeedbacks}>
-                <Text style={styles.inputLabel1}> On a scale of 1-10, how helpful was the activity in supporting your child's needs?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
-                </View>
-                <View style={styles.formFeedbacks}>
-                <Text style={styles.inputLabel1}> Would you recommend this activity to other parents of children with special needs?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
-                </View>
-                <View style={styles.formFeedbacks}>
-                <Text style={styles.inputLabel1}> How easy was the activity to set up and implement?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
-                </View>
-                <View style={styles.formFeedbacks}>
-                <Text style={styles.inputLabel1}> Did you face any challenges when trying to do the activity with your child? If yes, please explain.</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
-                </View>
-                <View style={styles.formFeedbacks}>
-                <Text style={styles.inputLabel1}> Do you have any additional comments or feedback about the activity or the application's recommendations in general?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
-                </View>
-                <TouchableOpacity style={styles.button1} >
-                 <Text style={styles.buttonText}>Submit</Text>
-                </TouchableOpacity>
-            </View>
-        </ScrollView>
-    )
-};
+export default styles;
