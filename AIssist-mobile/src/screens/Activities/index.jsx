@@ -9,6 +9,10 @@ export default function ActivitiesScreen() {
     return(
         <SafeAreaView style={styles.mainView}>
             <Header/>
+            <View>
+                <Text style={styles.activitiesTitle}>Activities</Text>
+                <Text style={styles.activitiesText}>Please fill out this form to help us determine which activities best suits your child case.</Text>
+            </View>
             <View style={styles.mainFormActivities}>
                 <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Name</Text>

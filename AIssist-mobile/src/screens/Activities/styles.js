@@ -6,6 +6,18 @@ const styles = StyleSheet.create({
         width:'100%',
         backgroundColor:'#F2F4F4',
     },
+    activitiesTitle:{
+        fontWeight:'bold',
+        fontSize:'larger',
+        marginLeft:10,
+        marginBottom:10,
+        marginTop:10
+    },
+    activitiesText:{
+        marginLeft:10,
+        marginBottom:10,
+        marginTop:10
+    },
     mainFormActivities:{
         display:'flex',
         flexDirection:'column',
@@ -18,6 +30,8 @@ const styles = StyleSheet.create({
         borderTopColor:'#fff',
         borderLeftWidth:5,
         backgroundColor:'#fff',
+        marginLeft:10,
+        marginRight:10
     },
     formActivities:{
         display:'flex',
