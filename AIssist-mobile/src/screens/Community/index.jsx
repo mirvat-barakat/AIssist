@@ -14,6 +14,8 @@ export default function CommunityScreen({ navigation }) {
     const [liked, setLiked] = useState(); 
     const [title, setTitle] = useState('');
       const [content, setContent] = useState('');
+      const [postId, setPostId] = useState(null);
+      const [likedPosts, setLikedPosts] = useState([]);
 
     const handleSharePost= (e) => {
       const [title, setTitle] = useState('');
@@ -41,9 +43,10 @@ export default function CommunityScreen({ navigation }) {
   };
   
 
-      const handleLike = async () => {
+      const handleLike = async (postId) => {
         try {
-          if (liked) {
+          setPostId(postId);
+          if (likedPosts.includes(postId)) {
             await fetch('http://127.0.0.1:8000/api/v0.0.1/like/'+ postId, {
               method: 'DELETE',
               headers: {
@@ -52,6 +55,7 @@ export default function CommunityScreen({ navigation }) {
                 'Authorization': 'bearer ' + token
               },
             });
+            setLikedPosts(likedPosts.filter((id) => id !== postId));
           }else {
             await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/'+postId+'/likes', {
               method: 'POST',
@@ -61,7 +65,7 @@ export default function CommunityScreen({ navigation }) {
                 'Authorization': 'bearer ' + token
               },
               });
-
+              setLikedPosts([...likedPosts, postId]);
         }
         
         setLiked(!liked);
@@ -132,7 +136,7 @@ export default function CommunityScreen({ navigation }) {
                         </View>
                         <View style={styles.actions}>
                           <View>
-                          <TouchableOpacity  onClick={handleLike()}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: liked? 'red' : 'black' }]} /></TouchableOpacity>
+                          <TouchableOpacity  onPress={() => handleLike(post.id)}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: likedPosts.includes(post.id) ? 'red' : 'black' }]}  /></TouchableOpacity>
                           </View>
                           <View>
                           <TouchableOpacity style={styles.commentButton} >
