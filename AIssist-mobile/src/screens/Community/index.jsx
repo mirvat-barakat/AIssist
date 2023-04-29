@@ -11,7 +11,7 @@ export default function CommunityScreen({ navigation }) {
     const[posts, setFeed]= useState([]);
     const token = localStorage.getItem("token");
     // const [token, setToken] = useState('');
-    const [liked, setLiked] = useState(); 
+    const [liked, setLiked] = useState(false); 
     const [title, setTitle] = useState('');
       const [content, setContent] = useState('');
       const [postId, setPostId] = useState(null);
@@ -106,8 +106,8 @@ export default function CommunityScreen({ navigation }) {
             });
       },[token]);
       return(
-        <SafeAreaView>
-          <View>
+        <SafeAreaView >
+          <ScrollView style={styles.scroll}>
             <Header/>
             <View style={styles.main}>
                 <Text style={styles.Heading}>Community</Text>
@@ -154,7 +154,7 @@ export default function CommunityScreen({ navigation }) {
                     </View>
                 </View>
                 </View>
-                </View>
+                </ScrollView>
         </SafeAreaView>
     );
 }

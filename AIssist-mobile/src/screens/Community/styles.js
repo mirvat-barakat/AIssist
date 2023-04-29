@@ -4,6 +4,9 @@ import { colors } from '../../constants/Palette';
 const styles = StyleSheet.create({
     main: {
         backgroundColor:colors.grey,
+        height:'100%',
+    },
+    scroll:{
         height:'100vh',
     },
     Heading: {
