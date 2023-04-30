@@ -74,6 +74,12 @@ export default function CommunityScreen({ navigation }) {
       }
     } 
 
+
+    // const handleViewComments=() => {
+    //   localStorage.setItem('postId', postId);
+    //   navigation.navigate('Comments');
+    // }
+
     const getPosts = {
         method: 'GET',
         url: 'http://127.0.0.1:8000/api/v0.0.1/community/posts',
@@ -140,7 +146,11 @@ export default function CommunityScreen({ navigation }) {
                           </View>
                           <View>
                           <TouchableOpacity style={styles.commentButton} >
-                            <Text style={styles.commentButtonText} title="Open Comments" onPress={() => navigation.navigate('Comments')} >Comments</Text>
+                            <Text style={styles.commentButtonText} title="Open Comments" onPress={() => {
+      window.localStorage.setItem('postId', post.id);
+      console.log(post.id);
+      navigation.navigate('Comments');
+    }} >Comments</Text>
                           </TouchableOpacity>
                           </View>
                           <View>

@@ -8,9 +8,10 @@ import axios from 'axios';
 
 
 
-const CommentsPage = (postId) => {
+const CommentsPage = () => {
   const[comments, setComments]= useState([]);
   const token = localStorage.getItem("token");
+  const postId = localStorage.getItem('postId');
 
 
   const getComments = {
@@ -32,7 +33,7 @@ const CommentsPage = (postId) => {
         .catch(function (error) {
             console.error();
         });
-  },[token]);
+  },[token, postId]);
 
 
   const handleAddComment= (e) => {
