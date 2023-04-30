@@ -11,7 +11,6 @@ import axios from 'axios';
 const CommentsPage = (postId) => {
   const[comments, setComments]= useState([]);
   const token = localStorage.getItem("token");
-  console.log(postId);
 
 
   const getComments = {
