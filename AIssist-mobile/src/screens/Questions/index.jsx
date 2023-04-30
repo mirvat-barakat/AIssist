@@ -52,8 +52,10 @@ export default function QuestionsScreen() {
                 <TouchableOpacity onPress={handleGenerateAnswers}>
                     <MaterialIcons name="search" size={30} color='black' style={styles.searchIcon} />
                 </TouchableOpacity>
-                    
             </View>
+            </View>
+            <View>
+                <Text style={styles.questionsText}>{Answer}</Text>
             </View>
         </ScrollView>
     )
