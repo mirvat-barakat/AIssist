@@ -5,6 +5,19 @@ import Header from '../../components/Header';
 
 export default function ActivitiesScreen() {
 
+    const [age, setAge] = useState('');
+    const [gender, setGender] = useState('');
+    const [diagnosis, setDiagnosis]= useState('');
+    const [medications, setMedications] = useState('');
+    const [interest, setInterest] = useState('');
+    const [notes, setNotes] = useState('');
+    const [things_have_tried, setThingSHaveTried] = useState('');
+
+    const handleGenerateActivities= (e)=>{
+        e.preventDefault();
+
+    };
+
 
     return(
         <ScrollView style={styles.mainView}>
@@ -57,7 +70,7 @@ export default function ActivitiesScreen() {
                  />
                 </View>
                 <TouchableOpacity style={styles.button1} >
-                 <Text style={styles.buttonText}>Save</Text>
+                 <Text style={styles.buttonText} onPress={handleGenerateActivities}>Save</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
