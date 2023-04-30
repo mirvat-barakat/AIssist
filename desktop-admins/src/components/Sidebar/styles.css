@@ -12,11 +12,12 @@
 .items{
   display:flex;
   flex-direction: column;
+  padding-bottom: 10%;
 }
-.items-list{
+/* .items-list{
   display: flex;
   flex-direction: row;
-}
+} */
 .sidebar-links{
   margin-top: 20%;
   padding: 0px 0px;
@@ -27,6 +28,7 @@
   justify-content: flex-start;
   gap: 0px;
   margin-top: -10%;
+  width: 100%;
 }
 .link{
   color: white;
@@ -37,6 +39,8 @@
   /* background-color: white; */
   padding: 20px;
   /* margin-left: 10%; */
+  white-space: nowrap;
+  width: 100%;
 }
 .link:hover{
   color:white;
@@ -50,4 +54,7 @@
 }
 .faicon{
   margin-right: 5%;
+}
+.ml-3{
+  align-items: start;
 }
