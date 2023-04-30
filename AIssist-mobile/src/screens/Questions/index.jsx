@@ -3,17 +3,14 @@ import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } fro
 import styles from './styles';
 import { MaterialIcons } from '@expo/vector-icons';
 import Header from '../../components/Header';
+import axios from 'axios';
 
 export default function QuestionsScreen() {
 
-    const [Question, setQuestion] = useState('');
-
-    
-    const handleGenerateAnswers= (e)=>{
         const [Question, setQuestion] = useState('');
         const token = localStorage.getItem("token");
     
-        const handleGenerateActivities= (e)=>{
+        const handleGenerateAnswers= (e)=>{
             e.preventDefault();
             axios.post('http://127.0.0.1:8000/api/v0.0.1/answers', {
               'Question': Question,
@@ -31,7 +28,6 @@ export default function QuestionsScreen() {
               console.log(error);
           });
     };
-};
 
 
     return(
