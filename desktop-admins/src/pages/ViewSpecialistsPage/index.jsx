@@ -2,6 +2,7 @@ import React , {useState, useEffect} from "react";
 import Sidebar from "../../components/Sidebar";
 import axios from "axios";
 import "./styles.css";
+import Button from '../../components/Button';
 
 const ViewSpecialists = () => {
 
@@ -36,6 +37,7 @@ const ViewSpecialists = () => {
         <Sidebar/>
         <div className="title1">
           <h1>Specialists Managment</h1>
+          <button>Add Specialists</button>
         </div>
           <div className="specialists-table">
             <table>
