@@ -13,10 +13,10 @@ const Sidebar = () => {
 
             <div className='sidebar-links'>
             <a href="#" className='link'><FontAwesomeIcon icon={faUser} className="ml-2" /><span className="ml-3">Users Accounts</span></a>
-            <a href="#" className='link'><span className="ml-3">Specialists Managment</span></a>
-             <a href="#" className='link'><span className="ml-3">Community Moderation</span></a>
-             <a href="#" className='link'> <span className="ml-3">User Data Analysis</span></a>
-             <a href="#" className='link'><span className="ml-3">Rewards Managment</span></a>
+            <a href="#" className='link'><FontAwesomeIcon icon={faUserTie} className="ml-2" /><span className="ml-3">Specialists Managment</span></a>
+             <a href="#" className='link'><FontAwesomeIcon icon={faUsersCog} className="ml-2" /><span className="ml-3">Community Moderation</span></a>
+             <a href="#" className='link'><FontAwesomeIcon icon={faChartLine} className="ml-2" /> <span className="ml-3">User Data Analysis</span></a>
+             <a href="#" className='link'><FontAwesomeIcon icon={faGift} className="ml-2" /><span className="ml-3">Rewards Managment</span></a>
             </div>
  
             </div>
