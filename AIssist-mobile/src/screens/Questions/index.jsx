@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
 import styles from './styles';
 import { MaterialIcons } from '@expo/vector-icons';
 import Header from '../../components/Header';
 
 export default function QuestionsScreen() {
+
+    const [Question, setQuestion] = useState('');
+
+    
+    const handleGenerateActivities= (e)=>{};
 
 
     return(
@@ -20,8 +25,14 @@ export default function QuestionsScreen() {
                 style={styles.input}
                 placeholder="Enter your question"
                 multiline
+                onChangeText={text => setQuestion(text)}
+                  setQuestion={setQuestion}
+                  Question={Question}
                 />
+                <TouchableOpacity>
                     <MaterialIcons name="search" size={30} color='black' style={styles.searchIcon} />
+                </TouchableOpacity>
+                    
             </View>
             </View>
         </ScrollView>
