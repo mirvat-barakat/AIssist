@@ -15,8 +15,31 @@ export default function ActivitiesScreen() {
 
     const handleGenerateActivities= (e)=>{
         e.preventDefault();
-
-    };
+        axios.post('http://127.0.0.1:8000/api/v0.0.1/community/posts', {
+          'age': age,
+          'gender':gender,
+          'diagnosis': diagnosis,
+          'medications':medications,
+          'interest': interest,
+          'notes':notes,
+          'things_have_tried': things_have_tried,
+          
+      }, {
+          headers: {
+              'content-type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': 'bearer ' + token
+          }
+      })
+      .then(response => {
+          if (response.data.status == "success"){
+              alert("Post Shared");
+          }
+      })
+      .catch(error => {
+          console.log(error);
+      });
+  };
 
 
     return(
