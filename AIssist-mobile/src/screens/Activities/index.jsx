@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
 import styles from './styles';
 import Header from '../../components/Header';
+import axios from 'axios';
 
 export default function ActivitiesScreen() {
 
@@ -12,10 +13,11 @@ export default function ActivitiesScreen() {
     const [interest, setInterest] = useState('');
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
+    const token = localStorage.getItem("token");
 
     const handleGenerateActivities= (e)=>{
         e.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/v0.0.1/community/posts', {
+        axios.post('http://127.0.0.1:8000/api/v0.0.1/activities', {
           'age': age,
           'gender':gender,
           'diagnosis': diagnosis,
@@ -33,7 +35,7 @@ export default function ActivitiesScreen() {
       })
       .then(response => {
           if (response.data.status == "success"){
-              alert("Post Shared");
+            console.log(response)
           }
       })
       .catch(error => {
