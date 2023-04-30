@@ -1,6 +1,9 @@
 import React from 'react';
 import './styles.css';
 import logo from '../../assets/images/Logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faUserTie, faUsersCog, faChartLine, faGift } from '@fortawesome/free-solid-svg-icons';
+
 
 const Sidebar = () => {
     return (
@@ -9,7 +12,7 @@ const Sidebar = () => {
             <div className='items'>
 
             <div className='sidebar-links'>
-            <a href="#" className='link'><span className="ml-3">Users Accounts</span></a>
+            <a href="#" className='link'><FontAwesomeIcon icon={faUser} className="ml-2" /><span className="ml-3">Users Accounts</span></a>
             <a href="#" className='link'><span className="ml-3">Specialists Managment</span></a>
              <a href="#" className='link'><span className="ml-3">Community Moderation</span></a>
              <a href="#" className='link'> <span className="ml-3">User Data Analysis</span></a>
