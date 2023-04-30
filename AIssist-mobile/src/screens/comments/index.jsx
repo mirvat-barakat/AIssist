@@ -7,7 +7,30 @@ import CommentBox from '../../components/CommentBox';
 
 
 
-const MyPage = () => {
+const CommentsPage = () => {
+  const[comments, setComments]= useState([]);
+
+
+  const getComments = {
+    method: 'GET',
+    url: 'http://127.0.0.1:8000/api/v0.0.1/posts/'+post.id+'/comments',
+    headers: {
+      'content-type': 'application/json',
+      'Accept' : 'application/json',
+      'Authorization': 'bearer ' + token
+    },
+  };
+
+  useEffect(() => {
+    axios.request(getComments)
+        .then(response => {
+            console.log(response);
+            setComments(response.data.posts);
+        })
+        .catch(function (error) {
+            console.error();
+        });
+  },[token]);
 
     
     const handleBackButtonPress = () => {
@@ -24,4 +47,4 @@ const MyPage = () => {
     );
   };
   
-  export default MyPage;
+  export default CommentsPage;
