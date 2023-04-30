@@ -34,9 +34,7 @@ export default function ActivitiesScreen() {
           }
       })
       .then(response => {
-          if (response.data.status == "success"){
             console.log(response)
-          }
       })
       .catch(error => {
           console.log(error);
@@ -56,42 +54,63 @@ export default function ActivitiesScreen() {
                 <Text style={styles.inputLabel1}> Age</Text>
                  <TextInput
                   style={styles.input1}
+                  onChangeText={text => setAge(text)}
+                  setAge={setAge}
+                  age={age}
                  />
                 </View>
                 <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Gender</Text>
                  <TextInput
                   style={styles.input1}
+                  onChangeText={text => setGender(text)}
+                  setGender={setGender}
+                  gender={gender}
                  />
                 </View>
                 <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Diagnosis</Text>
                  <TextInput
                   style={styles.input1}
+                  onChangeText={text => setDiagnosis(text)}
+                  setDiagnosis={setDiagnosis}
+                  diagnosis={diagnosis}
                  />
                 </View>
                 <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Medications</Text>
                  <TextInput
                   style={styles.input1}
+                  onChangeText={text => setMedications(text)}
+                  setMedications={setMedications}
+                  medications={medications}
                  />
                 </View>
                 <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> What are your child's interests?</Text>
                  <TextInput
                   style={styles.input1}
+                  onChangeText={text => setInterest(text)}
+                  setInterest={setInterest}
+                  interest={interest}
                  />
                 </View>
                 <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Is there any activities you have tried before?</Text>
                  <TextInput
                   style={styles.input1}
+                  onChangeText={text => setThingSHaveTried(text)}
+                  setThingSHaveTried={setThingSHaveTried}
+                  things_have_tried={things_have_tried}
                  />
                 </View>
                 <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Is there anything else you'd like us  to know about your child?</Text>
                  <TextInput
                   style={styles.input1}
+                  onChangeText={text => setNotes(text)}
+                  setNotes={setNotes}
+                  notes={notes}
                  />
                 </View>
                 <TouchableOpacity style={styles.button1} >
