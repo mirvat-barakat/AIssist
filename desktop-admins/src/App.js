@@ -18,9 +18,9 @@ function App() {
     //   <Route path="*" element={<div>404</div>} />
     // </Routes>
     // <LoginPage/>
-    <AddSpecialistsPage/>
+    // <AddSpecialistsPage/>
     // <AdminPannelPage/>
-    // <ViewSpecialistsPage/>
+    <ViewSpecialistsPage/>
     // <ViewUsersPage/>
     
   );

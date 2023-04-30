@@ -1,6 +1,9 @@
 body{
     background-color: white;
   }
+  .title1{
+    margin-left: 20%;
+  }
   .users-table {
       margin-top: 5%;
       margin-right: 20%;
