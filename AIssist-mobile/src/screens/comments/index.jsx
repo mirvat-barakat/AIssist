@@ -11,6 +11,7 @@ import axios from 'axios';
 const CommentsPage = (postId) => {
   const[comments, setComments]= useState([]);
   const token = localStorage.getItem("token");
+  console.log(postId);
 
 
   const getComments = {
@@ -67,7 +68,7 @@ const CommentsPage = (postId) => {
       <View style={styles.commentView}>
         <Header1 title="Comments" backgroundColor='#F08080'  onPressBackButton={handleBackButtonPress} />
         <View style={styles.box}>
-              <CommentBox  />
+              <CommentBox />
         </View>
       </View>
     );
