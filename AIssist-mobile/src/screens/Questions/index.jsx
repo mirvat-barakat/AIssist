@@ -9,7 +9,7 @@ export default function QuestionsScreen() {
     const [Question, setQuestion] = useState('');
 
     
-    const handleGenerateActivities= (e)=>{};
+    const handleGenerateAnswers= (e)=>{};
 
 
     return(
@@ -29,7 +29,7 @@ export default function QuestionsScreen() {
                   setQuestion={setQuestion}
                   Question={Question}
                 />
-                <TouchableOpacity>
+                <TouchableOpacity onPress={handleGenerateAnswers}>
                     <MaterialIcons name="search" size={30} color='black' style={styles.searchIcon} />
                 </TouchableOpacity>
                     
