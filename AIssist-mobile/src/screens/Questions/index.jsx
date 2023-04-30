@@ -8,6 +8,7 @@ import axios from 'axios';
 export default function QuestionsScreen() {
 
         const [Question, setQuestion] = useState('');
+        const[Answer, setAnswer] =useState('');
         const token = localStorage.getItem("token");
     
         const handleGenerateAnswers= (e)=>{
@@ -23,6 +24,7 @@ export default function QuestionsScreen() {
           })
           .then(response => {
                 console.log(response)
+                setAnswer(response.data.data);
           })
           .catch(error => {
               console.log(error);
