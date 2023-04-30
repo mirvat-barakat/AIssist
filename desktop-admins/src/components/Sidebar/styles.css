@@ -19,8 +19,8 @@
   flex-direction: row;
 } */
 .sidebar-links{
-  margin-top: 20%;
-  padding: 0px 0px;
+  /* margin-top: 40%; */
+  /* padding: 0px 0px; */
   /* text-align: center; */
   transition: all 0.5s;
   display:flex;
@@ -37,7 +37,8 @@
   text-decoration: none;
   /* border:solid 1px; */
   /* background-color: white; */
-  padding: 20px;
+  padding: 10%;
+  /* padding-bottom: 10%; */
   /* margin-left: 10%; */
   white-space: nowrap;
   width: 100%;
@@ -55,6 +56,6 @@
 .faicon{
   margin-right: 5%;
 }
-.ml-3{
+/* .ml-3{
   align-items: start;
-}
+} */

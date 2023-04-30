@@ -12,19 +12,19 @@ const Sidebar = () => {
             <div className='items'>
             <div className='sidebar-links'>
                 <div>
-                    <a href="#" className='link'><FontAwesomeIcon icon={faUser} className="faicon" /><span className="ml-3">Users Accounts</span></a>
+                    <a href="#" className='link'><FontAwesomeIcon icon={faUser} className="faicon" /><span>Users Accounts</span></a>
                 </div>
                 <div className='category'>
-                    <a href="#" className='link'><FontAwesomeIcon icon={faUserTie} className="faicon" /><span className="ml-3">Specialists Managment</span></a>
+                    <a href="#" className='link'><FontAwesomeIcon icon={faUserTie} className="faicon" /><span>Specialists Managment</span></a>
                 </div>
                 <div className='category'>
-                    <a href="#" className='link'><FontAwesomeIcon icon={faUsersCog} className="faicon" /><span className="ml-3">Community Moderation</span></a>
+                    <a href="#" className='link'><FontAwesomeIcon icon={faUsersCog} className="faicon" /><span>Community Moderation</span></a>
                 </div>
                 <div className='category'>
-                    <a href="#" className='link'><FontAwesomeIcon icon={faChartLine} className="faicon" /> <span className="ml-3">User Data Analysis</span></a>
+                    <a href="#" className='link'><FontAwesomeIcon icon={faChartLine} className="faicon" /> <span>User Data Analysis</span></a>
                 </div>
                 <div className='category'>
-                    <a href="#" className='link'><FontAwesomeIcon icon={faGift} className="faicon" /><span className="ml-3">Rewards Managment</span></a>
+                    <a href="#" className='link'><FontAwesomeIcon icon={faGift} className="faicon" /><span>Rewards Managment</span></a>
                 </div>
             </div>
             </div>
