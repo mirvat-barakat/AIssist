@@ -15,12 +15,6 @@ export default function ActivitiesScreen() {
             </View>
             <View style={styles.mainFormActivities}>
                 <View style={styles.formActivities}>
-                <Text style={styles.inputLabel1}> Name</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
-                </View>
-                <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> Age</Text>
                  <TextInput
                   style={styles.input1}
@@ -46,6 +40,12 @@ export default function ActivitiesScreen() {
                 </View>
                 <View style={styles.formActivities}>
                 <Text style={styles.inputLabel1}> What are your child's interests?</Text>
+                 <TextInput
+                  style={styles.input1}
+                 />
+                </View>
+                <View style={styles.formActivities}>
+                <Text style={styles.inputLabel1}> Is there any activities you have tried before?</Text>
                  <TextInput
                   style={styles.input1}
                  />

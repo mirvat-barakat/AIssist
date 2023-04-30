@@ -18,7 +18,7 @@ function App() {
       //   <AppStack/>
       // </NavigationContainer>
       // <CommunityScreen/>
-      <AppStack/>
+      <ActivitiesScreen/>
     
     // <SafeAreaView>
     //   <CommunityScreen/>
