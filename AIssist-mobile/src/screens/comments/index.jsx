@@ -65,7 +65,7 @@ const CommentsPage = (postId) => {
   
     return (
       <View style={styles.commentView}>
-        <Header1 title="Comments" backgroundColor='#F08080'  onPressBackButton={handleBackButtonPress} />
+        <Header1 title="Comments" backgroundColor='#F08080'  onPressBackButton={() => navigation.navigate('Comments')} />
         <View style={styles.box}>
               <CommentBox />
         </View>
