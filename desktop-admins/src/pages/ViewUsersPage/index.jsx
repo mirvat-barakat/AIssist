@@ -1,5 +1,4 @@
 import React , {useState, useEffect} from "react";
-import Header from  '../../components/Header';
 import Sidebar from "../../components/Sidebar";
 import axios from "axios";
 import "./styles.css";
@@ -40,7 +39,6 @@ const ViewPage = () => {
         <>
         <div className="body">
         <Sidebar/>
-        <Header/>
           <div className="users-table">
             <table>
               <thead>

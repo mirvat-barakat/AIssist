@@ -1,5 +1,4 @@
 import React , {useState, useEffect} from "react";
-import Header from  '../../components/Header';
 import Sidebar from "../../components/Sidebar";
 import "./styles.css";
 import axios from "axios";
@@ -49,7 +48,6 @@ const AddSpecialists = () => {
         <>
         <div className="body">
         <Sidebar/>
-        <Header/>
         </div>
         <div>
       <h2>Add Specialist</h2>

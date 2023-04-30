@@ -1,5 +1,4 @@
 import React , {useState, useEffect} from "react";
-import Header from  '../../components/Header';
 import Sidebar from "../../components/Sidebar";
 import axios from "axios";
 import "./styles.css";
@@ -35,7 +34,6 @@ const ViewSpecialists = () => {
         <>
         <div className="body">
         <Sidebar/>
-        <Header/>
           <div className="specialists-table">
             <table>
               <thead>
