@@ -20,15 +20,16 @@
 .sidebar-links{
   margin-top: 20%;
   padding: 0px 0px;
-  text-align: center;
+  /* text-align: center; */
   transition: all 0.5s;
   display:flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 0px;
   margin-top: -10%;
 }
 .link{
-  color: black;
+  color: white;
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
