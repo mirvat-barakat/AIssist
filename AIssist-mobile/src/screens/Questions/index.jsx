@@ -9,7 +9,29 @@ export default function QuestionsScreen() {
     const [Question, setQuestion] = useState('');
 
     
-    const handleGenerateAnswers= (e)=>{};
+    const handleGenerateAnswers= (e)=>{
+        const [Question, setQuestion] = useState('');
+        const token = localStorage.getItem("token");
+    
+        const handleGenerateActivities= (e)=>{
+            e.preventDefault();
+            axios.post('http://127.0.0.1:8000/api/v0.0.1/answers', {
+              'Question': Question,
+          }, {
+              headers: {
+                  'content-type': 'application/json',
+                  'Accept': 'application/json',
+                  'Authorization': 'bearer ' + token
+              }
+          })
+          .then(response => {
+                console.log(response)
+          })
+          .catch(error => {
+              console.log(error);
+          });
+    };
+};
 
 
     return(
