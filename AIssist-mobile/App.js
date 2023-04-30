@@ -15,10 +15,11 @@ function App() {
       // <AppStack/>
       
       // <NavigationContainer>
-      //   <AppStack/>
+        <AppStack/>
       // </NavigationContainer>
       // <CommunityScreen/>
-      <ActivitiesScreen />
+      // <ActivitiesScreen />
+      // <RootStack/>
     
     // <SafeAreaView>
     //   <CommunityScreen/>

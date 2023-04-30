@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Text, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
 import styles from './styles';
 import Header1 from '../../components/Header1';
@@ -7,13 +7,13 @@ import CommentBox from '../../components/CommentBox';
 
 
 
-const CommentsPage = () => {
+const CommentsPage = (postId) => {
   const[comments, setComments]= useState([]);
 
 
   const getComments = {
     method: 'GET',
-    url: 'http://127.0.0.1:8000/api/v0.0.1/posts/'+post.id+'/comments',
+    url: 'http://127.0.0.1:8000/api/v0.0.1/posts/'+postId+'/comments',
     headers: {
       'content-type': 'application/json',
       'Accept' : 'application/json',
@@ -25,7 +25,7 @@ const CommentsPage = () => {
     axios.request(getComments)
         .then(response => {
             console.log(response);
-            setComments(response.data.posts);
+            setComments(response.data.comments);
         })
         .catch(function (error) {
             console.error();
