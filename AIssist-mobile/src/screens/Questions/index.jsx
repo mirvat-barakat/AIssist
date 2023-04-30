@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState,  useEffect} from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
 import styles from './styles';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -9,6 +9,7 @@ export default function QuestionsScreen() {
 
         const [Question, setQuestion] = useState('');
         const[Answer, setAnswer] =useState('');
+        const [answerDisplay, setAnswerDisplay] = useState('');
         const token = localStorage.getItem("token");
     
         const handleGenerateAnswers= (e)=>{
@@ -30,6 +31,19 @@ export default function QuestionsScreen() {
               console.log(error);
           });
     };
+
+    useEffect(() => {
+        let i = 0;
+        const timer = setInterval(() => {
+            if (i < Answer.length) {
+                setAnswerDisplay(prevDisplay => prevDisplay + Answer.charAt(i));
+                i++;
+            } else {
+                clearInterval(timer);
+            }
+        }, 100);
+        return () => clearInterval(timer);
+    }, [Answer]);
 
 
     return(
@@ -55,7 +69,7 @@ export default function QuestionsScreen() {
             </View>
             </View>
             <View>
-                <Text style={styles.answer}>{Answer}</Text>
+                <Text style={styles.answer}>{answerDisplay}</Text>
             </View>
         </ScrollView>
     )

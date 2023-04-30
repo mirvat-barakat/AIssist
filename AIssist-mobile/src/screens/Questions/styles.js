@@ -64,6 +64,14 @@ const styles = StyleSheet.create({
     resultText: {
       fontSize: 16,
     },
+    answer:{
+      marginLeft:20,
+      marginBottom:10,
+      marginRight:20,
+      marginTop:10,
+      alignSelf:'center',
+      fontSize:16,
+  },
   });
   
   export default styles;
