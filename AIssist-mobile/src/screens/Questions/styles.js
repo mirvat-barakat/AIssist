@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
         marginRight:20,
         marginTop:10,
         alignSelf:'center',
+        fontSize:16,
     },
     inputContainer: {
       flexDirection: 'row',

@@ -55,7 +55,7 @@ export default function QuestionsScreen() {
             </View>
             </View>
             <View>
-                <Text style={styles.questionsText}>{Answer}</Text>
+                <Text style={styles.answer}>{Answer}</Text>
             </View>
         </ScrollView>
     )
