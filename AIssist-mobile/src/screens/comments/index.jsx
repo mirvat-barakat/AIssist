@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { Text, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
+import { Text, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
 import Header1 from '../../components/Header1';
-import { colors } from '../../constants/Palette';
 import CommentBox from '../../components/CommentBox';
 import axios from 'axios';
 
@@ -58,11 +57,6 @@ const CommentsPage = () => {
         console.log(error);
     });
 };
-
-    
-    const handleBackButtonPress = () => {
-      // handle back button press
-    };
   
     return (
       <View style={styles.commentView}>
