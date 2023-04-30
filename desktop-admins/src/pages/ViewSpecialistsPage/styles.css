@@ -7,11 +7,12 @@ body{
     flex-direction: row;
     justify-content: space-between;
   }
-  .users-table {
+  /* .users-table {
       margin-top: 5%;
       margin-right: 20%;
       margin-left: 25%;
-    }
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    } */
   
   table {
       width: 100%;
@@ -21,11 +22,12 @@ body{
       margin-top: 5%;
       margin-bottom: 5%;
       margin-left: 20%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
   
   th,td {
       padding: 10px;
-      text-align: center;
+      text-align:center;
     }
   
   th {
