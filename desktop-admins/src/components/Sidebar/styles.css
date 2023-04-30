@@ -36,9 +36,18 @@
   /* border:solid 1px; */
   /* background-color: white; */
   padding: 20px;
+  /* margin-left: 10%; */
 }
 .link:hover{
   color:white;
   background-color: #FFC6C6;
   transition: all 0.5s;
+}
+.category{
+  display: flex;
+  flex-direction: row;
+  justify-content:left;
+}
+.faicon{
+  margin-right: 5%;
 }
