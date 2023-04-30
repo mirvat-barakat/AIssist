@@ -32,8 +32,8 @@
   font-size: 1rem;
   font-weight: bold;
   text-decoration: none;
-  border:solid 1px;
-  background-color: white;
+  /* border:solid 1px; */
+  /* background-color: white; */
   padding: 20px;
 }
 .link:hover{
