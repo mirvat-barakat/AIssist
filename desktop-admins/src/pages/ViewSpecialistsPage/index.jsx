@@ -6,6 +6,7 @@ import "./styles.css";
 const ViewSpecialists = () => {
 
     const [specialists, setSpecialists] = useState([]);
+    const [showForm, setShowForm] = useState(false);
     const token = localStorage.getItem("token");
 
     const getSpecialists = {
@@ -29,13 +30,17 @@ const ViewSpecialists = () => {
             });
       },[token]);
 
+      const handleAddSpecialistClick = () => {
+        setShowForm(true);
+      };
+
       return (
         <>
         <div className="body">
         <Sidebar/>
         <div className="title1">
           <h1>Specialists Managment</h1>
-          <button className="button2">Add Specialists</button>
+          <button className="button2" onClick={handleAddSpecialistClick}>Add Specialists</button>
         </div>
           <div className="specialists-table">
             <table>
