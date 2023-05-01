@@ -6,7 +6,7 @@ const Form = () => {
 
     return (
         <form className="form">
-            <div>
+            <div className='form1-input1'>
                 <label htmlFor="name" className="input1-text">Name:</label>
                 <input
                     className="input1"
@@ -15,7 +15,7 @@ const Form = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='form1-input1'>
                 <label htmlFor="email" className="input1-text">Email:</label>
                 <input
                     className="input1"
@@ -24,7 +24,7 @@ const Form = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='form1-input1'>
                 <label htmlFor="category" className="input1-text">Category:</label>
                 <input
                     className="input1"
@@ -33,7 +33,7 @@ const Form = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='form1-input1'>
                 <label htmlFor="speciality" className="input1-text">Speciality:</label>
                 <input
                     className="input1"
@@ -42,7 +42,7 @@ const Form = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='form1-input1'>
                 <label htmlFor="phone-number" className="input1-text">Phone Number:</label>
                 <input
                     className="input1"
@@ -51,7 +51,7 @@ const Form = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='form1-input1'>
                 <label htmlFor="location" className="input1-text">Location:</label>
                 <input
                     className="input1"
@@ -60,7 +60,7 @@ const Form = () => {
                     required
                 />
             </div>
-            <div>
+            <div className='form1-input1'>
                 <label htmlFor="profile-picture" className="input1-text">Profile Picture:</label>
                 <input
                     className="input1"
