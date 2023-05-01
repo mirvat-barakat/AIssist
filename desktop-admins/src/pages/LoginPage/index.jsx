@@ -59,24 +59,27 @@ const Login =()=> {
   };
 
     return(
-    <div className="login-block">
-      <img src={logo} alt="logo" className="logo1"></img>
-      <form className="form">
-        <h2 className="title">LOGIN</h2>
-        <div className="form-group1">
-          <label htmlFor="email" className="input1-label">Email:</label>
-          <input type="email" id="email" name="email" className="input1-login"
-                  value={email}  onChange={handleEmailChange} autoComplete="off" required />
+      <div className="login-page">
+        <div className="login-block">
+          <img src={logo} alt="logo" className="logo1"></img>
+          <form className="form">
+            <h2 className="title">LOGIN</h2>
+            <div className="form-group1">
+              <label htmlFor="email" className="input1-label">Email:</label>
+              <input type="email" id="email" name="email" className="input1-login"
+                      value={email}  onChange={handleEmailChange} autoComplete="off" required />
+            </div>
+            <div className="form1-group">
+              <label htmlFor="password" className="input1-label">Password:</label>
+              <input type="password" id="password" name="password"
+                      value={password} className="input1-login" onChange={handlePasswordChange} autoComplete="off" required/>
+              {<div className="error">{passwordError}</div>}
+            </div>
+            <button type="submit" className="button1" onClick={HandleFormSubmit}>LOGIN</button>
+          </form>
         </div>
-        <div className="form1-group">
-          <label htmlFor="password" className="input1-label">Password:</label>
-          <input type="password" id="password" name="password"
-                  value={password} className="input1-login" onChange={handlePasswordChange} autoComplete="off" required/>
-          {<div className="error">{passwordError}</div>}
-        </div>
-        <button type="submit" className="button1" onClick={HandleFormSubmit}>LOGIN</button>
-      </form>
-    </div>
+      </div>
+    
     );
 };
 
