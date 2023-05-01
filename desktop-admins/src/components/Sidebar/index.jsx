@@ -19,13 +19,13 @@ const Sidebar = () => {
                     <Link to="/view_specialists" className='link'><FontAwesomeIcon icon={faUserTie} className="faicon" /><span>Specialists Managment</span></Link>
                 </div>
                 <div className='category'>
-                    <a href="#" className='link'><FontAwesomeIcon icon={faUsersCog} className="faicon" /><span>Community Moderation</span></a>
+                    <Link href="#" className='link'><FontAwesomeIcon icon={faUsersCog} className="faicon" /><span>Community Moderation</span></Link>
                 </div>
                 <div className='category'>
-                    <a href="#" className='link'><FontAwesomeIcon icon={faChartLine} className="faicon" /> <span>User Data Analysis</span></a>
+                    <Link href="#" className='link'><FontAwesomeIcon icon={faChartLine} className="faicon" /> <span>User Data Analysis</span></Link>
                 </div>
                 <div className='category'>
-                    <a href="#" className='link'><FontAwesomeIcon icon={faGift} className="faicon" /><span>Rewards Managment</span></a>
+                    <Link href="#" className='link'><FontAwesomeIcon icon={faGift} className="faicon" /><span>Rewards Managment</span></Link>
                 </div>
             </div>
             </div>
