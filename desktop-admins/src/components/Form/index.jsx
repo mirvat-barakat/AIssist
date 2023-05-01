@@ -1,43 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles.css';
+import axios from 'axios';
 
 const Form = () => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [speciality, setspeciality] = useState('');
+    const [speciality, setSpeciality] = useState('');
     const [category, setCategory] = useState('');
     const [profile_picture, setProfilePicture] = useState('');
     const [phone_number, setPhoneNumber] = useState('');
     const [location, setLocation] = useState('');
+    const token = localStorage.getItem("token");
 
 
     const handleAddSpecialist = (e) => {
         e.preventDefault();
-    axios.post('http://127.0.0.1:8000/api/v0.0.1/specialist', {
-        'name': name,
-        'email': email,
-        'speciality': speciality,
-        'category': category,
-        'profile_picture': profile_picture,
-        'phone_number': phone_number,
-        'location': location,
-    }, {
-        headers: {
-            'content-type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization': 'bearer ' + token
-        }
-    })
-    .then(response => {
-      console.log(response);
-        if (response.data.status == "success"){
-            alert("Specialist added");
-        }
-    })
-    .catch(error => {
-        console.log(error);
-    });
+        axios.post('http://127.0.0.1:8000/api/v0.0.1/specialist', {
+            'name': name,
+            'email': email,
+            'speciality': speciality,
+            'category': category,
+            'profile_picture': profile_picture,
+            'phone_number': phone_number,
+            'location': location,
+        }, {
+            headers: {
+                'content-type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'bearer ' + token
+            }
+        })
+        .then(response => {
+        console.log(response);
+            if (response.data.status == "success"){
+                alert("Specialist added");
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
     };
 
 
@@ -49,6 +51,9 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="name"
+                    name={name}
+                    setName={setName}
+                    onChangeText={text => setName(text)}
                     required
                 />
             </div>
@@ -58,6 +63,9 @@ const Form = () => {
                     className="input1"
                     type="email"
                     id="email"
+                    email={email}
+                    setEmail={setEmail}
+                    onChangeText={text => setEmail(text)}
                     required
                 />
             </div>
@@ -67,6 +75,9 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="category"
+                    category={category}
+                    setCategory={setCategory}
+                    onChangeText={text => setCategory(text)}
                     required
                 />
             </div>
@@ -76,6 +87,9 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="speciality"
+                    speciality={speciality}
+                    setSpeciality={setSpeciality}
+                    onChangeText={text => setSpeciality(text)}
                     required
                 />
             </div>
@@ -85,6 +99,9 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="phone-number"
+                    phone_number={phone_number}
+                    setPhoneNumber={setPhoneNumber}
+                    onChangeText={text => setPhoneNumber(text)}
                     required
                 />
             </div>
@@ -94,6 +111,9 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="location"
+                    location={location}
+                    setLocation={setLocation}
+                    onChangeText={text => setLocation(text)}
                     required
                 />
             </div>
@@ -103,6 +123,9 @@ const Form = () => {
                     className="input1"
                     type="file"
                     id="profile-picture"
+                    profile_picture={profile_picture}
+                    setProfilePicture={setProfilePicture}
+                    onChangeText={text => setProfilePicture(text)}
                 />
             </div>
           <button type="submit" className='button3' onClick={handleAddSpecialist}>Add Specialist</button>
