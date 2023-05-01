@@ -1,18 +1,20 @@
 body{
     background-color: white;
   }
-/* 
+
   .form{
+    position: relative;
      margin-left: 20%;
      display: flex;
      flex-direction: column;
      align-items: center;
      background-color: #F2F4F4;
-     width: 20%;
-  } */
+     width: 400px;
+     height: 500px;
+  }
   .input1{
-      width:300px;
-      padding: 40px;
+      width:275px;
+      padding: 2%;
       margin-bottom: 2%;
       border-radius: 10px;
   }
