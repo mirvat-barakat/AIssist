@@ -1,5 +1,6 @@
 import React , {useState, useEffect} from "react";
 import Sidebar from "../../components/Sidebar";
+import Form from "../../components/Form";
 import axios from "axios";
 import "./styles.css";
 
@@ -74,6 +75,7 @@ const ViewSpecialists = () => {
               </tbody>
             </table>
           </div>
+          {showForm && <Form />}
           </div>
         </>
         
