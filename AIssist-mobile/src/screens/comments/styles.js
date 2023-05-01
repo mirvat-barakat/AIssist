@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection:'row',
     marginTop:'5%',
-    marginLeft:'10%'
+    marginLeft:'10%',
+    marginBottom:'5%'
   },
   commentView:{
     height:'100%',
