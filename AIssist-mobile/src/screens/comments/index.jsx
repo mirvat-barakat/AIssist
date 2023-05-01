@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Text, TouchableOpacity, View} from 'react-native';
+import { Text, TouchableOpacity, View, Image} from 'react-native';
 import styles from './styles';
 import Header1 from '../../components/Header1';
 import CommentBox from '../../components/CommentBox';
@@ -61,11 +61,14 @@ const CommentsPage = () => {
     return (
       <View style={styles.commentView}>
         <Header1 title="Comments" backgroundColor='#F08080'  onPressBackButton={() => navigation.navigate('Comments')} />
-        <View style={styles.mainCommentView}>
+        <View style={styles.mainView}>
           <View>
           {comments.map(comment => (
-            <View>
-              <View style={styles.comment}> <Text style={styles.commentContent}>{comment.content}</Text></View>
+            <View style={styles.mainCommentView}>
+              <Image style={styles.profilePhoto} source={{uri:comment.profile_picture}}></Image>
+              <View style={styles.comment}>
+                <Text style={styles.commentContent}>{comment.content}</Text>
+              </View>
             </View>
           ))}
           </View>
