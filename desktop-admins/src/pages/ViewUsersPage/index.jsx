@@ -39,6 +39,9 @@ const ViewPage = () => {
         <>
         <div className="body">
         <Sidebar/>
+        <div className="title1">
+          <h1>Users Managment</h1>
+        </div>
           <div className="users-table">
             <table>
               <thead>
