@@ -17,12 +17,13 @@
     height: 100vh;
 }
 
-.form1-group1{
+.form-group{
+    position: relative;
+    align-self: center;
     display: flex;
     flex-direction: column;
     text-align: start;
-    width:100%;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 .logo1{
     height:45%;

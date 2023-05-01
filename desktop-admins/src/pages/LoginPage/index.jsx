@@ -62,14 +62,13 @@ const Login =()=> {
       <div className="login-page">
         <div className="login-block">
           <img src={logo} alt="logo" className="logo1"></img>
-          <form className="form">
-            <h2 className="title">LOGIN</h2>
-            <div className="form-group1">
+          <form>
+            <div className="form-group">
               <label htmlFor="email" className="input1-label">Email:</label>
               <input type="email" id="email" name="email" className="input1-login"
                       value={email}  onChange={handleEmailChange} autoComplete="off" required />
             </div>
-            <div className="form1-group">
+            <div className="form-group">
               <label htmlFor="password" className="input1-label">Password:</label>
               <input type="password" id="password" name="password"
                       value={password} className="input1-login" onChange={handlePasswordChange} autoComplete="off" required/>
