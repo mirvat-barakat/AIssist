@@ -5,7 +5,7 @@ const Form = () => {
 
 
     return (
-        <form>
+        <form className="form">
           <label htmlFor="name" className="input1-text">Name:</label>
           <input
           className="input1"
@@ -54,7 +54,7 @@ const Form = () => {
             type="file"
             id="profile-picture"
           />
-          <button type="submit">Add Specialist</button>
+          <button type="submit" className='button2'>Add Specialist</button>
         </form>
       );
 };
