@@ -53,7 +53,6 @@ const Form = () => {
                     id="name"
                     name={name}
                     setName={setName}
-                    onChangeText={text => setName(text)}
                     required
                 />
             </div>
@@ -65,7 +64,7 @@ const Form = () => {
                     id="email"
                     email={email}
                     setEmail={setEmail}
-                    onChangeText={text => setEmail(text)}
+         
                     required
                 />
             </div>
@@ -77,7 +76,7 @@ const Form = () => {
                     id="category"
                     category={category}
                     setCategory={setCategory}
-                    onChangeText={text => setCategory(text)}
+    
                     required
                 />
             </div>
@@ -89,7 +88,7 @@ const Form = () => {
                     id="speciality"
                     speciality={speciality}
                     setSpeciality={setSpeciality}
-                    onChangeText={text => setSpeciality(text)}
+
                     required
                 />
             </div>
@@ -101,7 +100,7 @@ const Form = () => {
                     id="phone-number"
                     phone_number={phone_number}
                     setPhoneNumber={setPhoneNumber}
-                    onChangeText={text => setPhoneNumber(text)}
+ 
                     required
                 />
             </div>
@@ -113,7 +112,6 @@ const Form = () => {
                     id="location"
                     location={location}
                     setLocation={setLocation}
-                    onChangeText={text => setLocation(text)}
                     required
                 />
             </div>
@@ -125,7 +123,7 @@ const Form = () => {
                     id="profile-picture"
                     profile_picture={profile_picture}
                     setProfilePicture={setProfilePicture}
-                    onChangeText={text => setProfilePicture(text)}
+                    
                 />
             </div>
           <button type="submit" className='button3' onClick={handleAddSpecialist}>Add Specialist</button>
