@@ -23,13 +23,12 @@ const ViewSpecialists = () => {
         axios.request(getSpecialists)
             .then(response => {
                 setSpecialists(response.data.specialists);
-                console.log(response);
             })
             .catch(function (error) {
             //   navigate("/");
             alert("error");
             });
-      },[]);
+      },[token]);
 
       return (
         <>
@@ -51,7 +50,6 @@ const ViewSpecialists = () => {
                   <th>Speciality</th>
                   <th>Phone Number</th>
                   <th>Location</th>
-                  <th>Profile Photo</th>
                 </tr>
               </thead>
               <tbody>
