@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 const CommentsPage = () => {
-  const[data, setComments]= useState([]);
+  const[comments, setComments]= useState([]);
   const token = localStorage.getItem("token");
   const postId = localStorage.getItem('postId');
 
@@ -27,7 +27,7 @@ const CommentsPage = () => {
     axios.request(getComments)
         .then(response => {
             console.log(response);
-            setComments(response.data);
+            setComments(response.data.comments);
         })
         .catch(function (error) {
             console.error();
@@ -61,11 +61,11 @@ const CommentsPage = () => {
     return (
       <View style={styles.commentView}>
         <Header1 title="Comments" backgroundColor='#F08080'  onPressBackButton={() => navigation.navigate('Comments')} />
-        <View>
+        <View style={styles.mainCommentView}>
           <View>
-          {data.map(comment => (
+          {comments.map(comment => (
             <View>
-              <View> <Text>{comment.content}</Text></View>
+              <View style={styles.comment}> <Text style={styles.commentContent}>{comment.content}</Text></View>
             </View>
           ))}
           </View>
