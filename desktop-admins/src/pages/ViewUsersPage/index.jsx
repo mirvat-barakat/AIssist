@@ -46,6 +46,7 @@ const ViewPage = () => {
             <table>
               <thead>
                 <tr>
+                  <th>Profile Photo</th>
                   <th>Id</th>
                   <th>Name</th>
                   <th>Email</th>
@@ -55,6 +56,9 @@ const ViewPage = () => {
               <tbody>
               {users.map(user => (
                   <tr key={user.id}>
+                      <td>
+                      <img src={user.profile_picture} alt={user.name} className="profile-photo"/>
+                      </td>
                       <td>{user.id}</td>
                       <td>{user.name}</td>
                       <td>{user.email}</td>
