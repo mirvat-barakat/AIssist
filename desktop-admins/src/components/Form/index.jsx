@@ -14,6 +14,24 @@ const Form = () => {
 
     const handleAddSpecialist = (e) => {
         e.preventDefault();
+    axios.post('http://127.0.0.1:8000/api/v0.0.1/specialist', {
+        'content': content,
+    }, {
+        headers: {
+            'content-type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'bearer ' + token
+        }
+    })
+    .then(response => {
+      console.log(response);
+        if (response.data.status == "success"){
+            alert("Specialist added");
+        }
+    })
+    .catch(error => {
+        console.log(error);
+    });
     };
 
 
