@@ -5,9 +5,9 @@ const Form = () => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [soeciality, setsoeciality] = useState('');
+    const [speciality, setspeciality] = useState('');
     const [category, setCategory] = useState('');
-    const [profilr_picture, setProfilrPicture] = useState('');
+    const [profile_picture, setProfilePicture] = useState('');
     const [phone_number, setPhoneNumber] = useState('');
     const [location, setLocation] = useState('');
 
@@ -15,7 +15,13 @@ const Form = () => {
     const handleAddSpecialist = (e) => {
         e.preventDefault();
     axios.post('http://127.0.0.1:8000/api/v0.0.1/specialist', {
-        'content': content,
+        'name': name,
+        'email': email,
+        'speciality': speciality,
+        'category': category,
+        'profile_picture': profile_picture,
+        'phone_number': phone_number,
+        'location': location,
     }, {
         headers: {
             'content-type': 'application/json',
