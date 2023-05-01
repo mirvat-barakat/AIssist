@@ -43,6 +43,7 @@ const ViewSpecialists = () => {
             <table>
               <thead>
                 <tr>
+                  <th>Profile Photo</th>
                   <th>Id</th>
                   <th>Name</th>
                   <th>Email</th>
@@ -56,6 +57,9 @@ const ViewSpecialists = () => {
               <tbody>
               {specialists.map(specialist => (
                   <tr key={specialist.id}>
+                      <td>
+                      <img src={specialist.profile_picture} alt={specialist.name} className="profile-photo"/>
+                      </td>
                       <td>{specialist.id}</td>
                       <td>{specialist.name}</td>
                       <td>{specialist.email}</td>
@@ -63,7 +67,6 @@ const ViewSpecialists = () => {
                       <td>{specialist.speciality}</td>
                       <td>{specialist.phone_number}</td>
                       <td>{specialist.location}</td>
-                      <td>{specialist.profile_photo}</td>
                   </tr>
                 ))}
               </tbody>
