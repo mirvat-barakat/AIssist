@@ -4,11 +4,12 @@ import { Feather } from '@expo/vector-icons';
 import styles from './styles';
 import axios from 'axios';
 
-const CommentBox = (postId) => {
+const CommentBox = () => {
   const [comment, setComment] = useState('');
   const [inputHeight, setInputHeight] = useState(40);
   const [content, setContent] = useState('');
   const token = localStorage.getItem("token");
+  const postId = localStorage.getItem('postId');
 
   const handleCommentChange = (text) => {
     setComment(text);
@@ -28,6 +29,7 @@ const CommentBox = (postId) => {
         }
     })
     .then(response => {
+      console.log(response);
         if (response.data.status == "success"){
             alert("Comment added");
         }
@@ -45,7 +47,8 @@ const CommentBox = (postId) => {
         style={[styles.input, { height: inputHeight }]}
         multiline
         placeholder="Write a comment..."
-        value={comment}
+        content={content}
+        setContent={setContent}
         onChangeText={handleCommentChange}
       />
       <TouchableOpacity style={styles.button} >

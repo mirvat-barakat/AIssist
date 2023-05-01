@@ -33,30 +33,6 @@ const CommentsPage = () => {
             console.error();
         });
   },[token, postId]);
-
-
-  const handleAddComment= (e) => {
-    const [content, setContent] = useState('');
-
-    e.preventDefault();
-    axios.post('http://127.0.0.1:8000/api/v0.0.1/posts/'+postId+'/comments', {
-        'content': content,
-    }, {
-        headers: {
-            'content-type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization': 'bearer ' + token
-        }
-    })
-    .then(response => {
-        if (response.data.status == "success"){
-            alert("Comment added");
-        }
-    })
-    .catch(error => {
-        console.log(error);
-    });
-};
   
     return (
       <View style={styles.commentView}>
