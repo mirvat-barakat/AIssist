@@ -42,8 +42,8 @@ const Login =()=> {
     })
       .then(response => {
         if ( response.data.user.is_admin == 1) {
-          navigate("/admin");
           window.localStorage.setItem('token', response.data.authorization.token);
+          navigate("/admin");
         }
         else{
           alert("Incorrect Credentials");
