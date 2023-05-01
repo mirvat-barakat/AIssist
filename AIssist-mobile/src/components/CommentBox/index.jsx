@@ -49,7 +49,8 @@ const CommentBox = () => {
         placeholder="Write a comment..."
         content={content}
         setContent={setContent}
-        onChangeText={handleCommentChange}
+        // onChangeText={handleCommentChange}
+        onChangeText={text => setContent(text)}
       />
       <TouchableOpacity style={styles.button} >
         <Feather name="send" size={24} color="white" onPress={handleAddComment} />
