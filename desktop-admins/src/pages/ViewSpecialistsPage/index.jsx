@@ -37,7 +37,7 @@ const ViewSpecialists = () => {
         <Sidebar/>
         <div className="title1">
           <h1>Specialists Managment</h1>
-          <button>Add Specialists</button>
+          <button className="button2">Add Specialists</button>
         </div>
           <div className="specialists-table">
             <table>

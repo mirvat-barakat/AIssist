@@ -30,19 +30,23 @@
     width:45%;
 }
 .button1{
+    position: relative;
     background-color: #FFC6C6;
     border: #FFC6C6;
     padding: 4%;
     align-content: center;
-    width:330px;
+    width:300px;
+    border-radius: 10px;
 }
 .title{
     color:white;
 }
 .input1-login{
+    border-radius: 10px;
+    position: relative;
     padding: 4%;
     border: white;
-    width:300px;
+    width: 275px;;
 }
 .input1-label{
     color: white;
