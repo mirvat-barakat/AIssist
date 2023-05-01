@@ -30,6 +30,7 @@
   padding: 10%;
   white-space: nowrap;
   width: 100%;
+  align-self: flex-start;
 }
 .link:hover{
   color:white;
@@ -39,8 +40,8 @@
 .category{
   display: flex;
   flex-direction: row;
-  justify-content:left;
+  justify-content:flex-start;
 }
 .faicon{
-  margin-right: 5%;
+  margin-right: 10px;
 }
