@@ -3,6 +3,19 @@ import './styles.css';
 
 const Form = () => {
 
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [soeciality, setsoeciality] = useState('');
+    const [category, setCategory] = useState('');
+    const [profilr_picture, setProfilrPicture] = useState('');
+    const [phone_number, setPhoneNumber] = useState('');
+    const [location, setLocation] = useState('');
+
+
+    const handleAddSpecialist = (e) => {
+        e.preventDefault();
+    };
+
 
     return (
         <form className="form">
@@ -68,7 +81,7 @@ const Form = () => {
                     id="profile-picture"
                 />
             </div>
-          <button type="submit" className='button3'>Add Specialist</button>
+          <button type="submit" className='button3' onClick={handleAddSpecialist}>Add Specialist</button>
         </form>
       );
 };
