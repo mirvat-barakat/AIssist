@@ -67,6 +67,7 @@ const CommentsPage = () => {
             <View style={styles.mainCommentView}>
               <Image style={styles.profilePhoto} source={{uri:comment.profile_picture}}></Image>
               <View style={styles.comment}>
+                <Text style={styles.username} >{comment.name}</Text>
                 <Text style={styles.commentContent}>{comment.content}</Text>
               </View>
             </View>

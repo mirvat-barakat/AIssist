@@ -8,12 +8,12 @@ const styles = StyleSheet.create({
     alignSelf:'center',
   },
   mainView:{
-    marginTop:'10%',
+    marginTop:'5%',
   },
   mainCommentView:{
     display:'flex',
     flexDirection:'row',
-    marginTop:'10%',
+    marginTop:'5%',
     marginLeft:'10%'
   },
   commentView:{
@@ -28,13 +28,22 @@ const styles = StyleSheet.create({
     borderRadius:10,
     backgroundColor:'white',
     marginLeft:'5%',
-    marginRight:'5%'
+    marginRight:'5%',
+    width:'70%',
   },
   commentContent:{
-    top:10,      
+    top:10, 
+    marginLeft:10,     
     lineHeight: 22,         
     fontSize: 16, 
   },
+  username:{
+    alignContent:'center',
+    marginLeft:10,
+    fontSize:'25',
+    fontWeight:'600',
+    marginBottom:10
+},
 
 });
 export default styles;
