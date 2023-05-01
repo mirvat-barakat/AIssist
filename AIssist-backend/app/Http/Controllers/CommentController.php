@@ -50,7 +50,7 @@ class CommentController extends Controller{
 
         return response()->json([
         'status' => 'success',
-        'data' => $comments,
+        'comments' => $comments,
     ]);
     }
 
