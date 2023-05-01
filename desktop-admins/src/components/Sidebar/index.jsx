@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles.css';
 import logo from '../../assets/images/Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,7 +13,7 @@ const Sidebar = () => {
             <div className='items'>
             <div className='sidebar-links'>
                 <div>
-                    <a href="#" className='link'><FontAwesomeIcon icon={faUser} className="faicon" /><span>Users Accounts</span></a>
+                    <Link to="/view_users" className='link'><FontAwesomeIcon icon={faUser} className="faicon" /><span>Users Accounts</span></Link>
                 </div>
                 <div className='category'>
                     <a href="#" className='link'><FontAwesomeIcon icon={faUserTie} className="faicon" /><span>Specialists Managment</span></a>
