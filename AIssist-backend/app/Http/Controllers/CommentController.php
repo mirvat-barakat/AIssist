@@ -37,8 +37,9 @@ class CommentController extends Controller{
     }
 
     public function getComments(Request $request, $post_id){
-        $comments = Comment::where('post_id', 'like', "%$post_id%")
-                               ->get();
+        $comments = Comment::join('users', 'comments.user_id', '=', 'users.id')
+                    ->where('post_id', 'like', "%$post_id%")
+                    ->get(['comments.*', 'users.name', 'users.profile_picture']);
 
         if ($comments->isEmpty()){
             return response()->json([
