@@ -68,7 +68,7 @@ const Form = () => {
                     id="profile-picture"
                 />
             </div>
-          <button type="submit" className='button2'>Add Specialist</button>
+          <button type="submit" className='button3'>Add Specialist</button>
         </form>
       );
 };
