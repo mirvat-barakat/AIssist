@@ -6,49 +6,49 @@ const Form = () => {
 
     return (
         <form>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name" className="input1-text">Name:</label>
           <input
           className="input1"
             type="text"
             id="name"
             required
           />
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className="input1-text">Email:</label>
           <input
           className="input1"
             type="email"
             id="email"
             required
           />
-          <label htmlFor="category">Category:</label>
+          <label htmlFor="category" className="input1-text">Category:</label>
           <input
           className="input1"
             type="text"
             id="category"
             required
           />
-          <label htmlFor="speciality">Speciality:</label>
+          <label htmlFor="speciality" className="input1-text">Speciality:</label>
           <input
           className="input1"
             type="text"
             id="speciality"
             required
           />
-          <label htmlFor="phone-number">Phone Number:</label>
+          <label htmlFor="phone-number" className="input1-text">Phone Number:</label>
           <input
           className="input1"
             type="text"
             id="phone-number"
             required
           />
-          <label htmlFor="location">Location:</label>
+          <label htmlFor="location" className="input1-text">Location:</label>
           <input
           className="input1"
             type="text"
             id="location"
             required
           />
-          <label htmlFor="profile-picture">Profile Picture:</label>
+          <label htmlFor="profile-picture" className="input1-text">Profile Picture:</label>
           <input
           className="input1"
             type="file"
