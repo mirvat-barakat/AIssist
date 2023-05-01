@@ -19,7 +19,7 @@ const Sidebar = () => {
                     <Link to="/view_specialists" className='link'><FontAwesomeIcon icon={faUserTie} className="faicon" /><span>Specialists Managment</span></Link>
                 </div>
                 <div className='category'>
-                    <Link href="#" className='link'><FontAwesomeIcon icon={faUsersCog} className="faicon" /><span>Community Moderation</span></Link>
+                    <Link to="/admin" className='link'><FontAwesomeIcon icon={faUsersCog} className="faicon" /><span>Community Moderation</span></Link>
                 </div>
                 <div className='category'>
                     <Link href="#" className='link'><FontAwesomeIcon icon={faChartLine} className="faicon" /> <span>User Data Analysis</span></Link>
