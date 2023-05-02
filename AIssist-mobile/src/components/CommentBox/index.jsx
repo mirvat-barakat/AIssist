@@ -19,7 +19,7 @@ const CommentBox = () => {
   const handleAddComment= (e) => {
 
     e.preventDefault();
-    axios.post('http://127.0.0.1:8000/api/v0.0.1/posts/'+postId+'/comments', {
+    axios.post('http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments', {
         'content': content,
     }, {
         headers: {

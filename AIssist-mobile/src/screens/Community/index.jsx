@@ -22,7 +22,7 @@ export default function CommunityScreen({ navigation }) {
       const [content, setContent] = useState('');
 
       e.preventDefault();
-      axios.post('http://127.0.0.1:8000/api/v0.0.1/community/posts', {
+      axios.post('http://192.168.1.6:8000/api/v0.0.1/community/posts', {
           'content': content,
           'title':title,
       }, {
@@ -47,7 +47,7 @@ export default function CommunityScreen({ navigation }) {
         try {
           setPostId(postId);
           if (likedPosts.includes(postId)) {
-            await fetch('http://127.0.0.1:8000/api/v0.0.1/like/'+ postId, {
+            await fetch('http://192.168.1.6:8000/api/v0.0.1/like/'+ postId, {
               method: 'DELETE',
               headers: {
                 'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export default function CommunityScreen({ navigation }) {
             });
             setLikedPosts(likedPosts.filter((id) => id !== postId));
           }else {
-            await fetch('http://127.0.0.1:8000/api/v0.0.1/posts/'+postId+'/likes', {
+            await fetch('http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/likes', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ export default function CommunityScreen({ navigation }) {
 
     const getPosts = {
         method: 'GET',
-        url: 'http://127.0.0.1:8000/api/v0.0.1/community/posts',
+        url: 'http://192.168.1.6:8000/api/v0.0.1/community/posts',
         headers: {
           'content-type': 'application/json',
           'Accept' : 'application/json',

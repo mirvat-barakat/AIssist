@@ -15,7 +15,7 @@ const CommentsPage = () => {
 
   const getComments = {
     method: 'GET',
-    url: 'http://127.0.0.1:8000/api/v0.0.1/posts/'+postId+'/comments',
+    url: 'http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments',
     headers: {
       'content-type': 'application/json',
       'Accept' : 'application/json',

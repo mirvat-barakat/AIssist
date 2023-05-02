@@ -14,9 +14,9 @@ function App() {
     
       // <AppStack/>
       
-      // <NavigationContainer>
-        <AppStack/>
-      // </NavigationContainer>
+      <NavigationContainer>
+        <AuthStack/>
+      </NavigationContainer>
       // <CommunityScreen/>
       // <ActivitiesScreen />
       // <RootStack/>

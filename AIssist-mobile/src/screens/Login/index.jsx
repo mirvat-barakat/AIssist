@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } from 'react-native';
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -12,18 +12,18 @@ export default function LoginScreen({navigation}) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const data = JSON.stringify({
+      "email": email,
+      "password": password
+     });
 
     
       const handleLogin  = async () => {
-        const data = {
-          email: email,
-          password: password,
-        };
     
         const config = {
-          method: "post",
+          method: "POST",
           data:data,
-          url: 'http://127.0.0.1:8000/api/v0.0.1/login',
+          url: 'http://192.168.1.6:8000/api/v0.0.1/login',
           headers: {
             'content-type': 'application/json',
             'Accept': 'application/json',
@@ -32,15 +32,41 @@ export default function LoginScreen({navigation}) {
         try {
           const res = await axios(config);
           if (res.data.status == "success") {
-            // await AsyncStorage.setItem("@token", res.data.authorisation.token);
-            window.localStorage.setItem('token', res.data.authorisation.token);
-            // alert("success");
+            Alert.alert('Please provide all the requirements')
+            //  AsyncStorage.setItem(token, res.data.authorisation.token);
+            // window.localStorage.setItem('token', res.authorisation.token);
             navigation.navigate('Community');
+            console.log(res.data);
           }
         } catch (error) {
-          return error.response.data;
+          return error.response;
         }
       };
+      // const handleLogin  = (e) => {
+      //   e.preventDefault();
+      //   axios.post('http://localhost:8000/api/v0.0.1/login', {
+      //     email: email,
+      //     password: password
+      //   }, {
+      //     headers: {
+      //       'content-type': 'application/json',
+      //       'Accept': 'application/json',
+      //     }
+      //   })
+      //     .then(response => {
+      //       if ( response.data.status=="success") {
+      //         navigation.navigate('Community');
+      //         AsyncStorage.setItem("@token", res.data.authorisation.token);
+      //       }
+      //       else{
+      //         alert("Incorrect Credentials");
+    
+      //       }
+      //     })
+      //     .catch(error => {
+      //       console.error(error);
+      //     });
+      // };
 
 
     return (
@@ -58,7 +84,7 @@ export default function LoginScreen({navigation}) {
                   placeholder="Enter your email"
                   onChangeText={text => setEmail(text)}
                   setEmail={setEmail}
-                  email={email}
+                  value={email}
                  />
             </View>
             <View style={styles.inputContainer}>
@@ -68,7 +94,7 @@ export default function LoginScreen({navigation}) {
                   placeholder="Enter your password"
                   onChangeText={text => setPassword(text)}
                   setPassword={setPassword}
-                  password={password}
+                  value={password}
                   secureTextEntry
                  />
             </View>
