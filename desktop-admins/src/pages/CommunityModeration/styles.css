@@ -1,24 +1,30 @@
-
+.body-community{
+    background-color: #F2F4F4;
+}
 .mainPostView{
-    width:'50%';
+    width:80%;
     margin-left: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .postTitle{
-    width:'90%';
-    
     top:10px;
     display:flex;
     justify-content:space-between;
     flex-direction:row;
 }
 .postView{
-    width:'90%';
-    border:'solid';
-    background-color:'white';
+    position: relative;
+    width: 90%;
+    background-color:white;
     margin-top:20px;
-    align-self:'center';
-    display:'flex';
-    flex-direction:'column';
+    display:flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    border: solid 1px;
+    border-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 .profilePhoto{
     width:50px;
@@ -28,8 +34,8 @@
 .username{
     align-content:'center';
     margin-left:10px;
-    font-size:'25';
-    font-weight:'600';
+    font-size:16px;
+    font-weight:500;
 }
 .imageView{
     display:flex;
