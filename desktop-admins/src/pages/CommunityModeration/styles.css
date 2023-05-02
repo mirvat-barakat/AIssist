@@ -1,0 +1,50 @@
+
+.mainPostView{
+    width:'50%';
+    margin-left: 20%;
+}
+.postTitle{
+    width:'90%';
+    
+    top:10px;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+}
+.postView{
+    width:'90%';
+    border:'solid';
+    background-color:'white';
+    margin-top:20px;
+    align-self:'center';
+    display:'flex';
+    flex-direction:'column';
+}
+.profilePhoto{
+    width:50px;
+    height:50px;
+    border-radius:50px;
+}
+.username{
+    align-content:'center';
+    margin-left:10px;
+    font-size:'25';
+    font-weight:'600';
+}
+.imageView{
+    display:flex;
+    flex-direction:row;
+    margin-left:15px;
+    align-items:center;
+}
+.postContent{
+    top:10px;
+    margin-left:15px;               
+    font-size: 16px; 
+}
+.actions{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-wrap:nowrap;
+}
