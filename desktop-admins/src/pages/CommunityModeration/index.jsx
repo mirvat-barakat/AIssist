@@ -42,8 +42,8 @@ const Community = () => {
                     <div className="postView">
                     <div key={post.id} >
                         <div className="imageView">
-                            <img source={{uri:post.profile_picture}} className="profilePhoto"></img>
-                            <p  numberOfLines={3} ellipsizeMode="tail" className="username">{post.name}</p>
+                            <img src={post.profile_picture} className="profilePhoto"></img>
+                            <p className="username">{post.name}</p>
                         </div>
                     </div>
                     <div className="postContent">
