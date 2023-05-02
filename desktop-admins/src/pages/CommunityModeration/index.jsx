@@ -36,22 +36,25 @@ const Community = () => {
             <div className="title1">
             <h1>Community Moderation</h1>
             </div>
-            <div >
+            <div className="mainPostView">
                 <div >
                     {posts.map(post => (
-                    <div >
+                    <div className="postView">
                     <div key={post.id} >
-                        <div >
-                            <img  source={{uri:post.profile_picture}}></img>
-                            <p  numberOfLines={3} ellipsizeMode="tail">{post.name}</p>
+                        <div className="imageView">
+                            <img source={{uri:post.profile_picture}} className="profilePhoto"></img>
+                            <p  numberOfLines={3} ellipsizeMode="tail" className="username">{post.name}</p>
                         </div>
                     </div>
-                    <div >
+                    <div className="postContent">
                         <p>{post.content}</p>
                     </div>
-                    <div >
+                    <div className="actions">
                         <div>
                         <a>Comments</a>
+                        </div>
+                        <div>
+                        <a>Delete</a>
                         </div>
                     </div>
                     </div>
