@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -12,7 +13,6 @@ class CommunityPostController extends Controller{
     public function createPost(Request $request){
         $post = new Post;
         $post->user_id = Auth::id();
-        $post->title = $request->input('title');
         $post->content = $request->input('content');
         $post->save();
 
