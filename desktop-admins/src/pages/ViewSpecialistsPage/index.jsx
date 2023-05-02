@@ -10,6 +10,10 @@ const ViewSpecialists = () => {
     const [showForm, setShowForm] = useState(false);
     const token = localStorage.getItem("token");
 
+    useEffect(() => {
+      localStorage.setItem('showForm', showForm);
+    }, [showForm]);
+
     const getSpecialists = {
         method: 'GET',
         url: 'http://192.168.1.6:8000/api/v0.0.1/specialists',
