@@ -13,6 +13,29 @@ const Form = () => {
     const [location, setLocation] = useState('');
     const token = localStorage.getItem("token");
 
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+      };
+      const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+      };
+      const handleSpecialityChange = (e) => {
+        setSpeciality(e.target.value);
+      };
+      const handleCategoryChange = (e) => {
+        setCategory(e.target.value);
+      };
+      const handleProfilePictureChange = (e) => {
+        setProfilePicture(e.target.value);
+      };
+      const handlePhoneNumberChange = (e) => {
+        setPhoneNumber(e.target.value);
+      };
+      const handleLocationChange = (e) => {
+        setLocation(e.target.value);
+      };
+
+
 
     const handleAddSpecialist = (e) => {
         e.preventDefault();
@@ -51,8 +74,8 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="name"
-                    name={name}
-                    setName={setName}
+                    value={name}
+                    onChange={handleNameChange} 
                     required
                 />
             </div>
@@ -62,8 +85,8 @@ const Form = () => {
                     className="input1"
                     type="email"
                     id="email"
-                    email={email}
-                    setEmail={setEmail}
+                    value={email}
+                    onChange={handleEmailChange} 
          
                     required
                 />
@@ -74,8 +97,8 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="category"
-                    category={category}
-                    setCategory={setCategory}
+                    value={category}
+                    onChange={handleCategoryChange} 
     
                     required
                 />
@@ -86,8 +109,8 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="speciality"
-                    speciality={speciality}
-                    setSpeciality={setSpeciality}
+                    value={speciality}
+                    onChange={handleSpecialityChange} 
 
                     required
                 />
@@ -98,8 +121,8 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="phone-number"
-                    phone_number={phone_number}
-                    setPhoneNumber={setPhoneNumber}
+                    value={phone_number}
+                    onChange={handlePhoneNumberChange} 
  
                     required
                 />
@@ -110,8 +133,8 @@ const Form = () => {
                     className="input1"
                     type="text"
                     id="location"
-                    location={location}
-                    setLocation={setLocation}
+                    value={location}
+                    onChange={handleLocationChange} 
                     required
                 />
             </div>
@@ -121,8 +144,8 @@ const Form = () => {
                     className="input1"
                     type="file"
                     id="profile-picture"
-                    profile_picture={profile_picture}
-                    setProfilePicture={setProfilePicture}
+                    value={profile_picture}
+                    onChange={handleProfilePictureChange} 
                     
                 />
             </div>
