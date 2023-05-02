@@ -9,7 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function CommunityScreen({ navigation }) {
     const[postContent,setPostContent]= useState('');
     const[posts, setFeed]= useState([]);
-    const token = localStorage.getItem("token");
+    const token = AsyncStorage.getItem("token");
     // const [token, setToken] = useState('');
     const [liked, setLiked] = useState(false); 
     const [title, setTitle] = useState('');

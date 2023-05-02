@@ -3,7 +3,6 @@ import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert } f
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { SERVER_URL } from "../../../env";
 import axios from "axios";
 
 
@@ -34,7 +33,6 @@ export default function LoginScreen({navigation}) {
           if (res.data.status == "success") {
             Alert.alert('Please provide all the requirements')
              AsyncStorage.setItem('token', res.data.authorisation.token);
-            // window.localStorage.setItem('token', res.authorisation.token);
             navigation.navigate('Community');
             console.log(res.data);
           }
@@ -42,31 +40,6 @@ export default function LoginScreen({navigation}) {
           return error.response;
         }
       };
-      // const handleLogin  = (e) => {
-      //   e.preventDefault();
-      //   axios.post('http://localhost:8000/api/v0.0.1/login', {
-      //     email: email,
-      //     password: password
-      //   }, {
-      //     headers: {
-      //       'content-type': 'application/json',
-      //       'Accept': 'application/json',
-      //     }
-      //   })
-      //     .then(response => {
-      //       if ( response.data.status=="success") {
-      //         navigation.navigate('Community');
-      //         AsyncStorage.setItem("@token", res.data.authorisation.token);
-      //       }
-      //       else{
-      //         alert("Incorrect Credentials");
-    
-      //       }
-      //     })
-      //     .catch(error => {
-      //       console.error(error);
-      //     });
-      // };
 
 
     return (
