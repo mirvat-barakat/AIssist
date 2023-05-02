@@ -31,12 +31,34 @@ const Community = () => {
 
     return(
         <>
-        <div className="body">
-        <Sidebar/>
-        <div className="title1">
-          <h1>Community Moderation</h1>
-        </div>
-        </div>
+            <div className="body">
+            <Sidebar/>
+            <div className="title1">
+            <h1>Community Moderation</h1>
+            </div>
+            <div >
+                <div >
+                    {posts.map(post => (
+                    <div >
+                    <div key={post.id} >
+                        <div >
+                            <img  source={{uri:post.profile_picture}}></img>
+                            <p  numberOfLines={3} ellipsizeMode="tail">{post.name}</p>
+                        </div>
+                    </div>
+                    <div >
+                        <p>{post.content}</p>
+                    </div>
+                    <div >
+                        <div>
+                        <a>Comments</a>
+                        </div>
+                    </div>
+                    </div>
+                    ))}
+                </div>
+            </div>
+            </div>
         </>
     );
 
