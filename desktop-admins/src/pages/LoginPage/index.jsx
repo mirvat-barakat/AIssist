@@ -31,7 +31,7 @@ const Login =()=> {
 
   const HandleFormSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8000/api/v0.0.1/login', {
+    axios.post('http://192.168.1.6:8000/api/v0.0.1/login', {
       email: email,
       password: password
     }, {

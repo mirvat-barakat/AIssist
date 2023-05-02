@@ -16,7 +16,7 @@ const Form = () => {
 
     const handleAddSpecialist = (e) => {
         e.preventDefault();
-        axios.post('http://127.0.0.1:8000/api/v0.0.1/specialist', {
+        axios.post('http://192.168.1.6:8000/api/v0.0.1/specialist', {
             'name': name,
             'email': email,
             'speciality': speciality,

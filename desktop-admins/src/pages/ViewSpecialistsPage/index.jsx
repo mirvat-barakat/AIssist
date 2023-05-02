@@ -12,7 +12,7 @@ const ViewSpecialists = () => {
 
     const getSpecialists = {
         method: 'GET',
-        url: 'http://127.0.0.1:8000/api/v0.0.1/specialists',
+        url: 'http://192.168.1.6:8000/api/v0.0.1/specialists',
         headers: {
           'content-type': 'application/json',
           'Accept' : 'application/json',
