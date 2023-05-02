@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, Alert  } from 'react-native';
 import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import Header1 from '../../components/Header1';
@@ -27,7 +27,7 @@ export default function RegisterScreen({navigation}) {
     })
     .then(response => {
         if (response.data.status == "success"){
-            alert("success");
+            Alert.alert("success");
         }
     })
     .catch(error => {
@@ -46,7 +46,7 @@ export default function RegisterScreen({navigation}) {
                   placeholder="Enter your name"
                   onChangeText={text => setName(text)}
                   setName={setName}
-                  name={name}
+                  value={name}
                  />
               </View>
               <View style={styles.inputContainer}>
@@ -56,7 +56,7 @@ export default function RegisterScreen({navigation}) {
                   placeholder="Enter your email"
                   onChangeText={text => setEmail(text)}
                   setEmail={setEmail}
-                  email={email}
+                  value={email}
                  />
               </View>
               <View style={styles.inputContainer}>
@@ -66,7 +66,7 @@ export default function RegisterScreen({navigation}) {
                   placeholder="Enter your password"
                   onChangeText={text => setPassword(text)}
                   setPassword={setPassword}
-                  password={password}
+                  value={password}
                   secureTextEntry
                  />
               </View>

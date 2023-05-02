@@ -33,7 +33,7 @@ export default function LoginScreen({navigation}) {
           const res = await axios(config);
           if (res.data.status == "success") {
             Alert.alert('Please provide all the requirements')
-            //  AsyncStorage.setItem(token, res.data.authorisation.token);
+             AsyncStorage.setItem('token', res.data.authorisation.token);
             // window.localStorage.setItem('token', res.authorisation.token);
             navigation.navigate('Community');
             console.log(res.data);
