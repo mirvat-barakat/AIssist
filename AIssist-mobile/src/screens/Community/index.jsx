@@ -13,18 +13,15 @@ export default function CommunityScreen({ navigation }) {
     // const [token, setToken] = useState('');
     const [liked, setLiked] = useState(false); 
     const [title, setTitle] = useState('');
-      const [content, setContent] = useState('');
-      const [postId, setPostId] = useState(null);
-      const [likedPosts, setLikedPosts] = useState([]);
+    const [content, setContent] = useState('');
+    const [postId, setPostId] = useState(null);
+    const [likedPosts, setLikedPosts] = useState([]);
 
     const handleSharePost= (e) => {
-      const [title, setTitle] = useState('');
-      const [content, setContent] = useState('');
-
+      
       e.preventDefault();
       axios.post('http://192.168.1.6:8000/api/v0.0.1/community/posts', {
           'content': content,
-          'title':title,
       }, {
           headers: {
               'content-type': 'application/json',
@@ -35,6 +32,7 @@ export default function CommunityScreen({ navigation }) {
       .then(response => {
           if (response.data.status == "success"){
               alert("Post Shared");
+              console.log(response.data);
           }
       })
       .catch(error => {
@@ -103,6 +101,7 @@ export default function CommunityScreen({ navigation }) {
       useEffect(() => {
         axios.request(getPosts)
             .then(response => {
+                // AsyncStorage.getItem('token')
                 console.log(response);
                 setFeed(response.data.posts);
                 setLikedPosts(Array(response.data.posts.length).fill(false));
@@ -120,7 +119,7 @@ export default function CommunityScreen({ navigation }) {
                 <View style={styles.TextInputView}>
                     <TextInput onChangeText={text => setContent(text)}
                   setContent={setContent}
-                  content={content} multiline={true}
+                  value={content} multiline={true}
                        numberOfLines={20} placeholder="Enter your text here..." style={styles.TextInput}>
                     </TextInput>
                     <TouchableOpacity style={styles.shareButton} >
@@ -147,10 +146,11 @@ export default function CommunityScreen({ navigation }) {
                           <View>
                           <TouchableOpacity style={styles.commentButton} >
                             <Text style={styles.commentButtonText} title="Open Comments" onPress={() => {
-      window.localStorage.setItem('postId', post.id);
-      console.log(post.id);
-      navigation.navigate('Comments');
-    }} >Comments</Text>
+                                AsyncStorage.setItem('postId', post.id);
+                                console.log(post.id);
+                                navigation.navigate('Comments');
+                              }} >Comments
+                            </Text>
                           </TouchableOpacity>
                           </View>
                           <View>
