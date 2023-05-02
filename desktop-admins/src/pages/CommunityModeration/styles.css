@@ -26,6 +26,9 @@
     border: solid 1px;
     border-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .profilePhoto{
     width:50px;
@@ -52,6 +55,12 @@
 .actions{
     display:flex;
     flex-direction:row;
-    justify-content:space-around;
+    justify-content:flex-start;
+    gap:40px;
     flex-wrap:nowrap;
+    margin-left: 15px;
+    text-decoration: underline;
+    font-weight: 500;
+    text-decoration-color: #F08080 ;
+    color: #F08080;
 }
