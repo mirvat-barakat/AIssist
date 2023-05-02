@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './styles.css';
 import axios from 'axios';
 
-const Form = () => {
+const Form = ({ onSubmit }) => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -57,7 +57,7 @@ const Form = () => {
         .then(response => {
         console.log(response);
             if (response.data.status == "success"){
-                alert("Specialist added");
+                onSubmit();
             }
         })
         .catch(error => {
