@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     username:{
         alignContent:'center',
         marginLeft:10,
-        fontSize:'25',
+        // fontSize:'25',
         fontWeight:'600'
     },
     imageView:{
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         padding: 10,
         width:100,
         cursor: 'pointer',
-        fontSize: 16,
+        // fontSize: 16,
         marginTop:10,
         marginRight:10,
         alignSelf:'flex-end',

@@ -16,7 +16,7 @@ function App() {
       // <AppStack/>
       
       <NavigationContainer>
-        <AuthStack />
+        < DrawerNavigator/>
       </NavigationContainer>
       // <CommunityScreen/>
       // <ActivitiesScreen />

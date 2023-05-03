@@ -7,12 +7,9 @@ import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function CommunityScreen({ navigation }) {
-    const[postContent,setPostContent]= useState('');
     const[posts, setFeed]= useState([]);
     const token = AsyncStorage.getItem("token");
-    // const [token, setToken] = useState('');
     const [liked, setLiked] = useState(false); 
-    const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [postId, setPostId] = useState(null);
     const [likedPosts, setLikedPosts] = useState([]);
@@ -73,10 +70,6 @@ export default function CommunityScreen({ navigation }) {
     } 
 
 
-    // const handleViewComments=() => {
-    //   localStorage.setItem('postId', postId);
-    //   navigation.navigate('Comments');
-    // }
     const getPosts = async () => {
       const token = await AsyncStorage.getItem("token");
       const config = {
@@ -99,36 +92,7 @@ export default function CommunityScreen({ navigation }) {
     useEffect(() => {
       getPosts();
     }, []);
-    // const getPosts = {
-    //     method: 'GET',
-    //     url: 'http://192.168.1.6:8000/api/v0.0.1/community/posts',
-    //     headers: {
-    //       'content-type': 'application/json',
-    //       'Accept' : 'application/json',
-    //       'Authorization': 'bearer ' + token
-    //     },
-    //   };
 
-      // useEffect(() => {
-      //   AsyncStorage.getItem('token')
-      //     .then((value) => {
-      //       if (value !== null) {
-      //         setToken(value);
-      //       }
-      //     })
-      //     .catch((error) => console.error('Error getting token from async storage:', error));
-      // },[]);
-  
-      // useEffect(() => {
-      //   axios.request(getPosts)
-      //       .then(response => {
-      //           AsyncStorage.getItem('token');
-      //           console.log(response);
-      //           setFeed(response.data.posts);
-      //           setLikedPosts(Array(response.data.posts.length).fill(false));
-      //       })
-      //       .catch((error) => console.error('Error getting token from async storage:', error));
-      // },[token]);
       return(
         <SafeAreaView >
           <ScrollView style={styles.scroll}>
