@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, SafeAreaView } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthStack from './src/navigation/AuthStack';
@@ -11,13 +11,27 @@ import FeedbacksScreen from './src/screens/Feedbacks';
 import QuestionsScreen from './src/screens/Questions';
 
 function App() {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      const token = await AsyncStorage.getItem('token');
+      setIsAuthenticated(!!token);
+    };
+    checkAuthentication();
+  }, []);
+
+
   return (
+    <NavigationContainer>
+      {isAuthenticated ? <DrawerNavigator /> : <AuthStack />}
+    </NavigationContainer>
     
       // <AppStack/>
       
-      <NavigationContainer>
-        < DrawerNavigator/>
-      </NavigationContainer>
+      // <NavigationContainer>
+      //   < DrawerNavigator/>
+      // </NavigationContainer>
       // <CommunityScreen/>
       // <ActivitiesScreen />
       // <RootStack/>
@@ -25,6 +39,8 @@ function App() {
     // <SafeAreaView>
     //   <CommunityScreen/>
     // </SafeAreaView>
+
+    
   );
 }
 

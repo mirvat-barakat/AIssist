@@ -3,13 +3,14 @@ import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import styles from './styles';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CommentBox = () => {
   const [comment, setComment] = useState('');
   const [inputHeight, setInputHeight] = useState(40);
   const [content, setContent] = useState('');
-  const token = localStorage.getItem("token");
-  const postId = localStorage.getItem('postId');
+  const token = AsyncStorage.getItem("token");
+  const postId = AsyncStorage.getItem('postId');
 
   const handleCommentChange = (text) => {
     setComment(text);
