@@ -7,5 +7,15 @@ import QuestionsScreen from '../screens/Questions';
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNavigator = () =>{};
+const DrawerNavigator = () =>{
+
+    return (
+        <Drawer.Navigator initialRouteName="Community">
+          <Drawer.Screen name="Community" component={CommunityScreen} />
+          <Drawer.Screen name="Activities" component={ActivitiesScreen} />
+          <Drawer.Screen name="Feedbacks" component={FeedbacksScreen} />
+          <Drawer.Screen name="Questions" component={QuestionsScreen} />
+        </Drawer.Navigator>
+      );
+};
 export default DrawerNavigator;
