@@ -3,6 +3,7 @@ import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } fro
 import styles from './styles';
 import Header from '../../components/Header';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function ActivitiesScreen() {
 
@@ -13,7 +14,7 @@ export default function ActivitiesScreen() {
     const [interest, setInterest] = useState('');
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
-    const token = localStorage.getItem("token");
+    const token = AsyncStorage.getItem("token");
 
     const handleGenerateActivities= (e)=>{
         e.preventDefault();

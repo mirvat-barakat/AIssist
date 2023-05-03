@@ -4,13 +4,14 @@ import styles from './styles';
 import { MaterialIcons } from '@expo/vector-icons';
 import Header from '../../components/Header';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function QuestionsScreen() {
 
         const [Question, setQuestion] = useState('');
         const[Answer, setAnswer] =useState('');
         const [answerDisplay, setAnswerDisplay] = useState('');
-        const token = localStorage.getItem("token");
+        const token = AsyncStorage.getItem("token");
     
         const handleGenerateAnswers= (e)=>{
             e.preventDefault();

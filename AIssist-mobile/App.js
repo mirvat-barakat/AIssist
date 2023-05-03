@@ -2,6 +2,7 @@ import React from 'react';
 import { View, SafeAreaView } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import AuthStack from './src/navigation/AuthStack';
+import DrawerNavigator from './src/navigation/DrawerNavigator';
 import AppStack from './src/navigation/RootStack';
 import HomeScreen from './src/screens/Home';
 import CommunityScreen from './src/screens/Community';
@@ -15,7 +16,7 @@ function App() {
       // <AppStack/>
       
       <NavigationContainer>
-        <AuthStack/>
+        <DrawerNavigator />
       </NavigationContainer>
       // <CommunityScreen/>
       // <ActivitiesScreen />

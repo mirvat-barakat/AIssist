@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         height:'100%',
     },
     scroll:{
-        height:'100vh',
+        height:'100%',
     },
     Heading: {
         fontSize:32,

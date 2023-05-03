@@ -4,13 +4,14 @@ import styles from './styles';
 import Header1 from '../../components/Header1';
 import CommentBox from '../../components/CommentBox';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 
 const CommentsPage = () => {
   const[comments, setComments]= useState([]);
-  const token = localStorage.getItem("token");
-  const postId = localStorage.getItem('postId');
+  const token = AsyncStorage.getItem("token");
+  const postId = AsyncStorage.getItem('postId');
 
 
   const getComments = {
