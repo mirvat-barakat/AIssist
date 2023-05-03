@@ -41,9 +41,9 @@ export default function SpecialistsScreen() {
                        {specialists.map(specialist=> (
                         <View style={styles.specialistView}>
                         <View key={specialist.id}>
-                          <View >
+                          <View style={styles.card} >
                              <Image style={styles.profilePhoto} source={{uri:specialist.profile_picture}}></Image>
-                             <View>
+                             <View style={styles.specialistInfo}>
                                 <Text>{specialist.name}</Text>
                                 <Text>{specialist.category}</Text>
                                 <Text>{specialist.speciality}</Text>
