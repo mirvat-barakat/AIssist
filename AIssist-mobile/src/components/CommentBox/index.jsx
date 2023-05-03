@@ -9,8 +9,10 @@ const CommentBox = () => {
   const [comment, setComment] = useState('');
   const [inputHeight, setInputHeight] = useState(40);
   const [content, setContent] = useState('');
-  const token = AsyncStorage.getItem("token");
-  const postId = AsyncStorage.getItem('postId');
+  // const token = AsyncStorage.getItem("token");
+  // const postId = AsyncStorage.getItem('postId');
+  const token = localStorage.getItem("token");
+  const postId = localStorage.getItem('postId');
 
   const handleCommentChange = (text) => {
     setComment(text);

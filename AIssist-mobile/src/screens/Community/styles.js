@@ -5,7 +5,11 @@ const styles = StyleSheet.create({
     main: {
         backgroundColor:colors.grey,
         height:'100%',
+        marginTop:20,
     },
+    intro:{
+        marginTop:20,
+      },
     scroll:{
         height:'100%',
     },

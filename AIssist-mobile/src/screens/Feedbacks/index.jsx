@@ -8,9 +8,7 @@ export default function FeedbacksScreen() {
 
     return(
         <ScrollView style={styles.mainViewFeedbacks}>
-            <Header/>
-            <View>
-                <Text style={styles.feedbacksTitle}>Feedbacks</Text>
+            <View style={styles.intro}>
                 <Text style={styles.feedbacksText}>Please fill out this form to help us determine  which feedbacks best suits your child case.</Text>
             </View>
             <View style={styles.mainFormFeedbacks}>

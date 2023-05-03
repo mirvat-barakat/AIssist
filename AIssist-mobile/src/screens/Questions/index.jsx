@@ -11,7 +11,8 @@ export default function QuestionsScreen() {
         const [Question, setQuestion] = useState('');
         const[Answer, setAnswer] =useState('');
         const [answerDisplay, setAnswerDisplay] = useState('');
-        const token = AsyncStorage.getItem("token");
+        // const token = AsyncStorage.getItem("token");
+        const token = localStorage.getItem("token");
     
         const handleGenerateAnswers= (e)=>{
             e.preventDefault();
@@ -34,6 +35,7 @@ export default function QuestionsScreen() {
     };
 
     useEffect(() => {
+        if (Answer && Answer.length > 0) {
         let i = 0;
         setAnswerDisplay(Answer.charAt(0)); 
         const timer = setInterval(() => {
@@ -45,14 +47,13 @@ export default function QuestionsScreen() {
             }
         }, 50);
         return () => clearInterval(timer);
+    }
     }, [Answer]);
 
 
     return(
         <ScrollView style={styles.mainViewQuestions}>
-            <Header/>
-            <View>
-                <Text style={styles.questionsTitle}>Questions</Text>
+            <View style={styles.intro}>
                 <Text style={styles.questionsText}>Welcome! Ask any questions you have about your child's condition and we'll do our best to help you find the answers you need.</Text>
             </View>
             <View style={styles.container}>

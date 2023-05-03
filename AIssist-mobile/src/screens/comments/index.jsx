@@ -10,8 +10,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CommentsPage = () => {
   const[comments, setComments]= useState([]);
-  const token = AsyncStorage.getItem("token");
-  const postId = AsyncStorage.getItem('postId');
+  // const token = AsyncStorage.getItem("token");
+  // const postId = AsyncStorage.getItem('postId');
+  const token = localStorage.getItem("token");
+  const postId = localStorage.getItem('postId');
 
 
   const getComments = {

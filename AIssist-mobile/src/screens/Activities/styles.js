@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
         width:'100%',
         backgroundColor:'#F2F4F4',
     },
+    intro:{
+        marginTop:20,
+      },
     activitiesTitle:{
         fontWeight:'bold',
         fontSize:40,

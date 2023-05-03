@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
         width:'100%',
         backgroundColor:'#F2F4F4',
     },
+    intro:{
+      marginTop:20,
+    },
     container: {
       flex: 1,
       padding: 20,

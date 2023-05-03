@@ -14,7 +14,8 @@ export default function ActivitiesScreen() {
     const [interest, setInterest] = useState('');
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
-    const token = AsyncStorage.getItem("token");
+    // const token = AsyncStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
     const handleGenerateActivities= (e)=>{
         e.preventDefault();
@@ -45,9 +46,7 @@ export default function ActivitiesScreen() {
 
     return(
         <ScrollView style={styles.mainView}>
-            <Header/>
-            <View>
-                <Text style={styles.activitiesTitle}>Activities</Text>
+            <View style={styles.intro}>
                 <Text style={styles.activitiesText}>Please fill out this form to help us determine  which activities best suits your child case.</Text>
             </View>
             <View style={styles.mainFormActivities}>

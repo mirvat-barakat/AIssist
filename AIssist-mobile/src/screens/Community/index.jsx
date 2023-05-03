@@ -8,7 +8,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function CommunityScreen({ navigation }) {
     const[posts, setFeed]= useState([]);
-    const token = AsyncStorage.getItem("token");
+    // const token = AsyncStorage.getItem("token");
+    const token = localStorage.getItem("token");
     const [liked, setLiked] = useState(false); 
     const [content, setContent] = useState('');
     const [postId, setPostId] = useState(null);
@@ -23,7 +24,7 @@ export default function CommunityScreen({ navigation }) {
           headers: {
               'content-type': 'application/json',
               'Accept': 'application/json',
-              'Authorization': 'bearer ' + token
+              'Authorization': `Bearer ${token}` 
           }
       })
       .then(response => {
@@ -39,6 +40,8 @@ export default function CommunityScreen({ navigation }) {
   
 
       const handleLike = async (postId) => {
+        // const token = await AsyncStorage.getItem("token");
+        const token = await localStorage.getItem("token");
         try {
           setPostId(postId);
           if (likedPosts.includes(postId)) {
@@ -47,7 +50,7 @@ export default function CommunityScreen({ navigation }) {
               headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': 'bearer ' + token
+                 'Authorization': `Bearer ${token}` 
               },
             });
             setLikedPosts(likedPosts.filter((id) => id !== postId));
@@ -57,7 +60,7 @@ export default function CommunityScreen({ navigation }) {
               headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': 'bearer ' + token
+                'Authorization': `Bearer ${token}` 
               },
               });
               setLikedPosts([...likedPosts, postId]);
@@ -71,7 +74,8 @@ export default function CommunityScreen({ navigation }) {
 
 
     const getPosts = async () => {
-      const token = await AsyncStorage.getItem("token");
+      // const token = await AsyncStorage.getItem("token");
+      const token = await localStorage.getItem("token");
       const config = {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -96,9 +100,7 @@ export default function CommunityScreen({ navigation }) {
       return(
         <SafeAreaView >
           <ScrollView style={styles.scroll}>
-            <Header/>
             <View style={styles.main}>
-                <Text style={styles.Heading}>Community</Text>
                 <View style={styles.TextInputView}>
                     <TextInput onChangeText={text => setContent(text)}
                   setContent={setContent}
