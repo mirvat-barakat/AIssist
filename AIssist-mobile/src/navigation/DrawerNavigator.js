@@ -12,14 +12,14 @@ const DrawerNavigator = () =>{
 
     return (
         <Drawer.Navigator initialRouteName="Community"
-         screenOptions={{
-          headerStyle: {
-            backgroundColor: colors.primary_1,
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
+        screenOptions={{
+          headerTitleAlign: "center",
+          headerStyle: { backgroundColor: colors.primary_1 },
+          headerTintColor: "#FFFFFF",
+          drawerStyle: { backgroundColor: "#FFFFFF" },
+          drawerActiveBackgroundColor: colors.primary_1,
+          drawerActiveTintColor: "#FFFFFF",
+          drawerInactiveTintColor: '#000',
         }}>
           <Drawer.Screen name="Community" component={CommunityScreen} />
           <Drawer.Screen name="Activities" component={ActivitiesScreen} />
