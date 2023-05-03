@@ -32,7 +32,7 @@ export default function LoginScreen({navigation}) {
           const res = await axios(config);
           if (res.data.status == "success") {
             await AsyncStorage.setItem("token", res.data.authorisation.token);
-            navigation.navigate('Community');
+            navigation.navigate('DrawerNavigator');
           }
         } catch (error) {
           return error.response;

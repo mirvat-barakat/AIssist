@@ -129,7 +129,7 @@ export default function CommunityScreen({ navigation }) {
                           <View>
                           <TouchableOpacity style={styles.commentButton} >
                             <Text style={styles.commentButtonText} title="Open Comments" onPress={() => {
-                                AsyncStorage.setItem('postId', post.id);
+                                AsyncStorage.setItem('postId', JSON.stringify(post.id));
                                 console.log(post.id);
                                 navigation.navigate('Comments');
                               }} >Comments
