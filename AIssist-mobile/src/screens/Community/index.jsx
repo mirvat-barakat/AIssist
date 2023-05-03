@@ -77,16 +77,37 @@ export default function CommunityScreen({ navigation }) {
     //   localStorage.setItem('postId', postId);
     //   navigation.navigate('Comments');
     // }
-
-    const getPosts = {
-        method: 'GET',
+    const getPosts = async () => {
+      const token = await AsyncStorage.getItem("token");
+      const config = {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
         url: 'http://192.168.1.6:8000/api/v0.0.1/community/posts',
-        headers: {
-          'content-type': 'application/json',
-          'Accept' : 'application/json',
-          'Authorization': 'bearer ' + token
-        },
       };
+  
+      try {
+        const res = await axios(config);
+  
+        if (res.data.status == "success") {
+          setFeed(res.data.posts);
+          console.log(res.data);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    useEffect(() => {
+      getPosts();
+    }, []);
+    // const getPosts = {
+    //     method: 'GET',
+    //     url: 'http://192.168.1.6:8000/api/v0.0.1/community/posts',
+    //     headers: {
+    //       'content-type': 'application/json',
+    //       'Accept' : 'application/json',
+    //       'Authorization': 'bearer ' + token
+    //     },
+    //   };
 
       // useEffect(() => {
       //   AsyncStorage.getItem('token')
@@ -98,18 +119,16 @@ export default function CommunityScreen({ navigation }) {
       //     .catch((error) => console.error('Error getting token from async storage:', error));
       // },[]);
   
-      useEffect(() => {
-        axios.request(getPosts)
-            .then(response => {
-                // AsyncStorage.getItem('token')
-                console.log(response);
-                setFeed(response.data.posts);
-                setLikedPosts(Array(response.data.posts.length).fill(false));
-            })
-            .catch(function (error) {
-                console.error();
-            });
-      },[token]);
+      // useEffect(() => {
+      //   axios.request(getPosts)
+      //       .then(response => {
+      //           AsyncStorage.getItem('token');
+      //           console.log(response);
+      //           setFeed(response.data.posts);
+      //           setLikedPosts(Array(response.data.posts.length).fill(false));
+      //       })
+      //       .catch((error) => console.error('Error getting token from async storage:', error));
+      // },[token]);
       return(
         <SafeAreaView >
           <ScrollView style={styles.scroll}>
