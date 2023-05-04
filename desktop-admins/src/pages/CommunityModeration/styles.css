@@ -64,3 +64,13 @@
     text-decoration-color: #F08080 ;
     color: #F08080;
 }
+.action-button{
+    color:"white";
+    text-decoration-color: "white";
+    background-color:#F08080;
+    border:#F08080;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 30px;
+    color:white;
+}
