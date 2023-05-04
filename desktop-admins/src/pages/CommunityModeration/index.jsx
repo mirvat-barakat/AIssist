@@ -6,7 +6,9 @@ import "./styles.css";
 const Community = () => {
 
     const[posts, setPosts]= useState([]);
+    const[comments, setComments]= useState([]);
     const token = localStorage.getItem("token");
+    const postId = localStorage.getItem('postId');
 
     const getPosts = {
         method: 'GET',
@@ -28,6 +30,27 @@ const Community = () => {
                 console.error();
             });
       },[token]);
+
+      const getComments = {
+        method: 'GET',
+        url: 'http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments',
+        headers: {
+          'content-type': 'application/json',
+          'Accept' : 'application/json',
+          'Authorization': 'bearer ' + token
+        },
+      };
+    
+      useEffect(() => {
+        axios.request(getComments)
+            .then(response => {
+                console.log(response);
+                setComments(response.data.comments);
+            })
+            .catch(function (error) {
+                console.error();
+            });
+      },[token, postId]);
 
     return(
         <>
