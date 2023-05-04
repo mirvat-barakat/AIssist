@@ -33,6 +33,15 @@ const styles = StyleSheet.create({
     specialistName:{
         fontWeight:'600'
     },
+    phone:{
+        marginLeft:10,
+    },
+    call:{
+        display:'flex',
+        flexDirection:'row',
+        gap:20,
+        marginTop:10
+    },
     profilePhoto:{
         width:90,
         height:90,

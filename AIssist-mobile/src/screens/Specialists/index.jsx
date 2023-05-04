@@ -49,7 +49,11 @@ export default function SpecialistsScreen() {
                                 <Text>{specialist.category}</Text>
                                 <Text>{specialist.speciality}</Text>
                                 <Text><Icon name="map-marker" size={25} color="#CCCCCC" />{specialist.Location}</Text>
-                             </View>
+                             </View> 
+                          </View> 
+                          <View style={styles.call}>
+                             <Text style={styles.phone}><Icon name="phone" size={30} color="#F08080" />{specialist.phone_number}</Text>
+                             <TouchableOpacity><Icon name="whatsapp" size={30} color="#25D366" /></TouchableOpacity>
                           </View>
                         </View>
                        </View>
