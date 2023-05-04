@@ -7,6 +7,7 @@ import FeedbacksScreen from '../screens/Feedbacks';
 import QuestionsScreen from '../screens/Questions';
 import SpecialistsScreen from '../screens/Specialists';
 import { colors } from '../constants/Palette';
+import AppStack from './RootStack';
 
 const Drawer = createDrawerNavigator();
 

@@ -26,6 +26,13 @@ function App() {
     <NavigationContainer>
       {isAuthenticated ? <DrawerNavigator /> : <AuthStack />}
     </NavigationContainer>
+    // <NavigationContainer>
+    //     <AuthStack />
+    // </NavigationContainer>
+    // <NavigationContainer>
+    //     <DrawerNavigator />
+    // </NavigationContainer>
+
     
       // <AppStack/>
       

@@ -9,11 +9,12 @@ export default function ActivitiesScreen() {
 
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('');
-    const [diagnosis, setDiagnosis]= useState('');
+    const [Diagnosis, setDiagnosis]= useState('');
     const [medications, setMedications] = useState('');
     const [interest, setInterest] = useState('');
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
+    const[activities, setActivities]= useState('');
     // const token = AsyncStorage.getItem("token");
     const token = localStorage.getItem("token");
 
@@ -22,7 +23,7 @@ export default function ActivitiesScreen() {
         axios.post('http://192.168.1.6:8000/api/v0.0.1/activities', {
           'age': age,
           'gender':gender,
-          'diagnosis': diagnosis,
+          'Diagnosis': Diagnosis,
           'medications':medications,
           'interest': interest,
           'notes':notes,
@@ -36,7 +37,8 @@ export default function ActivitiesScreen() {
           }
       })
       .then(response => {
-            console.log(response)
+            setActivities(response.data);
+            console.log(response);
       })
       .catch(error => {
           console.log(error);
@@ -56,7 +58,7 @@ export default function ActivitiesScreen() {
                   style={styles.input1}
                   onChangeText={text => setAge(text)}
                   setAge={setAge}
-                  age={age}
+                  value={age}
                  />
                 </View>
                 <View style={styles.formActivities}>
@@ -65,7 +67,7 @@ export default function ActivitiesScreen() {
                   style={styles.input1}
                   onChangeText={text => setGender(text)}
                   setGender={setGender}
-                  gender={gender}
+                  value={gender}
                  />
                 </View>
                 <View style={styles.formActivities}>
@@ -74,7 +76,7 @@ export default function ActivitiesScreen() {
                   style={styles.input1}
                   onChangeText={text => setDiagnosis(text)}
                   setDiagnosis={setDiagnosis}
-                  diagnosis={diagnosis}
+                  value={Diagnosis}
                  />
                 </View>
                 <View style={styles.formActivities}>
@@ -83,7 +85,7 @@ export default function ActivitiesScreen() {
                   style={styles.input1}
                   onChangeText={text => setMedications(text)}
                   setMedications={setMedications}
-                  medications={medications}
+                  value={medications}
                  />
                 </View>
                 <View style={styles.formActivities}>
@@ -92,7 +94,7 @@ export default function ActivitiesScreen() {
                   style={styles.input1}
                   onChangeText={text => setInterest(text)}
                   setInterest={setInterest}
-                  interest={interest}
+                  value={interest}
                  />
                 </View>
                 <View style={styles.formActivities}>
@@ -101,7 +103,7 @@ export default function ActivitiesScreen() {
                   style={styles.input1}
                   onChangeText={text => setThingSHaveTried(text)}
                   setThingSHaveTried={setThingSHaveTried}
-                  things_have_tried={things_have_tried}
+                  value={things_have_tried}
                  />
                 </View>
                 <View style={styles.formActivities}>
@@ -110,7 +112,7 @@ export default function ActivitiesScreen() {
                   style={styles.input1}
                   onChangeText={text => setNotes(text)}
                   setNotes={setNotes}
-                  notes={notes}
+                  value={notes}
                  />
                 </View>
                 <TouchableOpacity style={styles.button1} >
