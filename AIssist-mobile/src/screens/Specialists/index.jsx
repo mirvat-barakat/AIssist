@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, ScrollView } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, ScrollView,  Linking } from 'react-native';
 import styles from './styles';
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -53,7 +53,10 @@ export default function SpecialistsScreen() {
                           </View> 
                           <View style={styles.call}>
                              <Text style={styles.phone}><Icon name="phone" size={30} color="#F08080" />{specialist.phone_number}</Text>
-                             <TouchableOpacity><Icon name="whatsapp" size={30} color="#25D366" /></TouchableOpacity>
+                            <TouchableOpacity onPress={() =>Linking.openURL(
+                                    "http://api.whatsapp.com/send?phone=961" + specialist.phone_number)}>
+                                        <Icon name="whatsapp" size={30} color="#25D366" />
+                            </TouchableOpacity>
                           </View>
                         </View>
                        </View>
