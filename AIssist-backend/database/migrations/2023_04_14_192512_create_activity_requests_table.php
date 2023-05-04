@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('activity_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('age');
             $table->string('gender');
+            $table->string('diagnosis');
             $table->string('medications');
             $table->string('interests');
             $table->string('notes');
+            $table->string('things_have_tried');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('category');
             $table->string('profile_picture')->nullable();
             $table->string('phone_number');
+            $table->string('whatsapp_number');
             $table->string('Location');
             $table->timestamps();
         });
