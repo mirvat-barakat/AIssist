@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         fontWeight:'600'
     },
     phone:{
-        marginLeft:10,
+        marginLeft:-20,
+        marginTop:5,
     },
     call:{
         display:'flex',
@@ -42,9 +43,12 @@ const styles = StyleSheet.create({
         gap:20,
         marginTop:10
     },
+    callIcon:{
+        marginLeft:20,
+    },
     profilePhoto:{
-        width:90,
-        height:90,
+        width:100,
+        height:100,
         borderRadius:10,
         marginLeft:10
     },
