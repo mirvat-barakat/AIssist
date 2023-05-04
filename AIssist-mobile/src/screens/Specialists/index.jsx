@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, ScrollView } from 'react-native';
 import styles from './styles';
 import axios from 'axios';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function SpecialistsScreen() {
 
@@ -44,10 +45,10 @@ export default function SpecialistsScreen() {
                           <View style={styles.card} >
                              <Image style={styles.profilePhoto} source={{uri:specialist.profile_picture}}></Image>
                              <View style={styles.specialistInfo}>
-                                <Text>{specialist.name}</Text>
+                                <Text style={styles.specialistName}>{specialist.name}</Text>
                                 <Text>{specialist.category}</Text>
                                 <Text>{specialist.speciality}</Text>
-                                <Text>{specialist.Location}</Text>
+                                <Text><Icon name="map-marker" size={25} color="#CCCCCC" />{specialist.Location}</Text>
                              </View>
                           </View>
                         </View>

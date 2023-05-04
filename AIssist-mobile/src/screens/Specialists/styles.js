@@ -14,7 +14,10 @@ const styles = StyleSheet.create({
         width:'90%',
         borderStyle:'solid',
         backgroundColor:'white',
-        marginTop:20,
+        // marginTop:10,
+        marginBottom:10,
+        paddingBottom:10,
+        paddingTop:10,
         alignSelf:'center',
         display:'flex',
         flexDirection:'column',
@@ -27,18 +30,24 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
     },
+    specialistName:{
+        fontWeight:'600'
+    },
     profilePhoto:{
-        width:100,
-        height:100,
+        width:90,
+        height:90,
         borderRadius:10,
+        marginLeft:10
     },
     card:{
         display:'flex',
         flexDirection:'row',
+        gap:20,
     },
     specialistInfo:{
         display:'flex',
         flexDirection:'column',
+        gap:10,
     },
 });
 export default styles;
