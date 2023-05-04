@@ -10,6 +10,7 @@ const Form = ({ onSubmit }) => {
     const [category, setCategory] = useState('');
     const [profile_picture, setProfilePicture] = useState('');
     const [phone_number, setPhoneNumber] = useState('');
+    const [whatsapp_number, setWhatsappNumber] = useState('');
     const [location, setLocation] = useState('');
     const token = localStorage.getItem("token");
 
@@ -31,6 +32,9 @@ const Form = ({ onSubmit }) => {
       const handlePhoneNumberChange = (e) => {
         setPhoneNumber(e.target.value);
       };
+      const handleWhatsappNumberChange = (e) => {
+        setWhatsappNumber(e.target.value);
+      };
       const handleLocationChange = (e) => {
         setLocation(e.target.value);
       };
@@ -46,6 +50,7 @@ const Form = ({ onSubmit }) => {
             'category': category,
             'profile_picture': profile_picture,
             'phone_number': phone_number,
+            'whatsapp-number':whatsapp_number,
             'location': location,
         }, {
             headers: {
@@ -68,6 +73,7 @@ const Form = ({ onSubmit }) => {
 
     return (
         <form className="form">
+            <h2>Add Specialist</h2>
             <div className='form1-input1'>
                 <label htmlFor="name" className="input1-text">Name:</label>
                 <input
@@ -125,6 +131,16 @@ const Form = ({ onSubmit }) => {
                     onChange={handlePhoneNumberChange} 
  
                     required
+                />
+            </div>
+            <div className='form1-input1'>
+                <label htmlFor="phone-number" className="input1-text">whatsapp Number:</label>
+                <input
+                    className="input1"
+                    type="text"
+                    id="whatsapp-number"
+                    value={whatsapp_number}
+                    onChange={handleWhatsappNumberChange} 
                 />
             </div>
             <div className='form1-input1'>
