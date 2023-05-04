@@ -15,7 +15,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     const checkAuthentication = async () => {
-      const token = await AsyncStorage.getItem('token');
+      const token = localStorage.getItem('token');
       setIsAuthenticated(!!token);
     };
     checkAuthentication();
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <NavigationContainer>
-      <DrawerNavigator /> 
+      {isAuthenticated ? <DrawerNavigator /> : <AuthStack />}
     </NavigationContainer>
     
       // <AppStack/>

@@ -35,6 +35,7 @@ const CommentBox = () => {
       console.log(response);
         if (response.data.status == "success"){
             alert("Comment added");
+            setContent('');
         }
     })
     .catch(error => {

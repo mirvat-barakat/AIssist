@@ -41,7 +41,7 @@ export default function CommunityScreen({ navigation }) {
 
       const handleLike = async (postId) => {
         // const token = await AsyncStorage.getItem("token");
-        const token = await localStorage.getItem("token");
+        const token =  localStorage.getItem("token");
         try {
           setPostId(postId);
           if (likedPosts.includes(postId)) {
@@ -75,7 +75,7 @@ export default function CommunityScreen({ navigation }) {
 
     const getPosts = async () => {
       // const token = await AsyncStorage.getItem("token");
-      const token = await localStorage.getItem("token");
+      const token = localStorage.getItem("token");
       const config = {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -105,7 +105,7 @@ export default function CommunityScreen({ navigation }) {
                     <TextInput onChangeText={text => setContent(text)}
                   setContent={setContent}
                   value={content} multiline={true}
-                       numberOfLines={20} placeholder="Enter your text here..." style={styles.TextInput}>
+                       placeholder="Enter your text here..." style={styles.TextInput}>
                     </TextInput>
                     <TouchableOpacity style={styles.shareButton} >
                       <Text style={styles.shareButtonText} onPress={handleSharePost}>Share</Text>

@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
         borderRadius:10,
         flexWrap:'wrap',
         padding:10,
+        borderColor:'#ccc',
+        borderWidth:0.1,
     },
     TextInputView:{
         dispaly:'flex',
