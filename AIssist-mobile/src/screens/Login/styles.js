@@ -2,20 +2,20 @@ import { StyleSheet } from 'react-native';
 import { colors } from '../../constants/Palette';
 
 const styles = StyleSheet.create({
-    container: {
+    container1: {
         flex: 1,
         backgroundColor: colors.primary_1,
         alignItems: 'center',
         justifyContent: 'center',
       },
     logo: {
-        width: 350,
-        height: 350,
+        width: 170,
+        height: 170,
         resizeMode: 'contain',
-        marginTop: -10,
+        marginTop: -40,
       },
       form:{
-        marginTop:-40,
+        marginTop:40,
       },
     // title: {
     //     fontSize: 24,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     //     marginTop:-60,
     //   },
     inputContainer: {
-        width: 250,
+        width: 300,
         marginBottom: 20,
         marginTop:-20,
       },
@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         alignItems: 'center',
-        width: 250,
+        alignSelf:'center',
+        width: 150,
         marginBottom: 10,
         marginTop:10,
       },

@@ -4,6 +4,7 @@ import styles from './styles';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from "axios";
+import Header1 from '../../components/Header1';
 
 
 
@@ -42,7 +43,9 @@ export default function LoginScreen({navigation}) {
 
 
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView  style={{ flex: 1 }}>
+          <Header1 title="Login" backgroundColor='#FFC6C6'onPressBackButton={() => navigation.navigate('Login')} />
+          <View style={styles.container1}>
             <Image
           style={styles.logo} 
           source={require('../../../assets/images/Logo.png')}
@@ -53,7 +56,6 @@ export default function LoginScreen({navigation}) {
                  <Text style={styles.inputLabel}> <Ionicons name="ios-mail" size={24} style={styles.icon} /> Email</Text>
                  <TextInput
                   style={styles.input}
-                  placeholder="Enter your email"
                   onChangeText={text => setEmail(text)}
                   setEmail={setEmail}
                   value={email}
@@ -63,7 +65,6 @@ export default function LoginScreen({navigation}) {
                  <Text style={styles.inputLabel}> <Ionicons name="key-outline" size={24} style={styles.icon} /> Password</Text>
                  <TextInput
                   style={styles.input}
-                  placeholder="Enter your password"
                   onChangeText={text => setPassword(text)}
                   setPassword={setPassword}
                   value={password}
@@ -78,6 +79,7 @@ export default function LoginScreen({navigation}) {
             </TouchableOpacity>
             <View>
                   <Text style={styles.registerText}>Don't have an account? <TouchableOpacity  onPress={() => navigation.navigate('Register')}><Text style={styles.registerLink}>Register Now</Text></TouchableOpacity ></Text>
+            </View>
             </View>
             </View>
         </SafeAreaView>
