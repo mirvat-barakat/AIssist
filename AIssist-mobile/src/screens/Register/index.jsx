@@ -36,14 +36,18 @@ export default function RegisterScreen({navigation}) {
 };
 
     return (
-        <SafeAreaView style={styles.view}>
+        <SafeAreaView style={{ flex: 1 }}>
             <Header1 title="Register" backgroundColor='#FFC6C6'onPressBackButton={() => navigation.navigate('Login')} />
-            <View style={styles.container}>
+            <View style={styles.container1}>
+            <Image
+          style={styles.logo} 
+          source={require('../../../assets/images/Logo.png')}
+            />
+            <View style={styles.form}>
               <View style={styles.inputContainer}>
                  <Text style={styles.inputLabel}>  <Ionicons name="person" size={24} style={styles.icon} /> Name</Text>
                  <TextInput
                   style={styles.input}
-                  placeholder="Enter your name"
                   onChangeText={text => setName(text)}
                   setName={setName}
                   value={name}
@@ -53,7 +57,6 @@ export default function RegisterScreen({navigation}) {
                  <Text style={styles.inputLabel}> <Ionicons name="ios-mail" size={24} style={styles.icon} /> Email</Text>
                  <TextInput
                   style={styles.input}
-                  placeholder="Enter your email"
                   onChangeText={text => setEmail(text)}
                   setEmail={setEmail}
                   value={email}
@@ -63,7 +66,6 @@ export default function RegisterScreen({navigation}) {
                  <Text style={styles.inputLabel}> <Ionicons name="key-outline" size={24} style={styles.icon} /> Password</Text>
                  <TextInput
                   style={styles.input}
-                  placeholder="Enter your password"
                   onChangeText={text => setPassword(text)}
                   setPassword={setPassword}
                   value={password}
@@ -75,6 +77,7 @@ export default function RegisterScreen({navigation}) {
               </TouchableOpacity>
               <View >
                   <Text style={styles.loginText}>Already have an account? <TouchableOpacity  onPress={() => navigation.navigate('Login')}><Text style={styles.loginLink}>Login Now</Text></TouchableOpacity ></Text>
+              </View>
               </View>
           </View>
         </SafeAreaView>

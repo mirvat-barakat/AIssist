@@ -17,14 +17,8 @@ const styles = StyleSheet.create({
       form:{
         marginTop:40,
       },
-    // title: {
-    //     fontSize: 24,
-    //     fontWeight: 'bold',
-    //     marginBottom: 20,
-    //     marginTop:-60,
-    //   },
     inputContainer: {
-        width: 300,
+        width: 270,
         marginBottom: 20,
         marginTop:-20,
       },
@@ -32,7 +26,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         fontSize:20,
         color: colors.white,
-        marginTop:20,
+        marginTop:10,
       },
     input: {
         backgroundColor:colors.white,
@@ -46,7 +40,7 @@ const styles = StyleSheet.create({
         padding: 10,
         alignItems: 'center',
         alignSelf:'center',
-        width: 150,
+        width: 135,
         marginBottom: 10,
         marginTop:10,
       },
