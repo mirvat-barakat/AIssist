@@ -16,15 +16,37 @@ const CommentsPage = () => {
   // const postId = localStorage.getItem('postId');
 
 
-  const getComments = {
-    method: 'GET',
-    url: 'http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments',
-    headers: {
+  const getComments = async () => {
+    const token = await AsyncStorage.getItem("token");
+    const postId = await AsyncStorage.getItem('postId');
+    const config = {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}`,
       'content-type': 'application/json',
-      'Accept' : 'application/json',
-      'Authorization': 'bearer ' + token
-    },
+      'Accept' : 'application/json', },
+      url: 'http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments',
+    };
+    try {
+      const res = await axios(config);
+
+      if (res.data.status == "success") {
+        setComments(res.data.comments);
+        console.log(res.data);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    // method: 'GET',
+    // url: 'http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments',
+    // headers: {
+    //   'content-type': 'application/json',
+    //   'Accept' : 'application/json',
+    //   'Authorization': 'bearer ' + token
+    // },
   };
+  useEffect(() => {
+    getComments();
+  }, []);
 
   useEffect(() => {
     axios.request(getComments)

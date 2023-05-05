@@ -33,15 +33,15 @@ const styles = StyleSheet.create({
     width:'70%',
   },
   commentContent:{
-    top:10, 
+    // top:10, 
     marginLeft:10,     
     lineHeight: 22,         
-    fontSize: 16, 
+    // fontSize: 16, 
   },
   username:{
     alignContent:'center',
     marginLeft:10,
-    fontSize:'25',
+    // fontSize:'25',
     fontWeight:'600',
     marginBottom:10
 },

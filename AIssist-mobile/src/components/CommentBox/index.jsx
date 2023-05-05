@@ -19,8 +19,8 @@ const CommentBox = () => {
     setInputHeight(Math.max(40, text.split('\n').length * 10));
   };
 
-  const handleAddComment= (e) => {
-
+  const handleAddComment= async(e) => {
+    const token = await AsyncStorage.getItem("token");
     e.preventDefault();
     axios.post('http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments', {
         'content': content,

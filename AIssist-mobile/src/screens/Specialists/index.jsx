@@ -53,12 +53,12 @@ export default function SpecialistsScreen() {
                              </View> 
                           </View> 
                           <View style={styles.call}>
-                            <TouchableOpacity onPress={() =>Linking.openURL(`tel:${specialist.whatsapp_number}`)}>
+                            <TouchableOpacity onPress={() =>Linking.openURL(`tel:${specialist.phone_number}`)}>
                                 <Icon name="phone" size={25} color="#F08080" style={styles.callIcon}/>
                             </TouchableOpacity>
                             <Text style={styles.phone}>{specialist.phone_number}</Text>
                             <TouchableOpacity onPress={() =>Linking.openURL(
-                                    "http://api.whatsapp.com/send?phone=961" + specialist.phone_number)}>
+                                    "http://api.whatsapp.com/send?phone=961" + specialist.whatsapp_number)}>
                                         <Icon name="whatsapp" size={25} color="#25D366" />
                             </TouchableOpacity>
                           </View>
