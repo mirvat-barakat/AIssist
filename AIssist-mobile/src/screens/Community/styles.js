@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
     intro:{
         marginTop:20,
       },
-    scroll:{
-        height:'100%',
-    },
+    // scroll:{
+    //     height:'100%',
+    // },
     Heading: {
         fontSize:32,
         marginTop:30,
@@ -46,6 +46,8 @@ const styles = StyleSheet.create({
     },
     postView:{
         width:'90%',
+        marginRight:'5%',
+        marginLeft:'5%',
         borderStyle:'solid',
         backgroundColor:'white',
         marginTop:20,
@@ -65,6 +67,7 @@ const styles = StyleSheet.create({
         width:50,
         height:50,
         borderRadius:50,
+        marginLeft:0,
     },
     username:{
         alignContent:'center',
@@ -77,6 +80,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         marginLeft:15,
         alignItems:'center',
+        marginBottom:10
     },
     shareButton: {
         backgroundColor: colors.primary_3,
@@ -84,7 +88,7 @@ const styles = StyleSheet.create({
         border: 'none',
         borderRadius: 10,
         padding: 10,
-        width:100,
+        width:135,
         cursor: 'pointer',
         // fontSize: 16,
         marginTop:10,
@@ -115,9 +119,11 @@ const styles = StyleSheet.create({
     },
     postContent:{
         top:10,
-        marginLeft:15,       
+        marginLeft:15,
+        marginRight:15,       
         lineHeight: 22,         
         fontSize: 16, 
+        textAlign:'auto'
     },
     icon: {
         color: colors.black,
