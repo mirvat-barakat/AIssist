@@ -73,4 +73,10 @@
     border-radius: 5px;
     height: 30px;
     color:white;
+    font-weight: 600;
+}
+.delete{
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+    color: #333;
 }

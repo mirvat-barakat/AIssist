@@ -83,7 +83,7 @@ const Community = () => {
                         <button onClick={() => {
                             localStorage.setItem('postId', JSON.stringify(post.id));
                             console.log(post.id);
-                        }} className="action-button">Delete</button>
+                        }} className="action-button delete">Delete</button>
                         </div>
                     </div>
                     </div>
