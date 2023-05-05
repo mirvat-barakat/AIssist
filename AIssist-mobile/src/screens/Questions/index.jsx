@@ -12,10 +12,11 @@ export default function QuestionsScreen() {
         const[Answer, setAnswer] =useState('');
         const [answerDisplay, setAnswerDisplay] = useState('');
         // const token = AsyncStorage.getItem("token");
-        const token = localStorage.getItem("token");
+        // const token = localStorage.getItem("token");
     
-        const handleGenerateAnswers= (e)=>{
+        const handleGenerateAnswers= async(e)=>{
             e.preventDefault();
+            const token = await AsyncStorage.getItem("token");
             axios.post('http://192.168.1.6:8000/api/v0.0.1/answers', {
               'Question': Question,
           }, {

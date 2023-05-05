@@ -15,8 +15,8 @@ export default function ActivitiesScreen() {
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
     const[activities, setActivities]= useState('');
-    // const token = AsyncStorage.getItem("token");
-    const token = localStorage.getItem("token");
+    const token = AsyncStorage.getItem("token");
+    // const token = localStorage.getItem("token");
 
     const handleGenerateActivities= (e)=>{
         e.preventDefault();

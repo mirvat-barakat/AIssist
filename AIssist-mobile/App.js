@@ -9,13 +9,14 @@ import CommunityScreen from './src/screens/Community';
 import ActivitiesScreen from './src/screens/Activities';
 import FeedbacksScreen from './src/screens/Feedbacks';
 import QuestionsScreen from './src/screens/Questions';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   useEffect(() => {
     const checkAuthentication = async () => {
-      const token = localStorage.getItem('token');
+      const token = await AsyncStorage.getItem('token');
       setIsAuthenticated(!!token);
     };
     checkAuthentication();
@@ -23,12 +24,12 @@ function App() {
 
 
   return (
-    <NavigationContainer>
-      {isAuthenticated ? <DrawerNavigator /> : <AuthStack />}
-    </NavigationContainer>
     // <NavigationContainer>
-    //     <AuthStack />
+    //   {isAuthenticated ? <DrawerNavigator /> : <AuthStack />}
     // </NavigationContainer>
+    <NavigationContainer>
+        <AuthStack />
+    </NavigationContainer>
     // <NavigationContainer>
     //     <DrawerNavigator />
     // </NavigationContainer>

@@ -9,14 +9,14 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function CommunityScreen({ navigation }) {
     const[posts, setFeed]= useState([]);
     // const token = AsyncStorage.getItem("token");
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
     const [liked, setLiked] = useState(false); 
     const [content, setContent] = useState('');
     const [postId, setPostId] = useState(null);
     const [likedPosts, setLikedPosts] = useState([]);
 
-    const handleSharePost= (e) => {
-      
+    const handleSharePost= async(e) => {
+      const token = await AsyncStorage.getItem("token");
       e.preventDefault();
       axios.post('http://192.168.1.6:8000/api/v0.0.1/community/posts', {
           'content': content,
@@ -40,8 +40,8 @@ export default function CommunityScreen({ navigation }) {
   
 
       const handleLike = async (postId) => {
-        // const token = await AsyncStorage.getItem("token");
-        const token =  localStorage.getItem("token");
+        const token = await AsyncStorage.getItem("token");
+        // const token =  localStorage.getItem("token");
         try {
           setPostId(postId);
           if (likedPosts.includes(postId)) {
@@ -74,8 +74,8 @@ export default function CommunityScreen({ navigation }) {
 
 
     const getPosts = async () => {
-      // const token = await AsyncStorage.getItem("token");
-      const token = localStorage.getItem("token");
+      const token = await AsyncStorage.getItem("token");
+      // const token = localStorage.getItem("token");
       const config = {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },

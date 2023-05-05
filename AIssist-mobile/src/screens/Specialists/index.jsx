@@ -3,6 +3,7 @@ import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, ScrollVie
 import styles from './styles';
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function SpecialistsScreen() {
 
@@ -10,8 +11,8 @@ export default function SpecialistsScreen() {
     // const token = AsyncStorage.getItem("token");
 
     const getSpecialists = async () => {
-        // const token = await AsyncStorage.getItem("token");
-        const token = localStorage.getItem("token");
+        const token = await AsyncStorage.getItem("token");
+        // const token = localStorage.getItem("token");
         const config = {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },

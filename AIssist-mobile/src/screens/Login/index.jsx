@@ -31,8 +31,8 @@ export default function LoginScreen({navigation}) {
         try {
           const res = await axios(config);
           if (res.data.status == "success") {
-            // await AsyncStorage.setItem("token", res.data.authorisation.token);
-            await localStorage.setItem("token", res.data.authorisation.token);
+             AsyncStorage.setItem("token", res.data.authorisation.token);
+            // await localStorage.setItem("token", res.data.authorisation.token);
             navigation.navigate('DrawerNavigator');
           }
         } catch (error) {
