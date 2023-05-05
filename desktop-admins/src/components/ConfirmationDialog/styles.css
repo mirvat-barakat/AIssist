@@ -1,0 +1,27 @@
+.confirmation-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+  }
+  
+.confirmation-dialog-message {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+.confirmation-dialog-buttons {
+    display: flex;
+    justify-content: center;
+  }
+.confirmation-dialog-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
