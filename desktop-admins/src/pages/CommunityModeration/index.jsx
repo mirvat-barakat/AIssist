@@ -2,6 +2,7 @@ import React , {useState, useEffect} from "react";
 import Sidebar from "../../components/Sidebar";
 import axios from "axios";
 import "./styles.css";
+import Confirmation from "../../components/ConfirmationDialog";
 
 const Community = () => {
 
@@ -9,6 +10,14 @@ const Community = () => {
     const[comments, setComments]= useState([]);
     const token = localStorage.getItem("token");
     const postId = localStorage.getItem('postId');
+    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+
+    function handleDeleteClick() {
+        setShowDeleteDialog(true);
+      }
+      function handleDeleteCancel() {
+        setShowDeleteDialog(false);
+      }
 
     const getPosts = {
         method: 'GET',
@@ -103,9 +112,14 @@ const Community = () => {
                         <button onClick={() => {
                             localStorage.setItem('postId', JSON.stringify(post.id));
                             console.log(post.id);
-                            handleDeletePost();
-                            
+                            handleDeleteClick()
                         }} className="action-button delete">Delete</button>
+                        {showDeleteDialog && (
+                            <Confirmation
+                            message="Are you sure you want to delete this post?"
+                            onCancel={handleDeleteCancel}
+                            onConfirm={handleDeletePost}
+                            />)};
                         </div>
                     </div>
                     </div>
