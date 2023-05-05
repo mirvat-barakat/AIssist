@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
         alignSelf:'center',
     },
     activitiesText:{
-        marginLeft:10,
+        marginLeft:'5%',
+        marginRight:'5%',
         marginBottom:10,
         marginTop:10,
         alignSelf:'center',
@@ -35,10 +36,10 @@ const styles = StyleSheet.create({
         borderTopColor:'#fff',
         borderLeftWidth:5,
         backgroundColor:'#fff',
-        marginLeft:10,
+        marginLeft:'5%',
         marginBottom:20,
-        marginRight:10,
-        width:300,
+        marginRight:'5%',
+        width:'90%',
         alignSelf:'center',
         shadowColor: '#000',
         shadowOffset: {
@@ -48,6 +49,9 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+        borderRadius:10,
+        paddingTop:10,
+        paddingBottom:10
     },
     formActivities:{
         display:'flex',
@@ -65,10 +69,11 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10,
         alignItems: 'center',
-        width: 250,
+        width: 135,
         marginBottom: 10,
         marginTop:10,
-        marginLeft:25
+        marginLeft:25,
+        alignSelf:'center'
       },
     buttonText: {
         color: colors.white,
@@ -76,12 +81,12 @@ const styles = StyleSheet.create({
       },
     input1: {
         backgroundColor: colors.white,
-        borderWidth:0.1,
+        borderWidth:0.4,
         borderColor:'#ccc',
         borderRadius: 10,
         padding: 10,
         fontSize: 16,
-        width:250
+        width:270
       },
 });
 
