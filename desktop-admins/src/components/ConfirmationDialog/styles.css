@@ -2,6 +2,7 @@
     position: fixed;
     top: 50%;
     left: 50%;
+    z-index: 9999;
     transform: translate(-50%, -50%);
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -25,3 +26,15 @@
     font-size: 16px;
     cursor: pointer;
   }
+.cancel{
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+  color: #333;
+
+}
+.confirm{
+    background-color: #F08080;
+    border-color: #F08080;
+  color: white;
+
+}
