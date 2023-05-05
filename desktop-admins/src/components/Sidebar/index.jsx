@@ -5,17 +5,43 @@ import logo from '../../assets/images/Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faUserTie, faUsersCog, faChartLine, faGift } from '@fortawesome/free-solid-svg-icons';
 import Confirmation from '../ConfirmationDialog';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 
 const Sidebar = () => {
-
+    const navigate = useNavigate();
     const [showLogoutDialog, setShowLogoutDialog] = useState(false);
+
     function handleLogoutClick(){
         setShowLogoutDialog(true);
     }
+
     function handleLogoutCancel() {
         setShowLogoutDialog(false);
-      }
+    }
+
+    const handleLogout = () => {
+
+        const token = localStorage.getItem("token");
+        
+        localStorage.clear();
+        
+        const logout = {
+          method: 'POST',
+          url: 'http://192.168.1.6:8000/api/v0.0.1/logout/',
+          headers: {
+            'content-type': 'application/json',
+            'Accept' : 'application/json',
+            'Authorization': 'bearer ' + token
+          },
+        };
+        
+        axios.request(logout)
+            .then(response => {
+                navigate("/");
+          });
+    }
 
     return (
         <aside className='sidebar'>
@@ -42,6 +68,7 @@ const Sidebar = () => {
                             <Confirmation
                             message="Are you sure you want to logout?"
                             onCancel={handleLogoutCancel}
+                            onConfirm={handleLogout}
                             />)}
 
             </div>
