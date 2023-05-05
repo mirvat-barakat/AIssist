@@ -1,12 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
 import logo from '../../assets/images/Logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faUserTie, faUsersCog, faChartLine, faGift } from '@fortawesome/free-solid-svg-icons';
+import Confirmation from '../ConfirmationDialog';
 
 
 const Sidebar = () => {
+
+    const [showLogoutDialog, setShowLogoutDialog] = useState(false);
+    function handleLogoutClick(){
+        setShowLogoutDialog(true);
+    }
+    function handleLogoutCancel() {
+        setShowLogoutDialog(false);
+      }
 
     return (
         <aside className='sidebar'>
@@ -27,8 +36,13 @@ const Sidebar = () => {
                 </div>
             </div>
             <div className='logout'>
-                    <Link href="#" className='link' onClick={handleLogout}><span>Logout</span></Link>
+                    <Link href="#" className='link' onClick={handleLogoutClick}><span>Logout</span></Link>
             </div>
+            {showLogoutDialog && (
+                            <Confirmation
+                            message="Are you sure you want to logout?"
+                            onCancel={handleLogoutCancel}
+                            />)}
 
             </div>
         </aside>
