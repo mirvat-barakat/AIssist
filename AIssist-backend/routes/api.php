@@ -16,6 +16,8 @@ Route::group(["prefix" => "v0.0.1"], function()
 
     Route::post('/login',[AuthController:: class, "login"]);
     Route::post('/register',[AuthController:: class, "register"]);
+    Route::post('/logout',[AuthController:: class, "logout"]);
+    Route::post('/refresh',[AuthController:: class, "refresh"]);
 
     Route::group(["middleware" => ["auth:api"]], function()
     {
