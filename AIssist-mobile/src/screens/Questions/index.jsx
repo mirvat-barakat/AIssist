@@ -2,7 +2,6 @@ import React, {useState,  useEffect} from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
 import styles from './styles';
 import { MaterialIcons } from '@expo/vector-icons';
-import Header from '../../components/Header';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 

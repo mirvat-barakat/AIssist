@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
 import styles from './styles';
-import Header from '../../components/Header';
 
 export default function FeedbacksScreen() {
 

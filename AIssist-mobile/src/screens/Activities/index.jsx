@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
 import styles from './styles';
-import Header from '../../components/Header';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 

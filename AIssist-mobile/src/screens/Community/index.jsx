@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, ScrollView } from 'react-native';
 import styles from './styles';
-import Header from '../../components/Header';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
