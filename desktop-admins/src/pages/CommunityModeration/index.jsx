@@ -52,26 +52,24 @@ const Community = () => {
             });
       },[token, postId]);
 
-      const handleDeletePost ={
-        method:'DELETE',
-        url:'http://192.168.1.6:8000/api/v0.0.1/community/'+postId,
-        headers: {
-            'content-type': 'application/json',
-            'Accept' : 'application/json',
-            'Authorization': 'bearer ' + token
-          },
+      const handleDeletePost = async() => {
+        const postId = localStorage.getItem('postId');
+        axios.delete('http://192.168.1.6:8000/api/v0.0.1/community/'+postId, {
+      }, {
+          headers: {
+              'content-type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': `Bearer ${token}` 
+          }
+      }).then(response => {
+        if (response.data.status == "success"){
+            alert("Post deleted successfully");
+        }
+      })
+        .catch(error => {
+            console.log(error);
+      });
       };
-      useEffect(() => {
-        axios.request(handleDeletePost)
-            .then(response => {
-                if(response.data.status="success"){
-                    alert("Post delted successfully");
-                }
-            })
-            .catch(function (error) {
-                console.error();
-            });
-      },[token, postId]);
 
 
     return(
@@ -104,7 +102,9 @@ const Community = () => {
                         <div>
                         <button onClick={() => {
                             localStorage.setItem('postId', JSON.stringify(post.id));
-                            handleDeletePost
+                            console.log(post.id);
+                            handleDeletePost();
+                            
                         }} className="action-button delete">Delete</button>
                         </div>
                     </div>
