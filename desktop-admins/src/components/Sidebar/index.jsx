@@ -7,6 +7,7 @@ import { faUser, faUserTie, faUsersCog, faChartLine, faGift } from '@fortawesome
 
 
 const Sidebar = () => {
+
     return (
         <aside className='sidebar'>
             <img src={logo} alt="logo" className="logo"></img>
@@ -22,12 +23,13 @@ const Sidebar = () => {
                     <Link to="/community" className='link'><FontAwesomeIcon icon={faUsersCog} className="faicon" /><span>Community Moderation</span></Link>
                 </div>
                 <div className='category'>
-                    <Link href="#" className='link'><FontAwesomeIcon icon={faChartLine} className="faicon" /> <span>User Data Analysis</span></Link>
-                </div>
-                <div className='category'>
                     <Link href="#" className='link'><FontAwesomeIcon icon={faGift} className="faicon" /><span>Rewards Managment</span></Link>
                 </div>
             </div>
+            <div className='logout'>
+                    <Link href="#" className='link' onClick={handleLogout}><span>Logout</span></Link>
+            </div>
+
             </div>
         </aside>
     );

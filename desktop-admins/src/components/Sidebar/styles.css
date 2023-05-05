@@ -40,8 +40,12 @@
 .category{
   display: flex;
   flex-direction: row;
-  justify-content:flex-start;
+  justify-content:baseline;
 }
 .faicon{
   margin-right: 10px;
+}
+.logout{
+  align-self: center;
+  margin-top: 10%;
 }
