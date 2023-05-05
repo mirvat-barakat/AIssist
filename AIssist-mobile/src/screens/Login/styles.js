@@ -49,8 +49,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
       },
     forgotPasswordLink: {
-       marginLeft:120,
-        marginTop: 10,
+       marginLeft:140,
         marginBottom:10,
       },
     forgotPasswordText: {
@@ -63,7 +62,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
       },
     registerLink: {
-      marginTop: 10,
         color: colors.primary_3,
         textDecorationLine: 'underline',
       },

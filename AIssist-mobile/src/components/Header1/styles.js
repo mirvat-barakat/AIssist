@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
       borderBottomWidth: 1,
       borderBottomColor: '#ddd',
       paddingHorizontal: 10,
+      marginTop:25,
     },
     backButton: {
       marginRight: 10,

@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
       fontSize: 16,
     },
   loginLink: {
-    marginTop: 10,
       color: colors.primary_3,
       textDecorationLine: 'underline',
     },
