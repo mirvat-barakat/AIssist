@@ -6,12 +6,13 @@
     transform: translate(-50%, -50%);
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    padding: 50px;
     width: 400px;
     text-align: center;
   }
   
 .confirmation-dialog-message {
+    color:black;
     font-size: 20px;
     margin-bottom: 20px;
   }

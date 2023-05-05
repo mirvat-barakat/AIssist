@@ -119,7 +119,7 @@ const Community = () => {
                             message="Are you sure you want to delete this post?"
                             onCancel={handleDeleteCancel}
                             onConfirm={handleDeletePost}
-                            />)};
+                            />)}
                         </div>
                     </div>
                     </div>
