@@ -49,19 +49,18 @@ export default function SpecialistsScreen() {
                                 <Text style={styles.specialistName}>{specialist.name}</Text>
                                 <Text>{specialist.category}</Text>
                                 <Text>{specialist.speciality}</Text>
-                                <Text><Icon name="map-marker" size={25} color="#CCCCCC" />{specialist.Location}</Text>
-                             </View> 
-                          </View> 
-                          <View style={styles.call}>
-                            <TouchableOpacity onPress={() =>Linking.openURL(`tel:${specialist.phone_number}`)}>
-                                <Icon name="phone" size={25} color="#F08080" style={styles.callIcon}/>
+                                <Text>{specialist.Location}</Text>
+                                <View style={styles.call}>
+                                  <TouchableOpacity onPress={() =>Linking.openURL(`tel:${specialist.phone_number}`)}>
+                                <Icon name="phone" size={25} color="#F08080"/>
                             </TouchableOpacity>
-                            <Text style={styles.phone}>{specialist.phone_number}</Text>
                             <TouchableOpacity onPress={() =>Linking.openURL(
                                     "http://api.whatsapp.com/send?phone=961" + specialist.whatsapp_number)}>
                                         <Icon name="whatsapp" size={25} color="#25D366" />
                             </TouchableOpacity>
                           </View>
+                             </View>
+                          </View> 
                         </View>
                        </View>
                        ))}

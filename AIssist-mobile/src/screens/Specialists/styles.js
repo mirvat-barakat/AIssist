@@ -12,12 +12,12 @@ const styles = StyleSheet.create({
     },
     specialistView:{
         width:'90%',
+        height:200,
         borderStyle:'solid',
+        borderRadius:10,
         backgroundColor:'white',
-        // marginTop:10,
         marginBottom:10,
         paddingBottom:10,
-        paddingTop:10,
         alignSelf:'center',
         display:'flex',
         flexDirection:'column',
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     specialistName:{
-        fontWeight:'600'
+        fontWeight:'700'
     },
     phone:{
         marginLeft:-20,
@@ -41,26 +41,25 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'row',
         gap:20,
-        marginTop:10
-    },
-    callIcon:{
-        marginLeft:20,
     },
     profilePhoto:{
-        width:100,
-        height:100,
-        borderRadius:10,
-        marginLeft:10
+        position:'relative',
+        width:135,
+        height:200,
+        marginTop:0,
+        borderTopLeftRadius:10,
+        borderBottomLeftRadius:10
     },
     card:{
         display:'flex',
         flexDirection:'row',
-        gap:20,
+        gap:10,
     },
     specialistInfo:{
         display:'flex',
         flexDirection:'column',
         gap:10,
+        marginTop:10,
     },
 });
 export default styles;
