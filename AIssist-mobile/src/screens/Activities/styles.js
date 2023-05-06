@@ -90,15 +90,44 @@ const styles = StyleSheet.create({
       generatedActivities:{
         margintop:20,
         marginleft:'5%',
+        width:'90%',
+        alignSelf:'center',
         display:'flex',
         flexDirection:'column',
         gap:20,
       },
       activityView:{
+        width:'100%',
+        marginRight:'5%',
+        marginLeft:'5%',
+        borderStyle:'solid',
+        backgroundColor:'white',
+        marginTop:20,
+        alignSelf:'center',
         display:'flex',
         flexDirection:'column',
-        gap:20,
-      }
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+        paddingLeft:10,
+        paddingBottom:10,
+        paddingRight:10,
+        paddingTop:10,
+        borderRadius:10,
+        
+        
+    },
+    activityName:{
+      marginBottom:20, 
+      alignContent:'center',
+      color:colors.primary_1,
+      fontWeight:'700',
+    },
 });
 
 export default styles;

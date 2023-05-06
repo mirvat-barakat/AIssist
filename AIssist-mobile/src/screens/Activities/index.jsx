@@ -43,10 +43,6 @@ export default function ActivitiesScreen() {
           console.log(error);
       });
   };
-//   useEffect(() => {
-//     handleGenerateActivities();
-//   }, []);
-
 
     return(
         <ScrollView style={styles.mainView}>
@@ -128,7 +124,7 @@ export default function ActivitiesScreen() {
                         <View key={activity.id}>
                           <View style={styles.card} >
                              <View style={styles.specialistInfo}>
-                                <Text style={styles.specialistName}>{activity.name}</Text>
+                                <Text style={styles.activityName}>{activity.name}</Text>
                                 <Text >{activity.description}</Text>
                           </View>
                              </View>
