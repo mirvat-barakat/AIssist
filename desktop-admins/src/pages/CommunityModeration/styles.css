@@ -1,9 +1,11 @@
 .body-community{
     background-color: #F2F4F4;
     height: 100vh;
+    width:100%;
 }
 .mainPostView{
-    width:80%;
+    position: relative;
+    width:75%;
     margin-left: 20%;
     display: flex;
     flex-direction: row;
@@ -16,15 +18,19 @@
     flex-direction:row;
 }
 .postView{
-    position: relative;
-    width: 90%;
+    padding-left: 10px;
+    padding-right: 10px;
     background-color:white;
     margin-top:20px;
     display:flex;
     flex-direction:column;
     flex-wrap: nowrap;
-    border: solid 1px;
-    border-color: white;
+    border-left-style: solid;
+    border-left-color: #F08080;
+    border-left-width:  5px;
+    border-right-style: solid;
+    border-right-color: #F08080;
+    border-right-width:  5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     padding-top: 10px;
