@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../constants/Palette';
 
 
 
@@ -6,6 +7,18 @@ const styles = StyleSheet.create({
     mainViewQuestions:{
         width:'100%',
         backgroundColor:'#F2F4F4',
+        alignContent:'center'
+    },
+    questionIcon:{
+      width:100,
+      height:100,
+      alignSelf:"center"
+    },
+    heading:{
+      alignSelf:'center',
+      fontWeight:'700',
+      fontSize:26,
+      color:colors.primary_1
     },
     intro:{
       marginTop:20,
@@ -14,14 +27,6 @@ const styles = StyleSheet.create({
       flex: 1,
       padding: 20,
     },
-    questionsTitle:{
-        fontWeight:'bold',
-        fontSize:40,
-        marginLeft:20,
-        marginBottom:10,
-        marginTop:10,
-        alignSelf:'flex-start',
-    },
     questionsText:{
         marginLeft:20,
         marginBottom:10,
@@ -29,6 +34,7 @@ const styles = StyleSheet.create({
         marginTop:10,
         alignSelf:'center',
         fontSize:16,
+        textAlign:'justify'
     },
     inputContainer: {
       flexDirection: 'row',
@@ -42,8 +48,7 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       backgroundColor:'white',
       padding: 10,
-      marginRight: 10,
-      height:100,
+      marginRight: 5,
       shadowColor: '#000',
         shadowOffset: {
           width: 0,
@@ -53,11 +58,8 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
     },
-    searchIcon: {
-      marginRight: 10,
-    },
     result: {
-      marginTop: 20,
+      marginTop: 10,
     },
     resultTitle: {
       fontSize: 18,
@@ -67,6 +69,24 @@ const styles = StyleSheet.create({
     resultText: {
       fontSize: 16,
     },
+    shareButton: {
+      backgroundColor: colors.primary_3,
+      color: '#fff',
+      border: 'none',
+      borderRadius: 10,
+      padding: 10,
+      width:135,
+      cursor: 'pointer',
+      marginTop:10,
+      marginRight:10,
+      alignSelf:'flex-end',
+      marginRight:'5%'
+  },
+  shareButtonText: {
+      color: '#fff',
+      fontWeight: 'bold',
+      textAlign:'center',
+  },
     answer:{
       marginLeft:20,
       marginBottom:10,
@@ -74,6 +94,8 @@ const styles = StyleSheet.create({
       marginTop:10,
       alignSelf:'center',
       fontSize:16,
+      textAlign:'justify'
+
   },
   });
   

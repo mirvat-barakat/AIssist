@@ -1,5 +1,5 @@
 import React, {useState,  useEffect} from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View, ScrollView, Image } from 'react-native';
 import styles from './styles';
 import { MaterialIcons } from '@expo/vector-icons';
 import axios from 'axios';
@@ -10,8 +10,6 @@ export default function QuestionsScreen() {
         const [Question, setQuestion] = useState('');
         const[Answer, setAnswer] =useState('');
         const [answerDisplay, setAnswerDisplay] = useState('');
-        // const token = AsyncStorage.getItem("token");
-        // const token = localStorage.getItem("token");
     
         const handleGenerateAnswers= async(e)=>{
             e.preventDefault();
@@ -54,7 +52,9 @@ export default function QuestionsScreen() {
     return(
         <ScrollView style={styles.mainViewQuestions}>
             <View style={styles.intro}>
-                <Text style={styles.questionsText}>Welcome! Ask any questions you have about your child's condition and we'll do our best to help you find the answers you need.</Text>
+              <Image style={styles.questionIcon} source={require('../../../assets/images/QA.png')}/>
+              <Text style={styles.heading}>Welcome!</Text>
+              <Text style={styles.questionsText}>Ask any questions you have about your child's condition and we'll do our best to help you find the answers you need.</Text>
             </View>
             <View style={styles.container}>
             <View style={styles.inputContainer}>
@@ -66,10 +66,10 @@ export default function QuestionsScreen() {
                   setQuestion={setQuestion}
                   Question={Question}
                 />
-                <TouchableOpacity onPress={handleGenerateAnswers}>
-                    <MaterialIcons name="search" size={30} color='black' style={styles.searchIcon} />
-                </TouchableOpacity>
             </View>
+            <TouchableOpacity style={styles.shareButton} >
+                      <Text style={styles.shareButtonText} onPress={handleGenerateAnswers}>Search</Text>
+            </TouchableOpacity>
             </View>
             <View>
                 <Text style={styles.answer}>{answerDisplay}</Text>
