@@ -1,14 +1,9 @@
 body{
     background-color: white;
   }
-  /* .users-table {
-      margin-top: 5%;
-      margin-right: 20%;
-      margin-left: 20%;
-    } */
   
   table {
-      width: 60%;
+      width: 75%;
       border-collapse: collapse;
       border-spacing: 0;
       font-size: 14px;
