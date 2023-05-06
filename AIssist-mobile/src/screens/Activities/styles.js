@@ -36,8 +36,7 @@ const styles = StyleSheet.create({
         borderTopColor:'#fff',
         borderLeftWidth:5,
         backgroundColor:'#fff',
-        marginLeft:'5%',
-        marginBottom:20,
+        marginLeft:'10px',
         marginRight:'5%',
         width:'90%',
         alignSelf:'center',
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
         flexDirection:'column',
         alignItems:'flex-start',
         marginBottom:10,
-        marginLeft:25
+        marginLeft:30
     },
     inputLabel1:{
         color:'black',

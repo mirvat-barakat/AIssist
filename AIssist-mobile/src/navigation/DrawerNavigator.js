@@ -19,8 +19,8 @@ const DrawerNavigator = () =>{
           headerTitleAlign: "center",
           headerStyle: { backgroundColor: colors.primary_1 },
           headerTintColor: "#FFFFFF",
-          drawerStyle: { backgroundColor: "#FFFFFF" },
-          drawerActiveBackgroundColor: colors.primary_1,
+          drawerStyle: { backgroundColor: colors.primary_1 },
+          drawerActiveBackgroundColor: colors.primary_3,
           drawerActiveTintColor: "#FFFFFF",
           drawerInactiveTintColor: '#000',
         }}>

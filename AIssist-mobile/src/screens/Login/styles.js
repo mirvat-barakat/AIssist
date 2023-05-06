@@ -41,8 +41,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         alignSelf:'center',
         width: 135,
-        marginBottom: 10,
-        marginTop:10,
+        marginBottom: 20,
       },
     buttonText: {
         color: colors.white,
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
       },
     forgotPasswordLink: {
        marginLeft:140,
-        marginBottom:10,
+        marginBottom:20,
       },
     forgotPasswordText: {
         color: colors.primary_3,
