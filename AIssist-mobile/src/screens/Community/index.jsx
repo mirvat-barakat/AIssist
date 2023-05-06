@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, ScrollView } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View, Image, ScrollView } from 'react-native';
 import styles from './styles';
 import axios from 'axios';
 import { Ionicons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function CommunityScreen({ navigation }) {
-    const[posts, setFeed]= useState([]);
-    // const token = AsyncStorage.getItem("token");
-    // const token = localStorage.getItem("token");
+    const [posts, setFeed]= useState([]);
     const [liked, setLiked] = useState(false); 
     const [content, setContent] = useState('');
     const [postId, setPostId] = useState(null);
@@ -40,7 +38,6 @@ export default function CommunityScreen({ navigation }) {
 
       const handleLike = async (postId) => {
         const token = await AsyncStorage.getItem("token");
-        // const token =  localStorage.getItem("token");
         try {
           setPostId(postId);
           if (likedPosts.includes(postId)) {
@@ -74,7 +71,6 @@ export default function CommunityScreen({ navigation }) {
 
     const getPosts = async () => {
       const token = await AsyncStorage.getItem("token");
-      // const token = localStorage.getItem("token");
       const config = {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
@@ -97,8 +93,7 @@ export default function CommunityScreen({ navigation }) {
     }, []);
 
       return(
-        <SafeAreaView >
-          <ScrollView style={styles.scroll}>
+          <ScrollView>
             <View style={styles.main}>
                 <View style={styles.TextInputView}>
                     <TextInput onChangeText={text => setContent(text)}
@@ -144,6 +139,5 @@ export default function CommunityScreen({ navigation }) {
                 </View>
                 </View>
                 </ScrollView>
-        </SafeAreaView>
     );
 }

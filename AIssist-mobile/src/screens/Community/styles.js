@@ -6,13 +6,11 @@ const styles = StyleSheet.create({
         backgroundColor:colors.grey,
         height:'100%',
         marginTop:20,
+        marginBottom:20
     },
     intro:{
         marginTop:20,
       },
-    // scroll:{
-    //     height:'100%',
-    // },
     Heading: {
         fontSize:32,
         marginTop:30,
@@ -72,7 +70,6 @@ const styles = StyleSheet.create({
     username:{
         alignContent:'center',
         marginLeft:10,
-        // fontSize:'25',
         fontWeight:'600'
     },
     imageView:{
@@ -90,7 +87,6 @@ const styles = StyleSheet.create({
         padding: 10,
         width:135,
         cursor: 'pointer',
-        // fontSize: 16,
         marginTop:10,
         marginRight:10,
         alignSelf:'flex-end',
