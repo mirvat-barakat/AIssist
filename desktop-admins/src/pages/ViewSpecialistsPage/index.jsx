@@ -57,6 +57,7 @@ const ViewSpecialists = () => {
                   <th>Category</th>
                   <th>Speciality</th>
                   <th>Phone Number</th>
+                  <th>Whatsapp Number</th>
                   <th>Location</th>
                 </tr>
               </thead>
@@ -72,7 +73,8 @@ const ViewSpecialists = () => {
                       <td>{specialist.category}</td>
                       <td>{specialist.speciality}</td>
                       <td>{specialist.phone_number}</td>
-                      <td>{specialist.location}</td>
+                      <td>{specialist.whatsapp_number}</td>
+                      <td>{specialist.Location}</td>
                   </tr>
                 ))}
               </tbody>
