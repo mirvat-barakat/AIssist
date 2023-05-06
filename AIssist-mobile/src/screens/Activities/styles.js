@@ -87,6 +87,18 @@ const styles = StyleSheet.create({
         fontSize: 16,
         width:270
       },
+      generatedActivities:{
+        margintop:20,
+        marginleft:'5%',
+        display:'flex',
+        flexDirection:'column',
+        gap:20,
+      },
+      activityView:{
+        display:'flex',
+        flexDirection:'column',
+        gap:20,
+      }
 });
 
 export default styles;

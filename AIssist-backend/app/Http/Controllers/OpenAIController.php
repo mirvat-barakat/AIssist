@@ -49,7 +49,8 @@ class OpenAIController extends Controller
          Diagnosis: {$diagnosis}\nGender: {$gender}\nAge: {$age} years old\nMedications: {$medications}\n
          Interest: {$interest}\nNotes: {$notes}\nThings tried: {$tried}\n\n.";
     
-        $result = $client->completions()->create([
+        try{
+            $result = $client->completions()->create([
             'model' => 'text-davinci-003',
             'prompt' => $prompt,
             'max_tokens' => 1000,
@@ -76,6 +77,13 @@ class OpenAIController extends Controller
             $activities[] = $activity;
         }
     
-        return ['activities' => $activities];
+        if (empty($activities)) {
+            return response()->json(['error' => 'No activities found.'], 404);
+        }
+
+        return response()->json(['activities' => $activities]);
+    } catch (\Exception $e) {
+        return response()->json(['error' => 'Unable to generate activities.'], 500);
     }
+}
 }

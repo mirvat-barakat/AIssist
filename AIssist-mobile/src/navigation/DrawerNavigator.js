@@ -24,7 +24,7 @@ const DrawerNavigator = () =>{
           drawerActiveTintColor: "#FFFFFF",
           drawerInactiveTintColor: '#000',
         }}>
-          <Drawer.Screen name="Community" component={CommunityScreen} />
+          <Drawer.Screen name="Feed" component={CommunityScreen} />
           <Drawer.Screen name="Specialists" component={SpecialistsScreen} />
           <Drawer.Screen name="Questions" component={QuestionsScreen} />
           <Drawer.Screen name="Activities" component={ActivitiesScreen} />

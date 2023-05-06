@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
 import styles from './styles';
 import axios from 'axios';
@@ -13,12 +13,12 @@ export default function ActivitiesScreen() {
     const [interest, setInterest] = useState('');
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
-    const[activities, setActivities]= useState('');
-    const token = AsyncStorage.getItem("token");
-    // const token = localStorage.getItem("token");
+    const[activities, setActivities]= useState([]);
+    // const token = AsyncStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
-    const handleGenerateActivities= (e)=>{
-        e.preventDefault();
+    const handleGenerateActivities= ()=>{
+        // const token = AsyncStorage.getItem("token");
         axios.post('http://192.168.1.6:8000/api/v0.0.1/activities', {
           'age': age,
           'gender':gender,
@@ -36,13 +36,16 @@ export default function ActivitiesScreen() {
           }
       })
       .then(response => {
-            setActivities(response.data);
             console.log(response);
+            setActivities(response.data.activities);
       })
       .catch(error => {
           console.log(error);
       });
   };
+//   useEffect(() => {
+//     handleGenerateActivities();
+//   }, []);
 
 
     return(
@@ -118,6 +121,21 @@ export default function ActivitiesScreen() {
                  <Text style={styles.buttonText} onPress={handleGenerateActivities}>Save</Text>
                 </TouchableOpacity>
             </View>
+
+            <View style={styles.generatedActivities}>
+                       {activities.map(activity=> (
+                        <View style={styles.activityView}>
+                        <View key={activity.id}>
+                          <View style={styles.card} >
+                             <View style={styles.specialistInfo}>
+                                <Text style={styles.specialistName}>{activity.name}</Text>
+                                <Text >{activity.description}</Text>
+                          </View>
+                             </View>
+                          </View> 
+                        </View>
+                       ))}
+                    </View>
         </ScrollView>
     )
 };

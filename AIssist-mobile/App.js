@@ -27,9 +27,9 @@ function App() {
     // <NavigationContainer>
     //   {isAuthenticated ? <DrawerNavigator /> : <AuthStack />}
     // </NavigationContainer>
-    <NavigationContainer>
-        <AuthStack />
-    </NavigationContainer>
+    // <NavigationContainer>
+    //     <AuthStack />
+    // </NavigationContainer>
     // <NavigationContainer>
     //     <DrawerNavigator />
     // </NavigationContainer>
@@ -37,9 +37,9 @@ function App() {
     
       // <AppStack/>
       
-      // <NavigationContainer>
-      //   < DrawerNavigator/>
-      // </NavigationContainer>
+      <NavigationContainer>
+        < DrawerNavigator/>
+      </NavigationContainer>
       // <CommunityScreen/>
       // <ActivitiesScreen />
       // <RootStack/>
