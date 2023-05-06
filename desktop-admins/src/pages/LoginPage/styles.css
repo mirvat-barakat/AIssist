@@ -5,7 +5,8 @@
     position:fixed;
 }
 .login-block{
-    position:fixed;
+    position:relative;
+    margin-top: 100px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -26,18 +27,28 @@
     margin-bottom: 10%;
 }
 .logo1{
-    height:300px;
-    width:300px;
+    height:200px;
+    width:200px;
+}
+.login-form{
+    margin-top: 80px;
 }
 .button1{
     position: relative;
-    background-color: #FFC6C6;
-    border: #FFC6C6;
+    background-color: #FFBEBE;
+    border: #FFBEBE;
     padding: 4%;
     align-content: center;
     width:300px;
     border-radius: 10px;
     cursor: pointer;
+    color:white;
+    font-weight: 600;
+    font-size: larger;
+}
+.button1:hover{
+    background-color: #faaeae;
+    translate: 0px -2px;
 }
 .title{
     color:white;

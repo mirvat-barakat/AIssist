@@ -59,7 +59,7 @@ const Login =()=> {
       <div className="login-page">
         <div className="login-block">
           <img src={logo} alt="logo" className="logo1"></img>
-          <form>
+          <form className="login-form">
             <div className="form-group">
               <label htmlFor="email" className="input1-label">Email:</label>
               <input type="email" id="email" name="email" className="input1-login"
