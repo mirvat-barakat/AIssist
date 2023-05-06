@@ -9,15 +9,8 @@ const CommentBox = () => {
   const [comment, setComment] = useState('');
   const [inputHeight, setInputHeight] = useState(40);
   const [content, setContent] = useState('');
-  const token = AsyncStorage.getItem("token");
   const postId = AsyncStorage.getItem('postId');
-  // const token = localStorage.getItem("token");
-  // const postId = localStorage.getItem('postId');
 
-  const handleCommentChange = (text) => {
-    setComment(text);
-    setInputHeight(Math.max(40, text.split('\n').length * 10));
-  };
 
   const handleAddComment= async(e) => {
     const token = await AsyncStorage.getItem("token");
@@ -53,7 +46,6 @@ const CommentBox = () => {
         placeholder="Write a comment..."
         content={content}
         setContent={setContent}
-        // onChangeText={handleCommentChange}
         onChangeText={text => setContent(text)}
       />
       <TouchableOpacity style={styles.button} >

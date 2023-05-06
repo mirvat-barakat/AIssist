@@ -10,16 +10,17 @@ const styles = StyleSheet.create({
       marginBottom: 10,
     },
     input: {
-      flex: 1,
       borderRadius: 10,
       padding: 10,
       marginRight: 10,
-      width: 250,
+      width: '80%',
       backgroundColor:'white',
+      marginBottom:10
     },
     button: {
       borderRadius: 50,
       padding: 10,
+      marginRight:10
     },
   });
 
