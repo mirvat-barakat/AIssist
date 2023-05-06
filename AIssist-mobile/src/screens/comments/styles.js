@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     display:'flex',
     flexDirection:'row',
     marginTop:'5%',
-    marginLeft:'10%',
+    marginLeft:'5%',
     marginBottom:'5%'
   },
   commentView:{
@@ -30,18 +30,19 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
     marginLeft:'5%',
     marginRight:'5%',
-    width:'70%',
+    width:'75%',
+    paddingBottom:10,
+    paddingTop:10,
   },
   commentContent:{
-    // top:10, 
-    marginLeft:10,     
-    lineHeight: 22,         
-    // fontSize: 16, 
+    marginLeft:10, 
+    marginRight:10,    
+    lineHeight: 22,   
+    textAlign:'justify'      
   },
   username:{
     alignContent:'center',
     marginLeft:10,
-    // fontSize:'25',
     fontWeight:'600',
     marginBottom:10
 },
