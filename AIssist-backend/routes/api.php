@@ -44,7 +44,7 @@ Route::group(["prefix" => "v0.0.1"], function()
 
         Route::post('/answers',[OpenAIController::class, 'generateAnswers']);
         Route::post('/activities',[OpenAIController::class, 'generateActivities']);
-        Route::post('/regenerate/activities',[OpenAIController::class, 'regenerateActivities']);
+        Route::post('/regenerate/activities/{id}',[OpenAIController::class, 'regenerateActivities']);
 
         Route::group(['middleware' => 'admin'], function () {
             

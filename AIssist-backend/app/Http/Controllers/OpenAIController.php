@@ -115,12 +115,13 @@ class OpenAIController extends Controller
         $feedback->interest=  $request->input('interest'); 
         $feedback->tried_activities=  $request->input('tried_activities');
         $feedback->unable_activities=  $request->input('unable_activities');
-        $feedback->improvment_suggestions=  $request->input('improvment_suggestions');
+        $feedback->improvement_suggestions=  $request->input('improvement_suggestions');
         $feedback->other_feedback=  $request->input('other_feedback');  
         $feedback->form_id= $form_id; 
         $feedback->save();
 
-        $formRequest = Activity::find($form_id);
+        $formRequest = Activity::select('age', 'gender', 'diagnosis', 'medications', 'interests', 'notes', 'things_have_tried','generated_activities')
+                                ->find($form_id);
         return response()->json($formRequest);
 }
 }
