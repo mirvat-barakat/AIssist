@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView } from 'react-native';
+import React, { useState, useEffect} from 'react';
+import { Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
 import styles from './styles';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -14,11 +14,10 @@ export default function ActivitiesScreen() {
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
     const[activities, setActivities]= useState([]);
-    // const token = AsyncStorage.getItem("token");
-    const token = localStorage.getItem("token");
 
-    const handleGenerateActivities= ()=>{
-        // const token = AsyncStorage.getItem("token");
+    const handleGenerateActivities= async (e)=>{
+        e.preventDefault();
+        const token = await AsyncStorage.getItem("token");
         axios.post('http://192.168.1.6:8000/api/v0.0.1/activities', {
           'age': age,
           'gender':gender,
@@ -32,7 +31,7 @@ export default function ActivitiesScreen() {
           headers: {
               'content-type': 'application/json',
               'Accept': 'application/json',
-              'Authorization': 'bearer ' + token
+              Authorization: `Bearer ${token}`
           }
       })
       .then(response => {
@@ -42,7 +41,7 @@ export default function ActivitiesScreen() {
       .catch(error => {
           console.log(error);
       });
-  };
+  }
 
     return(
         <ScrollView style={styles.mainView}>

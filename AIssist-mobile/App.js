@@ -30,23 +30,9 @@ function App() {
     // <NavigationContainer>
     //     <AuthStack />
     // </NavigationContainer>
-    // <NavigationContainer>
-    //     <DrawerNavigator />
-    // </NavigationContainer>
-
-    
-      // <AppStack/>
-      
-      <NavigationContainer>
-        < DrawerNavigator/>
-      </NavigationContainer>
-      // <CommunityScreen/>
-      // <ActivitiesScreen />
-      // <RootStack/>
-    
-    // <SafeAreaView>
-    //   <CommunityScreen/>
-    // </SafeAreaView>
+    <NavigationContainer>
+        <DrawerNavigator />
+    </NavigationContainer>
 
     
   );

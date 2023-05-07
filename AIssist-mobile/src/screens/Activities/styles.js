@@ -9,14 +9,6 @@ const styles = StyleSheet.create({
     intro:{
         marginTop:20,
       },
-    activitiesTitle:{
-        fontWeight:'bold',
-        fontSize:40,
-        marginLeft:10,
-        marginBottom:10,
-        marginTop:10,
-        alignSelf:'center',
-    },
     activitiesText:{
         marginLeft:'5%',
         marginRight:'5%',
@@ -36,7 +28,7 @@ const styles = StyleSheet.create({
         borderTopColor:'#fff',
         borderLeftWidth:5,
         backgroundColor:'#fff',
-        marginLeft:'10px',
+        marginLeft:'5%',
         marginRight:'5%',
         width:'90%',
         alignSelf:'center',
@@ -84,17 +76,17 @@ const styles = StyleSheet.create({
         borderColor:'#ccc',
         borderRadius: 10,
         padding: 10,
-        fontSize: 16,
+        // fontSize: 16,
         width:270
       },
       generatedActivities:{
-        margintop:20,
+        margintop:'5%',
         marginleft:'5%',
         width:'90%',
         alignSelf:'center',
         display:'flex',
         flexDirection:'column',
-        gap:20,
+        marginBottom:'5%',
       },
       activityView:{
         width:'100%',
@@ -102,6 +94,12 @@ const styles = StyleSheet.create({
         marginLeft:'5%',
         borderStyle:'solid',
         backgroundColor:'white',
+        borderWidth:2,
+        borderLeftColor:"#fff",
+        borderBottomColor:'#fff',
+        borderTopColor:'#fff',
+        borderRightWidth:5,
+        borderRightColor:'#F08080',
         marginTop:20,
         alignSelf:'center',
         display:'flex',
@@ -119,12 +117,12 @@ const styles = StyleSheet.create({
         paddingRight:10,
         paddingTop:10,
         borderRadius:10,
-        
+
         
     },
     activityName:{
       marginBottom:20, 
-      alignContent:'center',
+      textAlign:'center',
       color:colors.primary_1,
       fontWeight:'700',
     },
