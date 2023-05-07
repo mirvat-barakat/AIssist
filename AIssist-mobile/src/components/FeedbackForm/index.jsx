@@ -11,27 +11,67 @@ const FeedbackForm = () => {
             <View style={styles.mainFormFeedbacks}>
                 <View style={styles.formFeedbacks}>
                 <Text style={styles.inputLabel1}>How satisfied were you with the activities generated for you?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
+                <View>
+                    <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_all" />
+                        <Text style={{marginTop: 8}}>Satisfied</Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_some" />
+                        <Text style={{marginTop: 8}}>Neutral</Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="no" />
+                        <Text style={{marginTop: 8}}>Dissatisfied</Text>
+                    </View>
+                    </RadioButton.Group>
+                </View>
                 </View>
                 <View style={styles.formFeedbacks}>
                 <Text style={styles.inputLabel1}>Were the activities appropriate for your child's age and gender?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
+                <View>
+                    <RadioButton.Group onValueChange={value => set(value)} value={value}>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_all" />
+                        <Text style={{marginTop: 8}}>Yes</Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_some" />
+                        <Text style={{marginTop: 8}}>No</Text>
+                    </View>
+                    </RadioButton.Group>
+                </View>
                 </View>
                 <View style={styles.formFeedbacks}>
                 <Text style={styles.inputLabel1}>Were the activities appropriate for your child's diagnosis?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
+                <View>
+                    <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_all" />
+                        <Text style={{marginTop: 8}}>Yes</Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_some" />
+                        <Text style={{marginTop: 8}}>No</Text>
+                    </View>
+                    </RadioButton.Group>
+                </View>
                 </View>
                 <View style={styles.formFeedbacks}>
                 <Text style={styles.inputLabel1}>Did you find the activities interesting?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
+                <View>
+                    <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_all" />
+                        <Text style={{marginTop: 8}}>Yes</Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_some" />
+                        <Text style={{marginTop: 8}}>No</Text>
+                    </View>
+                    </RadioButton.Group>
+                </View>
                 </View>
                 <View style={styles.formFeedbacks}>
                 <Text style={styles.inputLabel1}>Did you try any of the activities suggested to your child?</Text>
@@ -54,9 +94,18 @@ const FeedbackForm = () => {
                 </View>
                 <View style={styles.formFeedbacks}>
                 <Text style={styles.inputLabel1}>Were there any activities that you were unable to do?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
+                <View>
+                    <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_all" />
+                        <Text style={{marginTop: 8}}>Yes</Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_some" />
+                        <Text style={{marginTop: 8}}>No</Text>
+                    </View>
+                    </RadioButton.Group>
+                </View>
                 </View>
                 <View style={styles.formFeedbacks}>
                 <Text style={styles.inputLabel1}>If you answered "Yes" to the previous question, please specify which activities you were unable to do and why:</Text>
