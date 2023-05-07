@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
+import { RadioButton } from 'react-native-paper';
+
 import styles from './styles';
 
 const FeedbackForm = () => {
+    const [value, setValue] = React.useState('first');
 
     return(
             <View style={styles.mainFormFeedbacks}>
@@ -32,9 +35,22 @@ const FeedbackForm = () => {
                 </View>
                 <View style={styles.formFeedbacks}>
                 <Text style={styles.inputLabel1}>Did you try any of the activities suggested to your child?</Text>
-                 <TextInput
-                  style={styles.input1}
-                 />
+                <View>
+                    <RadioButton.Group onValueChange={value => setValue(value)} value={value}>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_all" />
+                        <Text style={{marginTop: 8}}>Yes, I tried all of them</Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="yes_some" />
+                        <Text style={{marginTop: 8}}>Yes, I tried some of them</Text>
+                    </View>
+                    <View style={{flexDirection: 'row'}}>
+                        <RadioButton value="no" />
+                        <Text style={{marginTop: 8}}>No, I didn't try any of them</Text>
+                    </View>
+                    </RadioButton.Group>
+                </View>
                 </View>
                 <View style={styles.formFeedbacks}>
                 <Text style={styles.inputLabel1}>Were there any activities that you were unable to do?</Text>
