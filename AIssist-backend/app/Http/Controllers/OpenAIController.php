@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 use OpenAI;
 use OpenAI\Client;
 use App\Models\Activity;
+use App\Models\Feedback;
 
 class OpenAIController extends Controller
 {
-    public function generateAnswers(Request $request)
-    {
+    public function generateAnswers(Request $request){
+
         $request->validate(['Question']);
         $apiKey = env('OPENAI_API_KEY');
         $client = OpenAI::client($apiKey);
@@ -34,8 +35,8 @@ class OpenAIController extends Controller
         ], 200);
     }
 
-    public function generateActivities(Request $request)
-    {
+    public function generateActivities(Request $request){
+
         $diagnosis = $request->input('diagnosis');
         $gender = $request->input('gender');
         $age = $request->input('age');
@@ -103,5 +104,23 @@ class OpenAIController extends Controller
         logger($e->getTraceAsString());
         return response()->json(['error' => 'Unable to generate activities.'], 500);
     }
+}
+
+    public function regenerateActivities(Request $request, $form_id){
+
+        $feedback= new Feedback();
+        $feedback->satisfaction=  $request->input('satisfaction');
+        $feedback->age_gender=  $request->input('age_gender'); 
+        $feedback->diagnosis=  $request->input('diagnosis');
+        $feedback->interest=  $request->input('interest'); 
+        $feedback->tried_activities=  $request->input('tried_activities');
+        $feedback->unable_activities=  $request->input('unable_activities');
+        $feedback->improvment_suggestions=  $request->input('improvment_suggestions');
+        $feedback->other_feedback=  $request->input('other_feedback');  
+        $feedback->form_id= $form_id; 
+        $feedback->save();
+
+        $formRequest = Activity::find($form_id);
+        return response()->json($formRequest);
 }
 }
