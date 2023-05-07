@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
       color:colors.primary_1,
       fontWeight:'700',
     },
-    activitiesDescription:{
+    activityDescription:{
       textAlign:'justify',
     },
 });

@@ -14,6 +14,7 @@ export default function ActivitiesScreen() {
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
     const[activities, setActivities]= useState([]);
+    const [showMessage, setShowMessage] = useState(false);
     const scrollViewRef = useRef(null);
 
     const handleGenerateActivities= async (e)=>{
@@ -40,6 +41,7 @@ export default function ActivitiesScreen() {
       .then(response => {
             console.log(response);
             setActivities(response.data.activities);
+            setShowMessage(true);
             scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: true });
         })
       .catch(error => {
@@ -137,7 +139,8 @@ export default function ActivitiesScreen() {
                           </View> 
                         </View>
                        ))}
-                    </View>
+            </View>
+            
         </ScrollView>
     )
 };
