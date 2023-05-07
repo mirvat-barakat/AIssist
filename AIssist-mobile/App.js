@@ -30,11 +30,11 @@ function App() {
     // <NavigationContainer>
     //     <AuthStack />
     // </NavigationContainer>
-    // <NavigationContainer>
-    //     <DrawerNavigator />
-    // </NavigationContainer>
+    <NavigationContainer>
+        <DrawerNavigator />
+    </NavigationContainer>
 
-    <HomeScreen/>
+    // <HomeScreen/>
 
     
   );
