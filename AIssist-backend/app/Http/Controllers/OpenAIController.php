@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use OpenAI;
 use OpenAI\Client;
+use App\Models\Activity;
 
 class OpenAIController extends Controller
 {
@@ -34,13 +36,25 @@ class OpenAIController extends Controller
 
     public function generateActivities(Request $request)
     {
-        $diagnosis = $request->input('Diagnosis');
+        $diagnosis = $request->input('diagnosis');
         $gender = $request->input('gender');
         $age = $request->input('age');
         $medications = $request->input('medications');
         $interest = $request->input('interest');
         $notes = $request->input('notes');
         $tried = $request->input('things_have_tried');
+
+        $activity_request= new Activity();
+        $activity_request->age= $age;
+        $activity_request->gender= $gender; 
+        $activity_request->diagnosis= $diagnosis;
+        $activity_request->medications= $medications; 
+        $activity_request->interests= $interest;
+        $activity_request->things_have_tried= $tried;
+        $activity_request->notes= $notes; 
+        $activity_request->user_id= Auth::id();
+        $activity_request->save();
+
     
         $apiKey = env('OPENAI_API_KEY');
         $client = OpenAI::client($apiKey);
@@ -53,7 +67,7 @@ class OpenAIController extends Controller
             $result = $client->completions()->create([
             'model' => 'text-davinci-003',
             'prompt' => $prompt,
-            'max_tokens' => 1000,
+            'max_tokens' => 100,
             'temperature' => 0.5
         ]);
     
