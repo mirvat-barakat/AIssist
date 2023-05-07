@@ -109,19 +109,71 @@ class OpenAIController extends Controller
     public function regenerateActivities(Request $request, $form_id){
 
         $feedback= new Feedback();
-        $feedback->satisfaction=  $request->input('satisfaction');
-        $feedback->age_gender=  $request->input('age_gender'); 
-        $feedback->diagnosis=  $request->input('diagnosis');
-        $feedback->interest=  $request->input('interest'); 
-        $feedback->tried_activities=  $request->input('tried_activities');
-        $feedback->unable_activities=  $request->input('unable_activities');
-        $feedback->improvement_suggestions=  $request->input('improvement_suggestions');
-        $feedback->other_feedback=  $request->input('other_feedback');  
+        $satisfaction= $feedback->satisfaction=  $request->input('satisfaction');
+        $age_gender= $feedback->age_gender=  $request->input('age_gender'); 
+        $diagnosis= $feedback->diagnosis=  $request->input('diagnosis');
+        $interest= $feedback->interest=  $request->input('interest'); 
+        $tried_activities= $feedback->tried_activities=  $request->input('tried_activities');
+        $unable_activities=$feedback->unable_activities=  $request->input('unable_activities');
+        $improvement_suggestions= $feedback->improvement_suggestions=  $request->input('improvement_suggestions');
+        $other_feedback= $feedback->other_feedback=  $request->input('other_feedback');  
         $feedback->form_id= $form_id; 
         $feedback->save();
 
         $formRequest = Activity::select('age', 'gender', 'diagnosis', 'medications', 'interests', 'notes', 'things_have_tried','generated_activities')
                                 ->find($form_id);
-        return response()->json($formRequest);
+        $formRequestJson = response()->json($formRequest);
+
+        $apiKey = env('OPENAI_API_KEY');
+        $client = OpenAI::client($apiKey);
+    
+        $prompt = "Regenerate a list of activities with a description for each activity for a child with a special need with the following details that includes the details of the persong and the generated activities that you generated earlier.
+                    Please take into consideration the following feedback to improve the generated activities:
+                    How satisfied were you with the activities generated for you?: $satisfaction
+                    Were the activities appropriate for your age and gender?: $age_gender
+                    Were the activities appropriate for your diagnosis?: $diagnosis
+                    Did you find the activities interesting?: $diagnosis$interest
+                    Did you try any of the activities suggested to you?: $tried_activities
+                    If you answered Yes to the previous question, please specify which activities you were unable to do and why?: $unable_activities
+                    What suggestions do you have to improve the activities generated for you?: $improvement_suggestions
+                    Any other comments or feedback you would like to share: $other_feedback";
+    
+        try{
+            $result = $client->completions()->create([
+            'model' => 'text-davinci-003',
+            'prompt' => $prompt,
+            'max_tokens' => 50,
+            'temperature' => 0.5
+        ]);
+    
+        $response = $result['choices'][0]['text'];
+
+        $activities = [];
+        $activityMatches = [];
+        preg_match_all('/(?<=[0-9]\.\s)(.*?)(?=\n\n|$)/s', $response, $activityMatches);
+
+        foreach ($activityMatches[1] as $activityMatch) {
+            $activity = [
+                'name' => '',
+                'description' => ''
+            ];
+    
+            preg_match('/^(.*?):\s/', $activityMatch, $nameMatch);
+            $activity['name'] = $nameMatch[1];
+    
+            $activity['description'] = preg_replace('/^.*?:\s/', '', $activityMatch);
+    
+            $activities[] = $activity;
+        }
+    
+        if (empty($activities)) {
+            return response()->json(['error' => 'No activities found.'], 404);
+        }
+
+        return response()->json(['activities' => $activities]);
+
+    } catch (\Exception $e) {
+        return response()->json(['error' => 'Unable to generate activities.'], 500);
+    }
 }
 }
