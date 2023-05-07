@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useRef} from 'react';
 import { Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
 import styles from './styles';
 import axios from 'axios';
@@ -14,10 +14,13 @@ export default function ActivitiesScreen() {
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
     const[activities, setActivities]= useState([]);
+    const scrollViewRef = useRef(null);
 
     const handleGenerateActivities= async (e)=>{
         e.preventDefault();
-        const token = await AsyncStorage.getItem("token");
+        // const token = await AsyncStorage.getItem("token");
+         const token = localStorage.getItem("token");
+
         axios.post('http://192.168.1.6:8000/api/v0.0.1/activities', {
           'age': age,
           'gender':gender,
@@ -37,14 +40,18 @@ export default function ActivitiesScreen() {
       .then(response => {
             console.log(response);
             setActivities(response.data.activities);
-      })
+            scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: true });
+        })
       .catch(error => {
           console.log(error);
       });
   }
 
     return(
-        <ScrollView style={styles.mainView}>
+        <ScrollView style={styles.mainView} ref={scrollViewRef}
+        onContentSizeChange={() => {
+          scrollViewRef.current.scrollToEnd({ animated: true });
+        }}>
             <View style={styles.intro}>
                 <Text style={styles.activitiesText}>Please fill out this form to help us determine  which activities best suits your child case.</Text>
             </View>
