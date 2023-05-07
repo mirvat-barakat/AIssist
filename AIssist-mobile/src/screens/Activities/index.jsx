@@ -131,7 +131,7 @@ export default function ActivitiesScreen() {
                           <View style={styles.card} >
                              <View style={styles.specialistInfo}>
                                 <Text style={styles.activityName}>{activity.name}</Text>
-                                <Text >{activity.description}</Text>
+                                <Text style={styles.activityDescription}>{activity.description}</Text>
                           </View>
                              </View>
                           </View> 

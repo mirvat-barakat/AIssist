@@ -126,6 +126,9 @@ const styles = StyleSheet.create({
       color:colors.primary_1,
       fontWeight:'700',
     },
+    activitiesDescription:{
+      textAlign:'justify',
+    },
 });
 
 export default styles;
