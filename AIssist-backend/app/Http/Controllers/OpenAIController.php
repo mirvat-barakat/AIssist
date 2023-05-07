@@ -53,8 +53,6 @@ class OpenAIController extends Controller
         $activity_request->things_have_tried= $tried;
         $activity_request->notes= $notes; 
         $activity_request->user_id= Auth::id();
-        $activity_request->save();
-
     
         $apiKey = env('OPENAI_API_KEY');
         $client = OpenAI::client($apiKey);
@@ -67,16 +65,16 @@ class OpenAIController extends Controller
             $result = $client->completions()->create([
             'model' => 'text-davinci-003',
             'prompt' => $prompt,
-            'max_tokens' => 100,
+            'max_tokens' => 50,
             'temperature' => 0.5
         ]);
     
         $response = $result['choices'][0]['text'];
+
         $activities = [];
-    
         $activityMatches = [];
         preg_match_all('/(?<=[0-9]\.\s)(.*?)(?=\n\n|$)/s', $response, $activityMatches);
-    
+
         foreach ($activityMatches[1] as $activityMatch) {
             $activity = [
                 'name' => '',
@@ -90,13 +88,19 @@ class OpenAIController extends Controller
     
             $activities[] = $activity;
         }
+        $activity_request->generated_activities = json_encode($activities);
+        $activity_request->save();
     
         if (empty($activities)) {
             return response()->json(['error' => 'No activities found.'], 404);
         }
 
         return response()->json(['activities' => $activities]);
+
     } catch (\Exception $e) {
+
+        logger($e->getMessage());
+        logger($e->getTraceAsString());
         return response()->json(['error' => 'Unable to generate activities.'], 500);
     }
 }
