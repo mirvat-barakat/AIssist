@@ -127,7 +127,9 @@ class OpenAIController extends Controller
         $apiKey = env('OPENAI_API_KEY');
         $client = OpenAI::client($apiKey);
     
-        $prompt = "Regenerate a list of activities with a description for each activity for a child with a special need with the following details that includes the details of the persong and the generated activities that you generated earlier.
+        $prompt = "Regenerate a list of activities with a description for each activity for a child with a special need with the following details that includes
+                    the details of the person and the generated activities that you generated earlier.
+
                     Please take into consideration the following feedback to improve the generated activities:
                     How satisfied were you with the activities generated for you?: $satisfaction
                     Were the activities appropriate for your age and gender?: $age_gender
