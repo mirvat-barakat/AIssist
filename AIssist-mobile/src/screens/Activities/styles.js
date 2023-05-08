@@ -7,12 +7,12 @@ const styles = StyleSheet.create({
         backgroundColor:'#F2F4F4',
     },
     intro:{
-        marginTop:20,
+      marginTop:'5%',
       },
     activitiesText:{
         marginLeft:'5%',
         marginRight:'5%',
-        marginBottom:10,
+        marginBottom:'5%',
         marginTop:10,
         alignSelf:'center',
     },
@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
-        borderRadius:10,
         paddingTop:10,
         paddingBottom:10
     },
@@ -48,12 +47,15 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         alignItems:'flex-start',
+        alignSelf:'center',
         marginBottom:10,
-        marginLeft:30
+        marginLeft:30,
+        marginRight:30
     },
     inputLabel1:{
         color:'black',
-        fontWeight:'600'
+        fontWeight:'600',
+        marginBottom:5
     },
     button1: {
         backgroundColor: colors.primary_3,
@@ -76,7 +78,6 @@ const styles = StyleSheet.create({
         borderColor:'#ccc',
         borderRadius: 10,
         padding: 10,
-        // fontSize: 16,
         width:270
       },
       generatedActivities:{
