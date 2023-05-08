@@ -11,10 +11,9 @@ const styles = StyleSheet.create({
       },
     feedbacksText:{
         marginLeft:'5%',
-        marginRight:'5%',
         marginBottom:'5%',
         marginTop:10,
-        alignSelf:'center',
+        // alignSelf:'center',
     },
     mainFormFeedbacks:{
       display:'flex',
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       padding: 10,
       fontSize: 16,
-      width:270,
+      width:300,
     },
       generatedActivities:{
         margintop:'90%',
@@ -120,8 +119,6 @@ const styles = StyleSheet.create({
         paddingBottom:10,
         paddingRight:10,
         paddingTop:10,
-        borderRadius:10,
-
         
     },
     activityName:{

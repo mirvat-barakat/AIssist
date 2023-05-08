@@ -66,7 +66,7 @@ class OpenAIController extends Controller
             $result = $client->completions()->create([
             'model' => 'text-davinci-003',
             'prompt' => $prompt,
-            'max_tokens' => 50,
+            'max_tokens' => 500,
             'temperature' => 0.5
         ]);
     
@@ -144,7 +144,7 @@ class OpenAIController extends Controller
             $result = $client->completions()->create([
             'model' => 'text-davinci-003',
             'prompt' => $prompt,
-            'max_tokens' => 200,
+            'max_tokens' => 500,
             'temperature' => 0.5
         ]);
     

@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         marginRight:'5%',
         marginBottom:'5%',
         marginTop:10,
-        alignSelf:'center',
+        // alignSelf:'center',
     },
     mainFormActivities:{
         display:'flex',
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
         alignItems:'flex-start',
         alignSelf:'center',
         marginBottom:10,
-        marginLeft:30,
-        marginRight:30
+        marginLeft:40,
+        marginRight:30,
     },
     inputLabel1:{
         color:'black',
@@ -117,8 +117,6 @@ const styles = StyleSheet.create({
         paddingBottom:10,
         paddingRight:10,
         paddingTop:10,
-        borderRadius:10,
-
         
     },
     activityName:{

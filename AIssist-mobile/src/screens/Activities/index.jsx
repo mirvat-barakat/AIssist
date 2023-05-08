@@ -8,13 +8,12 @@ export default function ActivitiesScreen() {
 
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('');
-    const [Diagnosis, setDiagnosis]= useState('');
+    const [diagnosis, setDiagnosis]= useState('');
     const [medications, setMedications] = useState('');
     const [interest, setInterest] = useState('');
     const [notes, setNotes] = useState('');
     const [things_have_tried, setThingSHaveTried] = useState('');
     const[activities, setActivities]= useState([]);
-    const [showMessage, setShowMessage] = useState(false);
     const scrollViewRef = useRef(null);
 
     const handleGenerateActivities= async (e)=>{
@@ -24,7 +23,7 @@ export default function ActivitiesScreen() {
         axios.post('http://192.168.1.6:8000/api/v0.0.1/activities', {
           'age': age,
           'gender':gender,
-          'Diagnosis': Diagnosis,
+          'diagnosis': diagnosis,
           'medications':medications,
           'interest': interest,
           'notes':notes,
@@ -40,11 +39,10 @@ export default function ActivitiesScreen() {
       .then(response => {
             console.log(response);
             setActivities(response.data.activities);
-            setShowMessage(true);
             scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: true });
         })
       .catch(error => {
-          console.log(error);
+          console.error(error);
       });
   }
 
@@ -81,7 +79,7 @@ export default function ActivitiesScreen() {
                   style={styles.input1}
                   onChangeText={text => setDiagnosis(text)}
                   setDiagnosis={setDiagnosis}
-                  value={Diagnosis}
+                  value={diagnosis}
                  />
                 </View>
                 <View style={styles.formActivities}>
@@ -133,11 +131,13 @@ export default function ActivitiesScreen() {
                              <View style={styles.specialistInfo}>
                                 <Text style={styles.activityName}>{activity.name}</Text>
                                 <Text style={styles.activityDescription}>{activity.description}</Text>
+                                
                           </View>
                              </View>
                           </View> 
                         </View>
                        ))}
+                       
             </View>
             
         </ScrollView>

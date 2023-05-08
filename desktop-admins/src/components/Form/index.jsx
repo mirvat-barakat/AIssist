@@ -12,7 +12,7 @@ const Form = ({ onSubmit }) => {
     const [phone_number, setPhoneNumber] = useState('');
     const [whatsapp_number, setWhatsappNumber] = useState('');
     const [location, setLocation] = useState('');
-    const token = localStorage.getItem("token");
+    
 
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -42,6 +42,7 @@ const Form = ({ onSubmit }) => {
 
 
     const handleAddSpecialist = (e) => {
+        const token = localStorage.getItem("token");
         e.preventDefault();
         axios.post('http://192.168.1.6:8000/api/v0.0.1/specialist', {
             'name': name,
@@ -50,7 +51,7 @@ const Form = ({ onSubmit }) => {
             'category': category,
             'profile_picture': profile_picture,
             'phone_number': phone_number,
-            'whatsapp-number':whatsapp_number,
+            'whatsapp_number':whatsapp_number,
             'location': location,
         }, {
             headers: {
