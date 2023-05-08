@@ -7,6 +7,39 @@ import styles from './styles';
 const FeedbackForm = () => {
     const [value, setValue] = React.useState('first');
 
+    const handleRegenerateActivities= async (e)=>{
+        e.preventDefault();
+        // const token = await AsyncStorage.getItem("token");
+         const token = localStorage.getItem("token");
+
+        axios.post('http://192.168.1.6:8000/api/v0.0.1/regenerate/activities'+formId, {
+            
+          'satisfaction': $satisfaction ,
+          'age_gender': $age_gender , 
+          'diagnosis': $diagnosis ,
+          'interest': $interest , 
+          'tried_activities': $tried_activities ,
+          'unable_activities': $unable_activities ,
+          'improvement_suggestions': $improvement_suggestions ,
+          'other_feedback': $other_feedback ,  
+          
+      }, {
+          headers: {
+              'content-type': 'application/json',
+              'Accept': 'application/json',
+              Authorization: `Bearer ${token}`
+          }
+      })
+      .then(response => {
+            console.log(response);
+            setActivities(response.data.activities);
+            setShowMessage(true);
+        })
+      .catch(error => {
+          console.log(error);
+      });
+  }
+
     return(
             <View style={styles.mainFormFeedbacks}>
                 <View style={styles.formFeedbacks}>
