@@ -135,7 +135,7 @@ const Form = ({ onSubmit }) => {
                 />
             </div>
             <div className='form1-input1'>
-                <label htmlFor="phone-number" className="input1-text">whatsapp Number:</label>
+                <label htmlFor="phone-number" className="input1-text">WhatsApp Number:</label>
                 <input
                     className="input1"
                     type="text"

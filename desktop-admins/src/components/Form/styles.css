@@ -37,8 +37,8 @@ body{
    translate: 0px -2px;
 }
 .input1-text{
-    margin-left: 5%;
     font-weight: 600;
+    margin-bottom: 1%;
     align-self: flex-start;
    }
 
