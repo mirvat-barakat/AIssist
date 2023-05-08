@@ -20,6 +20,7 @@ class SpecialistsController extends Controller
         $specialist->category = $request->input('category');
         $specialist->speciality = $request->input('speciality');
         $specialist->phone_number= $request->input('phone_number');
+        $specialist->whatsapp_number= $request->input('whatsapp_number');
         $specialist->location= $request->input('location');
         $specialist->profile_picture= $request->input('profile_picture');
         $specialist->save();
