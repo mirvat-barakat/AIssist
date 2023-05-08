@@ -57,7 +57,7 @@ export default function FeedbacksScreen() {
     return(
         <ScrollView style={styles.mainView}>
             <View style={styles.intro}>
-                <Text style={styles.activitiesText}>Please fill out this form to help us determine  which activities best suits your child case.</Text>
+                <Text style={styles.feedbacksText}>Please fill out this form to help us determine  which activities best suits your child case.</Text>
             </View>
             <View style={styles.mainFormFeedbacks}>
                 <View style={styles.formFeedbacks}>

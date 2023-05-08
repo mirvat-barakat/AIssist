@@ -7,19 +7,12 @@ const styles = StyleSheet.create({
         backgroundColor:'#F2F4F4',
     },
     intro:{
-        marginTop:20,
+        marginTop:'5%',
       },
-    feedbacksTitle:{
-        fontWeight:'bold',
-        fontSize:40,
-        marginLeft:10,
-        marginBottom:10,
-        marginTop:10,
-        alignSelf:'center',
-    },
     feedbacksText:{
-        marginLeft:10,
-        marginBottom:10,
+        marginLeft:'5%',
+        marginRight:'5%',
+        marginBottom:'5%',
         marginTop:10,
         alignSelf:'center',
     },
@@ -38,7 +31,7 @@ const styles = StyleSheet.create({
       marginLeft:10,
       marginBottom:20,
       marginRight:10,
-      width:300,
+      width:'90%',
       alignSelf:'center',
       shadowColor: '#000',
       shadowOffset: {
@@ -50,18 +43,19 @@ const styles = StyleSheet.create({
       elevation: 5,
   },
   formFeedbacks:{
+      width:'90%',
       display:'flex',
       flexDirection:'column',
       alignItems:'flex-start',
+      alignSelf:'center',
       marginBottom:10,
-      marginLeft:20,
       marginTop:5,
   },
   inputLabel1:{
       color:'black',
       fontWeight:'600',
       paddingLeft:10,
-      paddingRight:20,
+      paddingRight:10,
       marginBottom:5
   },
   button1: {
@@ -69,7 +63,8 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       padding: 10,
       alignItems: 'center',
-      width: 250,
+      alignSelf:'center',
+      width: 135,
       marginBottom: 10,
       marginTop:10,
       marginLeft:20,
@@ -80,12 +75,13 @@ const styles = StyleSheet.create({
     },
   input1: {
       borderColor:'#ccc',
-      borderWidth:0.1,
+      borderWidth:0.2,
+      alignSelf:'center',
       backgroundColor: colors.white,
       borderRadius: 5,
       padding: 10,
       fontSize: 16,
-      width:250
+      width:270,
     },
       generatedActivities:{
         margintop:'90%',
