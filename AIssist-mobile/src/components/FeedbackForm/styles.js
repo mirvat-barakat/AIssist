@@ -3,10 +3,6 @@ import { colors } from '../../constants/Palette';
 
 const styles = StyleSheet.create({
 
-    mainViewFeedbacks:{
-        width:'100%',
-        backgroundColor:'#F2F4F4',
-    },
     mainFormFeedbacks:{
         display:'flex',
         flexDirection:'column',
