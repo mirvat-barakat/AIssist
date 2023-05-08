@@ -11,17 +11,26 @@ const FeedbackForm = () => {
         e.preventDefault();
         // const token = await AsyncStorage.getItem("token");
          const token = localStorage.getItem("token");
+         const [satisfaction, setSatisfaction] = useState('');
+        const [age_gender, setAgeGender]= useState('');
+        const [diagnosis, setDiagnosis] = useState('');
+        const [interest, setInterest] = useState('');
+        const [tried_activities, setTriedActivities] = useState('');
+        const [unable_activities, setUnableActivities] = useState('');
+        const[improvement_suggestions, setImprovementSuggestions]= useState('');
+        const [other_feedback, setOtherFeedback] = useState('');
+        const[activities, setActivities]= useState([]);
 
         axios.post('http://192.168.1.6:8000/api/v0.0.1/regenerate/activities'+formId, {
-            
-          'satisfaction': $satisfaction ,
-          'age_gender': $age_gender , 
-          'diagnosis': $diagnosis ,
-          'interest': $interest , 
-          'tried_activities': $tried_activities ,
-          'unable_activities': $unable_activities ,
-          'improvement_suggestions': $improvement_suggestions ,
-          'other_feedback': $other_feedback ,  
+
+          'satisfaction': satisfaction ,
+          'age_gender': age_gender , 
+          'diagnosis': diagnosis ,
+          'interest': interest , 
+          'tried_activities': tried_activities ,
+          'unable_activities': unable_activities ,
+          'improvement_suggestions': improvement_suggestions ,
+          'other_feedback': other_feedback ,  
           
       }, {
           headers: {
