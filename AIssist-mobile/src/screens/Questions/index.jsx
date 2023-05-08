@@ -35,7 +35,7 @@ export default function QuestionsScreen() {
     useEffect(() => {
         if (Answer && Answer.length > 0) {
         let i = 0;
-        setAnswerDisplay(Answer.charAt(0)); 
+        // setAnswerDisplay(Answer.charAt(0)); 
         const timer = setInterval(() => {
             if (i < Answer.length) {
                 setAnswerDisplay(prevDisplay => prevDisplay + Answer.charAt(i));

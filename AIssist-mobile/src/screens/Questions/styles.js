@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
       marginTop:10,
       marginRight:10,
       alignSelf:'flex-end',
-      marginRight:'5%'
+      marginRight:5
   },
   shareButtonText: {
       color: '#fff',
