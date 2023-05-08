@@ -127,8 +127,8 @@ class OpenAIController extends Controller
         $apiKey = env('OPENAI_API_KEY');
         $client = OpenAI::client($apiKey);
     
-        $prompt = "Regenerate a list of activities with a description for each activity for a child with a special need with the following details that includes
-                    the details of the person and the generated activities that you generated earlier.
+        $prompt = "Generate a list of activities with a description for each activity for a child with a special need with the following details that includes
+                    the details of the child's case and the generated activities that you generated earlier.
 
                     Please take into consideration the following feedback to improve the generated activities:
                     How satisfied were you with the activities generated for you?: $satisfaction
@@ -136,7 +136,7 @@ class OpenAIController extends Controller
                     Were the activities appropriate for your diagnosis?: $diagnosis
                     Did you find the activities interesting?: $diagnosis$interest
                     Did you try any of the activities suggested to you?: $tried_activities
-                    If you answered Yes to the previous question, please specify which activities you were unable to do and why?: $unable_activities
+                    Were there any activities that you were unable to do? $unable_activities
                     What suggestions do you have to improve the activities generated for you?: $improvement_suggestions
                     Any other comments or feedback you would like to share: $other_feedback";
     
@@ -144,15 +144,16 @@ class OpenAIController extends Controller
             $result = $client->completions()->create([
             'model' => 'text-davinci-003',
             'prompt' => $prompt,
-            'max_tokens' => 50,
+            'max_tokens' => 200,
             'temperature' => 0.5
         ]);
     
         $response = $result['choices'][0]['text'];
+        
 
         $activities = [];
         $activityMatches = [];
-        preg_match_all('/(?<=[0-9]\.\s)(.*?)(?=\n\n|$)/s', $response, $activityMatches);
+        preg_match_all('/(?<=[0-9]\.\s)(.*?)(?=(?<=\n)\d+\.\s|$)/s', $response, $activityMatches);
 
         foreach ($activityMatches[1] as $activityMatch) {
             $activity = [
@@ -163,7 +164,7 @@ class OpenAIController extends Controller
             preg_match('/^(.*?):\s/', $activityMatch, $nameMatch);
             $activity['name'] = $nameMatch[1];
     
-            $activity['description'] = preg_replace('/^.*?:\s/', '', $activityMatch);
+            $activity['description'] = rtrim(preg_replace('/^(.*?):\s/', '', $activityMatch));
     
             $activities[] = $activity;
         }
