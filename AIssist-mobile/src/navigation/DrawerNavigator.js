@@ -16,17 +16,15 @@ function CustomDrawerContent(props) {
     <DrawerContentScrollView {...props}>
       <Image
         source={require('../../assets/images/Logo.png')}
-        style={{ width: 150, height: 150, marginBottom: 20, alignSelf:'center', marginTop:10}}
+        style={{ width: 150, height: 145, marginBottom: 20, alignSelf:'center', marginTop:10}}
       />
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
   );
 }
 
-
 const DrawerNavigator = () =>{
   
-
     return (
 
         <Drawer.Navigator initialRouteName="Community"
