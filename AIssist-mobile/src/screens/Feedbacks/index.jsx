@@ -4,13 +4,12 @@ import styles from './styles';
 import FeedbackForm from '../../components/FeedbackForm';
 import { RadioButton } from 'react-native-paper';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function FeedbacksScreen() {
 
     const[activities, setActivities]= useState([]);
     const [value, setValue] = React.useState('first');
-    const token = localStorage.getItem("token");
-    const formId = localStorage.getItem("formId");
     const [satisfaction, setSatisfaction] = useState('');
     const [age_gender, setAgeGender]= useState('');
     const [diagnosis, setDiagnosis] = useState('');
@@ -22,7 +21,8 @@ export default function FeedbacksScreen() {
 
     const handleRegenerateActivities= async (e)=>{
         e.preventDefault();
-        // const token = await AsyncStorage.getItem("token");
+        const token = await AsyncStorage.getItem("token");
+        const formId = await AsyncStorage.getItem("formId");
         
 
         axios.post('http://192.168.1.6:8000/api/v0.0.1/regenerate/activities/'+formId, {

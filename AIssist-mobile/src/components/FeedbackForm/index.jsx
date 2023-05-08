@@ -7,8 +7,6 @@ import styles from './styles';
 
 const FeedbackForm = () => {
     const [value, setValue] = React.useState('first');
-    const token = localStorage.getItem("token");
-    const formId = localStorage.getItem("formId");
     const [satisfaction, setSatisfaction] = useState('');
     const [age_gender, setAgeGender]= useState('');
     const [diagnosis, setDiagnosis] = useState('');
@@ -21,7 +19,7 @@ const FeedbackForm = () => {
 
     const handleRegenerateActivities= async (e)=>{
         e.preventDefault();
-        // const token = await AsyncStorage.getItem("token");
+        const token = await AsyncStorage.getItem("token");
         
 
         axios.post('http://192.168.1.6:8000/api/v0.0.1/regenerate/activities/'+formId, {

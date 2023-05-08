@@ -19,8 +19,7 @@ export default function ActivitiesScreen() {
 
     const handleGenerateActivities= async (e)=>{
         e.preventDefault();
-        // const token = await AsyncStorage.getItem("token");
-         const token = localStorage.getItem("token");
+        const token = await AsyncStorage.getItem("token");
 
         axios.post('http://192.168.1.6:8000/api/v0.0.1/activities', {
           'age': age,
