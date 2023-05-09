@@ -40,6 +40,28 @@ const ViewSpecialists = () => {
         setShowForm(false);
       }
 
+      const handleDeleteSpecialist = async(e) => {
+        e.preventDefault();
+        const specialistId = localStorage.getItem('specialistIdId');
+        const token = localStorage.getItem("token");
+        axios.delete('http://192.168.1.6:8000/api/v0.0.1/specialist/'+specialistId, {
+      }, {
+          headers: {
+              'content-type': 'application/json',
+              'Accept': 'application/json',
+              'Authorization': 'bearer ' + token
+          }
+      }).then(response => {
+        if (response.data.status == "success"){
+            alert("Specialist deleted successfully");
+        }
+      })
+        .catch(error => {
+            console.error(error);
+      });
+      };
+      
+
       return (
         <>
         <div className="body">
