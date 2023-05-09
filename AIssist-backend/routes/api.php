@@ -50,6 +50,7 @@ Route::group(["prefix" => "v0.0.1"], function()
             
             Route::post('/specialist', [SpecialistsController::class, 'addSpecialist']);
             Route::get('/users', [UserController::class, 'getUsers']);
+            Route::delete('/specialist/{id}', [SpecialistsController::class, 'deleteSpecialist']);
 
         });
 
