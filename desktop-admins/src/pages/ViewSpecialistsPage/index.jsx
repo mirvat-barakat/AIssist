@@ -40,16 +40,14 @@ const ViewSpecialists = () => {
         setShowForm(false);
       }
 
-      const handleDeleteSpecialist = async(e) => {
-        e.preventDefault();
-        const specialistId = localStorage.getItem('specialistIdId');
-        const token = localStorage.getItem("token");
+      const handleDeleteSpecialist = () => {
+        const specialistId = localStorage.getItem('specialistId');
         axios.delete('http://192.168.1.6:8000/api/v0.0.1/specialist/'+specialistId, {
       }, {
           headers: {
               'content-type': 'application/json',
               'Accept': 'application/json',
-              'Authorization': 'bearer ' + token
+              Authorization: 'bearer ' + token
           }
       }).then(response => {
         if (response.data.status == "success"){
@@ -57,7 +55,7 @@ const ViewSpecialists = () => {
         }
       })
         .catch(error => {
-            console.error(error);
+            console.error();
       });
       };
       
@@ -100,7 +98,10 @@ const ViewSpecialists = () => {
                       <td>{specialist.phone_number}</td>
                       <td>{specialist.whatsapp_number}</td>
                       <td>{specialist.Location}</td>
-                      <td><FontAwesomeIcon icon= {faTrashAlt}  className="faicon" size="1x" color="#F08080"/></td>
+                      <td><FontAwesomeIcon icon= {faTrashAlt}  className="faicon" size="1x" color="#F08080" onClick={() => {
+                            localStorage.setItem('specialistId', JSON.stringify(specialist.id));
+                            handleDeleteSpecialist()
+                        }} /></td>
                   </tr>
                 ))}
               </tbody>
