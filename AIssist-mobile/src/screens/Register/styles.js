@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
       },
     inputLabel: {
         marginBottom: 10,
-        fontSize:20,
+        fontSize:16,
         color:colors.white,
         marginTop:10,
       },

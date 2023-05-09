@@ -33,7 +33,6 @@ export default function LoginScreen({navigation}) {
           const res = await axios(config);
           if (res.data.status == "success") {
              AsyncStorage.setItem("token", res.data.authorisation.token);
-            // await localStorage.setItem("token", res.data.authorisation.token);
             navigation.navigate('DrawerNavigator');
           }
         } catch (error) {
@@ -50,7 +49,6 @@ export default function LoginScreen({navigation}) {
           style={styles.logo} 
           source={require('../../../assets/images/Logo.png')}
             />
-            {/* <Text style={styles.title}>LOGIN</Text> */}
             <View style={styles.form}>
             <View style={styles.inputContainer}>
                  <Text style={styles.inputLabel}> <Ionicons name="ios-mail" size={24} style={styles.icon} /> Email</Text>
