@@ -85,7 +85,7 @@ const Community = () => {
 
     return(
         <>
-            <div className="body-community">
+            <div className="body">
             <Sidebar/>
             <div className="title1">
             <h1>Community Moderation</h1>
