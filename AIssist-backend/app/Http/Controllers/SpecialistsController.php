@@ -80,5 +80,22 @@ class SpecialistsController extends Controller
             'specialists' => $specialists
         ]);
 }
+public function deleteSpecialist(Request $request, $id){
+
+    $specialist = Specialist::find($id);
+
+    if (!$specialist ) {
+        return response()->json([
+            'status' => 'error',
+            'message' => 'Specialist not found'
+        ], 404);
+    }
+
+    $specialist ->delete();
+    return response()->json([
+        'status' => 'success',
+        'message' => 'Specialist deleted successfully'
+    ], 200);
+}
 
 }
