@@ -65,11 +65,12 @@ const Sidebar = () => {
                     <Link href="#" className='link' onClick={handleLogoutClick}><span>Logout</span></Link>
             </div>
             {showLogoutDialog && (
+                <div className="add-form-backdrop">
                             <Confirmation
                             message="Are you sure you want to logout?"
                             onCancel={handleLogoutCancel}
                             onConfirm={handleLogout}
-                            />)}
+                            /></div>)}
 
             </div>
         </aside>

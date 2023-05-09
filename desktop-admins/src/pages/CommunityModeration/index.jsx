@@ -115,11 +115,13 @@ const Community = () => {
                             handleDeleteClick()
                         }} className="action-button delete">Delete</button>
                         {showDeleteDialog && (
+                            <div className="add-form-backdrop">
                             <Confirmation
                             message="Are you sure you want to delete this post?"
                             onCancel={handleDeleteCancel}
                             onConfirm={handleDeletePost}
-                            />)}
+                            />
+                            </div>)}
                         </div>
                     </div>
                     </div>
