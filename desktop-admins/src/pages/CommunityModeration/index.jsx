@@ -32,7 +32,6 @@ const Community = () => {
       useEffect(() => {
         axios.request(getPosts)
             .then(response => {
-                console.log(response);
                 setPosts(response.data.posts);
             })
             .catch(function (error) {

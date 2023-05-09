@@ -23,7 +23,6 @@ const ViewPage = () => {
         axios.request(getUsers)
             .then(response => {
                 setUsers(response.data.users);
-                console.log(response);
             })
             .catch(function (error) {
             //   navigate("/");
