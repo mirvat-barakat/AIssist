@@ -61,8 +61,9 @@ const Sidebar = () => {
                     <Link href="#" className='link'><FontAwesomeIcon icon={faGift} className="faicon" /><span>Rewards Managment</span></Link>
                 </div>
             </div>
+            </div>
             <div className='logout'>
-                    <Link href="#" className='link' onClick={handleLogoutClick}><span>Logout</span></Link>
+                    <Link href="#" className='link1' onClick={handleLogoutClick}><span>Logout</span></Link>
             </div>
             {showLogoutDialog && (
                 <div className="add-form-backdrop">
@@ -71,8 +72,6 @@ const Sidebar = () => {
                             onCancel={handleLogoutCancel}
                             onConfirm={handleLogout}
                             /></div>)}
-
-            </div>
         </aside>
     );
 };

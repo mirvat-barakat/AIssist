@@ -33,8 +33,7 @@
   font-weight:600;
   text-decoration: none;
   padding: 10%;
-  white-space: nowrap;
-  width: 100%;
+  width: 80%;
   align-self: flex-start;
 }
 .link:hover{
@@ -48,9 +47,26 @@
   justify-content:center;
 }
 .faicon{
-  margin-right: 15px;
+  margin-right: 10px;
+}
+.link1{
+  position: relative;
+  color: white;
+  font-size: 14px;
+  font-weight:600;
+  text-decoration: none;
+  padding: 10%;
+  width: 100%;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
+.link1:hover{
+  color:white;
+  background-color: #FFC6C6;
+  transition: all 0.5s;
 }
 .logout{
-  align-self: center;
+  width:100%;
   margin-top: 70%;
 }
