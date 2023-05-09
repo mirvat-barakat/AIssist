@@ -3,6 +3,8 @@ import Sidebar from "../../components/Sidebar";
 import Form from "../../components/Form";
 import axios from "axios";
 import "./styles.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import  {faTrashAlt}  from '@fortawesome/free-solid-svg-icons';
 
 const ViewSpecialists = () => {
 
@@ -59,6 +61,7 @@ const ViewSpecialists = () => {
                   <th>Phone Number</th>
                   <th>Whatsapp Number</th>
                   <th>Location</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -75,6 +78,7 @@ const ViewSpecialists = () => {
                       <td>{specialist.phone_number}</td>
                       <td>{specialist.whatsapp_number}</td>
                       <td>{specialist.Location}</td>
+                      <td><FontAwesomeIcon icon= {faTrashAlt}  className="faicon" size="1x" color="#F08080"/></td>
                   </tr>
                 ))}
               </tbody>
