@@ -80,7 +80,11 @@ const ViewSpecialists = () => {
               </tbody>
             </table>
           </div>
-          {showForm && <Form onSubmit={handleAddSpecialist} />}
+          {showForm && (
+            <div className="add-form-backdrop">
+          <Form onSubmit={handleAddSpecialist} />
+          </div>
+          )}
           </div>
         </>
         
