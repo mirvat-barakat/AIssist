@@ -1,6 +1,6 @@
 .body-community{
     background-color: #F2F4F4;
-    height: 100vh;
+    height: 100%;
     width:100%;
 }
 .mainPostView{
@@ -22,6 +22,7 @@
     padding-right: 10px;
     background-color:white;
     margin-top:20px;
+    margin-bottom: 20px;
     display:flex;
     flex-direction:column;
     flex-wrap: nowrap;
@@ -69,6 +70,7 @@
     font-weight: 500;
     text-decoration-color: #F08080 ;
     color: #F08080;
+    margin-bottom: 10px;
 }
 .action-button{
     color:"white";
@@ -85,4 +87,25 @@
     background-color: #e0e0e0;
     border-color: #e0e0e0;
     color: #333;
+}
+.commentView{
+    margin-left: 30px;
+}
+.profilePhotoComment{
+    width:50px;
+    height:50px;
+    border-radius:50px;
+}
+.usernameComment{
+    align-content:normal;
+    margin-left:10px;
+    font-size:16px;
+    font-weight:500;
+}
+.commentContent{
+    color:black;
+    text-decoration: none;
+    font-size: 16px; 
+    margin-left: 75px;
+    margin-top: -20px;
 }

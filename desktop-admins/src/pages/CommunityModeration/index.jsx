@@ -11,6 +11,7 @@ const Community = () => {
     const token = localStorage.getItem("token");
     const postId = localStorage.getItem('postId');
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+    const [showComments, setShowComments] = useState(false);
 
     function handleDeleteClick() {
         setShowDeleteDialog(true);
@@ -39,6 +40,8 @@ const Community = () => {
             });
       },[token]);
 
+      const handleCommentsClick = async() => {
+
       const getComments = {
         method: 'GET',
         url: 'http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments',
@@ -48,26 +51,26 @@ const Community = () => {
           'Authorization': 'bearer ' + token
         },
       };
-    
-      useEffect(() => {
+        setShowComments(true);
         axios.request(getComments)
             .then(response => {
-                console.log(response);
                 setComments(response.data.comments);
             })
             .catch(function (error) {
                 console.error();
             });
-      },[token, postId]);
+    };
 
-      const handleDeletePost = async() => {
+      const handleDeletePost = async(e) => {
+        e.preventDefault();
         const postId = localStorage.getItem('postId');
+        const token = localStorage.getItem("token");
         axios.delete('http://192.168.1.6:8000/api/v0.0.1/community/'+postId, {
       }, {
           headers: {
               'content-type': 'application/json',
               'Accept': 'application/json',
-              'Authorization': `Bearer ${token}` 
+              'Authorization': 'bearer ' + token
           }
       }).then(response => {
         if (response.data.status == "success"){
@@ -75,7 +78,7 @@ const Community = () => {
         }
       })
         .catch(error => {
-            console.log(error);
+            console.error(error);
       });
       };
 
@@ -104,13 +107,12 @@ const Community = () => {
                         <div>
                         <button onClick={() => {
                             localStorage.setItem('postId', JSON.stringify(post.id));
-                            console.log(post.id);
+                            handleCommentsClick();
                         }} className="action-button">Comments</button>
                         </div>
                         <div>
                         <button onClick={() => {
                             localStorage.setItem('postId', JSON.stringify(post.id));
-                            console.log(post.id);
                             handleDeleteClick()
                         }} className="action-button delete">Delete</button>
                         {showDeleteDialog && (
@@ -123,6 +125,17 @@ const Community = () => {
                             </div>)}
                         </div>
                     </div>
+                    {showComments && comments.filter(comment => comment.post_id === post.id).map(comment => (
+                        <div className="commentView" key={comment.id}>
+                        <div className="imageView">
+                            <img src={comment.profile_picture} className="profilePhotoComment"></img>
+                            <p className="usernameComment">{comment.name}</p>
+                        </div>
+                        <div className="commentContent">
+                            <p>{comment.content}</p>
+                        </div>
+                        </div>
+                    ))}
                     </div>
                     ))}
                 </div>
