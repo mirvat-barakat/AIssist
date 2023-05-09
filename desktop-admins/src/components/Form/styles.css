@@ -1,6 +1,9 @@
 body{
     background-color: white;
   }
+  .form-title{
+    margin-top: -10px;
+  }
 
   .form{
     position: absolute;
@@ -57,4 +60,12 @@ body{
 .button3:hover{
   background-color: #faaeae;
   translate: 0px -2px;
+}
+.faicon1{
+  align-self: flex-end;
+  font-size: 22px;
+  margin-right: 15px;
+}
+.faicon1 :hover {
+  color: #F08080;
 }

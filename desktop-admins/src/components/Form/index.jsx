@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import './styles.css';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Form = ({ onSubmit }) => {
 
@@ -70,11 +72,14 @@ const Form = ({ onSubmit }) => {
             console.log(error);
         });
     };
-
+    const handleIconClick = () => {
+        onSubmit();
+      };
 
     return (
         <form className="form">
-            <h2>Add Specialist</h2>
+            <FontAwesomeIcon icon={faTimes} className="faicon1" onClick={handleIconClick}/>
+            <h2 className='form-title'>Add Specialist</h2>
             <div className='form1-input1'>
                 <label htmlFor="name" className="input1-text">Name:</label>
                 <input
