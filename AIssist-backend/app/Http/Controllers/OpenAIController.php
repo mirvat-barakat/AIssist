@@ -46,8 +46,6 @@ class OpenAIController extends Controller
         $activity_request->things_have_tried= $tried = $request->input('things_have_tried');
         $activity_request->notes= $notes = $request->input('notes'); 
         $activity_request->user_id= Auth::id();
-        $activity_request->save();
-        $activity_request_id = $activity_request->id;
     
         $apiKey = env('OPENAI_API_KEY');
         $client = OpenAI::client($apiKey);
@@ -73,7 +71,7 @@ class OpenAIController extends Controller
 
         $activities = [];
         $activityMatches = [];
-        preg_match_all('/(?<=[0-9]\.\s)(.*?)(?=\n\n|$)/s', $response, $activityMatches);
+        preg_match_all('/(?<=[0-9]\.\s)(.*?)(?=(?<=\n)\d+\.\s|$)/s', $response, $activityMatches);
 
         foreach ($activityMatches[1] as $activityMatch) {
             $activity = [
@@ -84,10 +82,13 @@ class OpenAIController extends Controller
             preg_match('/^(.*?):\s/', $activityMatch, $nameMatch);
             $activity['name'] = $nameMatch[1];
     
-            $activity['description'] = preg_replace('/^.*?:\s/', '', $activityMatch);
+            $activity['description'] = rtrim(preg_replace('/^(.*?):\s/', '', $activityMatch));
     
             $activities[] = $activity;
         }
+        $activity_request->generated_activities = json_encode($activities);
+        $activity_request->save();
+        $activity_request_id = $activity_request->id;
     
         if (empty($activities)) {
             return response()->json([
