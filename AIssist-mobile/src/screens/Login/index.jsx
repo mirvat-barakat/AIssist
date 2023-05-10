@@ -43,7 +43,7 @@ export default function LoginScreen({navigation}) {
 
     return (
         <SafeAreaView  style={{ flex: 1 }}>
-          <Header1 title="Login" backgroundColor='#FFC6C6'onPressBackButton={() => navigation.navigate('Login')} />
+          <Header1 title="Login" backgroundColor='#FFC6C6'onPressBackButton={() => navigation.navigate('Launch')} />
           <View style={styles.container1}>
             <Image
           style={styles.logo} 

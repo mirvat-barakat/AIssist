@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
       },
       button: {
         backgroundColor: colors.primary_3,
-        paddingVertical: 15,
-        paddingHorizontal: 70,
+        paddingVertical: 10,
+        paddingHorizontal: 80,
         borderRadius: 10,
       },
       buttonText: {
