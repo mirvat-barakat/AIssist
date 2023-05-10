@@ -3,7 +3,7 @@ import {View, Image} from "react-native";
 import {createDrawerNavigator, DrawerContentScrollView, DrawerItemList} from '@react-navigation/drawer';
 import CommunityScreen from '../screens/Community';
 import ActivitiesScreen from '../screens/Activities';
-import FeedbacksScreen from '../screens/Feedbacks';
+import FeedbacksScreen from '../screens/Feedback';
 import QuestionsScreen from '../screens/Questions';
 import SpecialistsScreen from '../screens/Specialists';
 import { colors } from '../constants/Palette';

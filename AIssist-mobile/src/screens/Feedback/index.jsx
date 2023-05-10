@@ -6,7 +6,7 @@ import { RadioButton } from 'react-native-paper';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function FeedbacksScreen() {
+export default function FeedbackScreen() {
 
     const[activities, setActivities]= useState([]);
     const [value, setValue] = React.useState('first');

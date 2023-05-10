@@ -3,6 +3,7 @@ import { Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-nativ
 import styles from './styles';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import FeedbackScreen from '../Feedback';
 
 export default function ActivitiesScreen({navigation}) {
 
@@ -42,6 +43,7 @@ export default function ActivitiesScreen({navigation}) {
             console.log(response);
             setActivities(response.data.activities);
             setShowFeedbackMessage(true);
+            AsyncStorage.setItem('activityRequestId', JSON.stringify(response.data.activity_request_id));
             scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: true });
         })
       .catch(error => {
@@ -139,11 +141,12 @@ export default function ActivitiesScreen({navigation}) {
                              </View>
                           </View> 
                         </View>
+
                        ))}  
             </View>
             {showFeedbackMessage && (
                         <View >
-                            <Text style={styles.feedbackText}>Not satisfied with the activities? <TouchableOpacity  onPress={() => navigation.navigate('Login')}><Text style={styles.feedbackLink}>Submit feedback</Text></TouchableOpacity ></Text>
+                            <Text style={styles.feedbackText}>Not satisfied with the activities? <TouchableOpacity  onPress={() => navigation.navigate('FeedbackScreen')}><Text style={styles.feedbackLink}>Submit feedback</Text></TouchableOpacity ></Text>
                         </View>
                     )}
             
