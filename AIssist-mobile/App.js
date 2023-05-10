@@ -24,12 +24,12 @@ function App() {
 
 
   return (
-    // <NavigationContainer>
-    //   {isAuthenticated ? <DrawerNavigator /> : <AuthStack />}
-    // </NavigationContainer>
     <NavigationContainer>
-        <AuthStack />
+      {isAuthenticated ? <DrawerNavigator /> : <AuthStack />}
     </NavigationContainer>
+    // <NavigationContainer>
+    //     <AuthStack />
+    // </NavigationContainer>
     // <NavigationContainer>
     //     <DrawerNavigator />
     // </NavigationContainer>
