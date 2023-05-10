@@ -16,8 +16,8 @@ const AuthStack = () => {
         <Stack.Screen name="Launch" component={LaunchScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
-        {/* <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} options={{ headerShown: false }}/>
-        <Stack.Screen name="Comments" component={CommentsScreen} options={{ headerShown: false }}/> */}
+        <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} options={{ headerShown: false }}/>
+        <Stack.Screen name="Comments" component={CommentsScreen} options={{ headerShown: false }}/>
         
       </Stack.Navigator>
     );

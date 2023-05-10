@@ -27,14 +27,33 @@ export default function CommunityScreen({ navigation }) {
       })
       .then(response => {
           if (response.data.status == "success"){
-              alert("Post Shared");
-              console.log(response.data);
+              refreshFeed();
           }
       })
       .catch(error => {
           console.log(error);
       });
   };
+
+  const refreshFeed = async () => {
+    const token = await AsyncStorage.getItem("token");
+    const config = {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` },
+      url: 'http://192.168.1.6:8000/api/v0.0.1/community/posts',
+    };
+  
+    try {
+      const res = await axios(config);
+  
+      if (res.data.status === "success") {
+        setFeed(res.data.posts);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
   
 
       const handleLike = async (postId) => {
