@@ -47,7 +47,6 @@ class OpenAIController extends Controller
         $activity_request->notes= $notes = $request->input('notes'); 
         $activity_request->user_id= Auth::id();
         $activity_request->save();
-
         $activity_request_id = $activity_request->id;
     
         $apiKey = env('OPENAI_API_KEY');
