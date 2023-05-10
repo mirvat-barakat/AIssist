@@ -81,9 +81,23 @@ export default function CommunityScreen({ navigation }) {
       try {
         const res = await axios(config);
   
-        if (res.data.status == "success") {
-          setFeed(res.data.posts);
-          console.log(res.data);
+        if (res.data.status === "success") {
+          const postsWithLikesCount = await Promise.all(res.data.posts.map(async (post) => {
+            const likesRes = await axios({
+              method: "GET",
+              headers: { Authorization: `Bearer ${token}` },
+              url: `http://192.168.1.6:8000/api/v0.0.1/post/${post.id}/likes`,
+            });
+    
+            if (likesRes.data.status === "success") {
+              return { ...post, likesCount: likesRes.data.like_count };
+            }
+    
+            return post;
+          }));
+    
+          setFeed(postsWithLikesCount);
+          console.log(postsWithLikesCount);
         }
       } catch (error) {
         console.log(error);
@@ -114,7 +128,7 @@ export default function CommunityScreen({ navigation }) {
       }
     };
     useEffect(() => {
-      getPosts();
+      getPostLikes();
     }, []);
 
 
@@ -147,6 +161,7 @@ export default function CommunityScreen({ navigation }) {
                         <View style={styles.actions}>
                           <View>
                           <TouchableOpacity  onPress={() => handleLike(post.id)}><Ionicons name="heart-outline" size={24} style={[styles.icon, { color: likedPosts.includes(post.id) ? 'red' : 'black' }]}  /></TouchableOpacity>
+                          <Text>{post.likesCount}</Text>
                           </View>
                           <View>
                           <TouchableOpacity style={styles.commentButton} >
