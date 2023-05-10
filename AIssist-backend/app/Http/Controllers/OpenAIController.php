@@ -37,31 +37,29 @@ class OpenAIController extends Controller
 
     public function generateActivities(Request $request){
 
-        $diagnosis = $request->input('diagnosis');
-        $gender = $request->input('gender');
-        $age = $request->input('age');
-        $medications = $request->input('medications');
-        $interest = $request->input('interest');
-        $notes = $request->input('notes');
-        $tried = $request->input('things_have_tried');
-
         $activity_request= new Activity();
-        $activity_request->age= $age;
-        $activity_request->gender= $gender; 
-        $activity_request->diagnosis= $diagnosis;
-        $activity_request->medications= $medications; 
-        $activity_request->interests= $interest;
-        $activity_request->things_have_tried= $tried;
-        $activity_request->notes= $notes; 
+        $activity_request->age= $age = $request->input('age');
+        $activity_request->gender= $gender = $request->input('gender'); 
+        $activity_request->diagnosis= $diagnosis = $request->input('diagnosis');
+        $activity_request->medications= $medications = $request->input('medications'); 
+        $activity_request->interests= $interest = $request->input('interest');
+        $activity_request->things_have_tried= $tried = $request->input('things_have_tried');
+        $activity_request->notes= $notes = $request->input('notes'); 
         $activity_request->user_id= Auth::id();
+        $activity_request->save();
     
         $apiKey = env('OPENAI_API_KEY');
         $client = OpenAI::client($apiKey);
     
-        $prompt = "provide a list of activities with a description for each activity for a person with the following details:\n
-         Diagnosis: {$diagnosis}\nGender: {$gender}\nAge: {$age} years old\nMedications: {$medications}\n
-         Interest: {$interest}\nNotes: {$notes}\nThings tried: {$tried}\n\n.";
-    
+        $prompt = "provide a list of activities with a description for each activity for a person of special need with the following details:
+         Diagnosis: {$diagnosis} 
+         Gender: {$gender} 
+         Age: {$age} years old 
+         Medications: {$medications}
+         Interest: {$interest} 
+         Notes: {$notes} 
+         Things tried: {$tried}.";
+        
         try{
             $result = $client->completions()->create([
             'model' => 'text-davinci-003',
@@ -89,20 +87,17 @@ class OpenAIController extends Controller
     
             $activities[] = $activity;
         }
-        $activity_request->generated_activities = json_encode($activities);
-        $activity_request->save();
     
         if (empty($activities)) {
-            return response()->json(['error' => 'No activities found.'], 404);
+            return response()->json([
+                'error' => 'No activities found.'], 404);
         }
 
-        return response()->json(['activities' => $activities]);
+        return response()->json([ 'activities' => $activities]);
 
     } catch (\Exception $e) {
-
-        logger($e->getMessage());
-        logger($e->getTraceAsString());
-        return response()->json(['error' => 'Unable to generate activities.'], 500);
+        return response()->json([
+            'error' => 'Unable to generate activities.'], 500);
     }
 }
 

@@ -33,7 +33,7 @@ export default function ActivitiesScreen() {
           headers: {
               'content-type': 'application/json',
               'Accept': 'application/json',
-              Authorization: `Bearer ${token}`
+              Authorization: 'bearer'+ token
           }
       })
       .then(response => {
