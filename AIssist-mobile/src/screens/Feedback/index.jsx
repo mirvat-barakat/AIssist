@@ -22,7 +22,7 @@ export default function FeedbackScreen() {
     const handleRegenerateActivities= async (e)=>{
         e.preventDefault();
         const token = await AsyncStorage.getItem("token");
-        const formId = await AsyncStorage.getItem("formId");
+        const formId = await AsyncStorage.getItem("activityRequestId");
         
 
         axios.post('http://192.168.1.6:8000/api/v0.0.1/regenerate/activities/'+formId, {
@@ -182,8 +182,8 @@ export default function FeedbackScreen() {
             </View>
             <View style={styles.generatedActivities}>
                        {activities.map(activity=> (
-                        <View style={styles.activityView}>
-                        <View key={activity.id}>
+                        <View key={activity.id} style={styles.activityView}>
+                        <View>
                           <View style={styles.card} >
                              <View style={styles.specialistInfo}>
                                 <Text style={styles.activityName}>{activity.name}</Text>

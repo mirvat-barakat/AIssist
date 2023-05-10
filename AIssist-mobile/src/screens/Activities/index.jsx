@@ -130,8 +130,8 @@ export default function ActivitiesScreen({navigation}) {
 
             <View style={styles.generatedActivities}>
                        {activities.map(activity=> (
-                        <View style={styles.activityView}>
-                        <View key={activity.id}>
+                        <View key={activity.id} style={styles.activityView}>
+                        <View >
                           <View style={styles.card} >
                              <View style={styles.specialistInfo}>
                                 <Text style={styles.activityName}>{activity.name}</Text>
