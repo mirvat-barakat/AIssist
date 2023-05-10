@@ -28,6 +28,7 @@ export default function CommunityScreen({ navigation }) {
       .then(response => {
           if (response.data.status == "success"){
               refreshFeed();
+              setContent(''); 
           }
       })
       .catch(error => {
