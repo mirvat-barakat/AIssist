@@ -4,7 +4,7 @@ import styles from './styles';
 
 export default function LaunchScreen() {
     return(
-        <ScrollView>
-        </ScrollView>
+        <SafeAreaView style={styles.mainViewLaunch}>
+        </SafeAreaView >
     );
 }
