@@ -3,6 +3,8 @@ import  "./styles.css";
 import logo from '../../assets/images/Logo.png';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -61,12 +63,12 @@ const Login =()=> {
           <img src={logo} alt="logo" className="logo1"></img>
           <form className="login-form">
             <div className="form-group">
-              <label htmlFor="email" className="input1-label">Email:</label>
+              <label htmlFor="email" className="input1-label"><FontAwesomeIcon icon={faEnvelope} className="icon"/>Email:</label>
               <input type="email" id="email" name="email" className="input1-login"
                       value={email}  onChange={handleEmailChange} autoComplete="off" required />
             </div>
             <div className="form-group">
-              <label htmlFor="password" className="input1-label">Password:</label>
+              <label htmlFor="password" className="input1-label"><FontAwesomeIcon icon={faKey} className="icon"/>Password:</label>
               <input type="password" id="password" name="password"
                       value={password} className="input1-login" onChange={handlePasswordChange} autoComplete="off" required/>
               {<div className="error">{passwordError}</div>}
