@@ -168,8 +168,8 @@ export default function CommunityScreen({ navigation }) {
                 <View style={styles.mainPostView}>
                     <View >
                        {posts.map(post => (
-                        <View style={styles.postView}>
-                        <View key={post.id} style={styles.postTitle}>
+                        <View key={post.id} style={styles.postView}>
+                        <View style={styles.postTitle}>
                           <View style={styles.imageView}>
                              <Image style={styles.profilePhoto} source={{uri:post.profile_picture}}></Image>
                              <Text style={styles.username} numberOfLines={3} ellipsizeMode="tail">{post.name}</Text>
