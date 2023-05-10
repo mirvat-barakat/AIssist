@@ -47,6 +47,8 @@ class OpenAIController extends Controller
         $activity_request->notes= $notes = $request->input('notes'); 
         $activity_request->user_id= Auth::id();
         $activity_request->save();
+
+        $activity_request_id = $activity_request->id;
     
         $apiKey = env('OPENAI_API_KEY');
         $client = OpenAI::client($apiKey);
@@ -93,7 +95,9 @@ class OpenAIController extends Controller
                 'error' => 'No activities found.'], 404);
         }
 
-        return response()->json([ 'activities' => $activities]);
+        return response()->json([ 
+            'activity_request_id' => $activity_request_id,
+            'activities' => $activities]);
 
     } catch (\Exception $e) {
         return response()->json([
