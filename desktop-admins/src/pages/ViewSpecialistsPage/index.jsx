@@ -98,7 +98,7 @@ const ViewSpecialists = () => {
                       <td>{specialist.phone_number}</td>
                       <td>{specialist.whatsapp_number}</td>
                       <td>{specialist.Location}</td>
-                      <td><FontAwesomeIcon icon= {faTrashAlt}  className="faicon" size="1x" color="#F08080" onClick={() => {
+                      <td><FontAwesomeIcon icon= {faTrashAlt}  className="faicon-delete" size="1x" color="#F08080" onClick={() => {
                             localStorage.setItem('specialistId', JSON.stringify(specialist.id));
                             handleDeleteSpecialist()
                         }} /></td>
