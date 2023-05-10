@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
         fontWeight: '600',
         textAlign:'center',
         textDecorationLine:'underline',
+        marginRight:10,
     },
     postContent:{
         top:10,
@@ -119,16 +120,18 @@ const styles = StyleSheet.create({
         marginRight:15,       
         lineHeight: 22,         
         fontSize: 16, 
-        textAlign:'auto'
+        textAlign:'auto',
+        marginBottom:10,
     },
     icon: {
         color: colors.black,
         marginTop:15,
+        marginLeft:15
     },
     actions:{
         display:'flex',
         flexDirection:'row',
-        justifyContent:'space-around',
+        justifyContent:'space-between',
         flexWrap:'nowrap',
     },
     
