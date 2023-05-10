@@ -42,7 +42,7 @@ const ViewSpecialists = () => {
 
       const handleDeleteSpecialist = () => {
         const specialistId = localStorage.getItem('specialistId');
-        axios.delete('http://192.168.1.6:8000/api/v0.0.1/specialist/'+specialistId, {
+        axios.post('http://192.168.1.6:8000/api/v0.0.1/specialist/'+specialistId, {
       }, {
           headers: {
               'content-type': 'application/json',

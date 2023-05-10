@@ -65,7 +65,7 @@ const Community = () => {
         e.preventDefault();
         const postId = localStorage.getItem('postId');
         const token = localStorage.getItem("token");
-        axios.delete('http://192.168.1.6:8000/api/v0.0.1/community/'+postId, {
+        axios.post('http://192.168.1.6:8000/api/v0.0.1/community/'+postId, {
       }, {
           headers: {
               'content-type': 'application/json',
