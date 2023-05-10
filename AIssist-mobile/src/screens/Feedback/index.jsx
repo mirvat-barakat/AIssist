@@ -18,6 +18,7 @@ export default function FeedbackScreen() {
     const [unable_activities, setUnableActivities] = useState('');
     const[improvement_suggestions, setImprovementSuggestions]= useState('');
     const [other_feedback, setOtherFeedback] = useState('');
+    const [showForm, setShowForm] = useState(true);
 
     const handleRegenerateActivities= async (e)=>{
         e.preventDefault();
@@ -44,8 +45,8 @@ export default function FeedbackScreen() {
           }
       })
       .then(response => {
-            console.log(response);
             setActivities(response.data.activities);
+            setShowForm(false); 
         })
       .catch(error => {
           console.log(error);
@@ -56,6 +57,8 @@ export default function FeedbackScreen() {
 
     return(
         <ScrollView style={styles.mainView}>
+            {showForm && (
+                <>
             <View style={styles.intro}>
                 <Text style={styles.feedbacksText}>Please fill out this form to help us determine  which activities best suits your child case.</Text>
             </View>
@@ -180,6 +183,11 @@ export default function FeedbackScreen() {
                  <Text style={styles.buttonText} onPress={handleRegenerateActivities}>Submit</Text>
                 </TouchableOpacity>
             </View>
+            </>
+            )}
+            {!showForm && (
+            <>
+            <Text style={styles.feedbacksText}>Thank you for submitting your feedback. Here is another list og generated activities taking into consideration your previous application and your feedback. Hope this helps.</Text>
             <View style={styles.generatedActivities}>
                        {activities.map(activity=> (
                         <View key={activity.id} style={styles.activityView}>
@@ -194,6 +202,8 @@ export default function FeedbackScreen() {
                         </View>
                        ))}
             </View>
+            </>
+             )}
         </ScrollView>
     )
 };

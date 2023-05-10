@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         marginLeft:'5%',
         marginBottom:'5%',
         marginTop:10,
-        // alignSelf:'center',
+        marginRight:'5%',
     },
     mainFormFeedbacks:{
       display:'flex',
