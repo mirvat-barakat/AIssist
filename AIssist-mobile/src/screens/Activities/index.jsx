@@ -4,7 +4,7 @@ import styles from './styles';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function ActivitiesScreen() {
+export default function ActivitiesScreen({navigation}) {
 
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('');
@@ -15,6 +15,8 @@ export default function ActivitiesScreen() {
     const [things_have_tried, setThingSHaveTried] = useState('');
     const[activities, setActivities]= useState([]);
     const scrollViewRef = useRef(null);
+    const [showFeedbackMessage, setShowFeedbackMessage] = useState(false);
+
 
     const handleGenerateActivities= async (e)=>{
         e.preventDefault();
@@ -39,6 +41,7 @@ export default function ActivitiesScreen() {
       .then(response => {
             console.log(response);
             setActivities(response.data.activities);
+            setShowFeedbackMessage(true);
             scrollViewRef.current.scrollTo({ x: 0, y: 0, animated: true });
         })
       .catch(error => {
@@ -136,9 +139,13 @@ export default function ActivitiesScreen() {
                              </View>
                           </View> 
                         </View>
-                       ))}
-                       
+                       ))}  
             </View>
+            {showFeedbackMessage && (
+                        <View >
+                            <Text style={styles.feedbackText}>Not satisfied with the activities? <TouchableOpacity  onPress={() => navigation.navigate('Login')}><Text style={styles.feedbackLink}>Submit feedback</Text></TouchableOpacity ></Text>
+                        </View>
+                    )}
             
         </ScrollView>
     )

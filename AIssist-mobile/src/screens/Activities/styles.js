@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         borderColor:'#ccc',
         borderRadius: 10,
         padding: 10,
-        width:270
+        width:300
       },
       generatedActivities:{
         margintop:'5%',
@@ -127,6 +127,16 @@ const styles = StyleSheet.create({
     },
     activityDescription:{
       textAlign:'justify',
+    },
+    feedbackText: {
+      marginBottom:20,
+      color: 'black',
+      fontSize: 16,
+      marginLeft:'5%',
+    },
+    feedbackLink: {
+      color: colors.primary_3,
+      textDecorationLine: 'underline',
     },
 });
 
