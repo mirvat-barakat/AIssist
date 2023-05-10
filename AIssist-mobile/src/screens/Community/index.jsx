@@ -11,6 +11,7 @@ export default function CommunityScreen({ navigation }) {
     const [content, setContent] = useState('');
     const [postId, setPostId] = useState(null);
     const [likedPosts, setLikedPosts] = useState([]);
+    const[likesCount, setLikesCount]= useState('');
 
     const handleSharePost= async(e) => {
       const token = await AsyncStorage.getItem("token");
@@ -91,6 +92,31 @@ export default function CommunityScreen({ navigation }) {
     useEffect(() => {
       getPosts();
     }, []);
+    
+    const getPostLikes = async () => {
+      const token = await AsyncStorage.getItem("token");
+      const postId = await AsyncStorage.getItem('postId');
+      const config = {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+        url: 'http://192.168.1.6:8000/api/v0.0.1/post/'+postId+'/likes',
+      };
+  
+      try {
+        const res = await axios(config);
+  
+        if (res.data.status == "success") {
+          setLikesCount(res.data.like_count);
+          console.log(res.data.like_count);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    useEffect(() => {
+      getPosts();
+    }, []);
+
 
       return(
           <ScrollView>
