@@ -63,8 +63,8 @@ class OpenAIController extends Controller
             $result = $client->completions()->create([
             'model' => 'text-davinci-003',
             'prompt' => $prompt,
-            'max_tokens' => 100,
-            'temperature' => 0.5
+            'max_tokens' => 500,
+            'temperature' => 0.4
         ]);
     
         $response = $result['choices'][0]['text'];
@@ -72,9 +72,12 @@ class OpenAIController extends Controller
         $activities = [];
         $activityMatches = [];
         preg_match_all('/(?<=[0-9]\.\s)(.*?)(?=(?<=\n)\d+\.\s|$)/s', $response, $activityMatches);
-
-        foreach ($activityMatches[1] as $activityMatch) {
+         
+        $keys = array_keys($activityMatches[1]);
+        foreach ($keys as $index) {
+            $activityMatch = $activityMatches[1][$index];
             $activity = [
+                'id' => $index + 1,
                 'name' => '',
                 'description' => ''
             ];
@@ -144,7 +147,7 @@ class OpenAIController extends Controller
             'model' => 'text-davinci-003',
             'prompt' => $prompt,
             'max_tokens' => 500,
-            'temperature' => 0.5
+            'temperature' => 0.4
         ]);
     
         $response = $result['choices'][0]['text'];
@@ -153,9 +156,12 @@ class OpenAIController extends Controller
         $activities = [];
         $activityMatches = [];
         preg_match_all('/(?<=[0-9]\.\s)(.*?)(?=(?<=\n)\d+\.\s|$)/s', $response, $activityMatches);
-
-        foreach ($activityMatches[1] as $activityMatch) {
+        
+        $keys = array_keys($activityMatches[1]);
+        foreach ($keys as $index) {
+            $activityMatch = $activityMatches[1][$index];
             $activity = [
+                'id' => $index + 1,
                 'name' => '',
                 'description' => ''
             ];
