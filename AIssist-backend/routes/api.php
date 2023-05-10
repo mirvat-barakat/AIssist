@@ -29,28 +29,28 @@ Route::group(["prefix" => "v0.0.1"], function()
 
         Route::post('/community/posts', [CommunityPostController::class, 'createPost']);
         Route::get('/community/posts', [CommunityPostController::class, 'getPosts']);
-        Route::delete('/community/{id}', [CommunityPostController::class, 'deletePost']);
+        Route::post('/community/{id}', [CommunityPostController::class, 'deletePost']);
 
         Route::post('/posts/{post_id}/comments', [CommentController::class, 'createComment']);
         Route::get('/posts/{post_id}/comments', [CommentController::class, 'getComments']);
         Route::post('/comment/{id}', [CommentController::class, 'update']);
-        Route::delete('/comment/{id}', [CommentController::class, 'deleteComment']);
+        Route::post('/delete/comment/{id}', [CommentController::class, 'deleteComment']);
        
         Route::post('/posts/{post_id}/likes', [LikeController::class, 'likePost']);
         Route::post('/comments/{comment_id}/likes', [LikeController::class, 'likeComment']);
         Route::get('/post/{id}/likes', [LikeController::class, 'getPostLikes']);
         Route::get('/comment/{id}/likes', [LikeController::class, 'getCommentLikes']);
-        Route::delete('/like/{id}', [LikeController::class, 'deleteLike']);
+        Route::post('/like/{id}', [LikeController::class, 'deleteLike']);
 
         Route::post('/answers',[OpenAIController::class, 'generateAnswers']);
         Route::post('/activities',[OpenAIController::class, 'generateActivities']);
         Route::post('/regenerate/activities/{id}',[OpenAIController::class, 'regenerateActivities']);
-
+        
         Route::group(['middleware' => 'admin'], function () {
-            
+            Route::post('/specialist/{id}', [SpecialistsController::class, 'deleteSpecialist']);
             Route::post('/specialist', [SpecialistsController::class, 'addSpecialist']);
             Route::get('/users', [UserController::class, 'getUsers']);
-            Route::delete('/specialist/{id}', [SpecialistsController::class, 'deleteSpecialist']);
+           
 
         });
 
