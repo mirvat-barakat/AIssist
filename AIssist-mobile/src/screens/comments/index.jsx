@@ -34,13 +34,6 @@ const CommentsPage = () => {
     } catch (error) {
       console.log(error);
     }
-    // method: 'GET',
-    // url: 'http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments',
-    // headers: {
-    //   'content-type': 'application/json',
-    //   'Accept' : 'application/json',
-    //   'Authorization': 'bearer ' + token
-    // },
   };
   useEffect(() => {
     getComments();
@@ -63,7 +56,7 @@ const CommentsPage = () => {
         <View style={styles.mainView}>
           <View>
           {comments.map(comment => (
-            <View style={styles.mainCommentView}>
+            <View key={comment.id} style={styles.mainCommentView}>
               <Image style={styles.profilePhoto} source={{uri:comment.profile_picture}}></Image>
               <View style={styles.comment}>
                 <Text style={styles.username} >{comment.name}</Text>
