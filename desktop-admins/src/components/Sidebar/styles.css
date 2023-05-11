@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
 .sidebar {
     position: fixed;
     width: 15%;
@@ -29,11 +30,12 @@
 .link{
   position: relative;
   color: white;
-  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   font-weight:600;
   text-decoration: none;
   padding: 10%;
-  width: 80%;
+  width: 90%;
   align-self: flex-start;
 }
 .link:hover{
@@ -47,12 +49,14 @@
   justify-content:center;
 }
 .faicon{
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-left: -8px;
 }
 .link1{
   position: relative;
   color: white;
-  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   font-weight:600;
   text-decoration: none;
   padding: 10%;
@@ -66,7 +70,9 @@
   background-color: #FFC6C6;
   transition: all 0.5s;
 }
-.logout{
-  width:100%;
-  margin-top: 70%;
+.category-logout{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  margin-top: 80%;
 }

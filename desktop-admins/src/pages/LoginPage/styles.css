@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
 .login-page{
     background-color: #F08080;
     width: 100%;
@@ -43,8 +44,9 @@
     border-radius: 10px;
     cursor: pointer;
     color:white;
+    font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 22px;
 }
 .button1:hover{
     background-color: #faaeae;
@@ -59,15 +61,24 @@
     padding: 4%;
     border: white;
     width: 275px;;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
 }
 .input1-label{
     color: white;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 5px;
     font-size: 18px;
+    font-family: 'Roboto', sans-serif
 }
 .icon{
     color: #FFBEBE;
     font-size: larger;
     margin-right: 5px;
+}
+.error{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color:#FFBEBE;
+    margin-top: 5px;
 }
