@@ -187,7 +187,7 @@ export default function FeedbackScreen() {
             )}
             {!showForm && (
             <>
-            <Text style={styles.feedbacksText}>Thank you for submitting your feedback. Here is another list og generated activities taking into consideration your previous application and your feedback. Hope this helps.</Text>
+            <Text style={styles.feedbacksText}>Thank you for submitting your feedback. Here is another list of generated activities taking into consideration your previous application and your feedback. Hope this helps.</Text>
             <View style={styles.generatedActivities}>
                        {activities.map(activity=> (
                         <View key={activity.id} style={styles.activityView}>
