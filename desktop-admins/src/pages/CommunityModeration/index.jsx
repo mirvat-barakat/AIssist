@@ -125,17 +125,24 @@ const Community = () => {
                             </div>)}
                         </div>
                     </div>
-                    {showComments && comments.filter(comment => comment.post_id === post.id).map(comment => (
-                        <div className="commentView" key={comment.id}>
-                        <div className="imageView">
-                            <img src={comment.profile_picture} className="profilePhotoComment"></img>
-                            <p className="usernameComment">{comment.name}</p>
-                        </div>
-                        <div className="commentContent">
-                            <p>{comment.content}</p>
-                        </div>
-                        </div>
-                    ))}
+                    {showComments &&
+                        comments
+                            .filter((comment) => comment.post_id === post.id)
+                            .map((comment) => (
+                            <div className="commentView" key={comment.id}>
+                                <div className="imageView">
+                                <img
+                                    src={comment.profile_picture}
+                                    className="profilePhotoComment"
+                                    alt="Profile"
+                                />
+                                <p className="usernameComment">{comment.name}</p>
+                                </div>
+                                <div className="commentContent">
+                                <p>{comment.content}</p>
+                                </div>
+                            </div>
+                            ))}
                     </div>
                     ))}
                 </div>
