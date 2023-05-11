@@ -75,7 +75,9 @@
 ###  AIssist is built using the following technologies:
 
 -This project uses the [react-native](https://reactnative.dev/) framework for users mobile application. It is a JavaScript framework for writing real, natively rendering mobile applications for iOS and Android.
-- for the admin panel, we used 
+-Also this project uses React.JS along with Electron.JS for the admin panel.React is a JavaScript library for building user interfaces as a single-page application, and it allows the creation of reusable UI components.And For Designing admin we use Tailwind. Tailwind CSS is a framework for quickly building and customizing applications .
+- This project uses for backend Laravel web application framework.Laravel is a PHP web framework intended for the development of web applications following the model–view–controller (MVC) architectural pattern.
+-For database this project uses MySQL database. MySQL is an open-source relational database management system (RDBMS) that is based on Structured Query Language (SQL). RDBMS is a software or service used to create and manage databases based on a relational model.
 
 <br><br>
 
@@ -86,11 +88,11 @@
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+- Install NPM from: [NPM](https://nodejs.org/en/download)
+
+- Install composer from: [Composer](https://getcomposer.org/download)
+
+- Database server: Any Apache HTTP Server, MariaDB database server, recommended [XAMPP](https://www.apachefriends.org)
 
 ### Installation
 
@@ -99,7 +101,7 @@ _Below is an example of how you can instruct your audience on installing and set
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://https://github.com/mirvat-brkt/AIssist
    ```
 3. Install NPM packages
    ```sh
@@ -110,4 +112,4 @@ _Below is an example of how you can instruct your audience on installing and set
    const API_KEY = 'ENTER YOUR API';
    ```
 
-Now, you should be able to run Coffee Express locally and explore its features.
+Now, you should be able to run AIssist locally and explore its features.
