@@ -50,9 +50,9 @@
 ### User Screens (Mobile)
 | Login screen  | Register screen | Landing screen | Loading screen |
 | ---| ---| ---| ---|
-| ![Landing](./readme/assets/Implementation/Launch.jepg) | ![fsdaf](./readme/assets/Implementation/Login.jepg) | ![fsdaf](./readme/assets/Implementation/Register.jepg) | ![fsdaf](./readme/assets/Implementation/Feed.jepg) |
+| ![Landing](./readme/assets/Implementation/Launch.jpeg) | ![fsdaf](./readme/assets/Implementation/Login.jpeg) | ![fsdaf](./readme/assets/Implementation/Register.jpeg) | ![fsdaf](./readme/assets/Implementation/Feed.jpeg) |
 | Home screen  | Menu Screen | Order Screen | Checkout Screen |
-| ![Landing](./readme/assets/Implementation/Comments.jepg) | ![fsdaf](./readme/assets/Implementation/Questions.jepg) | ![fsdaf](./readme/assets/Implementation/Activities.jepg) | ![fsdaf](./readme/assets/Implementation/Admin1.jepg) |
+| ![Landing](./readme/assets/Implementation/Comments.jpeg) | ![fsdaf](./readme/assets/Implementation/Questions.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities.jpeg) | ![fsdaf](./readme/assets/Implementation/Admin1.jpeg) |
 
 ### Admin Screens (Web)
 | Login screen  | Users Accounts Screen |  View Specialists Screen |
