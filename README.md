@@ -36,9 +36,12 @@
 | ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
 
 ### Mockups
-| Home screen  | Menu Screen | Order Screen |
+| Register screen  | Login Screen | Questions Screen |
 | ---| ---| ---|
 | ![Landing](./readme/assets/Implementation/Register-w.png) | ![fsdaf](./readme/assets/Implementation/Login-w.png) | ![fsdaf](./readme/assets/Implementation/Questions-w.png) |
+| Activities screen  | Feedbacks Screen | Feed Screen |
+| ---| ---| ---|
+| ![Landing](./readme/assets/Implementation/Activities-w.png) | ![fsdaf](./readme/assets/Implementation/Feedbacks-w.png) | ![fsdaf](./readme/assets/Implementation/Feed-w.png) |
 
 <br><br>
 
@@ -48,12 +51,12 @@
 > Using the wireframes and mockups as a guide, we implemented the AIssist app with the following features:
 
 ### User Screens (Mobile)
-| Login screen  | Register screen | Landing screen | Loading screen |
+| Launch screen  | Login screen | Register screen | Specialists screen |
 | ---| ---| ---| ---|
 | ![Landing](./readme/assets/Implementation/Launch.jpeg) | ![fsdaf](./readme/assets/Implementation/Login.jpeg) | ![fsdaf](./readme/assets/Implementation/Register.jpeg) | ![fsdaf](./readme/assets/Implementation/Feed.jpeg) |
-| Home screen  | Menu Screen | Order Screen | Checkout Screen |
+| Feed screen  | Comments Screen | Questions Screen | Activities1 Screen |
 | ![Landing](./readme/assets/Implementation/Questions.jpeg) | ![fsdaf](./readme/assets/Implementation/Comments.jpeg) | ![fsdaf](./readme/assets/Implementation/Q&A.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities1.jpeg) |
-| Home screen  | Menu Screen | Order Screen | Checkout Screen |
+| Activities2 screen  | Activities2 Screen | Feedbacks1 Screen | Feedbacks2 Screen |
 | ![Landing](./readme/assets/Implementation/Activities2.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities3.jpeg) | ![fsdaf](./readme/assets/Implementation/Feedbacks1.jpeg) | ![fsdaf](./readme/assets/Implementation/Feedbacks2.jpeg) |
 
 ### Admin Screens (Web)
@@ -71,7 +74,8 @@
 
 ###  AIssist is built using the following technologies:
 
--This project uses the [react-native](https://reactnative.dev/) framework. It is a JavaScript framework for writing real, natively rendering mobile applications for iOS and Android.
+-This project uses the [react-native](https://reactnative.dev/) framework for users mobile application. It is a JavaScript framework for writing real, natively rendering mobile applications for iOS and Android.
+- for the admin panel, we used 
 
 <br><br>
 
