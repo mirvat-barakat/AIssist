@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     specialistName:{
+        fontSize:16,
         fontWeight:'700'
     },
     phone:{
@@ -60,6 +61,8 @@ const styles = StyleSheet.create({
         flexDirection:'column',
         gap:10,
         marginTop:25,
+        fontSize:14,
+        fontWeight:'400'
     },
 });
 export default styles;

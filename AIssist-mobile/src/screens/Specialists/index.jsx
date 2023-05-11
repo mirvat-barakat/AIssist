@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, TextInput, TouchableOpacity, View, SafeAreaView, Image, ScrollView,  Linking } from 'react-native';
+import { Text, TouchableOpacity, View, SafeAreaView, Image, ScrollView,  Linking } from 'react-native';
 import styles from './styles';
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -12,7 +12,6 @@ export default function SpecialistsScreen() {
 
     const getSpecialists = async () => {
         const token = await AsyncStorage.getItem("token");
-        // const token = localStorage.getItem("token");
         const config = {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },

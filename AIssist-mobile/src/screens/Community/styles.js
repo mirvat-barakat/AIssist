@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
         padding:10,
         borderColor:'#ccc',
         borderWidth:0.1,
+        fontSize:16,
     },
     TextInputView:{
         dispaly:'flex',
@@ -70,6 +71,7 @@ const styles = StyleSheet.create({
     username:{
         alignContent:'center',
         marginLeft:10,
+        fontSize:16,
         fontWeight:'600'
     },
     imageView:{
@@ -94,6 +96,7 @@ const styles = StyleSheet.create({
     },
     shareButtonText: {
         color: '#fff',
+        fontSize: 18,
         fontWeight: 'bold',
         textAlign:'center',
     },
@@ -120,6 +123,7 @@ const styles = StyleSheet.create({
         marginRight:15,       
         lineHeight: 22,         
         fontSize: 16, 
+        fontWeight:'600',
         textAlign:'auto',
         marginBottom:10,
     },
