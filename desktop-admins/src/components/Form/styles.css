@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400');
 body{
     background-color: white;
   }
   .form-title{
+    font-family: 'Roboto', sans-serif;
     margin-top: -10px;
   }
 
@@ -34,12 +36,15 @@ body{
       border:none;
       border-left: solid 5px;
       border-left-color: #F08080;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
   }
   .input1:hover{
 
    translate: 0px -2px;
 }
-.input1-text{
+  .input1-text{
+    font-family: 'Roboto', sans-serif;
     font-weight: 600;
     margin-bottom: 1%;
     align-self: flex-start;
@@ -55,6 +60,7 @@ body{
     border-radius: 5px;
     cursor: pointer;
     color:white;
+    font-family: 'Roboto', sans-serif;
     font-weight: 600;
 }
 .button3:hover{
