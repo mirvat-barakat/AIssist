@@ -38,7 +38,7 @@
 ### Mockups
 | Home screen  | Menu Screen | Order Screen |
 | ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/assets/Implementation/Register-w.png) | ![fsdaf](./readme/assets/Implementation/Login-w.png) | ![fsdaf](./readme/assets/Implementation/Questions-w.png) |
 
 <br><br>
 
@@ -52,7 +52,9 @@
 | ---| ---| ---| ---|
 | ![Landing](./readme/assets/Implementation/Launch.jpeg) | ![fsdaf](./readme/assets/Implementation/Login.jpeg) | ![fsdaf](./readme/assets/Implementation/Register.jpeg) | ![fsdaf](./readme/assets/Implementation/Feed.jpeg) |
 | Home screen  | Menu Screen | Order Screen | Checkout Screen |
-| ![Landing](./readme/assets/Implementation/Comments.jpeg) | ![fsdaf](./readme/assets/Implementation/Questions.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities.jpeg) | ![fsdaf](./readme/assets/Implementation/Admin1.jpeg) |
+| ![Landing](./readme/assets/Implementation/Questions.jpeg) | ![fsdaf](./readme/assets/Implementation/Comments.jpeg) | ![fsdaf](./readme/assets/Implementation/Q&A.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities1.jpeg) |
+| Home screen  | Menu Screen | Order Screen | Checkout Screen |
+| ![Landing](./readme/assets/Implementation/Activities2.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities3.jpeg) | ![fsdaf](./readme/assets/Implementation/Feedbacks1.jpeg) | ![fsdaf](./readme/assets/Implementation/Feedbacks2.jpeg) |
 
 ### Admin Screens (Web)
 | Login screen  | Users Accounts Screen |  View Specialists Screen |
