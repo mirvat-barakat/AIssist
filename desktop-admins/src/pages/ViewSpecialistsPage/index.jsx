@@ -5,12 +5,15 @@ import axios from "axios";
 import "./styles.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  {faTrashAlt}  from '@fortawesome/free-solid-svg-icons';
+import Confirmation from "../../components/ConfirmationDialog";
 
 const ViewSpecialists = () => {
 
     const [specialists, setSpecialists] = useState([]);
     const [showForm, setShowForm] = useState(false);
     const token = localStorage.getItem("token");
+    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+
 
     const getSpecialists = {
         method: 'GET',
@@ -39,6 +42,12 @@ const ViewSpecialists = () => {
       const handleAddSpecialist = () => {
         setShowForm(false);
       }
+      const handleDeleteClick= () => {
+          setShowDeleteDialog(true);
+        }
+      const handleDeleteCancel= ()=>{
+          setShowDeleteDialog(false);
+        }
 
       const handleDeleteSpecialist = () => {
         const specialistId = localStorage.getItem('specialistId');
@@ -51,7 +60,7 @@ const ViewSpecialists = () => {
           }
       }).then(response => {
         if (response.data.status == "success"){
-            alert("Specialist deleted successfully");
+          setShowDeleteDialog(false);
         }
       })
         .catch(error => {
@@ -100,8 +109,16 @@ const ViewSpecialists = () => {
                       <td>{specialist.Location}</td>
                       <td><FontAwesomeIcon icon= {faTrashAlt}  className="faicon-delete" size="1x" color="#F08080" onClick={() => {
                             localStorage.setItem('specialistId', JSON.stringify(specialist.id));
-                            handleDeleteSpecialist()
+                            handleDeleteClick()
                         }} /></td>
+                         {showDeleteDialog && (
+                            <div className="add-form-backdrop">
+                            <Confirmation
+                            message="Are you sure you want to delete this specialist"
+                            onCancel={handleDeleteCancel}
+                            onConfirm={handleDeleteSpecialist}
+                            />
+                            </div>)}
                   </tr>
                 ))}
               </tbody>

@@ -74,7 +74,7 @@ const Community = () => {
           }
       }).then(response => {
         if (response.data.status == "success"){
-            alert("Post deleted successfully");
+            setShowDeleteDialog(false);
         }
       })
         .catch(error => {
