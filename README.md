@@ -55,12 +55,13 @@
 | ![Landing](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) | ![fsdaf](https://placehold.co/900x1600) |
 
 ### Admin Screens (Web)
-| Login screen  | Register screen |  Landing screen |
+| Login screen  | Users Accounts Screen |  View Specialists Screen |
 | ---| ---| ---|
-| ![Landing](./readme/Implementation/Admin1.png) | ![fsdaf](./readme/Implementation/Admin2.png) | ![fsdaf](./readme/Implementation/Admin3.png) |
-| Home screen  | Menu Screen | Order Screen |
-| ![Landing](./readme/Implementation/Admin4.png) | ![fsdaf](./readme/Implementation/Admin5.png) | ![fsdaf](./readme/Implementation/Admin6.png) |
-
+| ![Landing](./readme/assets/Implementation/Admin1.jpg) | ![fsdaf](./readme/assets/Implementation/Admin2.jpg) | ![fsdaf](./readme/assets/Implementation/Admin3.jpg) |
+| Add Specialist screen  | Community Moderation Screen | Community Moderation Screen |
+| ![Landing](./readme/assets/Implementation/Admin4.jpg) | ![fsdaf](./readme/assets/Implementation/Admin5.jpg) | ![fsdaf](./readme/assets/Implementation/Admin6.jpg) |
+| Logout Screen  
+| ![Landing](./readme/assets/Implementation/Admin7.jpg)  
 <br><br>
 
 <!-- Tech stack -->
