@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         fontSize:16,
         color: colors.white,
         marginTop:10,
-        fontFamily: fonts.bold
       },
     input: {
         backgroundColor:colors.white,

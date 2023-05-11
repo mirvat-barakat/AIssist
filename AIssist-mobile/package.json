@@ -23,18 +23,20 @@
     "react": "18.2.0",
     "react-native": "0.71.6",
     "react-native-gesture-handler": "^2.9.0",
+    "react-native-google-fonts": "^0.0.0",
     "react-native-paper": "^5.7.2",
     "react-native-reanimated": "~2.14.4",
     "react-native-screens": "^3.20.0",
+    "react-native-vector-icons": "^9.2.0",
     "react-native-web": "~0.18.10"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "rnpm":{
-    "assets":[
+  "rnpm": {
+    "assets": [
       "./assets/Fonts/"
-  ]
+    ]
   },
   "private": true
 }
