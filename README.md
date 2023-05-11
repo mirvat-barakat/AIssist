@@ -74,10 +74,10 @@
 
 ###  AIssist is built using the following technologies:
 
--This project uses the [react-native](https://reactnative.dev/) framework for users mobile application. It is a JavaScript framework for writing real, natively rendering mobile applications for iOS and Android.
--Also this project uses React.JS along with Electron.JS for the admin panel.React is a JavaScript library for building user interfaces as a single-page application, and it allows the creation of reusable UI components.And For Designing admin we use Tailwind. Tailwind CSS is a framework for quickly building and customizing applications .
+- This project uses the [react-native](https://reactnative.dev/) framework for users mobile application. It is a JavaScript framework for writing real, natively rendering mobile applications for iOS and Android.
+- Also this project uses React.JS along with Electron.JS for the admin panel.React is a JavaScript library for building user interfaces as a single-page application, and it allows the creation of reusable UI components.And For Designing admin we use Tailwind. Tailwind CSS is a framework for quickly building and customizing applications .
 - This project uses for backend Laravel web application framework.Laravel is a PHP web framework intended for the development of web applications following the model–view–controller (MVC) architectural pattern.
--For database this project uses MySQL database. MySQL is an open-source relational database management system (RDBMS) that is based on Structured Query Language (SQL). RDBMS is a software or service used to create and manage databases based on a relational model.
+- For database this project uses MySQL database. MySQL is an open-source relational database management system (RDBMS) that is based on Structured Query Language (SQL). RDBMS is a software or service used to create and manage databases based on a relational model.
 
 <br><br>
 
@@ -96,9 +96,7 @@
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at https://platform.openai.com/account/api-keys
 2. Clone the repo
    ```sh
    git clone https://https://github.com/mirvat-brkt/AIssist
@@ -107,9 +105,52 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+### AIssist Backend 
+
+In `AIssist-backend`:
+
+1. Copy `.env.example` file and rename it `.env`
+2. Open your `.env` file and change the database name (DB_DATABASE) to whatever you need or to `assist_db`, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration if you configured them.
+3. Enter your API in `.env`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   OPENAI_API_KEY = 'ENTER YOUR API';
+
+3. Run the following command for larval ,JWT and Data Base  (you must have your XAMPP server running)
+   ```sh
+      php artisan key:generate
+   ```
+   ```sh
+      php artisan jwt:secret
+   ```
+   ```sh
+      php artisan migrate
+   ```
+   ```sh
+      php artisan serve --host <YOUR_LOCAL_IPv4@> 
    ```
 
-Now, you should be able to run AIssist locally and explore its features.
+### AIssist Admin Panel
+
+Go to `desktop-admins`:
+
+ In The Terminal Run 
+
+   ```sh
+     npm run electron:serve
+   ```
+
+### AIssist Mobile Application
+
+In `AIssist-mobile` :
+
+1. Copy "or Create" `.env.example` file and rename it `.env` you can run
+   ```sh
+   cp .env.example .env
+   ```
+2. In The Terminal Run 
+
+   ```sh
+     npm start
+   ```
+<br> 
+
