@@ -28,7 +28,6 @@ const CommentsPage = () => {
 
       if (res.data.status == "success") {
         setComments(res.data.comments);
-        console.log(res.data);
       }
   };
   useEffect(() => {
@@ -38,7 +37,6 @@ const CommentsPage = () => {
   useEffect(() => {
     axios.request(getComments)
         .then(response => {
-            console.log(response);
             setComments(response.data.comments);
         })
         .catch(function (error) {

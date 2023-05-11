@@ -24,7 +24,6 @@ export default function QuestionsScreen() {
               }
           })
           .then(response => {
-                console.log(response)
                 setAnswer(response.data.data);
           })
           .catch(error => {

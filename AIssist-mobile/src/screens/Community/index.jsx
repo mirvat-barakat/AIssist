@@ -117,7 +117,6 @@ export default function CommunityScreen({ navigation }) {
           }));
     
           setFeed(postsWithLikesCount);
-          console.log(postsWithLikesCount);
         }
       } catch (error) {
         console.log(error);
@@ -141,7 +140,6 @@ export default function CommunityScreen({ navigation }) {
   
         if (res.data.status == "success") {
           setLikesCount(res.data.like_count);
-          console.log(res.data.like_count);
         }
       } catch (error) {
         console.log(error);

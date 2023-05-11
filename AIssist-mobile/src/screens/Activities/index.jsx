@@ -40,7 +40,6 @@ export default function ActivitiesScreen({navigation}) {
           }
       })
       .then(response => {
-            console.log(response);
             setActivities(response.data.activities);
             setShowFeedbackMessage(true);
             AsyncStorage.setItem('activityRequestId', JSON.stringify(response.data.activity_request_id));

@@ -27,7 +27,7 @@ export default function RegisterScreen({navigation}) {
     })
     .then(response => {
         if (response.data.status == "success"){
-            Alert.alert("success");
+            navigation.navigate('Login');
         }
     })
     .catch(error => {

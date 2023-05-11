@@ -41,11 +41,10 @@ const FeedbackForm = () => {
           }
       })
       .then(response => {
-            console.log(response);
             setActivities(response.data.activities);
         })
       .catch(error => {
-          console.log(error);
+          return error
       });
   }
 
