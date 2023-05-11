@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     heading:{
       alignSelf:'center',
       fontWeight:'700',
-      fontSize:26,
+      fontSize:28,
       color:colors.primary_1
     },
     intro:{
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
         marginTop:10,
         alignSelf:'center',
         fontSize:16,
+        fontWeight:'500',
         textAlign:'justify'
     },
     inputContainer: {
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
       padding: 10,
       marginRight: 5,
       shadowColor: '#000',
+      fontSize: 16,
         shadowOffset: {
           width: 0,
           height: 2,
@@ -84,6 +86,7 @@ const styles = StyleSheet.create({
   },
   shareButtonText: {
       color: '#fff',
+      fontSize:18,
       fontWeight: 'bold',
       textAlign:'center',
   },

@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
         marginBottom:'5%',
         marginTop:10,
         marginRight:'5%',
+        fontSize:16,
+        fontWeight:'500',
     },
     mainFormFeedbacks:{
       display:'flex',
@@ -55,7 +57,8 @@ const styles = StyleSheet.create({
       fontWeight:'600',
       paddingLeft:10,
       paddingRight:10,
-      marginBottom:5
+      marginBottom:5,
+      fontSize:16
   },
   button1: {
       backgroundColor: colors.primary_3,
@@ -71,6 +74,7 @@ const styles = StyleSheet.create({
   buttonText: {
       color: colors.white,
       fontSize: 18,
+      fontWeight:'bold'
     },
   input1: {
       borderColor:'#ccc',
@@ -90,6 +94,7 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         marginBottom:'5%',
+        fontSize:16
       },
       activityView:{
         width:'100%',

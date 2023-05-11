@@ -14,6 +14,8 @@ const styles = StyleSheet.create({
         marginRight:'5%',
         marginBottom:'5%',
         marginTop:10,
+        fontSize:16,
+        fontWeight:'500',
         // alignSelf:'center',
     },
     mainFormActivities:{
@@ -54,6 +56,7 @@ const styles = StyleSheet.create({
     },
     inputLabel1:{
         color:'black',
+        fontSize:16,
         fontWeight:'600',
         marginBottom:5
     },
@@ -71,12 +74,14 @@ const styles = StyleSheet.create({
     buttonText: {
         color: colors.white,
         fontSize: 18,
+        fontWeight:'bold'
       },
     input1: {
         backgroundColor: colors.white,
         borderWidth:0.4,
         borderColor:'#ccc',
         borderRadius: 10,
+        fontSize:16,
         padding: 10,
         width:300
       },
@@ -88,6 +93,7 @@ const styles = StyleSheet.create({
         display:'flex',
         flexDirection:'column',
         marginBottom:'5%',
+        fontSize:16
       },
       activityView:{
         width:'100%',
@@ -131,12 +137,15 @@ const styles = StyleSheet.create({
     feedbackText: {
       marginBottom:20,
       color: 'black',
-      fontSize: 16,
+      fontSize: 15,
       marginLeft:'5%',
     },
     feedbackLink: {
       color: colors.primary_3,
       textDecorationLine: 'underline',
+      fontSize:15,
+      fontWeight:'600',
+
     },
 });
 

@@ -60,7 +60,7 @@ export default function FeedbackScreen() {
             {showForm && (
                 <>
             <View style={styles.intro}>
-                <Text style={styles.feedbacksText}>Please fill out this form to help us determine  which activities best suits your child case.</Text>
+                <Text style={styles.feedbacksText}>Please fill out this feedback form to help us improve by providing your thoughts and suggestions.</Text>
             </View>
             <View style={styles.mainFormFeedbacks}>
                 <View style={styles.formFeedbacks}>
