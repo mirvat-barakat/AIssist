@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { colors } from '../../constants/Palette';
+import { fonts} from '../../constants/Fonts';
 
 const styles = StyleSheet.create({
     container1: {
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
         fontSize:16,
         color: colors.white,
         marginTop:10,
+        fontFamily: fonts.bold
       },
     input: {
         backgroundColor:colors.white,
