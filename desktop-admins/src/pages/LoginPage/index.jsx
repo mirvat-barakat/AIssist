@@ -44,7 +44,7 @@ const Login =()=> {
     })
       .then(response => {
         if ( response.data.user.is_admin == 1) {
-          navigate("/admin");
+          navigate("/view_users");
           localStorage.setItem('token', response.data.authorisation.token);
         }
         else{
