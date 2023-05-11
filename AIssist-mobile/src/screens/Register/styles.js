@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
         width: 170,
         height: 170,
         resizeMode: 'contain',
-        marginTop: -40,
+        marginTop: 40,
       },
       form:{
-        marginTop:40,
+        marginTop:30,
       },
       inputContainer: {
         width: 300,
