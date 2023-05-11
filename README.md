@@ -38,7 +38,7 @@
 ### Mockups
 | Home screen  | Menu Screen | Order Screen |
 | ---| ---| ---|
-| ![Landing](./readme/assets/Register-w/.png) | ![fsdaf](./readme/assets/Login-w/.png) | ![fsdaf](./readme/assets/Questions-w/.png) |
+| ![Landing](./readme/assets/Implementation/Register-w.png) | ![fsdaf](./readme/assets/Implementation/Login-w.png) | ![fsdaf](./readme/assets/Implementation/Questions-w.png) |
 
 <br><br>
 
