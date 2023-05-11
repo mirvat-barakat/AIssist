@@ -31,9 +31,6 @@ const CommentBox = () => {
             setContent('');
         }
     })
-    .catch(error => {
-        console.log(error);
-    });
 };
 
 

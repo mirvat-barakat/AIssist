@@ -57,7 +57,7 @@ export default function ActivitiesScreen({navigation}) {
           scrollViewRef.current.scrollToEnd({ animated: true });
         }}>
             <View style={styles.intro}>
-                <Text style={styles.activitiesText}>Please fill out this form to help us determine  which activities best suits your child case.</Text>
+                <Text style={styles.activitiesText}>Please fill out this form to help us determine  which activities best suits your child's case.</Text>
             </View>
             <View style={styles.mainFormActivities}>
                 <View style={styles.formActivities}>

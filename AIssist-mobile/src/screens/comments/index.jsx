@@ -24,16 +24,12 @@ const CommentsPage = () => {
       'Accept' : 'application/json', },
       url: 'http://192.168.1.6:8000/api/v0.0.1/posts/'+postId+'/comments',
     };
-    try {
       const res = await axios(config);
 
       if (res.data.status == "success") {
         setComments(res.data.comments);
         console.log(res.data);
       }
-    } catch (error) {
-      console.log(error);
-    }
   };
   useEffect(() => {
     getComments();

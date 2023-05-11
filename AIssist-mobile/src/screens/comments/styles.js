@@ -37,12 +37,14 @@ const styles = StyleSheet.create({
   commentContent:{
     marginLeft:10, 
     marginRight:10,    
-    lineHeight: 22,   
+    lineHeight: 22,  
+    fontSize:16, 
     textAlign:'justify'      
   },
   username:{
     alignContent:'center',
     marginLeft:10,
+    fontSize:16,
     fontWeight:'600',
     marginBottom:10
 },
