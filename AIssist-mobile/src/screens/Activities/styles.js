@@ -138,6 +138,7 @@ const styles = StyleSheet.create({
       marginBottom:20,
       color: 'black',
       fontSize: 15,
+      fontWeight:'500',
       marginLeft:'5%',
     },
     feedbackLink: {
