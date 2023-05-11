@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     inputLabel: {
         marginBottom: 10,
         fontSize:16,
+        fontWeight:'500',
         color:colors.white,
         marginTop:10,
       },
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: colors.white,
         fontSize: 18,
+        fontWeight:'bold'
       },
     icon: {
         color: colors.primary_3,
@@ -54,10 +56,13 @@ const styles = StyleSheet.create({
     loginText: {
       color: colors.white,
       fontSize: 16,
+      fontWeight:'500',
     },
   loginLink: {
       color: colors.primary_3,
       textDecorationLine: 'underline',
+      fontSize:16,
+      fontWeight:'600'
     },
 });
 

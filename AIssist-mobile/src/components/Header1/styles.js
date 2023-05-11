@@ -20,9 +20,10 @@ const styles = StyleSheet.create({
     },
     title: {
       fontWeight: 'bold',
-      fontSize: 18,
+      fontSize: 22,
       color:'white',
       textAlign:'center',
+      marginRight:25
     },
   });
 

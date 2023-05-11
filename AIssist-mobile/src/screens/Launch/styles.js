@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
       },
       buttonText: {
         color: 'white',
-        fontSize: 18,
-        fontWeight: 'bold',
+        fontSize: 20,
+        fontWeight: '700',
         alignSelf:'center'
       },
 });

@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     inputLabel: {
         marginBottom: 10,
         fontSize:16,
+        fontWeight:'500',
         color: colors.white,
         marginTop:10,
       },
@@ -47,25 +48,30 @@ const styles = StyleSheet.create({
     buttonText: {
         color: colors.white,
         fontSize: 18,
+        fontWeight:'bold'
       },
     forgotPasswordLink: {
-      justifyContent:'flex-end',
-       marginLeft:170,
+        justifyContent:'flex-end',
+        marginLeft:170,
         marginBottom:20,
+        fontWeight:'600'
       },
     forgotPasswordText: {
         color: colors.primary_3,
         textDecorationLine: 'underline',
         fontSize: 16,
+        fontWeight:'600'
       },
     registerText: {
         color: colors.white,
+        fontWeight:'500',
         fontSize: 16,
       },
     registerLink: {
         color: colors.primary_3,
         textDecorationLine: 'underline',
-        marginTop:5
+        fontSize:16,
+        fontWeight:'600',
       },
     icon: {
         color: colors.primary_3,
