@@ -31,17 +31,17 @@
 > We designed AIssist using wireframes and mockups, iterating on the design until we reached the ideal layout for easy navigation and a seamless user experience.
 
 ### Wireframes
-| Login screen  | Register screen |  Landing screen |
+| Register screen  | Login screen |  Questions screen | 
 | ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/assets/Mockups/Registration.w.png) | ![fsdaf](./readme/assets/Mockups/Login.w.png) | ![fsdaf](./readme/assets/Mockups/Questions.w.png) |
 
 ### Mockups
 | Register screen  | Login Screen | Questions Screen |
 | ---| ---| ---|
-| ![Landing](./readme/assets/Implementation/Register-w.png) | ![fsdaf](./readme/assets/Implementation/Login-w.png) | ![fsdaf](./readme/assets/Implementation/Questions-w.png) |
+| ![Landing](./readme/assets/Mockups/Register-w.png) | ![fsdaf](./readme/assets/Mockups/Login-w.png) | ![fsdaf](./readme/assets/Mockups/Questions-w.png) |
 | Activities screen  | Feedbacks Screen | Feed Screen |
 | ---| ---| ---|
-| ![Landing](./readme/assets/Implementation/Activities-w.png) | ![fsdaf](./readme/assets/Implementation/Feedbacks-w.png) | ![fsdaf](./readme/assets/Implementation/Feed-w.png) |
+| ![Landing](./readme/assets/Mockups/Activities-w.png) | ![fsdaf](./readme/assets/Mockups/Feedbacks-w.png) | ![fsdaf](./readme/assets/Mockups/Feed-w.png) |
 
 <br><br>
 
