@@ -57,9 +57,9 @@
 ### Admin Screens (Web)
 | Login screen  | Register screen |  Landing screen |
 | ---| ---| ---|
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/Implementation/Admin1.png) | ![fsdaf](./readme/Implementation/Admin2.png) | ![fsdaf](./readme/Implementation/Admin3.png) |
 | Home screen  | Menu Screen | Order Screen |
-| ![Landing](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) | ![fsdaf](./readme/demo/1440x1024.png) |
+| ![Landing](./readme/Implementation/Admin4.png) | ![fsdaf](./readme/Implementation/Admin5.png) | ![fsdaf](./readme/Implementation/Admin6.png) |
 
 <br><br>
 
