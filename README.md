@@ -69,6 +69,13 @@
 | ![Landing](./readme/assets/Implementation/Admin7.jpg)  
 <br><br>
 
+### Admin Screens (Demo)
+| Login screen  | Users Accounts Screen |  View Specialists Screen |
+| ---| ---| ---|
+| ![Landing](./readme/assets/Demo/Admins/Login.gif) | ![fsdaf](./readme/assets/Demo/Admins/Users&Specialists.gif) | ![fsdaf](./readme/assets/Demo/Admins/Posts.gif) |
+| Add Specialist screen  | Community Moderation Screen | Community Moderation Screen |
+| ![Landing](./readme/assets/Demo/Admins/Comments.gif) | ![fsdaf](./readme/assets/Demo/Admins/Logout.gif) 
+
 <!-- Tech stack -->
 <img src="./readme/assets/Titles/title5.svg"/>
 
