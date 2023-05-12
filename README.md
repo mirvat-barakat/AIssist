@@ -60,21 +60,24 @@
 | ![Landing](./readme/assets/Implementation/Activities2.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities3.jpeg) | ![fsdaf](./readme/assets/Implementation/Feedbacks1.jpeg) | ![fsdaf](./readme/assets/Implementation/Feedbacks2.jpeg) |
 
 ### Admin Screens (Web)
-| Login screen  | Users Accounts Screen |  View Specialists Screen |
-| ---| ---| ---|
-| ![Landing](./readme/assets/Implementation/Admin1.jpg) | ![fsdaf](./readme/assets/Implementation/Admin2.jpg) | ![fsdaf](./readme/assets/Implementation/Admin3.jpg) |
-| Add Specialist screen  | Community Moderation Screen | Community Moderation Screen |
-| ![Landing](./readme/assets/Implementation/Admin4.jpg) | ![fsdaf](./readme/assets/Implementation/Admin5.jpg) | ![fsdaf](./readme/assets/Implementation/Admin6.jpg) |
+| Login screen  | Users Accounts Screen |
+| ---| ---|
+| ![Landing](./readme/assets/Implementation/Admin1.jpg) | ![fsdaf](./readme/assets/Implementation/Admin2.jpg) |
+|  View Specialists Screen |Add Specialist screen  |
+| ![Landing](./readme/assets/Implementation/Admin3.jpg) | ![fsdaf](./readme/assets/Implementation/Admin4.jpg) |
+| Community Moderation Screen | Community Moderation Screen |
+| ![Landing](./readme/assets/Implementation/Admin5.jpg) | ![fsdaf](./readme/assets/Implementation/Admin6.jpg) |
 | Logout Screen  
 | ![Landing](./readme/assets/Implementation/Admin7.jpg)  
-<br><br>
 
 ### Admin Screens (Demo)
-| Login screen  | Users Accounts Screen |  View Specialists Screen |
-| ---| ---| ---|
-| ![Landing](./readme/assets/Demo/Admins/Login.gif) | ![fsdaf](./readme/assets/Demo/Admins/Users&Specialists.gif) | ![fsdaf](./readme/assets/Demo/Admins/Posts.gif) |
-| Add Specialist screen  | Community Moderation Screen | Community Moderation Screen |
-| ![Landing](./readme/assets/Demo/Admins/Comments.gif) | ![fsdaf](./readme/assets/Demo/Admins/Logout.gif) 
+| Login screen  | Users & Specialists Screens |
+| ---| ---| 
+| ![Landing](./readme/assets/Demo/Admins/Login.gif) | ![fsdaf](./readme/assets/Demo/Admins/Users&Specialists.gif) | 
+| Posts Moderation screen  | Community Moderation Screen | Comments Display Screen |
+| ![Landing](./readme/assets/Demo/Admins/Posts.gif) | ![fsdaf](./readme/assets/Demo/Admins/Comments.gif)
+| Logout Screen |
+| ![Landing](./readme/assets/Demo/Admins/Logout.gif) |
 
 <!-- Tech stack -->
 <img src="./readme/assets/Titles/title5.svg"/>
