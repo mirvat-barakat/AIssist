@@ -49,13 +49,13 @@
 > Using the wireframes and mockups as a guide, we implemented the AIssist app with the following features:
 
 ### User Screens (Mobile)
-| Launch screen  | Login screen | Register screen | Specialists screen |
+| Login screen  | Register screen | Specialists screen | Feed screen |
 | ---| ---| ---| ---|
-| ![Landing](./readme/assets/Implementation/Launch.jpeg) | ![fsdaf](./readme/assets/Implementation/Login.jpeg) | ![fsdaf](./readme/assets/Implementation/Register.jpeg) | ![fsdaf](./readme/assets/Implementation/Feed.jpeg) |
-| Feed screen  | Comments Screen | Questions Screen | Activities1 Screen |
-| ![Landing](./readme/assets/Implementation/Questions.jpeg) | ![fsdaf](./readme/assets/Implementation/Comments.jpeg) | ![fsdaf](./readme/assets/Implementation/Q&A.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities1.jpeg) |
-| Activities2 screen  | Activities2 Screen | Feedbacks1 Screen | Feedbacks2 Screen |
-| ![Landing](./readme/assets/Implementation/Activities2.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities3.jpeg) | ![fsdaf](./readme/assets/Implementation/Feedbacks1.jpeg) | ![fsdaf](./readme/assets/Implementation/Feedbacks2.jpeg) |
+| ![fsdaf](./readme/assets/Implementation/Login.jpeg)  | ![fsdaf](./readme/assets/Implementation/Register.jpeg)  | ![fsdaf](./readme/assets/Implementation/Feed.jpeg) | ![fsdaf](./readme/assets/Implementation/Questions.jpeg) |
+| Comments screen  | Questions Screen | Activities1 Screen | Feedback1 screen Screen |
+| ![Landing](./readme/assets/Implementation/Comments.jpeg) | ![fsdaf](./readme/assets/Implementation/Q&A.jpeg) | ![fsdaf](./readme/assets/Implementation/Activities1.jpeg) | ![fsdaf](./readme/assets/Implementation/Feedbacks1.jpeg) |
+| Feedback2 screen  |
+| ![Landing](./readme/assets/Implementation/Feedbacks2.jpeg)  |
 
 ### Users Screens (Demo)
 | Login& Register screens  | Community Screens | Share Post Screen |
