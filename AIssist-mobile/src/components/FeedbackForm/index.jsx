@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
+import { View, Text, TextInput, TouchableOpacity} from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import axios from 'axios';
 
