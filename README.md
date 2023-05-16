@@ -10,19 +10,17 @@
 > 
 
 ### User Stories
-- As a new user, I want to be able to create an account with my personal information, such as name, email, and password, so that I can access the features of the application.
-- As a returning user, I want to be able to log in to my account using my email and password, so that I can access my saved information and preferences.
-- As a user, I want to be able to join a community where I can share my experience and connect with other parents who are going through similar situations.
-- As a user, I want to be able to ask any question related to my child's condition and receive relevant and accurate information. This will help me better understand my child's condition and make informed decisions about their care.
-- As a user, I want to be able to view a list of specialists in my area who can assist me and my child, and be able to book appointments online or in person.
-- As a user, I want to be able to submit a form with information about my child's situation and behaviors and receive personalized recommendations for activities, games, and lessons that I can practice with my child.
-- As a user, I want to be able to provide feedback on the activities recommended to me by the application, so that the system can improve its recommendations and provide better support for me and my child.
+- As a user, I want to be able to join a parent's community for support and connection.
+- As a user, I want to be able to ask any question related to my child's condition and receive relevant and accurate information.
+- As a user, I want to be able to view a list of specialists in my area who can assist me and my child.
+- As a user, I want to be able to submit a form with information about my child's situation and behaviors and get tailored activities for my child.
+- As a user, I want to be able to provide feedback to enhance recommendations and support.
+
 
 ### Admin Stories
--  As an admin, I want to be able to securely log into the admin panel using my unique email and password, in order to access and manage the application's features.
--  As an admin, I want to be able to manage the user accounts and profiles.
--  As an admin, I want to be able to monitor and moderate the community discussion, including flagging inappropriate content and addressing any conflicts or issues that arise.
--  As an admin, I want to be able to update and maintain the list of specialists in the domain, including adding new specialists and updating their information and availability.
+-  As an admin, I want to be able to manage users' accounts and profiles.
+-  As an admin, I want to be able to monitor and moderate the community discussion.
+-  As an admin, I want to be able to update and maintain the list of specialists in the domain.
 <br><br>
 
 <!-- Prototyping -->
